@@ -1,0 +1,8 @@
+build/
+__pycache__/
+*.pyc
+.venv/
+.env
+kaggle.json
+series/demo/
+series/ci/

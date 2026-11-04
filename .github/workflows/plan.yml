@@ -1,0 +1,78 @@
+name: 新劇企劃
+
+on:
+  issues:
+    types: [opened, labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: saga-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    # 只有 repo 擁有者開的、標了「新劇」的 Issue 才會觸發（公開 repo 防路人濫用）
+    if: >-
+      contains(github.event.issue.labels.*.name, '新劇') &&
+      github.event.issue.user.login == github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SLUG: s${{ github.event.issue.number }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 檢查是否已企劃過
+        id: check
+        run: |
+          if [ -f "series/$SLUG/bible.json" ]; then echo "done=true" >> "$GITHUB_OUTPUT"; fi
+
+      - uses: actions/setup-python@v5
+        if: steps.check.outputs.done != 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 安裝
+        if: steps.check.outputs.done != 'true'
+        run: pip install -r requirements.txt
+
+      - name: 回報開工
+        if: steps.check.outputs.done != 'true'
+        run: gh issue comment ${{ github.event.issue.number }} --body "🤵 收到靈感，編劇部開工中…（[執行紀錄](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})）"
+
+      - name: 寫劇本聖經與全劇大綱
+        if: steps.check.outputs.done != 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue.md"
+          python -m saga.cli plan --slug "$SLUG" --issue-file "$RUNNER_TEMP/issue.md"
+          python -m saga.cli summary --slug "$SLUG" > "$RUNNER_TEMP/summary.md"
+
+      - name: 存進 repo
+        if: steps.check.outputs.done != 'true'
+        run: |
+          git config user.name "saga-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add series
+          git commit -m "企劃 $SLUG：劇本聖經與大綱（#${{ github.event.issue.number }}）"
+          git pull --rebase
+          git push
+
+      - name: 回報結果
+        if: steps.check.outputs.done != 'true'
+        run: |
+          TITLE=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['title'])")
+          gh issue edit ${{ github.event.issue.number }} --title "《$TITLE》($SLUG)"
+          gh issue comment ${{ github.event.issue.number }} --body-file "$RUNNER_TEMP/summary.md"
+
+      - name: 失敗通知
+        if: failure()
+        run: gh issue comment ${{ github.event.issue.number }} --body "⚠️ 企劃失敗，請看[執行紀錄](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})。修正後把「新劇」標籤拿掉再加回來即可重跑。"

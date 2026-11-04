@@ -1,0 +1,31 @@
+name: 流水線自我測試（mock）
+
+on:
+  push:
+    paths: ["saga/**", "requirements.txt", ".github/workflows/test.yml"]
+  workflow_dispatch:
+
+jobs:
+  mock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk > /dev/null
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 用假資料跑完整流程
+        run: |
+          python -m saga.cli plan --slug ci --idea "測試" --episodes 3 --mock
+          python -m saga.cli produce --slug ci --eps 1-2 --mock
+          ls -la build/ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mock-episode
+          path: build/ci/*.mp4
+          retention-days: 3

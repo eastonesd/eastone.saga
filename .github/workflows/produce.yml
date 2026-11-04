@@ -1,0 +1,155 @@
+name: 短劇生產
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 劇代號（例如 s12）
+        required: true
+      eps:
+        description: 集數範圍（例如 1-3）
+        required: true
+      video:
+        description: 關鍵鏡頭做成真影片（實驗性，較耗 GPU）
+        type: boolean
+        default: false
+      rewrite:
+        description: 重寫已存在的分鏡劇本
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: saga-kaggle   # Kaggle 同一時間只跑一個，避免搶 GPU 額度
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.comment.body, '/produce') &&
+       github.event.comment.user.login == github.repository_owner &&
+       contains(github.event.issue.labels.*.name, '新劇'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 解析指令
+        id: args
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            SLUG="${{ inputs.slug }}"; EPS="${{ inputs.eps }}"
+            FLAGS=""
+            [ "${{ inputs.video }}" = "true" ] && FLAGS="$FLAGS --video"
+            [ "${{ inputs.rewrite }}" = "true" ] && FLAGS="$FLAGS --rewrite"
+          else
+            SLUG="s$ISSUE"
+            EPS=$(printf '%s' "$COMMENT" | head -1 | grep -oE '[0-9][0-9,\-]*' | head -1)
+            FLAGS=""
+            printf '%s' "$COMMENT" | head -1 | grep -q -- '--video' && FLAGS="$FLAGS --video"
+            printf '%s' "$COMMENT" | head -1 | grep -q -- '--rewrite' && FLAGS="$FLAGS --rewrite"
+            gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" -f content=eyes >/dev/null || true
+          fi
+          [ -z "$EPS" ] && { echo "沒有集數，例：/produce 1-3"; exit 1; }
+          [ -f "series/$SLUG/bible.json" ] || { echo "找不到 series/$SLUG"; exit 1; }
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
+          echo "eps=$EPS" >> "$GITHUB_OUTPUT"
+          echo "flags=$FLAGS" >> "$GITHUB_OUTPUT"
+
+      - name: 安裝 FFmpeg 與中文字型
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk > /dev/null
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: 取回上次算好的圖（斷點續跑）
+        uses: actions/cache/restore@v4
+        with:
+          path: build/${{ steps.args.outputs.slug }}/ep*/shots
+          key: saga-shots-${{ steps.args.outputs.slug }}-${{ github.run_id }}
+          restore-keys: saga-shots-${{ steps.args.outputs.slug }}-
+
+      - name: 生產（劇本 → 配音 → Kaggle 算圖 → 剪輯）
+        id: run
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          SAGA_TIME_BUDGET_MIN: "240"   # 要留時間給 Kaggle 開機、下載與剪輯，才不會超過 Actions 6 小時上限
+        run: |
+          set +e
+          python -m saga.cli produce --slug "${{ steps.args.outputs.slug }}" --eps "${{ steps.args.outputs.eps }}" ${{ steps.args.outputs.flags }}
+          CODE=$?
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          [ $CODE -eq 0 ] || [ $CODE -eq 3 ]
+
+      - name: 保存已算好的圖
+        if: always() && steps.args.outputs.slug != ''
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: build/${{ steps.args.outputs.slug }}/ep*/shots
+          key: saga-shots-${{ steps.args.outputs.slug }}-${{ github.run_id }}
+
+      - name: 存劇本與定妝照
+        if: always()
+        run: |
+          git config user.name "saga-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add series
+          if ! git diff --cached --quiet; then
+            git commit -m "生產 ${{ steps.args.outputs.slug }} 第 ${{ steps.args.outputs.eps }} 集：分鏡與定妝照"
+            git pull --rebase && git push
+          fi
+
+      - name: 上傳成片到 Release
+        id: release
+        run: |
+          SLUG="${{ steps.args.outputs.slug }}"
+          TITLE=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['title'])")
+          shopt -s nullglob
+          FILES=(build/$SLUG/*.mp4)
+          [ ${#FILES[@]} -eq 0 ] && { echo "沒有成片"; exit 0; }
+          gh release view "$SLUG" >/dev/null 2>&1 || gh release create "$SLUG" --title "《$TITLE》" --notes "由 SAGA.AI 自動生產" --latest=false
+          gh release upload "$SLUG" "${FILES[@]}" --clobber
+          {
+            echo "body<<EOF"
+            echo "## ✅ 第 ${{ steps.args.outputs.eps }} 集完成"
+            for f in "${FILES[@]}"; do
+              n=$(basename "$f")
+              echo "- [$n](${{ github.server_url }}/${{ github.repository }}/releases/download/$SLUG/$n)"
+            done
+            if [ "${{ steps.run.outputs.code }}" = "3" ]; then
+              echo ""
+              echo "⏳ 有部分鏡頭因時間預算未完成，再留言一次相同的 \`/produce\` 會接續。"
+            fi
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: 回報
+        if: steps.release.outputs.body != '' && env.ISSUE != ''
+        env:
+          BODY: ${{ steps.release.outputs.body }}
+        run: gh issue comment "$ISSUE" --body "$BODY"
+
+      - name: 失敗通知
+        if: failure() && env.ISSUE != ''
+        run: gh issue comment "$ISSUE" --body "⚠️ 生產失敗，請看[執行紀錄](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})。"

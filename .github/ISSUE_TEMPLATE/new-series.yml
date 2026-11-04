@@ -1,0 +1,37 @@
+name: 🎬 新劇靈感
+description: 丟一個靈感，自動產出劇本聖經與全劇大綱
+title: "新劇："
+labels: ["新劇"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: 靈感
+      description: 一句話也行，越具體越好（主角是誰、遇到什麼事、爽點在哪）
+      placeholder: 被趕出家門的千金，三年後以神秘投資人身分回歸，讓當年的渣男跪著求她
+    validations:
+      required: true
+  - type: dropdown
+    id: genre
+    attributes:
+      label: 類型
+      options: [都市逆襲, 霸總甜寵, 古裝宮鬥, 懸疑推理, 玄幻修仙, 重生復仇, 其他（由 AI 判斷）]
+    validations:
+      required: false
+  - type: dropdown
+    id: style
+    attributes:
+      label: 畫風
+      options: [寫實電影感, 日系動漫, 國風古韻, 3D 卡通]
+    validations:
+      required: false
+  - type: input
+    id: episodes
+    attributes:
+      label: 集數
+      value: "60"
+  - type: input
+    id: seconds
+    attributes:
+      label: 每集長度（秒）
+      value: "90"
