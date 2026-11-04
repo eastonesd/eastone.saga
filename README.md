@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/logo.png" width="220" alt="SAGA.ai"></p>
+
 # SAGA.AI
 
 **用手機丟一句靈感，自動生產整部 AI 直式短劇。全程免費。**
@@ -38,7 +40,15 @@
    - `KAGGLE_KEY`
 4.（選用）**Variables** 加 `GEMINI_MODEL` 可指定模型；不設就用 `gemini-flash-latest`。
 
-## 日常使用
+## 手機 App
+
+打開 **<https://eastonesd.github.io/saga.ai/>**：
+- Android／Chrome：選單 → 安裝應用程式
+- iPhone／Safari：分享 → 加入主畫面
+
+第一次開啟時貼上 GitHub fine-grained token（只選 saga.ai；Issues 讀寫、Contents 與 Actions 唯讀）。之後就能在 App 裡送靈感、下生產指令、看底片牆與播放成片，不必再開 GitHub App。
+
+## 日常使用（GitHub 介面）
 
 1. 手機打開 GitHub App → 這個 repo → Issues → New → **🎬 新劇靈感**，填靈感送出。
 2. 幾分鐘後 Issue 會收到劇名、角色表、前 10 集大綱。

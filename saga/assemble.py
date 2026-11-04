@@ -127,5 +127,8 @@ def assemble_episode(slug: str, ep: int) -> Path:
     _ff(*args, "-filter_complex", ";".join(filters), "-map", "[vout]", "-map", "[aout]",
         "-c:v", "libx264", "-preset", "veryfast", "-crf", "21", "-pix_fmt", "yuv420p",
         "-c:a", "aac", "-b:a", "160k", "-t", f"{total:.3f}", "-movflags", "+faststart", str(out))
+    # 劇照（App 的底片格縮圖）
+    _ff("-ss", f"{min(1.2, total / 2):.2f}", "-i", str(out), "-frames:v", "1",
+        "-vf", "scale=360:-2", "-q:v", "4", str(out.with_suffix(".jpg")))
     print(f"  ✔ {out.name}（{total:.0f} 秒）", flush=True)
     return out

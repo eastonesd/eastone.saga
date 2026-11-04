@@ -129,7 +129,7 @@ jobs:
           FILES=(build/$SLUG/*.mp4)
           [ ${#FILES[@]} -eq 0 ] && { echo "沒有成片"; exit 0; }
           gh release view "$SLUG" >/dev/null 2>&1 || gh release create "$SLUG" --title "《$TITLE》" --notes "由 SAGA.AI 自動生產" --latest=false
-          gh release upload "$SLUG" "${FILES[@]}" --clobber
+          gh release upload "$SLUG" "${FILES[@]}" build/$SLUG/*.jpg --clobber
           {
             echo "body<<EOF"
             echo "## ✅ 第 ${{ steps.args.outputs.eps }} 集完成"
