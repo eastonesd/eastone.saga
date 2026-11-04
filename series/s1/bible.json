@@ -1,0 +1,87 @@
+{
+  "title": "鐵獄逆襲：血債血償",
+  "logline": "被至親兄弟背叛入獄的鄉巴佬，五年後帶著鐵血勢力歸來，將昔日仇人一步步推入真實的阿鼻地獄！",
+  "genre": "都市逆襲",
+  "tone": "暗黑、爽快、緊張、電影質感",
+  "style_prompt": "cinematic film still, realistic cinematic lighting, dark moody tone, 35mm photograph, highly detailed, dramatic shadows, 8k resolution, depth of field",
+  "negative_prompt": "anime, 3d render, cartoon, deformed, low quality, blurred, bright neon, exaggerated facial expressions, extra limbs",
+  "narrator_voice": "旁白-男",
+  "characters": [
+    {
+      "id": "chen_feng",
+      "name": "陳峰",
+      "role": "主角",
+      "age": 28,
+      "gender": "male",
+      "appearance": "28 years old Asian male, buzz cut dark hair, sharp intense eyes, scarred left cheek, wearing a black tailored wool trench coat over a dark charcoal suit, crisp white shirt, no tie, rugged handsome face",
+      "personality": "隱忍冷酷、重情重義但對敵人絕不手軟、心思縝密",
+      "voice": "男聲-霸氣",
+      "seed": 1842942639
+    },
+    {
+      "id": "zhao_tianhao",
+      "name": "趙天豪",
+      "role": "反派",
+      "age": 29,
+      "gender": "male",
+      "appearance": "29 years old Asian male, sleek combed-back black hair, wire-rimmed glasses, arrogant expression, wearing a navy blue double-breasted designer suit with a gold silk tie, polished appearance",
+      "personality": "虛偽貪婪、狡詐殘忍、自命不凡",
+      "voice": "男聲-沉穩",
+      "seed": 454315780
+    },
+    {
+      "id": "lin_su",
+      "name": "林素",
+      "role": "配角",
+      "age": 26,
+      "gender": "female",
+      "appearance": "26 years old Asian female, long straight pitch-black hair in low ponytail, sharp eyes, wearing a fitted black leather blazer over a burgundy silk blouse, dark trousers, cold elite look",
+      "personality": "幹練忠誠、冷靜理智、精通商業與情報",
+      "voice": "女聲-御姐",
+      "seed": 1317934588
+    },
+    {
+      "id": "zhao_meiling",
+      "name": "趙美玲",
+      "role": "反派",
+      "age": 24,
+      "gender": "female",
+      "appearance": "24 years old Asian female, wavy dyed chestnut hair, heavy glamorous makeup, wearing a sleeveless emerald green luxury cocktail dress, diamond necklace, pretentious smile",
+      "personality": "勢利拜金、膚淺惡劣、趨炎附勢",
+      "voice": "女聲-活潑",
+      "seed": 219525089
+    }
+  ],
+  "locations": [
+    {
+      "id": "prison_gate",
+      "name": "重刑監獄大門外",
+      "visual": "exterior of a heavy concrete prison gate, rusty iron doors, gloomy overcast sky, wet asphalt ground, cinematic atmospheric atmospheric lighting"
+    },
+    {
+      "id": "zhao_mansion",
+      "name": "趙氏豪華豪宅客廳",
+      "visual": "luxurious modern penthouse living room, high ceilings, marble floor, leather sofa, floor-to-ceiling windows showing city skyline night view, warm golden ambient lighting"
+    },
+    {
+      "id": "black_gold_club",
+      "name": "黑金私人會所包廂",
+      "visual": "exclusive dark VIP lounge room, dim neon accent lighting, red velvet couches, liquor bottles on glass table, smoky underground atmosphere"
+    },
+    {
+      "id": "underground_dungeon",
+      "name": "模擬監獄地下室",
+      "visual": "dimly lit underground concrete cell, steel bars, damp walls, single hanging halogen lamp, cold blue light, dramatic shadows"
+    },
+    {
+      "id": "longteng_office",
+      "name": "龍騰集團總裁辦公室",
+      "visual": "minimalist modern CEO office, mahogany desk, glass walls overlooking downtown skyscraper district, dark sleek furniture, high contrast cinematic lighting"
+    }
+  ],
+  "slug": "s1",
+  "idea": "被兄弟背叛而入獄的土包子，出獄後絕地反擊，讓兄弟也體驗獄中的滋味。",
+  "episode_count": 11,
+  "episode_seconds": 90,
+  "style_choice": "寫實電影感"
+}
