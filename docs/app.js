@@ -133,12 +133,17 @@ function chipGroup(name, options) {
 }
 function stepper(id, value, min, max, step) {
   return `<div class="stepper"><button type="button" data-step="-${step}" aria-label="減少">−</button>
-    <input id="${id}" type="number" inputmode="numeric" value="${value}" min="${min}" max="${max}" step="${step}">
+    <input id="${id}" type="number" inputmode="numeric" value="${value}" min="${min}" max="${max}" step="1">
     <button type="button" data-step="${step}" aria-label="增加">＋</button></div>`;
 }
 function wireSteppers(root) {
   root.querySelectorAll(".stepper").forEach((s) => {
     const input = $("input", s);
+    input.addEventListener("blur", () => {
+      const v = Math.round(Number(input.value) || Number(input.min));
+      input.value = Math.min(Number(input.max), Math.max(Number(input.min), v));
+      input.dispatchEvent(new Event("change"));
+    });
     s.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
       const v = Number(input.value || 0) + Number(b.dataset.step);
       input.value = Math.min(Number(input.max), Math.max(Number(input.min), v));
