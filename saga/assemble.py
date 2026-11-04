@@ -31,13 +31,13 @@ def _motion_filter(motion: str, frames: int) -> str:
         "pan_left": ("1.12", f"(iw-iw/zoom)*(1-on/{n})", cy),
         "pan_right": ("1.12", f"(iw-iw/zoom)*on/{n}", cy),
     }.get(motion, (f"1+0.03*on/{n}", cx, cy))
-    return (f"scale={int(W * 1.5)}:{int(H * 1.5)}:force_original_aspect_ratio=increase,"
-            f"crop={int(W * 1.5)}:{int(H * 1.5)},"
+    return (f"scale={int(W * 1.25)}:{int(H * 1.25)}:force_original_aspect_ratio=increase,"
+            f"crop={int(W * 1.25)}:{int(H * 1.25)},"
             f"zoompan=z='{z}':x='{x}':y='{y}':d={n}:s={W}x{H}:fps={FPS},format=yuv420p")
 
 
 def _render_shot(src: Path, motion: str, dur: float, out: Path) -> None:
-    enc = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(FPS), "-an"]
+    enc = ["-c:v", "libx264", "-preset", "ultrafast", "-crf", "17", "-pix_fmt", "yuv420p", "-r", str(FPS), "-an"]
     if src.suffix == ".mp4":
         clip = audio_duration(src) or dur
         slow = min(max(dur / clip, 1.0), 1.6)

@@ -89,3 +89,24 @@ def write_episode(slug: str, ep: int, *, mock: bool = False, force: bool = False
     data = _normalize_episode(raw, bible, ep)
     paths.write_json(path, data)
     return data
+
+
+def write_episodes(slug: str, eps: list[int], *, mock: bool = False, force: bool = False,
+                   workers: int = 3) -> list[int]:
+    """平行寫多集分鏡（每集只依賴大綱，彼此獨立）。回傳失敗的集數。"""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    todo = [e for e in eps if force or not paths.episode_path(slug, e).exists()]
+    if not todo:
+        return []
+    print(f"▶ 平行撰寫 {len(todo)} 集分鏡（{workers} 路）", flush=True)
+    failed = []
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futs = {pool.submit(write_episode, slug, e, mock=mock, force=force): e for e in todo}
+        for f in as_completed(futs):
+            try:
+                f.result()
+            except Exception as e:  # 單集失敗不拖垮整批
+                print(f"  ⚠ 第 {futs[f]} 集分鏡失敗：{e}", flush=True)
+                failed.append(futs[f])
+    return sorted(failed)

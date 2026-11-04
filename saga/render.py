@@ -14,9 +14,12 @@ from pathlib import Path
 from . import paths
 
 KERNEL_TEMPLATE = Path(__file__).with_name("kaggle_kernel.py")
-IMAGE_MODEL = os.environ.get("SAGA_IMAGE_MODEL", "stabilityai/stable-diffusion-xl-base-1.0")
+MODELS_TEMPLATE = Path(__file__).with_name("kaggle_models.py")
 VIDEO_MODEL = os.environ.get("SAGA_VIDEO_MODEL", "Wan-AI/Wan2.2-TI2V-5B-Diffusers")
 KERNEL_SLUG = os.environ.get("SAGA_KERNEL_SLUG", "saga-render")
+MODELS_VERSION = 1  # 改了 kaggle_models.py 的模型配方就加一，會自動重建模型包
+MODELS_SLUG = f"saga-models-v{MODELS_VERSION}"
+ACCELERATOR = os.environ.get("SAGA_ACCELERATOR", "NvidiaTeslaT4")  # Kaggle 的 T4 ×2
 
 CAMERA = {
     "close-up": "close-up shot, face focus",
@@ -73,11 +76,9 @@ def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
     return {
         "job_id": uuid.uuid4().hex[:12],
         "slug": slug,
-        "model": IMAGE_MODEL,
         "video_model": VIDEO_MODEL,
-        "negative_prompt": bible.get("negative_prompt", ""),
-        "width": 768, "height": 1344, "steps": 28, "cfg": 6.0, "ip_scale": 0.55,
-        "time_budget_min": int(os.environ.get("SAGA_TIME_BUDGET_MIN", "480")),
+        "width": 768, "height": 1344, "steps": 8, "ip_scale": 0.6,
+        "time_budget_min": int(os.environ.get("SAGA_TIME_BUDGET_MIN", "240")),
         "characters": characters,
         "shots": shots,
         "video_shots": video_shots,
@@ -86,51 +87,102 @@ def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
 
 # ── Kaggle ──────────────────────────────────────────────────
 
+def _kaggle_env() -> dict:
+    env = dict(os.environ)
+    key = env.get("KAGGLE_KEY", "")
+    if key.startswith("KGAT_") and not env.get("KAGGLE_API_TOKEN"):
+        env["KAGGLE_API_TOKEN"] = key  # 新版 token 格式
+    return env
+
+
 def _kaggle(*args: str, check: bool = True) -> str:
-    r = subprocess.run(["kaggle", *args], capture_output=True, text=True)
+    r = subprocess.run(["kaggle", *args], capture_output=True, text=True, env=_kaggle_env())
+    out = (r.stdout or "") + (r.stderr or "")
     if check and r.returncode != 0:
-        raise RuntimeError(f"kaggle {' '.join(args)} 失敗：{r.stderr or r.stdout}")
-    return (r.stdout or "") + (r.stderr or "")
+        raise RuntimeError(f"kaggle {' '.join(args)} 失敗：{out[-1500:]}")
+    return out
+
+
+def _user() -> str:
+    user = os.environ.get("KAGGLE_USERNAME")
+    if not user:
+        raise RuntimeError("缺少 KAGGLE_USERNAME（請到 GitHub Secrets 設定）")
+    return user
+
+
+def _push(slug: str, code: str, *, gpu: bool, sources: list[str]) -> None:
+    with tempfile.TemporaryDirectory() as tmp:
+        Path(tmp, "kernel.py").write_text(code, encoding="utf-8")
+        Path(tmp, "kernel-metadata.json").write_text(json.dumps({
+            "id": f"{_user()}/{slug}", "title": slug, "code_file": "kernel.py",
+            "language": "python", "kernel_type": "script", "is_private": True,
+            "enable_gpu": gpu, "enable_internet": True,
+            **({"machine_shape": ACCELERATOR} if gpu else {}),
+            "dataset_sources": [], "competition_sources": [], "kernel_sources": sources,
+        }), encoding="utf-8")
+        args = ["kernels", "push", "-p", tmp] + (["--accelerator", ACCELERATOR] if gpu else [])
+        out = _kaggle(*args).strip()
+        if "push error" in out.lower():
+            raise RuntimeError(f"Kaggle 送出失敗：{out[-800:]}")
+        print("  " + out.splitlines()[-1], flush=True)
+
+
+def _status(kernel_id: str) -> str:
+    return _kaggle("kernels", "status", kernel_id, check=False).lower()
+
+
+def _wait(kernel_id: str, label: str, max_min: int, require_active: bool = True) -> None:
+    t0 = time.time()
+    seen_active = not require_active
+    time.sleep(30)
+    last = ""
+    while True:
+        st = _status(kernel_id)
+        mins = (time.time() - t0) / 60
+        if any(w in st for w in ("running", "queued", "new_script", "pending")):
+            seen_active = True
+        if ("error" in st or "cancel" in st) and (seen_active or mins > 5):
+            logs = _kaggle("kernels", "logs", kernel_id, check=False)
+            raise RuntimeError(f"Kaggle {label} 失敗：{st.strip()}\n--- Kaggle 日誌結尾 ---\n{logs[-3000:]}")
+        if "complete" in st and (seen_active or mins > 5):
+            return
+        if mins > max_min:
+            raise RuntimeError(f"Kaggle {label} 超過 {max_min} 分鐘未完成")
+        brief = st.strip().split('"')[-2] if '"' in st else st.strip()[-40:]
+        if brief != last or int(mins) % 5 == 0:
+            print(f"  …{label}：{brief}（{mins:.0f} 分）", flush=True)
+            last = brief
+        time.sleep(30)
+
+
+def ensure_models() -> str:
+    """確認 Kaggle 上的模型包存在；沒有就建一次（約 15～25 分鐘，之後永久沿用）。"""
+    kid = f"{_user()}/{MODELS_SLUG}"
+    st = _status(kid)
+    if "complete" in st:
+        return kid
+    if any(w in st for w in ("running", "queued")):
+        print("▶ 模型包建置中，等待完成…", flush=True)
+    else:
+        print("▶ 第一次使用：在 Kaggle 上建置模型包（只需一次）", flush=True)
+        _push(MODELS_SLUG, MODELS_TEMPLATE.read_text(encoding="utf-8"), gpu=False, sources=[])
+    _wait(kid, "模型包", 60)
+    return kid
 
 
 def _run_on_kaggle(job: dict, download_to: Path) -> dict:
-    user = os.environ.get("KAGGLE_USERNAME")
-    if not user:
-        raise RuntimeError("缺少 KAGGLE_USERNAME / KAGGLE_KEY")
-    kernel_id = f"{user}/{KERNEL_SLUG}"
-    with tempfile.TemporaryDirectory() as tmp:
-        payload = base64.b64encode(json.dumps(job, ensure_ascii=False).encode()).decode()
-        code = KERNEL_TEMPLATE.read_text(encoding="utf-8").replace("__JOB_B64__", payload)
-        Path(tmp, "kernel.py").write_text(code, encoding="utf-8")
-        Path(tmp, "kernel-metadata.json").write_text(json.dumps({
-            "id": kernel_id, "title": KERNEL_SLUG, "code_file": "kernel.py",
-            "language": "python", "kernel_type": "script", "is_private": True,
-            "enable_gpu": True, "enable_internet": True,
-            "dataset_sources": [], "competition_sources": [], "kernel_sources": [],
-        }), encoding="utf-8")
-        print(f"▶ 送出 Kaggle 算圖：{len(job['shots'])} 張圖、{len(job['video_shots'])} 段影片", flush=True)
-        print(_kaggle("kernels", "push", "-p", tmp).strip(), flush=True)
-
+    models = ensure_models()
+    kernel_id = f"{_user()}/{KERNEL_SLUG}"
+    payload = base64.b64encode(json.dumps(job, ensure_ascii=False).encode()).decode()
+    code = KERNEL_TEMPLATE.read_text(encoding="utf-8").replace("__JOB_B64__", payload)
+    print(f"▶ 送出 Kaggle 算圖：{len(job['shots'])} 張圖、{len(job['video_shots'])} 段影片（{ACCELERATOR}）", flush=True)
     t0 = time.time()
-    seen_active = False
-    time.sleep(60)
-    while True:
-        status = _kaggle("kernels", "status", kernel_id, check=False).lower()
-        mins = (time.time() - t0) / 60
-        if any(w in status for w in ("running", "queued")):
-            seen_active = True
-        if "error" in status or "cancel" in status:
-            _kaggle("kernels", "output", kernel_id, "-p", str(download_to), check=False)
-            raise RuntimeError(f"Kaggle 執行失敗，log 在 {download_to}：{status.strip()}")
-        if "complete" in status and (seen_active or mins > 10):
-            break
-        if mins > 11 * 60:
-            raise RuntimeError("Kaggle 超過 11 小時未完成")
-        print(f"  …Kaggle 執行中（{mins:.0f} 分）", flush=True)
-        time.sleep(90)
+    _push(KERNEL_SLUG, code, gpu=True, sources=[models])
+    _wait(kernel_id, "算圖", job["time_budget_min"] + 60)
+    print(f"  Kaggle 完成，耗時 {(time.time() - t0) / 60:.1f} 分鐘", flush=True)
 
     download_to.mkdir(parents=True, exist_ok=True)
-    _kaggle("kernels", "output", kernel_id, "-p", str(download_to))
+    _kaggle("kernels", "output", kernel_id, "-p", str(download_to), "-o")
     manifests = list(download_to.rglob("manifest.json"))
     if not manifests:
         raise RuntimeError("Kaggle 輸出中找不到 manifest.json")

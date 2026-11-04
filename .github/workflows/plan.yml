@@ -7,6 +7,7 @@ on:
 permissions:
   contents: write
   issues: write
+  models: read   # Gemini 擁塞時改用 GitHub Models
 
 concurrency:
   group: saga-${{ github.event.issue.number }}
@@ -19,7 +20,7 @@ jobs:
       contains(github.event.issue.labels.*.name, '新劇') &&
       github.event.issue.user.login == github.repository_owner
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 150
     env:
       SLUG: s${{ github.event.issue.number }}
       GH_TOKEN: ${{ github.token }}
@@ -50,6 +51,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GITHUB_TOKEN: ${{ github.token }}
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue.md"
@@ -72,6 +74,29 @@ jobs:
           TITLE=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['title'])")
           gh issue edit ${{ github.event.issue.number }} --title "《$TITLE》($SLUG)"
           gh issue comment ${{ github.event.issue.number }} --body-file "$RUNNER_TEMP/summary.md"
+
+      # 大綱一出來就先回報，分鏡在背景接著寫完全劇，生產時 GPU 就不必等 LLM
+      - name: 先寫好全劇分鏡
+        if: steps.check.outputs.done != 'true'
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          timeout 130m python -m saga.cli scripts --slug "$SLUG" --workers 3 | tee "$RUNNER_TEMP/scripts.log"
+
+      - name: 存分鏡並回報
+        if: always() && steps.check.outputs.done != 'true'
+        run: |
+          git add series
+          if ! git diff --cached --quiet; then
+            git commit -m "$SLUG：全劇分鏡劇本"
+            git pull --rebase && git push
+          fi
+          N=$(ls series/$SLUG/episodes 2>/dev/null | wc -l)
+          TOTAL=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['episode_count'])" 2>/dev/null || echo 0)
+          [ "$TOTAL" != "0" ] && gh issue comment ${{ github.event.issue.number }} --body "📝 分鏡劇本 $N／$TOTAL 集已就緒。留言 \`/produce all\` 開始全自動生產。"
 
       - name: 失敗通知
         if: failure()

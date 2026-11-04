@@ -296,17 +296,22 @@ async function renderSeries(num) {
   const total = bible?.episode_count || 0;
   const titles = Object.fromEntries((outline?.episodes || []).map((e) => [e.ep, e.title]));
 
-  // 最後一次 /produce 之後若還沒回報，視為生產中
+  // 生產中：最後一次 /produce 之後還沒有回報，或最後的回報說「接力下一批」
   const lastCmd = [...comments].reverse().find((c) => c.body.startsWith("/produce"));
-  const lastReport = [...comments].reverse().find((c) => /第 .+ 集完成|生產失敗/.test(c.body));
-  const pending = lastCmd && (!lastReport || new Date(lastReport.created_at) < new Date(lastCmd.created_at));
+  const lastReport = [...comments].reverse().find((c) => c.user.type === "Bot" && /集完成|生產失敗|全部完成|停止接力/.test(c.body));
+  const cmdAfterReport = lastCmd && (!lastReport || new Date(lastReport.created_at) < new Date(lastCmd.created_at));
+  const pending = Boolean(cmdAfterReport || (lastCmd && lastReport && /接力下一批/.test(lastReport.body)));
   const queued = new Set();
   if (pending) {
-    for (const part of (lastCmd.body.match(/[\d,\-]+/) || [""])[0].split(",")) {
+    const range = new Set();
+    if (/\ball\b/.test(lastCmd.body)) for (let k = 1; k <= total; k++) range.add(k);
+    for (const part of ((lastCmd.body.replace(/--\w+/g, "").match(/[\d,\-]+/) || [""])[0]).split(",")) {
       const [a, b] = part.split("-").map(Number);
-      if (a) for (let k = a; k <= (b || a); k++) if (!files[k]?.mp4) queued.add(k);
+      if (a) for (let k = a; k <= (b || a); k++) range.add(k);
     }
+    [...range].sort((x, y) => x - y).filter((k) => !files[k]?.mp4).slice(0, 10).forEach((k) => queued.add(k));
   }
+  const left = total - Object.values(files).filter((f) => f.mp4).length;
   const nextEp = Array.from({ length: total }, (_, k) => k + 1).find((k) => !files[k]?.mp4 && !queued.has(k)) || 1;
 
   const frames = Array.from({ length: total }, (_, k) => {
@@ -329,15 +334,22 @@ async function renderSeries(num) {
       <div class="film" id="film">${frames}</div>
       <div class="film-legend"><span>亮格：可播放</span><span>紫框：生產中</span><span>暗格：尚未生產</span></div>
       <section class="panel" id="produce">
-        <h2>生產下一批</h2>
+        <h2>${pending ? "工廠運轉中" : left ? `還有 ${left} 集待生產` : "全劇已完成"}</h2>
+        <p class="muted small" style="margin:-4px 0 14px">${pending
+          ? "每批 10 集，做完自動接力下一批，可以關掉 App 去忙別的。"
+          : "一鍵生產到完結：每批 10 集自動接力，中途出錯會自動重試。"}</p>
+        <button class="btn primary" id="go-all" type="button" ${pending || !left ? "disabled" : ""}>${pending ? "生產中…" : left ? `全部生產到完結` : "全部完成"}</button>
+        <details style="margin-top:14px">
+        <summary class="muted small" style="cursor:pointer">指定範圍或重做某幾集</summary>
+        <div style="margin-top:14px"></div>
         <div class="row field">
           <div><label for="from">從第</label>${stepper("from", nextEp, 1, total, 1)}</div>
           <div><label for="to">到第</label>${stepper("to", Math.min(total, nextEp + 2), 1, total, 1)}</div>
         </div>
         <label class="toggle"><input type="checkbox" id="video"> 關鍵鏡頭做成真影片 <span class="muted small">較耗 GPU 時數</span></label>
         <label class="toggle"><input type="checkbox" id="rewrite"> 重寫這幾集的分鏡 <span class="muted small">整集重做</span></label>
-        <button class="btn primary" id="go" type="button" ${pending ? "disabled" : ""}>${pending ? "工廠正在處理上一批" : ""}</button>
-        <p class="muted small" style="margin:10px 0 0">一次 3～5 集最穩定。完成後會出現在上方底片裡。</p>
+        <button class="btn ghost" id="go" type="button" style="width:100%" ${pending ? "disabled" : ""}>${pending ? "工廠正在處理上一批" : ""}</button>
+        </details>
       </section>` : `
       <section class="panel">
         <h2>編劇部正在寫劇本聖經</h2>
@@ -364,17 +376,20 @@ async function renderSeries(num) {
     from.addEventListener("change", () => { if (Number(to.value) < Number(from.value)) to.value = from.value; label(); });
     to.addEventListener("change", label);
     label();
-    go.addEventListener("click", async () => {
-      const a = Number(from.value), b = Math.max(a, Number(to.value));
-      if (b - a >= 8 && !confirm(`一次 ${b - a + 1} 集可能超過單次 6 小時上限，會分好幾輪接續。確定嗎？`)) return;
-      const cmd = `/produce ${a === b ? a : `${a}-${b}`}${$("#video").checked ? " --video" : ""}${$("#rewrite").checked ? " --rewrite" : ""}`;
-      go.disabled = true; go.textContent = "送出中…";
+    const send = async (btn, cmd, reset) => {
+      btn.disabled = true; btn.textContent = "送出中…";
       try {
         await gh(`/repos/{repo}/issues/${num}/comments`, { method: "POST", body: { body: cmd } });
         toast("已下單，工廠開工");
         setTimeout(() => renderSeries(num).catch(handleError), 1500);
-      } catch (e) { handleError(e); label(); go.disabled = false; }
+      } catch (e) { handleError(e); reset(); btn.disabled = false; }
+    };
+    go.addEventListener("click", () => {
+      const a = Number(from.value), b = Math.max(a, Number(to.value));
+      send(go, `/produce ${a === b ? a : `${a}-${b}`}${$("#video").checked ? " --video" : ""}${$("#rewrite").checked ? " --rewrite" : ""}`, label);
     });
+    $("#go-all").addEventListener("click", (e) =>
+      send(e.currentTarget, `/produce all${$("#video").checked ? " --video" : ""}`, () => { e.currentTarget.textContent = "全部生產到完結"; }));
     $("#film").addEventListener("click", (e) => {
       const f = e.target.closest(".frame.done");
       if (f) openPlayer(files, titles, Number(f.dataset.ep), bible.title);

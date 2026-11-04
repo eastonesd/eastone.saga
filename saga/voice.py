@@ -41,7 +41,7 @@ async def _edge_tts(text: str, voice: str, out: Path) -> None:
             await asyncio.sleep(3)
 
 
-def voice_episode(slug: str, ep: int, *, mock: bool = False) -> dict:
+def voice_episode(slug: str, ep: int, *, mock: bool = False, concurrency: int = 8) -> dict:
     bible = paths.read_json(paths.bible_path(slug))
     episode = paths.read_json(paths.episode_path(slug, ep))
     voice_of = {c["id"]: prompts.VOICES[c["voice"]] for c in bible["characters"]}
@@ -49,18 +49,33 @@ def voice_episode(slug: str, ep: int, *, mock: bool = False) -> dict:
     audio_dir = paths.build_ep_dir(slug, ep) / "audio"
     audio_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"▶ 配音：第 {ep} 集", flush=True)
+    jobs = []
     for shot in episode["shots"]:
         for i, line in enumerate(shot["lines"]):
             voice = voice_of.get(line["speaker"], narrator)
             tag = hashlib.md5(f"{voice}|{line['text']}".encode()).hexdigest()[:8]
             out = audio_dir / f"{shot['id']}_{i}_{tag}.mp3"
-            if not out.exists():
-                if mock:
-                    _mock_tts(line["text"], out)
-                else:
-                    asyncio.run(_edge_tts(line["text"], voice, out))
             line["audio"] = out.name
-            line["duration"] = round(audio_duration(out), 3)
+            if not out.exists():
+                jobs.append((line["text"], voice, out))
+
+    if jobs:
+        if mock:
+            for text, _, out in jobs:
+                _mock_tts(text, out)
+        else:
+            async def run_all():
+                sem = asyncio.Semaphore(concurrency)
+
+                async def one(text, voice, out):
+                    async with sem:
+                        await _edge_tts(text, voice, out)
+                await asyncio.gather(*(one(*j) for j in jobs))
+            asyncio.run(run_all())
+
+    for shot in episode["shots"]:
+        for line in shot["lines"]:
+            line["duration"] = round(audio_duration(audio_dir / line["audio"]), 3)
     paths.write_json(audio_dir / "timing.json", episode)
+    print(f"  ✓ 第 {ep} 集配音（{len(jobs)} 句新錄）", flush=True)
     return episode

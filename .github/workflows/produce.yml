@@ -1,28 +1,45 @@
 name: 短劇生產
 
+# 一次做一批（預設 10 集），做完自動接力下一批，直到範圍內全部完成。
+#   /produce all          整部劇做到完
+#   /produce 1-10         指定範圍
+#   /produce 5 --rewrite  重寫並重做第 5 集
+#   /produce all --video  關鍵鏡頭做成真影片（實驗性）
+
 on:
   issue_comment:
     types: [created]
   workflow_dispatch:
     inputs:
       slug:
-        description: 劇代號（例如 s12）
+        description: 劇代號（例如 s1）
         required: true
       eps:
-        description: 集數範圍（例如 1-3）
-        required: true
+        description: 集數範圍（例如 1-10 或 all）
+        default: all
+      batch:
+        description: 每批幾集
+        default: "10"
       video:
-        description: 關鍵鏡頭做成真影片（實驗性，較耗 GPU）
+        description: 關鍵鏡頭做成真影片（實驗性）
         type: boolean
         default: false
       rewrite:
-        description: 重寫已存在的分鏡劇本
+        description: 重寫這批的分鏡
         type: boolean
         default: false
+      issue:
+        description: 回報進度的 Issue 編號（接力時自動帶入）
+        default: ""
+      attempt:
+        description: 連續沒有進度的次數（接力時自動帶入）
+        default: "0"
 
 permissions:
   contents: write
   issues: write
+  actions: write   # 自動接力下一批
+  models: read     # Gemini 擁塞時改用 GitHub Models
 
 concurrency:
   group: saga-kaggle   # Kaggle 同一時間只跑一個，避免搶 GPU 額度
@@ -36,10 +53,9 @@ jobs:
        github.event.comment.user.login == github.repository_owner &&
        contains(github.event.issue.labels.*.name, '新劇'))
     runs-on: ubuntu-latest
-    timeout-minutes: 350
+    timeout-minutes: 330
     env:
       GH_TOKEN: ${{ github.token }}
-      ISSUE: ${{ github.event.issue.number }}
     steps:
       - uses: actions/checkout@v4
 
@@ -49,23 +65,40 @@ jobs:
           COMMENT: ${{ github.event.comment.body }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            SLUG="${{ inputs.slug }}"; EPS="${{ inputs.eps }}"
-            FLAGS=""
-            [ "${{ inputs.video }}" = "true" ] && FLAGS="$FLAGS --video"
-            [ "${{ inputs.rewrite }}" = "true" ] && FLAGS="$FLAGS --rewrite"
+            SLUG="${{ inputs.slug }}"; EPS="${{ inputs.eps }}"; BATCH="${{ inputs.batch }}"
+            ISSUE="${{ inputs.issue }}"; ATTEMPT="${{ inputs.attempt }}"
+            VIDEO="${{ inputs.video }}"; REWRITE="${{ inputs.rewrite }}"
+            [ -z "$ISSUE" ] && ISSUE="${SLUG#s}"
           else
-            SLUG="s$ISSUE"
-            EPS=$(printf '%s' "$COMMENT" | head -1 | grep -oE '[0-9][0-9,\-]*' | head -1)
-            FLAGS=""
-            printf '%s' "$COMMENT" | head -1 | grep -q -- '--video' && FLAGS="$FLAGS --video"
-            printf '%s' "$COMMENT" | head -1 | grep -q -- '--rewrite' && FLAGS="$FLAGS --rewrite"
-            gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" -f content=eyes >/dev/null || true
+            ISSUE="${{ github.event.issue.number }}"; SLUG="s$ISSUE"; BATCH=10; ATTEMPT=0
+            LINE=$(printf '%s' "$COMMENT" | head -1)
+            if printf '%s' "$LINE" | grep -qiE '(^| )all( |$)|全部'; then EPS=all
+            else EPS=$(printf '%s' "$LINE" | grep -oE '[0-9][0-9,\-]*' | head -1); fi
+            VIDEO=false; REWRITE=false
+            printf '%s' "$LINE" | grep -q -- '--video' && VIDEO=true
+            printf '%s' "$LINE" | grep -q -- '--rewrite' && REWRITE=true
+            gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" -f content=rocket >/dev/null || true
           fi
-          [ -z "$EPS" ] && { echo "沒有集數，例：/produce 1-3"; exit 1; }
+          [ -z "$EPS" ] && { echo "沒有集數，例：/produce all 或 /produce 1-10"; exit 1; }
           [ -f "series/$SLUG/bible.json" ] || { echo "找不到 series/$SLUG"; exit 1; }
-          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"
-          echo "eps=$EPS" >> "$GITHUB_OUTPUT"
-          echo "flags=$FLAGS" >> "$GITHUB_OUTPUT"
+          FLAGS=""
+          [ "$VIDEO" = "true" ] && FLAGS="$FLAGS --video"
+          [ "$REWRITE" = "true" ] && FLAGS="$FLAGS --rewrite"
+          {
+            echo "slug=$SLUG"; echo "eps=$EPS"; echo "batch=$BATCH"; echo "issue=$ISSUE"
+            echo "attempt=$ATTEMPT"; echo "video=$VIDEO"; echo "flags=$FLAGS"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: 查已完成的集數
+        id: done
+        run: |
+          SKIP=""
+          if [ "${{ contains(steps.args.outputs.flags, '--rewrite') }}" != "true" ]; then
+            SKIP=$(gh release view "${{ steps.args.outputs.slug }}" --json assets -q '.assets[].name' 2>/dev/null \
+              | sed -nE 's/.*-ep0*([0-9]+)\.mp4$/\1/p' | sort -n | paste -sd, -)
+          fi
+          echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
+          echo "已完成：${SKIP:-無}"
 
       - name: 安裝 FFmpeg 與中文字型
         run: |
@@ -86,20 +119,31 @@ jobs:
           key: saga-shots-${{ steps.args.outputs.slug }}-${{ github.run_id }}
           restore-keys: saga-shots-${{ steps.args.outputs.slug }}-
 
-      - name: 生產（劇本 → 配音 → Kaggle 算圖 → 剪輯）
+      - name: 生產這一批
         id: run
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GITHUB_TOKEN: ${{ github.token }}
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
-          SAGA_TIME_BUDGET_MIN: "240"   # 要留時間給 Kaggle 開機、下載與剪輯，才不會超過 Actions 6 小時上限
+          SAGA_TIME_BUDGET_MIN: "180"   # 留時間給模型包首次建置、下載與剪輯，不超過 Actions 上限
         run: |
-          set +e
-          python -m saga.cli produce --slug "${{ steps.args.outputs.slug }}" --eps "${{ steps.args.outputs.eps }}" ${{ steps.args.outputs.flags }}
-          CODE=$?
-          echo "code=$CODE" >> "$GITHUB_OUTPUT"
-          [ $CODE -eq 0 ] || [ $CODE -eq 3 ]
+          python -m saga.cli produce --slug "${{ steps.args.outputs.slug }}" \
+            --eps "${{ steps.args.outputs.eps }}" --skip "${{ steps.done.outputs.skip }}" \
+            --batch "${{ steps.args.outputs.batch }}" ${{ steps.args.outputs.flags }} \
+            --status-out "$RUNNER_TEMP/status.json"
+          python - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json, os
+          s = json.load(open(os.environ["RUNNER_TEMP"] + "/status.json"))
+          fmt = lambda xs: ",".join(map(str, xs))
+          print(f"done={fmt(s['done'])}")
+          print(f"remaining={fmt(s['remaining'])}")
+          t = s.get("timing", {})
+          print("timing=" + (" ｜ ".join(f"{k} {v / 60:.1f} 分" for k, v in [
+              ("分鏡", t.get("scripts", 0)), ("配音", t.get("voice", 0) - t.get("scripts", 0)),
+              ("算圖", t.get("render", 0) - t.get("scripts", 0)), ("剪輯", t.get("assemble", 0) - t.get("render", 0))]) if t else ""))
+          EOF
 
       - name: 保存已算好的圖
         if: always() && steps.args.outputs.slug != ''
@@ -110,46 +154,49 @@ jobs:
           key: saga-shots-${{ steps.args.outputs.slug }}-${{ github.run_id }}
 
       - name: 存劇本與定妝照
-        if: always()
+        if: always() && steps.args.outputs.slug != ''
         run: |
           git config user.name "saga-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add series
           if ! git diff --cached --quiet; then
-            git commit -m "生產 ${{ steps.args.outputs.slug }} 第 ${{ steps.args.outputs.eps }} 集：分鏡與定妝照"
+            git commit -m "生產 ${{ steps.args.outputs.slug }}：分鏡與定妝照"
             git pull --rebase && git push
           fi
 
-      - name: 上傳成片到 Release
-        id: release
+      - name: 上傳成片
+        if: steps.run.outputs.done != ''
         run: |
           SLUG="${{ steps.args.outputs.slug }}"
           TITLE=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['title'])")
-          shopt -s nullglob
-          FILES=(build/$SLUG/*.mp4)
-          [ ${#FILES[@]} -eq 0 ] && { echo "沒有成片"; exit 0; }
           gh release view "$SLUG" >/dev/null 2>&1 || gh release create "$SLUG" --title "《$TITLE》" --notes "由 SAGA.AI 自動生產" --latest=false
-          gh release upload "$SLUG" "${FILES[@]}" build/$SLUG/*.jpg --clobber
-          {
-            echo "body<<EOF"
-            echo "## ✅ 第 ${{ steps.args.outputs.eps }} 集完成"
-            for f in "${FILES[@]}"; do
-              n=$(basename "$f")
-              echo "- [$n](${{ github.server_url }}/${{ github.repository }}/releases/download/$SLUG/$n)"
-            done
-            if [ "${{ steps.run.outputs.code }}" = "3" ]; then
-              echo ""
-              echo "⏳ 有部分鏡頭因時間預算未完成，再留言一次相同的 \`/produce\` 會接續。"
-            fi
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          shopt -s nullglob
+          gh release upload "$SLUG" build/$SLUG/*.mp4 build/$SLUG/*.jpg --clobber
 
-      - name: 回報
-        if: steps.release.outputs.body != '' && env.ISSUE != ''
-        env:
-          BODY: ${{ steps.release.outputs.body }}
-        run: gh issue comment "$ISSUE" --body "$BODY"
+      - name: 回報並接力
+        if: steps.run.outcome == 'success'
+        run: |
+          SLUG="${{ steps.args.outputs.slug }}"; ISSUE="${{ steps.args.outputs.issue }}"
+          DONE="${{ steps.run.outputs.done }}"; REMAINING="${{ steps.run.outputs.remaining }}"
+          ATTEMPT="${{ steps.args.outputs.attempt }}"
+          TOTAL=$(gh release view "$SLUG" --json assets -q '[.assets[].name | select(endswith(".mp4"))] | length' 2>/dev/null || echo 0)
+          ALL=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['episode_count'])")
+          if [ -n "$DONE" ]; then ATTEMPT=0; else ATTEMPT=$((ATTEMPT + 1)); fi
+
+          if [ -z "$REMAINING" ]; then
+            MSG="🎉 全部完成！共 $TOTAL／$ALL 集。（本批：第 ${DONE:-無} 集）"
+          elif [ "$ATTEMPT" -ge 3 ]; then
+            MSG="⚠️ 連續 3 批沒有進度，已停止接力。剩下第 $REMAINING 集。請看[執行紀錄](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})。"
+          else
+            MSG="✅ 第 ${DONE:-無} 集完成（累計 $TOTAL／$ALL 集），接力下一批中…"
+            gh workflow run produce.yml -f slug="$SLUG" -f eps="${{ steps.args.outputs.eps }}" \
+              -f batch="${{ steps.args.outputs.batch }}" -f video="${{ steps.args.outputs.video }}" \
+              -f issue="$ISSUE" -f attempt="$ATTEMPT"
+          fi
+          [ -n "${{ steps.run.outputs.timing }}" ] && MSG="$MSG"$'\n\n'"⏱ ${{ steps.run.outputs.timing }}"
+          [ -n "$ISSUE" ] && gh issue comment "$ISSUE" --body "$MSG"
 
       - name: 失敗通知
-        if: failure() && env.ISSUE != ''
-        run: gh issue comment "$ISSUE" --body "⚠️ 生產失敗，請看[執行紀錄](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})。"
+        if: failure() && steps.args.outputs.issue != ''
+        run: |
+          gh issue comment "${{ steps.args.outputs.issue }}" --body "⚠️ 生產失敗，已停止接力。請看[執行紀錄](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})；修正後留言 \`/produce all\` 會從中斷處繼續。"
