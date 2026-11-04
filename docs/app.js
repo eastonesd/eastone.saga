@@ -41,6 +41,10 @@ async function gh(path, { method = "GET", body, raw = false } = {}) {
     let msg = res.statusText;
     try { msg = (await res.json()).message || msg; } catch { /* */ }
     if (res.status === 401) msg = "金鑰無效或已過期，請到設定重新貼上";
+    if ((res.status === 403 || res.status === 429) && /rate limit/i.test(msg)) {
+      const reset = Number(res.headers.get("x-ratelimit-reset")) * 1000;
+      msg = "GitHub 查詢次數暫時用完" + (reset ? `，${new Date(reset).toLocaleTimeString("zh-TW", { hour: "2-digit", minute: "2-digit" })} 後恢復` : "，約一小時內恢復") + "。工廠不受影響，會照常生產";
+    }
     if (res.status === 403 && /permission|accessible/i.test(msg)) msg = "金鑰權限不足：需要 Issues 讀寫、Contents 讀取、Actions 讀取";
     throw new ApiError(res.status, msg);
   }
@@ -116,6 +120,7 @@ async function route() {
   $("#factory").hidden = !cfg.token;
   if (!cfg.token && page !== "settings") { location.hash = "#/settings"; return; }
   window.scrollTo(0, 0);
+  delete view.dataset.series;
   try {
     if (page === "new") renderNew();
     else if (page === "s") await renderSeries(Number(arg));
@@ -275,7 +280,10 @@ async function renderList() {
 
 // ── 頁面：單部劇 ────────────────────────────────────────
 async function renderSeries(num) {
-  view.innerHTML = `<div class="skeleton" style="height:120px"></div><div class="skeleton" style="height:200px"></div>`;
+  clearInterval(poll);  // 每次重畫前先關掉舊的計時器，避免倍增
+  const silent = view.dataset.series === String(num);
+  view.dataset.series = String(num);
+  if (!silent) view.innerHTML = `<div class="skeleton" style="height:120px"></div><div class="skeleton" style="height:200px"></div>`;
   const slug = `s${num}`;
   const [issue, comments, rel, bible, outline] = await Promise.all([
     gh(`/repos/{repo}/issues/${num}`),
@@ -375,7 +383,9 @@ async function renderSeries(num) {
     if (firstTodo) $("#film").scrollLeft = Math.max(0, firstTodo.offsetLeft - 220);
   }
   // 企劃中或生產中時自動刷新
-  if (!bible || pending) poll = setInterval(() => { if (!document.hidden) renderSeries(num).catch(handleError); }, 45000);
+  if ((!bible || pending) && location.hash === `#/s/${num}`) {
+    poll = setInterval(() => { if (!document.hidden && location.hash === `#/s/${num}`) renderSeries(num).catch(handleError); }, 60000);
+  }
 }
 
 // ── 播放器 ──────────────────────────────────────────────
