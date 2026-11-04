@@ -1,0 +1,537 @@
+{
+  "ep": 1,
+  "title": "鐵獄歸來",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "prison_gate",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A heavy iron prison gate slowly slides open with a piercing metallic screech.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "五年了，我陳峰終於回來了。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "prison_gate",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "low-angle",
+      "motion": "static",
+      "visual": "Dusty boots step out of the shadows into the blinding sunlight.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "prison_gate",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "A man stands alone in front of the massive grey prison walls, looking up at the sky.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "prison_gate",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A dozen black luxury sedans are parked in a neat row across the road.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "prison_gate",
+      "characters": [
+        "lin_su",
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Dozens of men in black suits bow simultaneously at a 90-degree angle.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "恭迎殿主出獄！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "prison_gate",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The female assistant steps forward, opening the car door with professional elegance.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "陳先生，一切都準備好了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "prison_gate",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man's cold eyes reflect the line of black cars, showing no emotion.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪在哪？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "prison_gate",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "She holds out a digital tablet showing a news headline about a wedding.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "他在趙家大宅，正為他妹妹趙美玲舉辦訂婚宴。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "prison_gate",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "He sits in the back of the car, the door closing with a heavy thud.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "血債血償，就從這場喜事開始。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Grand ballroom decorated in gold and white, filled with socialites.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A woman in a diamond-encrusted dress laughs while holding a champagne glass.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "嫁入豪門，這才是本小姐該有的生活。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She looks at her massive diamond ring with a smug, arrogant smile.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "那個替死鬼陳峰，恐怕已經爛在獄中了吧。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "zhao_mansion",
+      "camera": "wide",
+      "motion": "static",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "visual": "The guests toast together in a scene of excessive luxury.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The black car fleet pulls up abruptly in front of the mansion, screeching to a halt.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A gloved hand adjusts a black suit sleeve.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "賀禮帶了嗎？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assistant holds a crimson-red box with a chilling aura.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "準備好了，保證讓她畢生難忘。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "low-angle",
+      "motion": "static",
+      "visual": "He walks towards the entrance, his shadow stretching long across the marble floor.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "zhao_mansion",
+      "camera": "wide",
+      "motion": "static",
+      "characters": [
+        "chen_feng"
+      ],
+      "visual": "Two security guards try to block him but are instantly shoved aside by invisible force.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "擋我者，死。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The woman is on stage, microphone in hand, basking in the spotlight.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "感謝各位見證我最幸福的時刻..."
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The heavy double doors of the banquet hall are kicked open with a thunderous bang.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Her smile freezes, the microphone dropping slightly from her hand.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "He stands in the doorway, back-lit, looking like a demon from hell.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這場婚禮，我沒來，怎麼能算圓滿？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "She points a trembling finger, her face twisting in shock and fear.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "陳...陳峰？你竟然沒死在牢裡！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "He walks slowly through the crowd, guests parting like the Red Sea.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "我不死，是因為要看著你們下地獄。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She tries to regain her composure, screaming at the guards.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "保安！把這個臭要飯的給我轟出去！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The female assistant steps in front of the approaching guards with a deadly glare.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "誰敢上前一步，斷手斷腳。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He reaches the stage, looking down at the woman from a higher step.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙美玲，這五年的利息，今天先收一點。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s28",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He pulls out the red gift box and places it on the table near her cake.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s29",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "She looks at the box with suspicion and greed, her eyes darting.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "這是什麼？你少在那裝神弄鬼！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "He leans in close to her ear, whispering with a terrifying coldness.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "打開它，這是送給趙家的第一份葬禮。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Her hand trembles as she slowly reaches for the lid of the red box.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s32",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The entire room is silent, everyone holding their breath watching the stage.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s33",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The lid opens slightly, and a faint red glow or liquid starts to seep out.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s34",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "extreme-close-up",
+      "motion": "static",
+      "visual": "Her pupils dilate in pure horror as she sees the content.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "啊！！！這是什麼！！！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s35",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "He stands tall with a cruel smirk, while she collapses in terror. Freeze frame on his cold face.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "驚喜，才剛剛開始。"
+        }
+      ],
+      "key": true
+    }
+  ]
+}
