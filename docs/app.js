@@ -153,37 +153,48 @@ function wireSteppers(root) {
 }
 
 function renderNew() {
-  const draft = store.get("draft");
+  let draft = {};
+  try { draft = JSON.parse(store.get("draft2", "{}")); } catch { /* */ }
   view.innerHTML = `
     <h1>今天想拍什麼？</h1>
     <p class="lede">一句話就夠。主角是誰、遇到什麼事、觀眾爽在哪，寫得越具體，劇本越好看。</p>
     <form id="idea-form">
       <div class="field">
         <label for="idea">靈感</label>
-        <textarea id="idea" class="idea" required placeholder="被趕出家門的千金，三年後以神秘投資人身分回歸，讓當年的渣男跪著求她">${esc(draft)}</textarea>
+        <textarea id="idea" class="idea" required placeholder="被趕出家門的千金，三年後以神秘投資人身分回歸，讓當年的渣男跪著求她">${esc(draft.idea || "")}</textarea>
       </div>
       <div class="field"><span class="label">類型</span>${chipGroup("genre", GENRES)}</div>
       <div class="field"><span class="label">畫風</span>${chipGroup("style", STYLES)}</div>
       <div class="row field">
-        <div><label for="eps">集數</label>${stepper("eps", 60, 1, 120, 10)}</div>
-        <div><label for="secs">每集秒數</label>${stepper("secs", 90, 30, 300, 15)}</div>
+        <div><label for="eps">集數</label>${stepper("eps", draft.eps || 60, 1, 120, 10)}</div>
+        <div><label for="secs">每集秒數</label>${stepper("secs", draft.secs || 90, 30, 300, 15)}</div>
       </div>
       <button class="btn primary" type="submit">開始企劃</button>
       <p class="muted small" style="margin-top:12px">送出後幾分鐘內，編劇部會寫好角色表與 60 集大綱。</p>
     </form>`;
   wireSteppers(view);
+  const idea = $("#idea");
+  const pickOf = (g) => $(`[data-group=${g}] [aria-pressed=true]`)?.dataset.v || "";
+  const saveDraft = () => store.set("draft2", JSON.stringify({
+    idea: idea.value, genre: pickOf("genre"), style: pickOf("style"), eps: $("#eps").value, secs: $("#secs").value,
+  }));
+  for (const g of ["genre", "style"]) {
+    const chip = draft[g] && view.querySelector(`[data-group=${g}] [data-v="${CSS.escape(draft[g])}"]`);
+    if (chip) chip.setAttribute("aria-pressed", "true");
+  }
   view.querySelectorAll("[data-group]").forEach((g) => g.addEventListener("click", (e) => {
     const b = e.target.closest(".chip"); if (!b) return;
     const was = b.getAttribute("aria-pressed") === "true";
     g.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", "false"));
     b.setAttribute("aria-pressed", String(!was));
+    saveDraft();
   }));
-  const idea = $("#idea");
-  idea.addEventListener("input", () => store.set("draft", idea.value));
+  idea.addEventListener("input", saveDraft);
+  view.querySelectorAll(".stepper input").forEach((i) => i.addEventListener("change", saveDraft));
   $("#idea-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const btn = $("button[type=submit]", e.target);
-    const pick = (g) => $(`[data-group=${g}] [aria-pressed=true]`)?.dataset.v || "_No response_";
+    const pick = (g) => pickOf(g) || "_No response_";
     const text = idea.value.trim();
     if (!text) return;
     btn.disabled = true; btn.textContent = "送出中…";
@@ -197,7 +208,7 @@ function renderNew() {
                 `### 集數\n\n${$("#eps").value}\n\n### 每集長度（秒）\n\n${$("#secs").value}\n`,
         },
       });
-      store.del("draft");
+      store.del("draft2");
       toast("已送出，編劇部開工");
       location.hash = `#/s/${issue.number}`;
     } catch (err) {
