@@ -1,0 +1,451 @@
+{
+  "ep": 5,
+  "title": "身敗名裂",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling",
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A Smartphone screen displaying a live broadcast with millions of viewers. A terrified woman is crying on her knees on a luxury marble floor.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "求求你們別看了！我錯了！求求你陳峰！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng",
+        "zhao_meiling"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "A lavish living room filled with media reporters and legal officials surrounding the hysterical woman on the ground.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng",
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A sharp, cold-eyed man in a tailored dark suit looks down with absolute disgust and zero emotion.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙美玲，背叛我時，想過今天嗎？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A large projector screen displaying security footage from 5 years ago showing a younger woman signing fraudulent asset transfer papers.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "陳峰那個傻子，資產全是我們的了！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Reporters thrusting microphones towards the disheveled woman on the floor while camera flashes blind her.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "趙美玲直播公開，涉嫌洗錢與誣告！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman's trembling face, her eyes filled with shock and horror as her reputation collapses completely.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "不……這不可能！影片哪來的？！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su",
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A calm, elegant assistant in a sleek navy suit steps forward holding sealed legal repossession documents.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "法院強制執行令，你的財產全數查封。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A luxury smartphone screen displaying multiple urgent bank notifications stating all accounts froze.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The woman desperately scrambles across the floor to grab her scattered designer handbags and diamond jewelry.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng",
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "An expensive Italian leather shoe forcefully steps down on the designer handbag she is reaching for.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "用我的血汗錢裝高貴，舒服嗎？"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling",
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The broken woman collapses completely onto her knees, weeping bitterly and reaching up in desperation.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "陳峰！看在五年感情的份上，放過我吧！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man's eyes glint with lethal coldness as his face hardens into a contemptuous sneer.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "五年感情？你親手把我送進監獄！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling",
+        "chen_feng"
+      ],
+      "camera": "over-shoulder",
+      "motion": "zoom_in",
+      "visual": "Over the man's shoulder, the woman crawls forward on her hands and knees, grabbing his pant leg.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "那是趙天豪指使我的！我是被逼的！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Inside a dim luxury VIP room, a middle-aged villain hurls his glass against the wall, shattering it in extreme fury.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "賤人！竟然敢把責任全都推給我！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s15",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Veins pop on the angry man's forehead as he stares at the live video stream with intense malice.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰……我要讓你跟你的人死無葬身之地！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling",
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Back in the living room, the woman clings tightly to the man's leg, her face smeared with ruined makeup.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "只要你原諒我，我做牛做馬都願意！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Fast scrolling live comment overlay showing millions mocking her: 'Deserved!', 'Evil woman is finished!'.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man looks down at her with absolute indifference, his voice devoid of warmth.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你不配。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng",
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man coldly kicks his leg back, sending the crying woman sprawling onto the cold marble floor.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "髒了我的鞋。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s20",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Police officers step in from all sides to restrain the screaming woman lying on the floor.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "不——！我的人生全毀了！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Heavy steel handcuffs snap firmly onto the woman's wrists.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The woman is dragged out by officers, shrieking in hatred and helplessness as she looks back.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "陳峰！你這個魔鬼！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man pulls out a crisp white handkerchief, wipes his shoes clean, and tosses it onto the ground.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "清理垃圾完成。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su",
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The female assistant walks up to the man, holding a high-security black folder stamped with confidential markings.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "陳總，趙美玲已經徹底身敗名裂。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man turns his sharp gaze toward the folder, his eyes narrowing.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪那邊什麼反應？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su",
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The assistant opens the folder, presenting a top-secret document detailing an upcoming dark ambush.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "趙天豪準備動用最後底牌了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of the man's dark, fierce eyes glowing with deadly intent as the frame freezes.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "那就讓他，萬劫不復。"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

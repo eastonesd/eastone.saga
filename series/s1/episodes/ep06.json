@@ -1,0 +1,532 @@
+{
+  "ep": 6,
+  "title": "陰謀陷阱",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "A woman walks towards a car in a dark garage, holding a tablet and looking focused.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A sudden shadow appears behind the woman. Her eyes widen in alarm.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "誰？！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "A gunshot rings out, hitting the car window. Glass shatters everywhere.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "（砰！）"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman is grabbed by a masked man and a cloth is pressed to her mouth.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "The woman is dragged into a black van which then speeds away, leaving tires screeching.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The protagonist walks into the parking spot, looking at the shattered glass on the floor.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The protagonist picks up a bloody envelope from the ground, his face darkening.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪……你找死。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of the protagonist's eyes, burning with intense cold anger.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The antagonist is pacing frantically in a luxury living room, holding a glass of whiskey.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰，這都是你逼我的！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The antagonist smashes the glass against the wall, his expression crazed and desperate.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "我要讓你跪下來求我！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The woman is tied to a metal chair in a dimly lit, damp basement.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman wakes up, struggling against the ropes, her breathing heavy.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao",
+        "lin_su"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The antagonist enters the room, casting a long shadow over the tied woman.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "林秘書，陳峰會為了妳捨棄一切嗎？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman spits at the ground, her gaze defiant and cold.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "他會讓你生不如死。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The antagonist laughs hysterically, pulling out a cell phone.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "那我們就來看看，是他的命硬，還是妳的命長！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The protagonist is in his office, his phone suddenly vibrates on the desk.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist answers the phone, his voice like ice.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "說。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The antagonist leans into the phone, a cruel smirk on his face.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰，聽聽這個聲音？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The antagonist forces the phone to the woman's mouth; she remains silent, gritting her teeth.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The protagonist grips the phone so hard his knuckles turn white.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "動她一根汗毛，我要趙家陪葬。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The antagonist walks around the chair, kicking a metal bucket over.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "少廢話！帶上股權轉讓書！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The antagonist yells into the phone with a distorted, evil face.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "半小時內，獨自來廢棄碼頭！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist hangs up and grabs a black coat from the rack.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "The protagonist opens a drawer, revealing a set of tactical knives.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist puts a knife into his sleeve with a swift, practiced motion.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "準備收屍吧。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "The protagonist walks out of the office, his silhouette looking like a god of death.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The woman is sitting in a corner of the mansion, looking at her ruined reputation on her phone.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "哥……一定要殺了他……"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s28",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The antagonist checks his watch, looking nervous yet excited.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "時間快到了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s29",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The antagonist signals to several armed thugs standing in the shadows.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "只要他出現，立刻開火！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist is driving, his face illuminated by the passing streetlights.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "A black sports car speeds through the city night, heading towards the outskirts.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s32",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman looks at the entrance, her eyes filled with worry for the protagonist.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "別來……這是陷阱……"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s33",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The antagonist stares at the heavy iron door of the warehouse, holding a remote detonator.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰，你的死期到了！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s34",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The sound of a car engine roaring outside the iron door grows louder.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "（引擎轟鳴聲）"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s35",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The iron door begins to buckle under a massive impact. High tension freeze frame.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "他來了！"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

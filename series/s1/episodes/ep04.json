@@ -1,0 +1,459 @@
+{
+  "ep": 4,
+  "title": "血債血償",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "A man stands calmly in a dimly lit underground corridor, surrounded by dozens of aggressive thugs holding machetes and iron pipes.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "給你們三秒鐘，跪下求饒。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "black_gold_club",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A scarred gang leader sneers violently, pointing his shiny machete directly forward.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "死到臨頭還敢嘴硬！給我砍死他！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Multiple thugs charge forward at full speed with weapons raised under flashing neon lights.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extremely sharp zoom into cold, lethal eyes filled with intense vengeance.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A blade slashes down hard, but the central figure sidesteps swiftly with terrifying agility.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A brutal hand grab twisting a thug's wrist backward with a violent crunching motion.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "A thug flies across the hallway, violently crashing into a concrete wall.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Two assailants attack simultaneously; the central martial artist strikes both with swift elbow strikes.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A devastating throat-strike executed in shadow lighting, dropping an opponent instantly.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao",
+        "zhao_meiling"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Looking at a live surveillance monitor displaying a chaotic single-handed beatdown inside a luxurious living room.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A man staring at the monitor screen with wide, bloodshot eyes, cold sweat dripping down his cheek.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "這怎麼可能？！他一個人擊倒三十個？！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling",
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A woman shivering in panic, clutching the man's sleeve with trembling hands.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "哥……我們是不是惹錯人了？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man smashes a crystal glass onto the marble table in rage and fear.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "閉嘴！給老子加碼！叫所有人過去！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Pan across the dark corridor strewn with dozens of groaning thugs collapsed on the floor.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The dark-suited figure steps calmly across fallen bodies, slowly adjusting his suit jacket.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The gang leader crawls backward frantically in terror, bleeding and shaking.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "怪物……你根本不是人……"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A heavy black boot stomps down hard directly onto the gang leader's head against the floor.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s18",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The gang leader screaming in agony beneath the crushing weight.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "饒命啊……求求你饒了我！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "black_gold_club",
+      "characters": [
+        "lin_su",
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "A poised female executive steps into frame smoothly, offering an active smartphone.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "老闆，趙天豪的電話通了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The main figure takes the phone with a deadly cold demeanor and holds it up.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A man holding a phone against his ear frantically, panting with high anxiety.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "得手了沒有？！陳峰死了沒有？！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A subtle, chilling smirk appears on the hero's face under dim neon lights.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，你派來的垃圾不太夠打。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "The villain staggers backward three steps in shock, dropping his unlit cigar.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰？！你……你竟然沒事？！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A woman shrinks into the leather couch, covering her mouth in horrified disbelief.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "不可能……那可是三十個殺手啊！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The hero presses his boot down harder onto the gang leader beneath him.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "black_gold_club",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assistant reports quietly while looking at a tablet in her hand.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "趙氏集團的最後海外帳戶已被解凍併購。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The trembling villain shouts hysterically into his phone receiver.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "你到底想怎樣？！要多少錢我都給！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s28",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of dark ruthless eyes emitting terrifying bloodthirst.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "洗乾淨脖子，下個就是你。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s29",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The phone call cuts off to a dead tone sound; dark shadow falls over the villain's face.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "The villain drops his phone and collapses powerlessly onto the floor in utter despair.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "完了……徹底完了……"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The main character crushed the phone into pieces with his bare hand, staring directly into camera with an intense death glare. Freeze frame.",
+      "lines": [],
+      "key": true
+    }
+  ]
+}

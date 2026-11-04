@@ -1,0 +1,601 @@
+{
+  "ep": 3,
+  "title": "資本圍剿",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A crystal glass shatters on the floor, red wine splashing everywhere like blood.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰！你這勞改犯，竟敢動我趙家的人！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sitting on the floor, face swollen, pointing at the protagonist with a vengeful look.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "哥！殺了他！他讓我當眾丟盡了臉！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing calmly with hands behind back, looking down at the antagonist with icy indifference.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "五年前你欠我的，今天只是收個利息。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Laughing maniacally, face contorted with arrogance.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "利息？在江城，我趙天豪就是天！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He snaps his fingers, and several bodyguards move forward.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "我要你跪著走出這道門！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "A woman in a sharp suit walks in, holding a high-tech tablet, her presence commanding attention.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "恐怕要跪下的人，是你。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Looking at the newcomer with confusion and hidden lust.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "妳是哪來的賤貨？敢管我的閒事？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Adjusting her glasses, looking cold and professional.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "我是陳先生的私人秘書。現在，請看大螢幕。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The huge TV screen in the living room suddenly turns on, showing stock market charts.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "趙氏集團股價瞬間斷崖式下跌。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Staring at the screen, his face turning pale and sweat appearing on his forehead.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "不可能……這可是十個億的資金盤！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Swiping the tablet, her fingers moving rapidly.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "三分鐘前，趙氏地產的資金鏈已斷裂。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A subtle, cold smile on her lips.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "兩分鐘前，您的三家子公司已被強制收購。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "His phone rings incessantly, he answers it with a trembling hand.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "餵？什麼？銀行要收回所有貸款？！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Clinging to her brother's leg, terrified by the sudden change in atmosphere.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "哥，到底發生什麼事了？你快說話呀！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Screaming into the phone, veins popping on his neck.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "到底是誰在背後搞鬼！給我查！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Slowly taking a seat on the expensive sofa, crossing his legs.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，被自己引以為傲的金錢拋棄，感覺如何？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Pointing at the protagonist, his hand shaking uncontrollably.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "是你？不……你一個窮囚犯哪來這麼多錢！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "She hands a document to the antagonist with a mocking expression.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "這是收購協議，請簽字吧，趙總。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Reading the document, his eyes widening in shock.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "收購方……鐵血金控？那是全球前十的財團！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He stumbles back, bumping into a vase which crashes to the floor.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "難道……難道陳峰跟鐵血金控有關係？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "His eyes are cold as ice, reflecting the antagonist's fear.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你還不配知道我的真實身份。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He suddenly turns to his bodyguards, desperate and crazed.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "給我上！弄死他！只要他死了，合約就作廢！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "She steps in front of the protagonist, several top-tier bodyguards appearing from the shadows behind her.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "誰敢動陳先生一下，我就讓誰全家消失。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The antagonist's bodyguards look at each other, intimidated by the sheer aura of the professionals.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "趙家的打手們被嚇得連連後退。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Covering her mouth, her world collapsing as she realizes the man she mocked is a giant.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "不……這不可能，他只是個臭要飯的……"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing up, walking towards the antagonist with predatory slowness.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，你還有最後一張牌嗎？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "Backing away until he hits the wall, his arrogance replaced by pure terror.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "你……你別過來！我還有黑道的人脈！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s28",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Whispering in the antagonist's ear, cold and sharp.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "黑道？在監獄裡，他們都叫我——死神。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s29",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "His legs give out, and he collapses to his knees.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳……陳少，饒了我，我把財產都還給你！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Throwing a fountain pen onto the floor in front of him.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "簽字。然後，滾出這棟別墅。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Signing the document with a shaking hand, despair written on his face.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "曾經不可一世的梟雄，此刻卑微如狗。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s32",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Looking at the final page of the document, he sees the authorized signature.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "這簽名……「鐵血金控董事長，陳峰」？！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s33",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Dropping the pen, eyes bloodshot, realizing the full scale of the disaster.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "原來……你才是幕後的大老闆！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s34",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Walking towards the exit without looking back, his figure tall and imposing.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "明天，我會親自去收購你的命。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s35",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "He stares at the protagonist's back, then suddenly picks up a hidden phone, his eyes filled with murderous intent.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "喂？龍哥……我要買一個人的命！今晚就動手！"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

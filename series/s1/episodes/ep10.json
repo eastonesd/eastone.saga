@@ -1,0 +1,565 @@
+{
+  "ep": 10,
+  "title": "困獸猶鬥",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sweat dripping down his face, hand trembling while gripping a small black detonator with a glowing red light.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "這是你們逼我的！都去死吧！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing calmly amidst the chaos, eyes cold and sharp, looking directly at the villain.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，你已經沒有退路了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao",
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "SWAT team members smashing through the high windows, glass shards flying everywhere.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "警方破門而入，包圍網正式收攏。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Eyes wide with madness, thumb hovering over the red button.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "別過來！再過來我就按下去！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Holding a tablet, tracking the signal from the detonator, face tense.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "陳總，那是神經毒氣裝置，不能硬來！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Screaming hysterically, pressing the button with a violent thumb movement.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "下地獄去吧！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Throwing a chair towards the gas canister to deflect the initial blast direction.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Thick green smoke erupts from a hidden vent, obscuring everyone's vision instantly.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Coughing violently, her expensive jewelry clinking as she falls to her knees in panic.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "救命……哥哥救我……"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Sprinting toward a hidden bookshelf door, gas mask already halfway on his face.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "誰也別想抓到我！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Covering his nose with a wet cloth, eyes scanning the smoke for the escaping target.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "林素，封鎖所有出口！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Tapping rapidly on the tablet, light from the screen reflecting in her focused eyes.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "他進了緊急逃生通道，通往頂樓！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "Running up a spiral staircase, gasping for air, the sound of boots echoing behind him.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Kicking open the heavy metal door to the rooftop staircase, determination in every move.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你逃不掉的。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Looking down from the height, the city lights blurred below, wind whipping his hair.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A cruel, desperate smile forming on his lips as he looks at a second, larger remote.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "既然我毀了，這座城市也別想好過。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Stepping onto the rooftop, the wind howling, moonlight highlighting his stern face.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "收手吧，趙天豪。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao",
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The two men facing each other on the edge of the skyscraper, the sky dark and heavy.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s19",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Holding the remote high, backing away toward the very edge of the building.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "收手？五年前你家破人亡時，怎麼不叫我收手？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Eyes narrowing, voice dropping to a dangerous whisper.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "那是你欠陳家的血債。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Laughing maniacally, spit flying from his mouth.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "成王敗寇！我輸了，也要拉百萬人墊背！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Emerging from the shadows behind Chen Feng, gun drawn but hesitant due to the remote.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "放下遙控器，那是全城的供水系統開關！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Finger resting on the final execution button, eyes bloodshot.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "明天早上，全城的水都會變成劇毒！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Taking a slow, calculated step forward, hands raised slightly to distract.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你真的以為，你的毒氣還能運作嗎？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Expression flickers from confidence to sudden doubt.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "你什麼意思？少在那裡虛張聲勢！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A small smirk playing on her lips as she checks her tablet.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "信號攔截器已經啟動，你手裡的只是廢鐵。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Pressing the button repeatedly in a frenzy. Nothing happens.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "不可能！這不可能！給我爆啊！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s28",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Suddenly rushing forward like a predator, closing the distance in a blur.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s29",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking up in terror as Chen Feng's shadow looms over him.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "別過來！哇啊！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng",
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng grabbing Zhao's wrist and twisting it with a sickening crack.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Screaming in agony, the remote falling from his hand and sliding toward the edge.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s32",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Staring down at the pathetic man, his foot pressing on Zhao's chest.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這只是利息，正餐還在後面。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s33",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Gasping, his body half-hanging off the rooftop ledge, looking down at the abyss.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰……你殺了我吧……"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s34",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A cold, emotionless stare. He picks up the remote, which suddenly starts beeping fast.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "殺你？太便宜你了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s35",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao",
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The remote beeps turn into a solid tone. Zhao Tianhao's eyes bug out as he realizes the 'fail-safe' is actually a self-destruct for the rooftop.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "不，這不是毒氣遙控，這是……炸彈！"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

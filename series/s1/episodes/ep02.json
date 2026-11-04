@@ -1,0 +1,598 @@
+{
+  "ep": 2,
+  "title": "打臉狗眼",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling",
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A woman's face distorted with rage, screaming at the man in front of her. Expensive jewelry flickers under the chandelier.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "臭要飯的，誰准你進來的？滾出去！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man stands calm and cold, his eyes like ice, looking at the woman's hysterical state with disdain.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "五年不見，妳的嘴還是這麼臭。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su",
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A sharp, fast movement. A sleek woman in a suit delivers a heavy slap to the hysterical woman's face.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "對陳先生說話，放尊重點。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "The woman falls back into a wedding cake, her face covered in cream and red marks from the slap.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "妳敢打我？保安！死哪去了！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Dozens of mansion security guards rush in, surrounding the intruders with batons drawn.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "給我打死他！出事我負責！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The sleek woman taps a button on her earpiece, her expression remainig professional and cold.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "清場。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Windows shatter as black-clad professional guards rappel in, instantly subduing the mansion security.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "不到十秒，局勢逆轉。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman gasps, her eyes wide with terror as she sees her elite security lying on the floor.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "這...這不可能...你只是個強姦犯！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The man steps forward slowly, the sound of his leather shoes echoing in the silent hall.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "當年陷害我的帳，我們先算第一筆。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assistant hands a thick leather folder to the man.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "陳總，趙美玲洗錢的證據都在這。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng",
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man throws the folder into the air, documents rain down like snow over the trembling woman.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "看看妳引以為傲的豪門夢，值多少錢。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She picks up a paper, her hands shaking. It's a bank statement with high-risk red stamps.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "你怎麼會有這些...這是機密！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man leans down, whispering into her ear with a terrifying smile.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這五年，我一直在地獄看著妳。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The woman looks at the surrounding guests, who are now pointing and whispering in disgust.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "名門婚宴，瞬間變成醜聞現場。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She screams and tries to grab the man's leg, her makeup ruined by tears.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "陳峰！你毀了我！我哥不會放過你的！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man kicks her hand away with disgust, his face showing no emotion.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "毀掉妳？這才剛剛開始。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assistant presents a tablet showing a stock market graph plummeting.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "趙氏影業股價已跌停，資金鏈斷裂。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman collapses on the floor, her eyes hollow and hopeless.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "不...我的豪宅，我的股份..."
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The man walks toward the bar, pours a glass of expensive wine, and slowly pours it onto the floor.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "祭奠我那死去的五年。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The woman frantically pulls out her phone, dialing a number with bloody fingernails.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "哥！救我！陳峰瘋了！他要殺了我！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man hears the phone and stops, a cold glint appearing in his eyes.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "讓他來。我也等他很久了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Guests are fleeing the mansion in panic as more black-clad men secure the exits.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "閒雜人等，限時三分鐘離開。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man sits on the host's chair, lighting a cigarette, looking like a king in a ruined kingdom.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "天要黑了，好戲才要上場。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close up on the phone screen showing 'Zhao Tianhao - Calling'.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "復仇的導火線，正式點燃。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "zhao_mansion",
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The sound of a heavy car engine roaring outside the mansion gates.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "正主到了。"
+        }
+      ],
+      "key": false,
+      "characters": []
+    },
+    {
+      "id": "s26",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man blows out a cloud of smoke, his gaze fixed on the main entrance.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，你終於肯露面了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "zhao_mansion",
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The massive double doors of the mansion are kicked open from the outside.",
+      "lines": [],
+      "key": false,
+      "characters": []
+    },
+    {
+      "id": "s28",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "A man in a tailored grey suit enters, surrounded by bodyguards, radiating arrogance and power.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "哪來的野狗，敢在趙家撒野？"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s29",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling",
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The woman crawls to the man in the grey suit, sobbing and pointing at the chair.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "哥！是他！陳峰那個廢物回來了！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man in the grey suit stops in his tracks, his eyes narrowing as he recognizes the figure in the smoke.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰？你竟然沒死在牢裡？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man stands up slowly, the cigarette flickering in the dim light.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "託你的福，我在地獄學會了怎麼殺人。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s32",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A vein pops on the man's forehead, his composure beginning to crack.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "五年前我能毀了你，今天我也能！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s33",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng",
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The two groups of guards face each other, the atmosphere heavy with imminent violence.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "兩大勢力交鋒，生死一瞬。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s34",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man reaches into his inner pocket, revealing a gold emblem representing a mysterious global organization.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，跪下，我饒你不死。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s35",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao",
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhao Tianhao's face turns from anger to sheer shock as he sees the emblem. Chen Feng's eyes are merciless.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "那個標誌...難道你是..."
+        }
+      ],
+      "key": true
+    }
+  ]
+}
