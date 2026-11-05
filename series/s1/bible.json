@@ -92,5 +92,15 @@
   "episode_count": 11,
   "episode_seconds": 90,
   "style_choice": "寫實電影感",
-  "render_style": "donghua3d"
+  "render_style": "donghua3d",
+  "tts": {
+    "engine": "indextts",
+    "cast": {
+      "chen_feng": "m11",
+      "zhao_tianhao": "m09",
+      "lin_su": "f07",
+      "zhao_meiling": "f01",
+      "narrator": "m07"
+    }
+  }
 }

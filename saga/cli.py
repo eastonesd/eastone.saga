@@ -59,7 +59,7 @@ def cmd_produce(a) -> None:
 
     from .assemble import assemble_episode
     from .render import render
-    from .voice import voice_episode
+    from .voice import voice_batch
     from .writer import write_episodes
 
     t0 = time.time()
@@ -74,6 +74,9 @@ def cmd_produce(a) -> None:
         return
     print(f"▶ 本批：第 {batch[0]}～{batch[-1]} 集（共 {len(batch)} 集；之後還剩 {len(todo) - len(batch)} 集）", flush=True)
 
+    if a.revoice:  # 只重錄配音，沿用已算好的畫面
+        for ep in batch:
+            shutil.rmtree(paths.build_ep_dir(a.slug, ep) / "audio", ignore_errors=True)
     if a.rewrite or a.redo:
         for ep in batch:
             shutil.rmtree(paths.build_ep_dir(a.slug, ep), ignore_errors=True)
@@ -91,11 +94,10 @@ def cmd_produce(a) -> None:
             result["error"] = e
     th = threading.Thread(target=gpu)
     th.start()
-    for ep in batch:
-        try:
-            voice_episode(a.slug, ep, mock=a.mock)
-        except Exception as e:  # 單集配音出錯不拖垮整批，剪輯時會以缺檔處理
-            print(f"  ⚠ 第 {ep} 集配音失敗：{e}", flush=True)
+    try:
+        voice_batch(a.slug, batch, mock=a.mock, wait_gpu=th.join)
+    except Exception as e:  # 配音出錯不拖垮整批，剪輯時會以缺檔處理
+        print(f"  ⚠ 配音失敗：{e}", flush=True)
     stamp["voice"] = time.time() - t0
     th.join()
     stamp["render"] = time.time() - t0
@@ -240,6 +242,7 @@ def main(argv=None) -> None:
     pr.add_argument("--video", action="store_true", help="關鍵鏡頭做成真影片（實驗性）")
     pr.add_argument("--rewrite", action="store_true", help="重寫已存在的分鏡劇本")
     pr.add_argument("--redo", action="store_true", help="重做畫面與配音，沿用現有劇本")
+    pr.add_argument("--revoice", action="store_true", help="只重錄配音，沿用畫面")
     pr.add_argument("--no-assemble", action="store_true", help="只做到算圖與配音，剪輯另外平行跑")
 
     pa = sub.add_parser("assemble", help="剪輯單集（素材需已就緒）")

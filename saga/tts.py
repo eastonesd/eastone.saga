@@ -124,3 +124,55 @@ def voicebench(out_dir: Path) -> Path:
         shutil.copy(f, refs / f.name)
     print(f"▶ 試聽帶：{out}（{len(segs)} 個聲線）", flush=True)
     return out
+
+
+# ── 正式生產 ───────────────────────────────────────────────────
+
+VOICE_DIR = Path(__file__).resolve().parent.parent / "assets" / "voices"
+_META = {vid: (kind, age) for vid, _, kind, age in CANDIDATES}
+
+
+def available_voices() -> list[str]:
+    return sorted(p.stem for p in VOICE_DIR.glob("*.wav"))
+
+
+def auto_cast(bible: dict) -> dict:
+    """依角色性別／年齡從聲線庫自動分配（盡量不重複），旁白用中年男聲或成熟女聲。"""
+    have = available_voices()
+    used: set[str] = set()
+
+    def pick(prefer: list[str]) -> str:
+        for v in prefer + have:
+            if v in have and v not in used:
+                used.add(v)
+                return v
+        return have[0]
+
+    cast = {}
+    for c in bible["characters"]:
+        female = str(c.get("gender", "")).lower().startswith("f")
+        age = int(c.get("age") or 28)
+        want = "中年" if age >= 41 else "成熟" if age >= 26 else "青年"
+        sex = "f" if female else "m"
+        pref = [v for v in have if v.startswith(sex) and want in _META.get(v, ("", ""))[0]]
+        pref += [v for v in have if v.startswith(sex)]  # 同性別的其他聲線當備選
+        cast[c["id"]] = pick(pref)
+    cast["narrator"] = pick(["m07", "f03", "m01"])
+    return cast
+
+
+def synthesize(items: list[dict], dl: Path) -> dict[str, Path]:
+    """items：[{key, voice(聲線庫 id), text, emo(EMO 的 key 或 None), speed}] → {key: wav 路徑}"""
+    if not items:
+        return {}
+    voices = sorted({it["voice"] for it in items})
+    job = {
+        "job_id": uuid.uuid4().hex[:12],
+        "voices": {v: {"ref_b64": base64.b64encode((VOICE_DIR / f"{v}.wav").read_bytes()).decode()} for v in voices},
+        "lines": [{"key": it["key"], "voice": it["voice"], "text": it["text"],
+                   "emo": EMO.get(it.get("emo") or ""), "speed": it.get("speed")} for it in items],
+        "workers_per_gpu": int(os.environ.get("SAGA_TTS_WORKERS_PER_GPU", "2")),
+    }
+    shutil.rmtree(dl, ignore_errors=True)
+    run_job(job, dl)
+    return {p.stem: p for p in dl.rglob("*.wav") if not p.name.startswith("ref_")}

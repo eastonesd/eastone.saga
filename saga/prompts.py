@@ -72,7 +72,8 @@ EPISODE_SCHEMA = {
             "camera": "close-up / medium / wide / over-shoulder",
             "motion": "zoom_in / zoom_out / pan_left / pan_right / static",
             "visual": "英文畫面描述：動作、表情、構圖、光線。不要寫角色名字也不要寫外觀（系統會自動帶入）",
-            "lines": [{"speaker": "角色 id 或 narrator", "text": "台詞（繁中，≤20 字）"}],
+            "lines": [{"speaker": "角色 id 或 narrator", "text": "台詞（繁中，≤14 字）",
+                       "emo": "calm / angry / sad / happy / afraid / surprised / disdain 擇一"}],
             "key": False,
         }
     ],
@@ -153,6 +154,7 @@ def episode_prompt(bible: dict, outline: dict, ep: int, seconds: int) -> str:
 - 用特寫表現情緒、中景表現對話、遠景交代場景，交替使用。
 - 挑 3～5 個最有張力的鏡頭標記 "key": true（之後會做成真影片）。
 - speaker 必須是角色 id 或 "narrator"。
+- 每句台詞都要標 emo（配音情緒）：憤怒質問用 angry、冷笑輕蔑用 disdain、震驚用 surprised、哭訴用 sad、得意用 happy、恐懼用 afraid、一般陳述用 calm。
 - lines 只放「會被念出來的台詞」。禁止在台詞裡寫括號動作、音效或語氣說明（例如「（砰！）」「（冷笑）」）；音效與動作請寫進 visual。
 
 只輸出 JSON：

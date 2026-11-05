@@ -32,6 +32,10 @@ on:
         description: 重做這批的畫面與配音（沿用現有劇本）
         type: boolean
         default: false
+      revoice:
+        description: 只重錄配音（沿用畫面）
+        type: boolean
+        default: false
       issue:
         description: 回報進度的 Issue 編號（接力時自動帶入）
         default: ""
@@ -81,17 +85,18 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             SLUG="${{ inputs.slug }}"; EPS="${{ inputs.eps }}"; BATCH="${{ inputs.batch }}"
             ISSUE="${{ inputs.issue }}"; ATTEMPT="${{ inputs.attempt }}"
-            VIDEO="${{ inputs.video }}"; REWRITE="${{ inputs.rewrite }}"; REDO="${{ inputs.redo }}"
+            VIDEO="${{ inputs.video }}"; REWRITE="${{ inputs.rewrite }}"; REDO="${{ inputs.redo }}"; REVOICE="${{ inputs.revoice }}"
             [ -z "$ISSUE" ] && ISSUE="${SLUG#s}"
           else
             ISSUE="${{ github.event.issue.number }}"; SLUG="s$ISSUE"; BATCH=10; ATTEMPT=0
             LINE=$(printf '%s' "$COMMENT" | head -1)
             if printf '%s' "$LINE" | grep -qiE '(^| )all( |$)|全部'; then EPS=all
             else EPS=$(printf '%s' "$LINE" | grep -oE '[0-9][0-9,\-]*' | head -1); fi
-            VIDEO=false; REWRITE=false; REDO=false
+            VIDEO=false; REWRITE=false; REDO=false; REVOICE=false
             printf '%s' "$LINE" | grep -q -- '--video' && VIDEO=true
             printf '%s' "$LINE" | grep -q -- '--rewrite' && REWRITE=true
             printf '%s' "$LINE" | grep -q -- '--redo' && REDO=true
+            printf '%s' "$LINE" | grep -q -- '--revoice' && REVOICE=true
             gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" -f content=rocket >/dev/null || true
           fi
           [ -z "$EPS" ] && { echo "沒有集數，例：/produce all 或 /produce 1-10"; exit 1; }
@@ -100,6 +105,7 @@ jobs:
           [ "$VIDEO" = "true" ] && FLAGS="$FLAGS --video"
           [ "$REWRITE" = "true" ] && FLAGS="$FLAGS --rewrite"
           [ "$REDO" = "true" ] && FLAGS="$FLAGS --redo"
+          [ "$REVOICE" = "true" ] && FLAGS="$FLAGS --revoice"
           {
             echo "slug=$SLUG"; echo "eps=$EPS"; echo "batch=$BATCH"; echo "issue=$ISSUE"
             echo "attempt=$ATTEMPT"; echo "video=$VIDEO"; echo "flags=$FLAGS"
@@ -109,7 +115,7 @@ jobs:
         id: done
         run: |
           SKIP=""
-          if [ "${{ contains(steps.args.outputs.flags, '--rewrite') || contains(steps.args.outputs.flags, '--redo') }}" != "true" ]; then
+          if [ "${{ contains(steps.args.outputs.flags, '--rewrite') || contains(steps.args.outputs.flags, '--redo') || contains(steps.args.outputs.flags, '--revoice') }}" != "true" ]; then
             SKIP=$(gh release view "${{ steps.args.outputs.slug }}" --json assets -q '.assets[].name' 2>/dev/null \
               | sed -nE 's/.*-ep0*([0-9]+)\.mp4$/\1/p' | sort -n | paste -sd, -)
           fi

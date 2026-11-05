@@ -24,6 +24,10 @@ def _normalize_bible(b: dict, *, slug: str, idea: str, episodes: int, seconds: i
         loc["id"] = str(loc.get("id") or f"loc{i + 1}").strip().lower().replace(" ", "_")
     if b.get("narrator_voice") not in prompts.VOICES:
         b["narrator_voice"] = "旁白-女"
+    if not b.get("tts"):
+        from .tts import auto_cast, available_voices
+        if available_voices():
+            b["tts"] = {"engine": "indextts", "cast": auto_cast(b)}
     b.update({"slug": slug, "idea": idea, "episode_count": episodes,
               "episode_seconds": seconds, "style_choice": style})
     return b
@@ -68,7 +72,8 @@ def _normalize_episode(ep_data: dict, bible: dict, ep: int) -> dict:
             if not text:
                 continue
             spk = ln.get("speaker")
-            lines.append({"speaker": spk if spk in char_ids else "narrator", "text": text})
+            emo = ln.get("emo") if ln.get("emo") in ("calm", "angry", "sad", "happy", "afraid", "surprised", "disdain") else None
+            lines.append({"speaker": spk if spk in char_ids else "narrator", "text": text, **({"emo": emo} if emo else {})})
         s["lines"] = lines
         s["key"] = bool(s.get("key"))
         shots.append(s)

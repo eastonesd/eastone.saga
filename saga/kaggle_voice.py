@@ -56,6 +56,12 @@ log("IndexTTS 安裝完成")
 REFDIR = "/kaggle/temp/refs"
 os.makedirs(REFDIR, exist_ok=True)
 for vid, v in JOB["voices"].items():
+    if v.get("ref_b64"):  # 聲線庫裡已有的參考音檔，直接用
+        ref = f"{REFDIR}/{vid}.wav"
+        with open(ref, "wb") as f:
+            f.write(base64.b64decode(v["ref_b64"]))
+        v["ref"] = ref
+        continue
     spk = v["speaker"]
     parts = []
     for split in ("train", "test"):
@@ -91,7 +97,9 @@ RUNNER = r'''
 import json, os, sys, time, traceback, inspect
 sys.path.insert(0, ".")
 from indextts.infer_v2_5 import IndexTTS2
+shard, nshards = int(sys.argv[1]), int(sys.argv[2])
 data = json.load(open("/kaggle/temp/lines.json", encoding="utf-8"))
+data["lines"] = data["lines"][shard::nshards]
 kw = {}
 sig = inspect.signature(IndexTTS2.__init__).parameters
 if "use_fp16" in sig: kw["use_fp16"] = True          # T4 不支援 bf16，用 fp16
@@ -118,18 +126,28 @@ with open(f"{REPO}/saga_run.py", "w", encoding="utf-8") as f:
     f.write(RUNNER)
 try:
     env = {k: v for k, v in os.environ.items() if k != "HF_HUB_ENABLE_HF_TRANSFER"}  # uv 環境沒裝 hf_transfer
-    p = subprocess.run(["uv", "run", "--python", "3.11", "python", "saga_run.py"], cwd=REPO,
-                       capture_output=True, text=True, env=env)
-    print(p.stdout[-20000:], p.stderr[-8000:], flush=True)
-    for line in p.stdout.splitlines():
-        if line.startswith("OK "):
-            manifest["done"].append(line.split()[1])
-        elif line.startswith("ERR "):
-            manifest["errors"].append(line[4:200])
-        elif line.startswith("DONE"):
-            manifest["speed"] = line
-    if p.returncode != 0:
-        manifest["errors"].append(f"runner exit {p.returncode}: {p.stderr[-600:]}")
+    gpus = len(subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True).stdout.strip().splitlines()) or 1
+    per_gpu = JOB.get("workers_per_gpu", 2)  # T4 16GB 可同時跑兩個 IndexTTS（各約 6GB）
+    n = max(1, min(gpus * per_gpu, len(lines)))
+    procs = []
+    for i in range(n):
+        e = dict(env, CUDA_VISIBLE_DEVICES=str(i % gpus))
+        procs.append(subprocess.Popen(["uv", "run", "--python", "3.11", "python", "saga_run.py", str(i), str(n)],
+                                      cwd=REPO, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, env=e))
+        time.sleep(15)  # 錯開載入
+    log(f"{n} 個配音程序（GPU ×{gpus}）")
+    for p in procs:
+        out, err = p.communicate()
+        print(out[-6000:], err[-3000:], flush=True)
+        for line in out.splitlines():
+            if line.startswith("OK "):
+                manifest["done"].append(line.split()[1])
+            elif line.startswith("ERR "):
+                manifest["errors"].append(line[4:200])
+            elif line.startswith("DONE"):
+                manifest.setdefault("speed", []).append(line)
+        if p.returncode != 0:
+            manifest["errors"].append(f"runner exit {p.returncode}: {err[-600:]}")
 except Exception:
     manifest["errors"].append(traceback.format_exc()[-600:])
 save()
