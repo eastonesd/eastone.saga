@@ -107,8 +107,9 @@ def cmd_produce(a) -> None:
     if a.no_assemble:  # 剪輯交給平行的 matrix 工作
         ok = [e for e in batch if (paths.build_ep_dir(a.slug, e) / "audio" / "timing.json").exists()]
         print(f"▶ 算圖與配音完成，交給平行剪輯：{ok}", flush=True)
+        from .voice import WARNINGS
         _write_status(a, batch=ok, done=[], remaining=[e for e in todo if e not in ok],
-                      partial=bool(manifest.get("partial")), timing=stamp)
+                      partial=bool(manifest.get("partial")), timing=stamp, warnings=WARNINGS)
         return
 
     def assemble(ep):

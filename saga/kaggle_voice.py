@@ -56,11 +56,13 @@ log("IndexTTS 安裝完成")
 REFDIR = "/kaggle/temp/refs"
 os.makedirs(REFDIR, exist_ok=True)
 for vid, v in JOB["voices"].items():
-    if v.get("ref_b64"):  # 聲線庫裡已有的參考音檔，直接用
+    if v.get("ref_url"):  # 聲線庫裡已有的參考音檔
         ref = f"{REFDIR}/{vid}.wav"
-        with open(ref, "wb") as f:
-            f.write(base64.b64decode(v["ref_b64"]))
-        v["ref"] = ref
+        try:
+            sh(["curl", "-sSfL", "--retry", "3", "-o", ref, v["ref_url"]])
+            v["ref"] = ref
+        except Exception:
+            manifest["errors"].append(f"{vid}: 下載參考音檔失敗 {v['ref_url']}")
         continue
     spk = v["speaker"]
     parts = []

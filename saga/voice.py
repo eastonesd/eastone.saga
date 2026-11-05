@@ -64,6 +64,9 @@ async def _edge_tts(text: str, voice: str, out: Path) -> str:
     return f"失敗（{last[:80]}）"
 
 
+WARNINGS: list[str] = []  # 給 workflow 回報用
+
+
 def guess_emo(text: str) -> str | None:
     """劇本沒標情緒時的粗略判斷"""
     if re.search(r"[？?][！!]|[！!][？?]|不可能|怎麼會", text):
@@ -139,6 +142,7 @@ def voice_batch(slug: str, eps: list[int], *, mock: bool = False, wait_gpu=None)
                 print(f"  ✓ IndexTTS 完成 {sum(1 for _, _, _, _, _, o in todo if o.exists())}／{len(todo)} 句", flush=True)
             except Exception as e:  # Kaggle 出狀況 → 整批改用 Edge-TTS，不中斷生產
                 print(f"  ⚠ IndexTTS 失敗，改用 Edge-TTS 補上：{e}", flush=True)
+                WARNINGS.append(f"IndexTTS 配音失敗，本批改用備援 Edge 配音（{str(e)[:120]}）")
 
     for ep, (episode, plan) in plans.items():
         _finish_episode(slug, ep, episode, plan, mock=mock, cast=cast, edge_voice=edge_voice, edge_narrator=edge_narrator)

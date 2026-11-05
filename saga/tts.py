@@ -129,6 +129,9 @@ def voicebench(out_dir: Path) -> Path:
 # ── 正式生產 ───────────────────────────────────────────────────
 
 VOICE_DIR = Path(__file__).resolve().parent.parent / "assets" / "voices"
+VOICE_BASE_URL = os.environ.get(
+    "SAGA_VOICE_BASE_URL",
+    f"https://raw.githubusercontent.com/{os.environ.get('GITHUB_REPOSITORY', 'eastonesd/saga.ai')}/main/assets/voices")
 _META = {vid: (kind, age) for vid, _, kind, age in CANDIDATES}
 
 
@@ -168,7 +171,8 @@ def synthesize(items: list[dict], dl: Path) -> dict[str, Path]:
     voices = sorted({it["voice"] for it in items})
     job = {
         "job_id": uuid.uuid4().hex[:12],
-        "voices": {v: {"ref_b64": base64.b64encode((VOICE_DIR / f"{v}.wav").read_bytes()).decode()} for v in voices},
+        # 參考音檔從公開 repo 下載（直接塞進程式碼會超過 Kaggle 的大小上限）
+        "voices": {v: {"ref_url": f"{VOICE_BASE_URL}/{v}.wav"} for v in voices},
         "lines": [{"key": it["key"], "voice": it["voice"], "text": it["text"],
                    "emo": EMO.get(it.get("emo") or ""), "speed": it.get("speed")} for it in items],
         "workers_per_gpu": int(os.environ.get("SAGA_TTS_WORKERS_PER_GPU", "2")),
