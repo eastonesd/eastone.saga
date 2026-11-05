@@ -20,7 +20,7 @@
 |---|---|---|
 | 編劇 | Gemini（自動挑可用模型）→ 擁塞時自動改用 GitHub Models | 0 |
 | 配音 | Edge-TTS（多角色聲線） | 0 |
-| 角色定妝＋分鏡圖 | SDXL-Lightning 8 步 + IP-Adapter（鎖臉），Kaggle T4 ×2 平行 | 0（每週約 30 GPU 小時） |
+| 角色定妝＋分鏡圖 | SDXL-Lightning 8 步 + IP-Adapter Plus Face（只鎖臉），Kaggle T4 ×2 平行 | 0（每週約 30 GPU 小時） |
 | 關鍵鏡頭影片（選用） | Wan 2.2 TI2V 5B | 0（較耗 GPU 時數，實驗性） |
 | 運鏡、字幕、配樂、合成 | FFmpeg，在 GitHub Actions 上跑 | 0（公開 repo 不限時數） |
 
@@ -63,7 +63,7 @@
 
 | 手段 | 效果 |
 |---|---|
-| 模型包常駐 Kaggle（第一次建置約 20 分鐘，之後掛載即用） | 每批省下 10～15 分鐘下載 |
+| 模型直接從 Hugging Face 高速下載到 Kaggle 本機硬碟（實測比掛載資料快 10 倍以上） | 每批載入約 1～2 分鐘 |
 | SDXL-Lightning 8 步取代 28 步、兩張 T4 平行 | 算圖約快 6～8 倍 |
 | 一批 10 集 | 開機成本由 10 集攤提 |
 | 企劃完成後立刻在背景寫完全劇分鏡；生產時 GPU 算圖與配音同時進行 | GPU 不等 LLM、不等配音 |

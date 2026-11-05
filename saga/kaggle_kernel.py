@@ -48,7 +48,7 @@ def load(ip=True):
     pipe = StableDiffusionXLPipeline.from_pretrained(f"{M}/sdxl", unet=unet, vae=vae, torch_dtype=torch.float16, variant="fp16")
     pipe.scheduler = EulerDiscreteScheduler.from_config(pipe.scheduler.config, timestep_spacing="trailing")
     if ip:
-        pipe.load_ip_adapter(f"{M}/ip", subfolder="sdxl_models", weight_name="ip-adapter_sdxl_vit-h.safetensors",
+        pipe.load_ip_adapter(f"{M}/ip", subfolder="sdxl_models", weight_name="ip-adapter-plus-face_sdxl_vit-h.safetensors",
                              image_encoder_folder="models/image_encoder", torch_dtype=torch.float16)
     pipe.to("cuda")
     pipe.set_progress_bar_config(disable=True)
@@ -82,7 +82,7 @@ elif mode == "shots":
             log("時間預算用完"); break
         try:
             ref = refs.get(s.get("ref"))
-            pipe.set_ip_adapter_scale(JOB.get("ip_scale", 0.6) if ref is not None else 0.0)
+            pipe.set_ip_adapter_scale(JOB.get("ip_scale", 0.5) if ref is not None else 0.0)
             img = pipe(prompt=s["prompt"], width=W, height=H, ip_adapter_image=ref if ref is not None else blank,
                        generator=torch.Generator("cuda").manual_seed(s["seed"]), **KW).images[0]
             img.save(f"{OUT}/{s['key']}.png")
@@ -111,24 +111,41 @@ elif mode == "video":
             traceback.print_exc()
 '''
 
-# ── 1. 準備 ──────────────────────────────────────────────
+# ── 1. 準備：模型直接從 Hugging Face 下載到本機硬碟 ─────────────
+# 實測：Kaggle 掛載資料約 12 MB/s（10GB 要 14 分鐘），HF 直接下載 > 200 MB/s（不到 1 分鐘）
 JOB = json.loads(base64.b64decode("__JOB_B64__").decode("utf-8"))
-markers = glob.glob("/kaggle/input/**/saga_models.json", recursive=True)
-if not markers:
-    sys.exit("找不到 saga-models 模型包（kernel_sources 沒有掛載成功）")
-base = os.path.dirname(markers[0])
-JOB["_models_dir"] = os.path.join(base, "models")
+M = "/kaggle/temp/models"
+JOB["_models_dir"] = M
 JOB["_t0"] = T0
 with open(JOB_PATH, "w", encoding="utf-8") as f:
     json.dump(JOB, f, ensure_ascii=False)
 with open(WORKER_PATH, "w", encoding="utf-8") as f:
     f.write(WORKER_SRC)
-log("模型包：", base)
 
-# 離線安裝需要的新版套件（幾秒鐘）
-subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--no-deps", "--no-index",
-                "--find-links", os.path.join(base, "wheels"), "diffusers", "huggingface_hub", "ftfy"],
-               check=False)
+subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--no-deps", "-U",
+                "diffusers>=0.35", "huggingface_hub", "ftfy", "hf_transfer"], check=False)
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
+os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
+from huggingface_hub import hf_hub_download, snapshot_download  # noqa: E402
+
+RECIPE = {
+    "sdxl": ("stabilityai/stable-diffusion-xl-base-1.0", [
+        "model_index.json", "scheduler/*",
+        "text_encoder/config.json", "text_encoder/model.fp16.safetensors",
+        "text_encoder_2/config.json", "text_encoder_2/model.fp16.safetensors",
+        "tokenizer/*", "tokenizer_2/*", "unet/config.json"]),
+    "vae": ("madebyollin/sdxl-vae-fp16-fix", ["config.json", "diffusion_pytorch_model.safetensors"]),
+    "ip": ("h94/IP-Adapter", ["sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors",
+                              "models/image_encoder/config.json", "models/image_encoder/model.safetensors"]),
+}
+for name, (repo, patterns) in RECIPE.items():
+    try:
+        snapshot_download(repo, local_dir=f"{M}/{name}", allow_patterns=patterns, max_workers=16)
+    except Exception:  # hf_transfer 不可用時退回一般下載
+        os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "0"
+        snapshot_download(repo, local_dir=f"{M}/{name}", allow_patterns=patterns, max_workers=16)
+hf_hub_download("ByteDance/SDXL-Lightning", "sdxl_lightning_8step_unet.safetensors", local_dir=f"{M}/lightning")
+log("模型下載完成")
 
 gpus = subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True).stdout.strip().splitlines()
 n = max(1, len(gpus))

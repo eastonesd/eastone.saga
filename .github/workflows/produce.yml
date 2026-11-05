@@ -115,8 +115,8 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: build/${{ steps.args.outputs.slug }}/ep*/shots
-          key: saga-shots-${{ steps.args.outputs.slug }}-${{ github.run_id }}
-          restore-keys: saga-shots-${{ steps.args.outputs.slug }}-
+          key: saga-shots-v2-${{ steps.args.outputs.slug }}-${{ github.run_id }}
+          restore-keys: saga-shots-v2-${{ steps.args.outputs.slug }}-
 
       - name: 生產這一批
         id: run
@@ -151,7 +151,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: build/${{ steps.args.outputs.slug }}/ep*/shots
-          key: saga-shots-${{ steps.args.outputs.slug }}-${{ github.run_id }}
+          key: saga-shots-v2-${{ steps.args.outputs.slug }}-${{ github.run_id }}
 
       - name: 存劇本與定妝照
         if: always() && steps.args.outputs.slug != ''

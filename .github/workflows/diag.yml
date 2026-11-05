@@ -39,7 +39,7 @@ jobs:
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         run: |
           case "$KAGGLE_KEY" in KGAT_*) export KAGGLE_API_TOKEN="$KAGGLE_KEY";; esac
-          for k in saga-models-v2 saga-render; do
+          for k in saga-render; do
             echo "=================== $k status"; kaggle kernels status "$KAGGLE_USERNAME/$k" || true
             echo "=================== $k timeline"
             kaggle kernels logs "$KAGGLE_USERNAME/$k" 2>&1 | python -c "

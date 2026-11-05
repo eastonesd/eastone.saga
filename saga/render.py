@@ -15,11 +15,8 @@ from pathlib import Path
 from . import paths
 
 KERNEL_TEMPLATE = Path(__file__).with_name("kaggle_kernel.py")
-MODELS_TEMPLATE = Path(__file__).with_name("kaggle_models.py")
 VIDEO_MODEL = os.environ.get("SAGA_VIDEO_MODEL", "Wan-AI/Wan2.2-TI2V-5B-Diffusers")
 KERNEL_SLUG = os.environ.get("SAGA_KERNEL_SLUG", "saga-render")
-MODELS_VERSION = 2  # 改了 kaggle_models.py 的模型配方就加一，會自動重建模型包
-MODELS_SLUG = f"saga-models-v{MODELS_VERSION}"
 ACCELERATOR = os.environ.get("SAGA_ACCELERATOR", "NvidiaTeslaT4")  # Kaggle 的 T4 ×2
 
 CAMERA = {
@@ -30,19 +27,24 @@ CAMERA = {
 }
 
 
+def _short(text: str, words: int) -> str:
+    """SDXL 的文字編碼器只讀前 77 個 token：每段限制字數，重要的放前面。"""
+    return " ".join(str(text or "").replace("\n", " ").split()[:words]).rstrip(",")
+
+
 def shot_prompt(shot: dict, bible: dict) -> str:
     chars = {c["id"]: c for c in bible["characters"]}
     locs = {l["id"]: l for l in bible["locations"]}
-    looks = [chars[c]["appearance"] for c in shot["characters"][:2] if c in chars]
+    ids = [c for c in shot["characters"] if c in chars]
     parts = [
         CAMERA.get(shot.get("camera"), "medium shot"),
-        *looks,
-        shot.get("visual", ""),
-        locs.get(shot["location"], {}).get("visual", ""),
-        bible.get("style_prompt", ""),
-        "vertical 9:16 composition",
+        _short(bible.get("style_prompt", ""), 8),
+        _short(chars[ids[0]]["appearance"], 20) if ids else "",
+        _short(shot.get("visual", ""), 14),
+        _short(chars[ids[1]]["appearance"], 8) if len(ids) > 1 else "",
+        _short(locs.get(shot["location"], {}).get("visual", ""), 8),
     ]
-    return ", ".join(p.strip() for p in parts if p and p.strip())
+    return ", ".join(p.strip(" ,") for p in parts if p and p.strip(" ,"))
 
 
 def _shot_seed(slug: str, ep: int, sid: str) -> int:
@@ -58,8 +60,8 @@ def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
         characters.append({
             "id": c["id"],
             "seed": c["seed"],
-            "ref_prompt": f"character reference sheet, front view portrait, upper body, neutral expression, "
-                          f"plain light grey background, {c['appearance']}, {bible.get('style_prompt', '')}",
+            "ref_prompt": f"portrait photo of a single person, head and shoulders, facing camera, sharp focus on face, "
+                          f"{_short(c['appearance'], 22)}, soft studio light, {_short(bible.get('style_prompt', ''), 6)}",
             "ref_b64": base64.b64encode(ref.read_bytes()).decode() if ref.exists() else None,
         })
     shots, video_shots = [], []
@@ -168,29 +170,13 @@ def _kaggle_error_tail(kernel_id: str, n: int = 25) -> str:
     return "\n".join((keep or lines)[-n:])
 
 
-def ensure_models() -> str:
-    """確認 Kaggle 上的模型包存在；沒有就建一次（約 15～25 分鐘，之後永久沿用）。"""
-    kid = f"{_user()}/{MODELS_SLUG}"
-    st = _status(kid)
-    if "complete" in st:
-        return kid
-    if any(w in st for w in ("running", "queued")):
-        print("▶ 模型包建置中，等待完成…", flush=True)
-    else:
-        print("▶ 第一次使用：在 Kaggle 上建置模型包（只需一次）", flush=True)
-        _push(MODELS_SLUG, MODELS_TEMPLATE.read_text(encoding="utf-8"), gpu=False, sources=[])
-    _wait(kid, "模型包", 60)
-    return kid
-
-
 def _run_on_kaggle(job: dict, download_to: Path) -> dict:
-    models = ensure_models()
     kernel_id = f"{_user()}/{KERNEL_SLUG}"
     payload = base64.b64encode(json.dumps(job, ensure_ascii=False).encode()).decode()
     code = KERNEL_TEMPLATE.read_text(encoding="utf-8").replace("__JOB_B64__", payload)
     print(f"▶ 送出 Kaggle 算圖：{len(job['shots'])} 張圖、{len(job['video_shots'])} 段影片（{ACCELERATOR}）", flush=True)
     t0 = time.time()
-    _push(KERNEL_SLUG, code, gpu=True, sources=[models])
+    _push(KERNEL_SLUG, code, gpu=True, sources=[])
     _wait(kernel_id, "算圖", job["time_budget_min"] + 60)
     print(f"  Kaggle 完成，耗時 {(time.time() - t0) / 60:.1f} 分鐘", flush=True)
 
