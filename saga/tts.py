@@ -168,6 +168,28 @@ def synthesize(items: list[dict], dl: Path) -> dict[str, Path]:
     """items：[{key, voice(聲線庫 id), text, emo(EMO 的 key 或 None), speed}] → {key: wav 路徑}"""
     if not items:
         return {}
+    if os.environ.get("MODAL_TOKEN_ID"):
+        try:
+            from . import modal_tts
+            lines = [{"key": it["key"], "voice": it["voice"], "text": it["text"],
+                      "emo": EMO.get(it.get("emo") or ""), "speed": it.get("speed")} for it in items]
+            got = modal_tts.synthesize(lines, {v: VOICE_DIR / f"{v}.wav" for v in {it["voice"] for it in items}},
+                                       dl / "modal")
+            missing = [it for it in items if it["key"] not in got]
+            print(f"  ✓ Modal 完成 {len(got)}／{len(items)} 句", flush=True)
+            if not missing:
+                return got
+            print(f"  … 剩 {len(missing)} 句改交 Kaggle", flush=True)
+            got.update(synthesize_kaggle(missing, dl / "kaggle"))
+            return got
+        except Exception as e:  # Modal 出狀況 → 改用 Kaggle
+            print(f"  ⚠ Modal 配音失敗，改用 Kaggle：{str(e)[:300]}", flush=True)
+    return synthesize_kaggle(items, dl)
+
+
+def synthesize_kaggle(items: list[dict], dl: Path) -> dict[str, Path]:
+    if not items:
+        return {}
     voices = sorted({it["voice"] for it in items})
     job = {
         "job_id": uuid.uuid4().hex[:12],
