@@ -62,7 +62,13 @@ jobs:
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        run: python -m saga.cli reoutline --slug "${{ steps.args.outputs.slug }}" --episodes "${{ steps.args.outputs.episodes }}" --seconds "${{ steps.args.outputs.seconds }}" | tee "$RUNNER_TEMP/out.md"
+        run: |
+          set -o pipefail
+          python -m saga.cli reoutline --slug "${{ steps.args.outputs.slug }}" --episodes "${{ steps.args.outputs.episodes }}" --seconds "${{ steps.args.outputs.seconds }}" | tee "$RUNNER_TEMP/out.md"
+      - name: 存下中途進度
+        if: failure()
+        run: scripts/commit.sh "${{ steps.args.outputs.slug }}：重排大綱（中途進度）"
+
       - name: 存檔並回報
         run: |
           git rm -q --cached -r "series/${{ steps.args.outputs.slug }}/episodes" 2>/dev/null || true

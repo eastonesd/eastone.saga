@@ -189,14 +189,27 @@ def cmd_reoutline(a) -> None:
     from . import prompts
     from .llm import generate_json
 
+    import time
     bible = paths.read_json(paths.bible_path(a.slug))
-    old = paths.read_json(paths.outline_path(a.slug))["episodes"]
     total = a.episodes
+    # 中途失敗可接續：原大綱另存一份，已重排好的集數也先寫進暫存檔
+    orig_p = paths.series_dir(a.slug) / "outline.orig.json"
+    part_p = paths.series_dir(a.slug) / "outline.partial.json"
+    if not orig_p.exists():
+        paths.write_json(orig_p, paths.read_json(paths.outline_path(a.slug)))
+    old = paths.read_json(orig_p)["episodes"]
     plan_text = "\n".join(f"{e['ep']}. {e['title']}" for e in old)
     bible["episode_count"], bible["episode_seconds"] = total, a.seconds
     eps: list[dict] = []
-    for start in range(1, total + 1, 10):
+    if part_p.exists():
+        part = paths.read_json(part_p)
+        if part.get("total") == total:
+            eps = part["episodes"]
+            print(f"▶ 接續上次進度：已有 {len(eps)} 集", flush=True)
+    for start in range(len(eps) + 1, total + 1, 10):
         end = min(total, start + 9)
+        if start > 1 and not a.mock:
+            time.sleep(20)  # 避開免費 API 每分鐘的用量上限
         print(f"▶ 重排大綱：第 {start}～{end} 集", flush=True)
         prompt = prompts.outline_prompt(bible, start, end, total, eps) + f"""
 【原本的 {len(old)} 集規劃（標題）】
@@ -209,8 +222,11 @@ def cmd_reoutline(a) -> None:
             e = got.get(n) or {"ep": n, "title": f"第{n}集", "summary": "（待補）", "hook": "", "cliffhanger": ""}
             e["ep"] = n
             eps.append(e)
+        paths.write_json(part_p, {"total": total, "episodes": eps})
     paths.write_json(paths.outline_path(a.slug), {"episodes": eps})
     paths.write_json(paths.bible_path(a.slug), bible)
+    part_p.unlink(missing_ok=True)
+    orig_p.unlink(missing_ok=True)
     removed = 0
     for f in (paths.series_dir(a.slug) / "episodes").glob("ep*.json"):
         f.unlink()

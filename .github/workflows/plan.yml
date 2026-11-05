@@ -80,6 +80,7 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
+          set -o pipefail
           timeout 130m python -m saga.cli scripts --slug "$SLUG" --workers 2 | tee "$RUNNER_TEMP/scripts.log"
 
       - name: 存分鏡並回報
