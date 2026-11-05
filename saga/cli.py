@@ -74,7 +74,7 @@ def cmd_produce(a) -> None:
         return
     print(f"▶ 本批：第 {batch[0]}～{batch[-1]} 集（共 {len(batch)} 集；之後還剩 {len(todo) - len(batch)} 集）", flush=True)
 
-    if a.rewrite:
+    if a.rewrite or a.redo:
         for ep in batch:
             shutil.rmtree(paths.build_ep_dir(a.slug, ep), ignore_errors=True)
     failed_scripts = write_episodes(a.slug, batch, mock=a.mock, force=a.rewrite)
@@ -187,6 +187,7 @@ def main(argv=None) -> None:
     pr.add_argument("--status-out", help="把結果寫成 JSON（給 workflow 接力用）")
     pr.add_argument("--video", action="store_true", help="關鍵鏡頭做成真影片（實驗性）")
     pr.add_argument("--rewrite", action="store_true", help="重寫已存在的分鏡劇本")
+    pr.add_argument("--redo", action="store_true", help="重做畫面與配音，沿用現有劇本")
     pr.add_argument("--mock", action="store_true")
     pr.set_defaults(fn=cmd_produce)
 
