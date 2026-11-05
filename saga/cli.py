@@ -264,6 +264,9 @@ def main(argv=None) -> None:
     pb.add_argument("--mock", action="store_true")
     pb.set_defaults(fn=cmd_stylebench)
 
+    pv = sub.add_parser("voicebench", help="IndexTTS 聲線試聽帶")
+    pv.set_defaults(fn=lambda a: __import__("saga.tts", fromlist=["x"]).voicebench(paths.BUILD_DIR))
+
     ps = sub.add_parser("summary")
     ps.add_argument("--slug", required=True)
     ps.set_defaults(fn=lambda a: print(summary(a.slug)))

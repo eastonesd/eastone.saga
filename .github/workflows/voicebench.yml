@@ -1,0 +1,42 @@
+name: 聲線試聽
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saga-voice
+  cancel-in-progress: false
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk > /dev/null
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Kaggle 配音試聽
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python -m saga.cli voicebench
+      - name: 存試聽帶
+        if: always()
+        run: |
+          mkdir -p bench/voices
+          cp build/voicebench.mp4 bench/voicebench.mp4 2>/dev/null || true
+          cp build/voice_refs/*.wav bench/voices/ 2>/dev/null || true
+          git config user.name "saga-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bench
+          git diff --cached --quiet || { git commit -m "聲線試聽帶" && git pull --rebase && git push; }
