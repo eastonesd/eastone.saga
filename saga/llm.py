@@ -113,6 +113,7 @@ class OpenAICompat:
 
             def rank(i: str) -> int:
                 return next((k for k, p in enumerate(self.prefer) if re.search(p, i, re.I)), 99)
+            ids = [i for i in ids if not re.search(r"safeguard|guard|whisper|tts|embed", i, re.I)]
             self._models = [i for i in sorted(ids, key=rank) if rank(i) < 99][:4]
         return self._models
 
