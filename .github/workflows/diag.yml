@@ -1,0 +1,66 @@
+name: 診斷
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  models: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+
+      - name: GitHub Models
+        env:
+          TOKEN: ${{ github.token }}
+        run: |
+          H=(-H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28")
+          echo "== catalog"; curl -sS -o cat.json -w "HTTP %{http_code} %{content_type}\n" "${H[@]}" https://models.github.ai/catalog/models
+          head -c 400 cat.json; echo
+          python -c "import json;d=json.load(open('cat.json'));print(len(d),'models');print([m['id'] for m in d][:40])" || true
+          echo "== chat"
+          curl -sS -w "\nHTTP %{http_code} %{content_type}\n" "${H[@]}" -H "Content-Type: application/json" \
+            -d '{"model":"openai/gpt-4.1","messages":[{"role":"user","content":"回一個 JSON：{\"ok\":true}"}]}' \
+            https://models.github.ai/inference/chat/completions | tail -c 600
+
+      - name: Kaggle 日誌
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: |
+          case "$KAGGLE_KEY" in KGAT_*) export KAGGLE_API_TOKEN="$KAGGLE_KEY";; esac
+          for k in saga-models-v1 saga-render; do
+            echo "=================== $k status"; kaggle kernels status "$KAGGLE_USERNAME/$k" || true
+            echo "=================== $k logs (tail)"; kaggle kernels logs "$KAGGLE_USERNAME/$k" 2>&1 | tail -c 6000 || true
+          done
+          mkdir -p out && kaggle kernels output "$KAGGLE_USERNAME/saga-render" -p out -o >/dev/null 2>&1 || true
+          echo "== render output files"; ls -la out | head -30
+          cat out/manifest.json 2>/dev/null | head -c 1500 || true
+
+      - name: Edge-TTS
+        run: |
+          python - <<'EOF'
+          import asyncio, edge_tts, time
+          voices = ["zh-TW-HsiaoChenNeural","zh-TW-HsiaoYuNeural","zh-TW-YunJheNeural","zh-CN-YunxiNeural",
+                    "zh-CN-YunjianNeural","zh-CN-XiaoyiNeural","zh-CN-YunyangNeural","zh-CN-XiaoxiaoNeural"]
+          async def one(v, i):
+              try:
+                  await edge_tts.Communicate("五年了，我回來了。", v, rate="+8%").save(f"/tmp/{i}.mp3"); return "ok"
+              except Exception as e:
+                  return type(e).__name__
+          async def main():
+              for v in voices:
+                  print(v, await one(v, v))
+              t = time.time()
+              r = await asyncio.gather(*(one(voices[i % 8], i) for i in range(16)))
+              print("16 concurrent:", r, f"{time.time()-t:.1f}s")
+          asyncio.run(main())
+          EOF
