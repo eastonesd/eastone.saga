@@ -1,0 +1,251 @@
+{
+  "ep": 5,
+  "title": "香香回歸，情斷義絕",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up on a hand slamming a letter onto the table. The paper slides slightly. Dramatic lighting.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot. A woman stands in the center of the room, looking down at the table. She looks tense and emotional.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "玄德，你真要死戰？",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up on the man's face. He doesn't look up, keeping his eyes on the table. His expression is cold and calm.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "他不配。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up on the woman's face. Tears well up in her eyes. She is shocked and hurt by his coldness.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "我們之間的情分呢？",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Over-shoulder shot from behind the woman, looking at the man. He is now looking at her, but with no emotion.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "舊情？早已過時。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The woman steps back, looking around the room nervously. She seems to be searching for something or someone.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "你這般絕情，為何？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "The man stands up slowly. He dominates the frame. His eyes are sharp and calculating.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "為了天下大業。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman's eyes narrow. She realizes he is deceiving her or pushing her away. Her face hardens with anger.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "你是在耍我？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man walks towards her. He maintains a safe distance. He looks down at her with disdain.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳信給你兄長。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman looks confused and angry. She doesn't understand why he wants her to send a message to her brother.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "說些什麼？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Over-shoulder shot. The man points to the letter on the table. His finger rests on the paper.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "就說我準備退兵。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman's eyes widen. She realizes he is setting a trap. Her expression shifts from anger to fear.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "這是假的？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The man gives a slight, cold smile. It is a predatory smile, showing he has control over the situation.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "真假，不重要。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The woman steps back further, creating distance. She looks at the door, considering an escape or a confrontation.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "你太冷血了。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "ep": 13,
+  "title": "朝堂清算，老臣膽寒",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of a hand clutching a crumpled letter with a family crest, held high. The background is blurred, focusing on the tense fingers.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of the protagonist sitting on the throne, looking down with cold, dead eyes. He places the letter on the armrest slowly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰送來的信？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Wide shot of the throne room. Dozens of officials are seated, but everyone is restless and avoiding eye contact. The atmosphere is heavy.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The protagonist stands up slowly. He walks down the steps of the throne, his face expressionless but intimidating.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "李相公，出列。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the strategist's face. His eyes widen slightly in surprise, but he remains composed, watching the protagonist's move.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Over-the-shoulder shot from behind the protagonist, looking at an elderly official (Li Xiangu) who is trembling and kneeling on the ground.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這印章，熟不熟悉？",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the protagonist's hand throwing the letter onto the ground in front of the kneeling official. The paper slaps the floor.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The old official looks at the letter, his face turning pale. He realizes the truth and tries to speak, but his voice is shaking.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "魏國暗哨，證據在此。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of the protagonist's cold smile. He leans in slightly, his voice dropping to a dangerous whisper.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你還想賴掉？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The old official kowtows desperately, sweat dripping from his forehead. He looks up with pleading, terrified eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "皇叔饒命！老臣無意！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the protagonist's eyes. There is no mercy in them, only cold calculation. The camera zooms in slightly on his pupils.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist stands tall, pointing a finger at the kneeling official. The light in the room seems to dim, highlighting his silhouette.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "無意？你賣國求榮。",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the old official's face, covered in tears and snot. He is sobbing uncontrollably, begging for his life.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "老臣也是為了蜀漢！",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The protagonist laughs coldly. It is a short, sharp laugh that chills the room. He takes a step closer to the official.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "為了蜀漢？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of the protagonist's mouth as he delivers the final verdict. His lips move slowly and clearly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你的平安是賣國來的。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

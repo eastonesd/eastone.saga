@@ -1,0 +1,264 @@
+{
+  "ep": 10,
+  "title": "首戰告捷，天下巨震",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of an arrow tip hovering inches from the character's neck. Blurred city wall in background. High tension lighting.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Character snaps head left to dodge the arrow. The arrow embeds in the pillar behind. Character draws sword.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Character leaps onto the city wall. Dust cloud rises. Enemy soldiers retreat in fear.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of eyes. Cold, determined gaze. Sweat on forehead. Blood on armor.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Second character observing from below, holding a folding fan. Eyes wide in shock.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這…這不是劉備。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Character grabs the Wei military flag. Muscles clenched. Veins popping.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Character burns the flag. Fire illuminates his face. Dark smoke rises.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這只是開始。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Interior throne room. A messenger rushes in, kowtowing. Dust on armor.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "襄陽…拿下了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of the messenger's trembling hand holding the report. Ink smudges.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Second character stands up abruptly. The fan drops to the floor. Shocked expression.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "天下…要變了。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Dark palace hall. A map on the table. Candlelight flickers. Storm outside.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Character sits on throne. Hands clasped. A messenger kneels in front, head down.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "說。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of eyes. Pupil dilation. A drop of sweat falls.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Character stands up, knocking over the table. Map flies into the air.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "不可能！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Character's face flushed with anger and fear. Veins in neck throbbing.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備…還活着？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Deck of a war ship. Waves crashing. Lightning strikes in the distance.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Character stands at the railing. Wind blows his hair. He looks pale.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of a trembling hand gripping the railing. Knuckles white.",
+      "lines": [],
+      "key": false
+    }
+  ]
+}
