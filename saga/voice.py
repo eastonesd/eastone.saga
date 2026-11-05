@@ -139,7 +139,10 @@ def voice_batch(slug: str, eps: list[int], *, mock: bool = False, wait_gpu=None)
                                                "silenceremove=start_periods=1:start_threshold=-50dB,areverse,"
                                                "loudnorm=I=-16:TP=-1.5",
                                         "-ar", "44100", "-c:a", "libmp3lame", "-q:a", "3", str(out)], check=True)
-                print(f"  ✓ IndexTTS 完成 {sum(1 for _, _, _, _, _, o in todo if o.exists())}／{len(todo)} 句", flush=True)
+                ok = sum(1 for _, _, _, _, _, o in todo if o.exists())
+                print(f"  ✓ IndexTTS 完成 {ok}／{len(todo)} 句", flush=True)
+                if ok < len(todo):
+                    WARNINGS.append(f"IndexTTS 只完成 {ok}／{len(todo)} 句，其餘改用備援 Edge 配音")
             except Exception as e:  # Kaggle 出狀況 → 整批改用 Edge-TTS，不中斷生產
                 print(f"  ⚠ IndexTTS 失敗，改用 Edge-TTS 補上：{e}", flush=True)
                 WARNINGS.append(f"IndexTTS 配音失敗，本批改用備援 Edge 配音（{str(e)[:120]}）")

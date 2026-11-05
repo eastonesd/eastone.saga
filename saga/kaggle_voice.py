@@ -131,6 +131,12 @@ try:
     gpus = len(subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True).stdout.strip().splitlines()) or 1
     per_gpu = JOB.get("workers_per_gpu", 2)  # T4 16GB 可同時跑兩個 IndexTTS（各約 6GB）
     n = max(1, min(gpus * per_gpu, len(lines)))
+    # 暖機：先單獨載入一次，讓輔助模型（w2v-bert、codec、BigVGAN…）下載完成，避免多個程序同時下載互相踩壞
+    warm = subprocess.run(["uv", "run", "--python", "3.11", "python", "-c",
+                           "import sys; sys.path.insert(0, '.'); from indextts.infer_v2_5 import IndexTTS2; "
+                           "IndexTTS2(cfg_path='checkpoints/config.yaml', model_dir='checkpoints'); print('WARM OK')"],
+                          cwd=REPO, capture_output=True, text=True, env=dict(env, CUDA_VISIBLE_DEVICES="0"))
+    log("暖機", "成功" if "WARM OK" in warm.stdout else f"失敗：{warm.stderr[-800:]}")
     procs = []
     for i in range(n):
         e = dict(env, CUDA_VISIBLE_DEVICES=str(i % gpus))
