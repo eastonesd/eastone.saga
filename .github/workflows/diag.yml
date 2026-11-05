@@ -9,7 +9,7 @@ permissions:
 jobs:
   diag:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,6 +31,25 @@ jobs:
                       print("OK ", p.name, m, llm._extract_json(p.call(m, '回傳 JSON：{"ok": true, "說": "你好"}', 0.2)))
                   except Exception as e:
                       print("ERR", p.name, m, str(e)[:200])
+          EOF
+
+      - name: Modal 配音測試
+        env:
+          MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+          MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+        run: |
+          sudo apt-get install -y -qq ffmpeg > /dev/null
+          python - <<'EOF'
+          import time
+          from pathlib import Path
+          from saga import modal_tts, tts
+          lines = [{"key": f"t{i}", "voice": v, "text": t, "emo": tts.EMO[e]} for i, (v, t, e) in enumerate([
+              ("m11", "五年了，我回來了。", "calm"), ("m09", "你以為你掌控了一切？", "angry"),
+              ("f07", "陳先生，一切都準備好了。", "calm"), ("f01", "這不可能！", "surprised"),
+              ("m07", "沒有人知道，他手上握著什麼。", "calm")] * 4)]
+          t = time.time()
+          got = modal_tts.synthesize(lines, {v: tts.VOICE_DIR / f"{v}.wav" for v in {l["voice"] for l in lines}}, Path("/tmp/modal_test"))
+          print(f"MODAL RESULT {len(got)}/{len(lines)} in {time.time() - t:.0f}s")
           EOF
 
       - name: Kaggle 日誌
