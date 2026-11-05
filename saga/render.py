@@ -17,6 +17,7 @@ from . import paths
 KERNEL_TEMPLATE = Path(__file__).with_name("kaggle_kernel.py")
 VIDEO_MODEL = os.environ.get("SAGA_VIDEO_MODEL", "Wan-AI/Wan2.2-TI2V-5B-Diffusers")
 KERNEL_SLUG = os.environ.get("SAGA_KERNEL_SLUG", "saga-render")
+REPO_RAW = f"https://raw.githubusercontent.com/{os.environ.get('GITHUB_REPOSITORY', 'eastonesd/saga.ai')}/main"
 ACCELERATOR = os.environ.get("SAGA_ACCELERATOR", "NvidiaTeslaT4")  # Kaggle 的 T4 ×2
 
 CAMERA = {
@@ -90,7 +91,9 @@ def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
             "seed": c["seed"],
             "ref_prompt": f"{style_of(bible)['ref']}, single person, head and shoulders, facing camera, "
                           f"{_short(c['appearance'], 24)}, neutral background",
-            "ref_b64": base64.b64encode(ref.read_bytes()).decode() if ref.exists() else None,
+            # 定妝照改由 Kaggle 從公開 repo 下載（嵌進程式碼會超過 Kaggle 約 1MB 的上限）
+            "ref_url": f"{REPO_RAW}/series/{slug}/refs/{c['id']}.jpg" if ref.exists() else None,
+            "ref_b64": None,
         })
     shots, video_shots = [], []
     for ep in eps:
@@ -235,7 +238,7 @@ def _run_mock(job: dict, out: Path) -> dict:
     font = ImageFont.truetype(font_path, 34) if font_path else ImageFont.load_default()
     manifest = {"job_id": job["job_id"], "refs": [], "images": [], "videos": [], "errors": [], "partial": False}
     for c in job["characters"]:
-        if not c["ref_b64"]:
+        if not (c["ref_b64"] or c.get("ref_url")):
             img = Image.new("RGB", (448, 576), (60 + c["seed"] % 120, 80, 140))
             ImageDraw.Draw(img).text((20, 260), c["id"], fill="white", font=font)
             name = f"ref_{c['id']}.jpg"

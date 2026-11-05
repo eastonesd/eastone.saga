@@ -29,6 +29,7 @@ jobs:
       - name: 檢查是否已企劃過
         id: check
         run: |
+          git pull -q origin main   # 同一個 Issue 會同時觸發兩次（開立＋貼標籤）；以最新內容判斷是否已企劃
           if [ -f "series/$SLUG/bible.json" ]; then echo "done=true" >> "$GITHUB_OUTPUT"; fi
 
       - uses: actions/setup-python@v5
@@ -60,13 +61,7 @@ jobs:
 
       - name: 存進 repo
         if: steps.check.outputs.done != 'true'
-        run: |
-          git config user.name "saga-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add series
-          git commit -m "企劃 $SLUG：劇本聖經與大綱（#${{ github.event.issue.number }}）"
-          git pull --rebase
-          git push
+        run: scripts/commit.sh "企劃 $SLUG：劇本聖經與大綱（#${{ github.event.issue.number }}）"
 
       - name: 回報結果
         if: steps.check.outputs.done != 'true'
@@ -90,11 +85,7 @@ jobs:
       - name: 存分鏡並回報
         if: always() && steps.check.outputs.done != 'true'
         run: |
-          git add series
-          if ! git diff --cached --quiet; then
-            git commit -m "$SLUG：全劇分鏡劇本"
-            git pull --rebase && git push
-          fi
+          scripts/commit.sh "$SLUG：全劇分鏡劇本"
           N=$(ls series/$SLUG/episodes 2>/dev/null | wc -l)
           TOTAL=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['episode_count'])" 2>/dev/null || echo 0)
           [ "$TOTAL" != "0" ] && gh issue comment ${{ github.event.issue.number }} --body "📝 分鏡劇本 $N／$TOTAL 集已就緒。留言 \`/produce all\` 開始全自動生產。"

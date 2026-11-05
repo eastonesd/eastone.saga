@@ -124,9 +124,14 @@ jobs:
           echo "已完成：${SKIP:-無}"
 
       - name: 安裝
+        timeout-minutes: 12
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg > /dev/null
+          # 套件伺服器偶爾卡住：每次最多等 4 分鐘，失敗重試 3 次
+          for i in 1 2 3; do
+            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg > /dev/null && break
+            echo "apt 第 $i 次失敗，重試…"; sleep 10
+          done
+          command -v ffmpeg
 
       - uses: actions/setup-python@v5
         with:
@@ -206,14 +211,7 @@ jobs:
 
       - name: 存劇本與定妝照
         if: always() && steps.args.outputs.slug != ''
-        run: |
-          git config user.name "saga-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add series
-          if ! git diff --cached --quiet; then
-            git commit -m "生產 ${{ steps.args.outputs.slug }}：分鏡與定妝照"
-            git pull --rebase && git push
-          fi
+        run: scripts/commit.sh "生產 ${{ steps.args.outputs.slug }}：分鏡與定妝照"
 
       - name: 準備 Release
         if: steps.run.outputs.batch != '[]' && steps.run.outputs.batch != ''
@@ -246,9 +244,14 @@ jobs:
         with:
           ref: main
       - name: 安裝 FFmpeg 與中文字型
+        timeout-minutes: 12
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk > /dev/null
+          # 套件伺服器偶爾卡住：每次最多等 4 分鐘，失敗重試 3 次
+          for i in 1 2 3; do
+            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg fonts-noto-cjk > /dev/null && break
+            echo "apt 第 $i 次失敗，重試…"; sleep 10
+          done
+          command -v ffmpeg
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

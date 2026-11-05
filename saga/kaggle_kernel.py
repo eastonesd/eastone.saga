@@ -63,7 +63,7 @@ if mode == "refs":
         pipe.load_lora_weights(st["repo"], weight_name=st["file"], adapter_name="style")
         pipe.set_adapters(["style"], adapter_weights=[st.get("scale", 0.8)])
     for c in JOB["characters"]:
-        if c.get("ref_b64"):
+        if c.get("ref_b64") or c.get("ref_url"):
             continue
         img = pipe(prompt=c["ref_prompt"], width=896, height=1152,
                    generator=torch.Generator("cuda").manual_seed(c["seed"]), **KW).images[0]
@@ -201,10 +201,19 @@ def wait_all(*procs):
 
 # ── 2. 角色定妝照（只做還沒有的） ─────────────────────────
 for c in JOB["characters"]:
-    if c.get("ref_b64"):
+    if c.get("ref_url"):
+        try:
+            import urllib.request
+            urllib.request.urlretrieve(c["ref_url"], f"{OUT}/ref_{c['id']}.jpg")
+        except Exception as e:  # 下載失敗 → 當作沒有定妝照，現場重做
+            log("⚠ 定妝照下載失敗，重做：", c["id"], e)
+            c["ref_url"] = None
+    elif c.get("ref_b64"):
         with open(f"{OUT}/ref_{c['id']}.jpg", "wb") as f:
             f.write(base64.b64decode(c["ref_b64"]))
-if any(not c.get("ref_b64") for c in JOB["characters"]):
+with open(JOB_PATH, "w", encoding="utf-8") as f:  # 子程序讀的是這份，同步更新
+    json.dump(JOB, f, ensure_ascii=False)
+if any(not (c.get("ref_b64") or c.get("ref_url")) for c in JOB["characters"]):
     wait_all(run("refs"))
 
 # ── 3. 分鏡圖：每張 GPU 各分一半 ───────────────────────────
@@ -225,7 +234,7 @@ videos = sorted(os.path.basename(p) for p in glob.glob(f"{OUT}/ep*_s*.mp4"))
 wanted = {s["key"] for s in JOB["shots"]}
 manifest = {
     "job_id": JOB["job_id"],
-    "refs": [f"ref_{c['id']}.jpg" for c in JOB["characters"] if not c.get("ref_b64")
+    "refs": [f"ref_{c['id']}.jpg" for c in JOB["characters"] if not (c.get("ref_b64") or c.get("ref_url"))
              and os.path.exists(f"{OUT}/ref_{c['id']}.jpg")],
     "images": images,
     "videos": videos,

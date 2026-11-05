@@ -150,7 +150,7 @@ def _get_providers() -> list:
             if os.environ.get("GROQ_API_KEY"):
                 providers.append(OpenAICompat(
                     "Groq", "https://api.groq.com/openai/v1", os.environ["GROQ_API_KEY"],
-                    prefer=[r"qwen", r"kimi", r"gpt-oss-120b", r"deepseek", r"llama-4", r"llama-3\.3-70b", r"gpt-oss"]))
+                    prefer=[r"gpt-oss-120b", r"kimi", r"deepseek", r"llama-4", r"llama-3\.3-70b", r"qwen"]))
             if os.environ.get("OPENROUTER_API_KEY"):
                 providers.append(OpenAICompat(
                     "OpenRouter", "https://openrouter.ai/api/v1", os.environ["OPENROUTER_API_KEY"],

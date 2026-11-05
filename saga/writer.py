@@ -89,11 +89,21 @@ def write_episode(slug: str, ep: int, *, mock: bool = False, force: bool = False
     bible = paths.read_json(paths.bible_path(slug))
     outline = paths.read_json(paths.outline_path(slug))
     print(f"▶ 分鏡劇本：第 {ep} 集", flush=True)
-    raw = generate_json(prompts.episode_prompt(bible, outline, ep, bible["episode_seconds"]),
-                        kind="episode", mock=mock, context={"ep": ep})
-    data = _normalize_episode(raw, bible, ep)
-    paths.write_json(path, data)
-    return data
+    prompt = prompts.episode_prompt(bible, outline, ep, bible["episode_seconds"])
+    need = max(10, int(bible["episode_seconds"] / 2.4 * 0.65))  # 鏡頭數太少＝整集太短，重寫
+    best = None
+    for attempt in range(3):
+        raw = generate_json(prompt, kind="episode", mock=mock, context={"ep": ep})
+        data = _normalize_episode(raw, bible, ep)
+        if best is None or len(data["shots"]) > len(best["shots"]):
+            best = data
+        if mock or len(data["shots"]) >= need:
+            break
+        print(f"  … 第 {ep} 集只有 {len(data['shots'])} 個鏡頭（至少要 {need}），重寫", flush=True)
+        prompt += (f"\n\n【重要】上一版只寫了 {len(data['shots'])} 個鏡頭，太短了。"
+                   f"這一集至少要 {need + 4} 個鏡頭，每個鏡頭 2～3 秒，請把劇情拆細。")
+    paths.write_json(path, best)
+    return best
 
 
 def write_episodes(slug: str, eps: list[int], *, mock: bool = False, force: bool = False,

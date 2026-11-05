@@ -151,7 +151,7 @@ def cmd_stylebench(a) -> None:
     finally:
         paths.write_json(paths.bible_path(a.slug), original)
     for c in job["characters"]:
-        c["ref_b64"] = None  # 依新畫風重做定妝照
+        c["ref_b64"] = c["ref_url"] = None  # 依新畫風重做定妝照
     ep = paths.read_json(paths.episode_path(a.slug, 1))
     picks = [s for s in ep["shots"] if s["characters"]][: a.n]
     duo = next((s for s in ep["shots"] if len(s["characters"]) >= 2), None)
