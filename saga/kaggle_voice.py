@@ -47,7 +47,7 @@ if not os.path.exists(REPO):
     sh(["git", "clone", "--depth", "1", "https://github.com/index-tts/index-tts.git", REPO])
 sh("uv python install 3.11 -q", cwd=REPO)
 sh("uv sync --python 3.11 -q", cwd=REPO, env=dict(os.environ, UV_LINK_MODE="copy"))
-from huggingface_hub import hf_hub_download, snapshot_download  # noqa: E402
+from huggingface_hub import HfApi, hf_hub_download, snapshot_download  # noqa: E402
 
 snapshot_download("IndexTeam/IndexTTS-2.5", local_dir=f"{REPO}/checkpoints", max_workers=16)
 log("IndexTTS 安裝完成")
@@ -59,15 +59,13 @@ for vid, v in JOB["voices"].items():
     spk = v["speaker"]
     parts = []
     for split in ("train", "test"):
-        for n in range(1, 40):
-            if len(parts) >= 3:
-                break
-            name = f"{split}/wav/{spk}/{spk}{n:04d}.wav"
-            try:
-                parts.append(hf_hub_download("AISHELL/AISHELL-3", name, repo_type="dataset", local_dir="/kaggle/temp/aishell"))
-            except Exception:
-                if n > 3:
-                    break
+        try:
+            files = sorted(f.path for f in HfApi().list_repo_tree("AISHELL/AISHELL-3", path_in_repo=f"{split}/wav/{spk}",
+                                                                 repo_type="dataset") if f.path.endswith(".wav"))
+        except Exception:
+            continue
+        for name in files[:3]:
+            parts.append(hf_hub_download("AISHELL/AISHELL-3", name, repo_type="dataset", local_dir="/kaggle/temp/aishell"))
         if parts:
             break
     if not parts:
@@ -119,8 +117,9 @@ print(f"DONE {n} lines in {time.time() - t0:.0f}s", flush=True)
 with open(f"{REPO}/saga_run.py", "w", encoding="utf-8") as f:
     f.write(RUNNER)
 try:
+    env = {k: v for k, v in os.environ.items() if k != "HF_HUB_ENABLE_HF_TRANSFER"}  # uv 環境沒裝 hf_transfer
     p = subprocess.run(["uv", "run", "--python", "3.11", "python", "saga_run.py"], cwd=REPO,
-                       capture_output=True, text=True)
+                       capture_output=True, text=True, env=env)
     print(p.stdout[-20000:], p.stderr[-8000:], flush=True)
     for line in p.stdout.splitlines():
         if line.startswith("OK "):

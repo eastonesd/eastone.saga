@@ -110,6 +110,8 @@ def voicebench(out_dir: Path) -> Path:
                         "-preset", "veryfast", "-tune", "stillimage", "-pix_fmt", "yuv420p",
                         "-c:a", "aac", "-b:a", "160k", str(seg)], check=True)
         segs.append(seg)
+    if not segs:
+        raise RuntimeError("沒有任何聲線合成成功，請看上方 Kaggle 錯誤")
     lst = seg_dir / "list.txt"
     lst.write_text("".join(f"file '{s.name}'\n" for s in segs), encoding="utf-8")
     out = out_dir / "voicebench.mp4"
