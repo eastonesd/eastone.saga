@@ -1,0 +1,434 @@
+{
+  "ep": 12,
+  "title": "空手接箭，反殺刺客",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A sharp arrow flies at high speed towards the center of the frame, aiming right between the eyes.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Hand suddenly enters the frame, catching the arrow shaft just inches away from the forehead.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "就這點本事，也敢來行刺？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing to the side, eyes wide with absolute shock, fan stopping mid-air.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公！您的身手何時……",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Turning with a sharp gaze, throwing the arrow back with immense force towards a wooden screen.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "還給你！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The arrow pierces the screen; blood splatters onto the silk surface.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Walking slowly toward the screen, face cold and devoid of mercy.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "成都城內，竟藏著魏國老鼠。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Approaching quickly, looking concerned but trying to regain composure.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這刺客恐怕還有同謀。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Glares at the dead assassin, then looks toward the palace gates.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令下去，封鎖全城！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Screaming the order with authority that shakes the room.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "一隻蒼蠅也別放過！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Soldiers in black armor marching rapidly through the streets of Chengdu.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "皇叔一怒，滿城皆驚。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Kicking open a door of a hidden warehouse, sword drawn.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "全部拿下，反抗者死！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A spy tries to swallow poison, but is punched in the jaw by Liu Bei.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "想死？沒那麼容易！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sheathing his sword while soldiers drag out several bound men.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "搜！挖地三尺也要找出名單。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Inspecting a hidden compartment in the wall, pulling out a small wooden box.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這裡有發現。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Taking the box from the strategist, opening it with a look of anticipation.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A silk letter is revealed inside, written in blood and ink.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "果然有內鬼……",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking at the letter over his shoulder, his eyes narrowing.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "竟然連他們也背叛了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Crushing the letter in his fist, his knuckles turning white.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "拿著我的俸祿，通魏叛蜀。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A dark, chilling smile spreads across his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這成都的血，看來還不夠多。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Returning to the empty throne room at night, moonlight casting long shadows.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "重生歸來，絕不容忍背叛。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Holding the letter under a candle, the flame illuminates a red seal at the bottom.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這家徽……真眼熟啊。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing in the dark corner, watching the King's transformation with awe and fear.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，您打算如何處置？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Eyes flashing with murderous intent.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "明日早朝，我要殺人。",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s24",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extinguishing the candle with his fingers, the frame goes black.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "殺到他們……膽寒為止！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of the red seal on the letter: It belongs to the most senior court official.",
+      "lines": [],
+      "key": true
+    }
+  ]
+}
