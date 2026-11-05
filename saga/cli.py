@@ -102,6 +102,12 @@ def cmd_produce(a) -> None:
     if "error" in result:
         raise result["error"]
     manifest = result["manifest"]
+    if a.no_assemble:  # 剪輯交給平行的 matrix 工作
+        ok = [e for e in batch if (paths.build_ep_dir(a.slug, e) / "audio" / "timing.json").exists()]
+        print(f"▶ 算圖與配音完成，交給平行剪輯：{ok}", flush=True)
+        _write_status(a, batch=ok, done=[], remaining=[e for e in todo if e not in ok],
+                      partial=bool(manifest.get("partial")), timing=stamp)
+        return
 
     def assemble(ep):
         try:
@@ -234,6 +240,12 @@ def main(argv=None) -> None:
     pr.add_argument("--video", action="store_true", help="關鍵鏡頭做成真影片（實驗性）")
     pr.add_argument("--rewrite", action="store_true", help="重寫已存在的分鏡劇本")
     pr.add_argument("--redo", action="store_true", help="重做畫面與配音，沿用現有劇本")
+    pr.add_argument("--no-assemble", action="store_true", help="只做到算圖與配音，剪輯另外平行跑")
+
+    pa = sub.add_parser("assemble", help="剪輯單集（素材需已就緒）")
+    pa.add_argument("--slug", required=True)
+    pa.add_argument("--ep", type=int, required=True)
+    pa.set_defaults(fn=lambda a: __import__("saga.assemble", fromlist=["x"]).assemble_episode(a.slug, a.ep))
     pr.add_argument("--mock", action="store_true")
     pr.set_defaults(fn=cmd_produce)
 

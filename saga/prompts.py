@@ -39,7 +39,9 @@ BIBLE_SCHEMA = {
             "role": "主角/反派/配角",
             "age": 25,
             "gender": "female/male",
+            "key_features": "英文，10 個字以內，最能辨識此角色的特徵，性別放最前面，例如 'young man, silver hair, black-rimmed glasses, white tuxedo'",
             "appearance": "英文外觀標籤：年齡、性別、髮型髮色、五官、固定服裝。要非常具體且固定，確保每集一致",
+            "tagline": "登場名牌上的身分說明，繁中 8 字內，例如「趙氏集團總裁」",
             "personality": "性格（中文）",
             "voice": "從可用聲線挑一個 key",
         }
@@ -129,7 +131,7 @@ def episode_prompt(bible: dict, outline: dict, ep: int, seconds: int) -> str:
     cur = eps[ep]
     prev = eps.get(ep - 1)
     nxt = eps.get(ep + 1)
-    shots_hint = max(12, round(seconds / 2.6))
+    shots_hint = max(14, round(seconds / 2.4))
     return f"""你是短劇分鏡編劇。把第 {ep} 集寫成可直接生產的分鏡劇本。
 
 【劇本聖經】
@@ -144,7 +146,9 @@ def episode_prompt(bible: dict, outline: dict, ep: int, seconds: int) -> str:
 {DRAMA_RULES}
 
 【分鏡要求】
-- 約 {shots_hint} 個鏡頭，總長約 {seconds} 秒；每個鏡頭 0～2 句台詞。
+- 約 {shots_hint} 個鏡頭，總長約 {seconds} 秒；節奏要快，平均 2～3 秒切一個鏡頭。
+- 每個鏡頭最多 1 句台詞，每句不超過 14 個字；長台詞拆成多個鏡頭（例如說話者特寫 → 聽者反應）。
+- 以單人鏡頭為主；同框最多 2 人，且 characters 第一個人站畫面左邊、第二個站右邊。
 - 第 1 個鏡頭就是鉤子；最後 1 個鏡頭是懸念定格。
 - 用特寫表現情緒、中景表現對話、遠景交代場景，交替使用。
 - 挑 3～5 個最有張力的鏡頭標記 "key": true（之後會做成真影片）。
