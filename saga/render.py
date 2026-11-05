@@ -60,9 +60,9 @@ def shot_prompt(shot: dict, bible: dict) -> str:
     ids = [c for c in shot["characters"] if c in chars]
     look = lambda c, n: _short(chars[c].get("key_features") or chars[c]["appearance"], n)  # noqa: E731
     if len(ids) >= 2:  # 雙人：明確左右站位，避免兩人特徵混在一起
-        who = f"only two people, on the left {look(ids[0], 11)}, on the right {look(ids[1], 11)}"
+        who = f"exactly two people, on the left {look(ids[0], 11)}, on the right {look(ids[1], 11)}"
     elif ids:
-        who = f"single person, {look(ids[0], 18)}"
+        who = f"solo, one person only, {look(ids[0], 17)}"
     else:
         who = ""
     parts = [
