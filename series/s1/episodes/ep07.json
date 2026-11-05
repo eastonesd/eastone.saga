@@ -1,0 +1,425 @@
+{
+  "ep": 7,
+  "title": "單槍匹馬",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "A heavy rusty iron door is kicked violently open with sparks flying. A stern man in a dark jacket steps through dust and smoke under harsh dramatic lighting.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A sharp-suited villain holding a wine glass flinches in surprise as dust settles around him.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "什麼人？！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A capable woman tied firmly to a metal chair with thick ropes, bruised cheek, looking up with wide, shocked eyes.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close up of a man's face, dark cold eyes filled with intense murderous intent, stepping forward slowly.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，放了她。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The villain bursts into a sinister laugh, throwing his glass to the floor where it shatters into pieces.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰！你還真敢一個人來送死！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "A dozen armed thugs wearing leather jackets emerge from the gloom, surrounding the solitary hero.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The villain points aggressively forward with a cruel, ruthless smirk.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "給我廢了他！留一口氣就行！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Fast action sequence: the protagonist dodges a heavy swinging pipe, grabs the attacker's wrist, and twists it backward forcefully.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close up of an attacker screaming in agony as his weapon drops onto the dusty concrete ground.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Low angle shot: the protagonist executes a powerful spin kick, sending two guards flying backwards into wooden crates.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The villain's arrogant expression instantly vanishes, replaced by utter shock and rage.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "一群廢物！一起上啊！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "A massive, muscular lead henchman charges forward holding a heavy iron club with both hands.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist ducks under the crushing blow effortlessly, closing the distance into the brute's chest.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "High-impact close up: the protagonist kicks fiercely into the brute's knee joint, snapping it backward.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s15",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The giant henchman collapses groaning in agony, as the protagonist steps over him without looking back.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "就憑這群雜碎，也想擋我？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The tied woman watches in awe and relief as the remaining guards back away in terror.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng",
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist crouches down, draws a sharp blade, and slices through the ropes holding the woman.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman tears off tape from her face, catching her breath while looking anxiously past the hero.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "陳總！別管我，小心趙天豪！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The villain frantically draws a dark handgun from his suit jacket, hands trembling slightly.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close up of the villain aiming the barrel forward with madness and desperation.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "去死吧，陳峰！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng",
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "In a split second, the protagonist lunges, grabs the handgun barrel, and wrenches it out of the villain's hand.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The villain's wrist is twisted back violently, his mouth open wide in a silent scream of pain.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng",
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Tense showdown: the protagonist slams the villain hard against a concrete pillar, pressing the gun muzzle straight onto his forehead.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s24",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Cold sweat drips down the villain's face as he trembles violently with frantic fear.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "別……陳峰！冷靜！有話好說！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist's face remains totally calm and deadly, his finger beginning to pull the trigger.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "血債，必須用血來償。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "underground_dungeon",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The woman stands near the pillar, watching the fatal standoff with held breath.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The villain grimaces hysterically, eyes bulging with desperate menace.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "你殺了我，你也別想活著離開！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s28",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close up of the handgun's hammer cocking all the way back, a millisecond from firing.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s29",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "View from high catwalk shadows overlooking the scene, a silenced rifle barrel glinting in the dark.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng",
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A loud gunshot shatters the room. A sniper bullet detonates the concrete wall right beside the protagonist's head, dust exploding out into a frozen suspenseful frame.",
+      "lines": [],
+      "key": true
+    }
+  ]
+}

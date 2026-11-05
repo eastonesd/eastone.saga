@@ -1,0 +1,591 @@
+{
+  "ep": 9,
+  "title": "大反轉：絕地反殺",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A sweaty thumb presses a red button on a black remote control with trembling force.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "跟我一起下地獄吧！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao",
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Total silence in the room. The luxury furniture remains intact. No explosion occurs.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Maniacal expression turns into confusion, eyes widening as he looks at the remote.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "怎麼可能？這不可能！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing calmly with hands behind back, looking down at the antagonist with pure disdain.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你在等煙火秀嗎？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A cold, razor-sharp smile appears on his face. Cinematic lighting highlights his eyes.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這遙控器，五分鐘前就被替換了。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "She walks into the hall wearing a sharp suit, holding a tablet and a real remote control.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "趙總，您手裡那台只是個兒童玩具。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He frantically presses the button multiple times, his face turning pale and desperate.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "賤人！妳敢背叛我？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su",
+        "zhao_tianhao"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "She stops in front of him, looking at him like he is a piece of trash.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "我從未效忠過你，何來背叛？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Walking slowly toward the desk, picking up a glass of wine and swirling it.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "離間計用得不錯，但我弟弟死的時候，我親手葬的他。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Eyes turning icy cold, staring straight into the camera lens.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你想讓他背鍋？他也配？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Stepping back, tripping over a rug and falling onto the leather sofa.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "就算炸彈是假的，當年的證據也是真的！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She taps the tablet screen. A hologram or screen glow reflects on her face.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "你是說那些偽造的銀行流水嗎？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao",
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A video starts playing on the wall-mounted TV showing the antagonist signing documents.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "這才是五年前，你一手遮天的原始錄音。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "zhao_mansion",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The video plays a grainy CCTV of the antagonist laughing while framing the protagonist's family.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "我要陳家所有人都跪在我腳下求死。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "His face turns from pale to gray, jaw twitching in shock.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "你……你怎麼拿到的？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He walks up and grabs the antagonist by the collar, lifting him partially up.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "在獄中五年，我每天都在想這一天。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng",
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He whispers into the antagonist's ear, voice low and dangerous.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，你最後的底牌爛透了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "She hides behind a pillar, trembling, her face full of terror and regret.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "哥……我們完了，全完了。"
+        }
+      ],
+      "key": false,
+      "location": "prison_gate"
+    },
+    {
+      "id": "s19",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He pushes the protagonist away weakly and tries to run toward the door.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "滾開！我還有龍騰集團！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She shows a digital stock market graph on her phone; the line is crashing vertically.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "剛接到消息，龍騰集團已經破產清算了。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "He stops dead in his tracks, looking around the hall as if seeing it for the last time.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "破產？這是我一輩子的心血！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He throws a file onto the coffee table with a loud bang.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你的心血，是用我全家的血換來的。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He collapses to his knees, staring at the documents on the floor.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "求你……留一條活路給趙家。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking down with an expression of pure, cold justice.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "當初我求你的時候，你有給我活路嗎？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He starts laughing hysterically, a sound of total mental collapse.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "哈哈哈哈！大家都別想好過！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "He lunges toward a hidden panel behind a painting on the wall.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "我還有最後一招！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "zhao_mansion",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "She raises an eyebrow, completely unfazed by his erratic behavior.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "想啟動地下室的毒氣裝置？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s28",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He checks his luxury watch with a calm, methodical gesture.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你已經沒有時間了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s29",
+      "location": "zhao_mansion",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Suddenly, faint siren sounds start growing louder from outside the mansion.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He freezes, his hand touching the hidden panel, face filled with pure panic.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "警察？你竟然報警了？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He adjusts his cuffs, looking ready to leave the scene.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "我說過，要讓你合法地在地獄待一輩子。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s32",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "She runs out and tries to grab the protagonist's leg, crying hysterically.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "陳峰！放過我，我都是被逼的！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s33",
+      "location": "zhao_mansion",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "He kicks her hand away without even looking down.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "妳的髒手，別碰我的衣服。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s34",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The room is flooded with red and blue emergency lights reflecting through the windows.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "我不服！我絕不認輸！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s35",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He suddenly pulls a hidden lever. A loud mechanical sound vibrates through the mansion floor.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "那就全城陪葬吧！"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

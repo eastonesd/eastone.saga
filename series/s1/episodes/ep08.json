@@ -1,0 +1,556 @@
+{
+  "ep": 8,
+  "title": "局中之局",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A bullet sparks against a metal pillar inches from his face, debris flying across his cheek.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Holding a blood-stained folder, laughing maniacally with a twisted expression of triumph.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "你以為你掌控了一切？你不過是個可憐蟲！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Eyes narrowing, breathing heavily, gun still aimed but body tense in cover.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "少廢話，今天誰也救不了你。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Throwing the folder onto a table, the documents scattering everywhere.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "看看這些！當年害你入獄的主謀，是你親弟弟！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Pupils dilating in shock, the reflection of the documents visible in his eyes.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "不可能……他在五年前就失蹤了！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Leaning forward, his face obscured by shadows, whispering like a demon.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "是他親手把罪證交給我，換取了去海外的機票。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "black_gold_club",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Clutching her wounded arm, looking at the documents on the floor with doubt.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "陳總，別聽他的！他在動搖你的心智！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Smirking, pointing at a signature on one of the papers.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "這筆跡，你應該比我更熟悉吧？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "Memories flash by in a blur, sweating, the gun hand slightly trembling.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "為了錢……他竟然連親哥哥都賣？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Spreading arms wide, the silhouette of a sniper visible through the window behind him.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "親情在利益面前，一文不值！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Suddenly regaining focus, his expression turning cold and sharp again.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "不，你在撒謊。我弟弟根本不抽菸。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Pointing at a yellow stain on the document page with his boot.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這份文件上有尼古丁的味道，是你偽造的！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "His smile freezing, facial muscles twitching in anger.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "死到臨頭，還在嘴硬！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "black_gold_club",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Pulling out a small tablet, data scrolling rapidly on screen.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "陳總，我查到了，狙擊手在三點鐘方向！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Diving behind a heavy wooden table as another shot shatters the glass above him.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing up, kicking a chair away, looking desperate.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "你以為發現真相就能活著出去？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Checking his magazine, only three bullets left. A grim smile appears.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "殺你，一顆子彈就夠了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Backing away slowly toward a hidden compartment in the wall.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰，你太小看趙家的底蘊了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "black_gold_club",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking around the room, noticing red blinking lights under the floorboards.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "陳總！這地方埋了炸藥！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s20",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The entire room is revealed to be a death trap, sensors glowing in the dark corners.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Pulling out a small, black remote with a single red button.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "既然我得不到，那就全部毀掉！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Veins popping on his forehead, aiming the gun with absolute precision.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "放下它，你還有機會坐牢。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sweat dripping down his nose, eyes wide and bloodshot.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "坐牢？我寧願拉你一起下地獄！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "black_gold_club",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Struggling to stand, reaching for a tactical knife on her belt.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "快阻止他！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The sniper's laser dot moves onto Chen Feng's heart.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Lifting the remote high in the air, thumb hovering over the trigger.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰，永別了！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A look of sudden calm, as if he expected this move all along.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你真的以為，我是一個人來的？"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s28",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A moment of confusion crosses his face before turning back to rage.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "故弄玄虛！去死吧！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s29",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Slow motion: His thumb begins to press down on the red button.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s30",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sprinting toward Zhao Tianhao, ignoring the sniper threat.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "black_gold_club",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Closing her eyes, bracing for the impact of the explosion.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s32",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The button is fully depressed. A mechanical 'click' sound is heard.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s33",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A tense silence hangs in the air. No explosion occurs.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "怎麼可能……為什麼沒炸！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s34",
+      "location": "black_gold_club",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Now standing directly in front of Zhao, his shadow looming over him.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "因為這份大禮，我五分鐘前就收下了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s35",
+      "location": "black_gold_club",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "His face pale as a ghost, staring at the useless remote in horror as the screen fades to black.",
+      "lines": [],
+      "key": true
+    }
+  ]
+}

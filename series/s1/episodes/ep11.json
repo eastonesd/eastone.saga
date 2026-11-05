@@ -1,0 +1,553 @@
+{
+  "ep": 11,
+  "title": "血債血償：終極審判",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao",
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A trembling finger hovering over a red button on a high-tech detonator, flickering light reflecting on the metal.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "誰過來，我就讓全城陪葬！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao",
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhao points a handgun directly at Lin Su's head, wind whipping his hair, eyes bloodshot and crazed.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "林素，妳這叛徒，先拿妳祭旗！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Chen Feng walks slowly out of the shadows on the rooftop, his expression cold and devoid of fear.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "趙天豪，你的對手是我。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao",
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Extreme wide shot of the skyscraper rooftop at night, flashing red police lights from below illuminating the scene.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhao screams hysterically, his face distorted with sweat and rain.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "陳峰！這五年你為什麼沒死在牢裡！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Chen Feng's eyes narrow, showing a brief flash of the hell he endured.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "因為老天要我回來，親手送你下地獄。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Lin Su subtly reaches for a small metallic device on her belt while Zhao is distracted.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhao waves the gun wildly, losing his grip on reality.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "趙氏是我的！龍騰也是我的！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng takes another step forward, closing the distance.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "你現在除了一條賤命，什麼都沒了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhao's thumb presses down on the button.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "那大家就一起死吧！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Lin Su activates the EMP device, a blue wave of energy ripples through the air.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "做夢！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The lights on the gas device flicker and die. No explosion occurs.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhao stares at the dead device in disbelief, clicking the button repeatedly.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "不……不可能！響啊！給我響啊！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng lunges forward with explosive speed.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng",
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng grabs Zhao's wrist and snaps it upward, the gun falling off the roof edge.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhao screams in agony as his arm is broken.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng delivers a heavy knee to Zhao's stomach, then a punch to his jaw.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhao falls to the floor, coughing up blood, crawling backward towards the edge.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Chen Feng stands over Zhao, looking down with absolute disdain.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這一拳，是替我枉死的兄弟打的。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Chen Feng steps on Zhao's other hand, crushing it.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這一腳，是為了我這五年受的罪。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhao is now completely broken, weeping and begging.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "求求你……陳峰，我把錢都給你……"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s22",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng leans in close to Zhao's ear.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "我不想要你的錢，我只要你生不如死。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s23",
+      "location": "longteng_office",
+      "characters": [
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Lin Su looks at her watch as police sirens get louder and brighter.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "峰哥，警察上來了。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s24",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng hands a USB drive to the police commander who just entered the frame.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這裡是他所有的罪證，一個都跑不掉。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s25",
+      "location": "longteng_office",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Zhao is dragged away by multiple police officers, shouting incoherently.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "放開我！我是趙天豪！你們不能抓我！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s26",
+      "location": "zhao_mansion",
+      "characters": [
+        "zhao_meiling"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhao Meiling is watching the news in her mansion, her face pale as police burst into her room.",
+      "lines": [
+        {
+          "speaker": "zhao_meiling",
+          "text": "不！這些事與我無關！"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s27",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Zhao is thrown into a dark, cold iron cell, identical to the one Chen Feng was in.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s28",
+      "location": "underground_dungeon",
+      "characters": [
+        "zhao_tianhao"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhao grips the bars, his eyes filled with absolute despair and madness.",
+      "lines": [
+        {
+          "speaker": "zhao_tianhao",
+          "text": "放我出去！放我出去啊！"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s29",
+      "location": "underground_dungeon",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Chen Feng stands outside the bars, looking at Zhao one last time.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "慢慢享受這餘下的五十年吧。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s30",
+      "location": "prison_gate",
+      "characters": [
+        "chen_feng",
+        "lin_su"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Chen Feng walks out of the prison complex, Lin Su waiting by a black car.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s31",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng",
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng and Lin Su stand on the balcony of the CEO office, overlooking the sunrise.",
+      "lines": [
+        {
+          "speaker": "lin_su",
+          "text": "趙家徹底倒了，現在全城都在談論你。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s32",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Chen Feng gazes at the horizon, the darkness in his eyes slowly replaced by a cold light.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "這不是結束。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s33",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng",
+        "lin_su"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Chen Feng turns to Lin Su, a faint, dangerous smile on his lips.",
+      "lines": [
+        {
+          "speaker": "chen_feng",
+          "text": "是新秩序的開始。"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s34",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "The camera pulls back quickly, showing Chen Feng standing at the very peak of the city.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "血債已償，王座易主。"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s35",
+      "location": "longteng_office",
+      "characters": [
+        "chen_feng"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of Chen Feng's eyes. They are sharp, cold, and dominant. Freeze frame.",
+      "lines": [],
+      "key": false
+    }
+  ]
+}
