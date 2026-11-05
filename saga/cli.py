@@ -128,6 +128,52 @@ def _write_status(a, **data) -> None:
             json.dump(data, f, ensure_ascii=False)
 
 
+def cmd_stylebench(a) -> None:
+    """在 Kaggle 上用同一批鏡頭比較畫風設定，輸出對照圖 build/<slug>/stylebench.jpg"""
+    from PIL import Image, ImageDraw, ImageFont
+    from . import render
+
+    original = paths.read_json(paths.bible_path(a.slug))
+    bible = dict(original, render_style=a.style)
+    paths.write_json(paths.bible_path(a.slug), bible)  # 暫時套用，建 job 用
+    try:
+        job = render.build_job(a.slug, [], video=False)
+    finally:
+        paths.write_json(paths.bible_path(a.slug), original)
+    for c in job["characters"]:
+        c["ref_b64"] = None  # 依新畫風重做定妝照
+    ep = paths.read_json(paths.episode_path(a.slug, 1))
+    picks = [s for s in ep["shots"] if s["characters"]][: a.n]
+    duo = next((s for s in ep["shots"] if len(s["characters"]) >= 2), None)
+    if duo and duo not in picks:
+        picks[-1] = duo
+    variants = [float(x) for x in a.lora.split(",")]
+    for i, s in enumerate(picks):
+        for v in variants:
+            job["shots"].append({"key": f"ep99_b{i}v{int(v * 100):03d}", "prompt": render.shot_prompt(s, bible),
+                                 "refs": s["characters"][:2], "seed": render._shot_seed(a.slug, 1, s["id"]), "lora": v})
+    dl = paths.BUILD_DIR / a.slug / "_bench"
+    shutil.rmtree(dl, ignore_errors=True)
+    manifest = render._run_mock(job, dl) if a.mock else render._run_on_kaggle(job, dl)
+    font = ImageFont.load_default()
+    cols, tw, th = len(variants), 448, 256
+    sheet = Image.new("RGB", (cols * tw, len(picks) * th + 20 + 2 * 288), "black")
+    d = ImageDraw.Draw(sheet)
+    for j, v in enumerate(variants):
+        d.text((j * tw + 6, 4), f"style LoRA {v}", fill="white", font=font)
+    for i in range(len(picks)):
+        for j, v in enumerate(variants):
+            f = next(iter(dl.rglob(f"ep99_b{i}v{int(v * 100):03d}.png")), None)
+            if f:
+                sheet.paste(Image.open(f).resize((tw, th)), (j * tw, 20 + i * th))
+    refs = sorted(dl.rglob("ref_*.jpg"))
+    for k, f in enumerate(refs):
+        sheet.paste(Image.open(f).resize((224, 288)), ((k % (cols * 2)) * 224, 20 + len(picks) * th + (k // (cols * 2)) * 288))
+    out = paths.BUILD_DIR / a.slug / "stylebench.jpg"
+    sheet.save(out, quality=90)
+    print(f"▶ 對照圖：{out}（{len(manifest.get('images', []))} 張）")
+
+
 def cmd_scripts(a) -> None:
     from .writer import write_episodes
 
@@ -197,6 +243,14 @@ def main(argv=None) -> None:
     pw.add_argument("--workers", type=int, default=2)
     pw.add_argument("--mock", action="store_true")
     pw.set_defaults(fn=cmd_scripts)
+
+    pb = sub.add_parser("stylebench", help="比較畫風設定")
+    pb.add_argument("--slug", required=True)
+    pb.add_argument("--style", default="donghua3d")
+    pb.add_argument("--lora", default="0,0.6,0.9", help="要比較的畫風 LoRA 強度")
+    pb.add_argument("--n", type=int, default=5)
+    pb.add_argument("--mock", action="store_true")
+    pb.set_defaults(fn=cmd_stylebench)
 
     ps = sub.add_parser("summary")
     ps.add_argument("--slug", required=True)

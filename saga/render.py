@@ -32,16 +32,44 @@ def _short(text: str, words: int) -> str:
     return " ".join(str(text or "").replace("\n", " ").split()[:words]).rstrip(",")
 
 
+# 畫風預設：提示詞前綴＋（選用）畫風 LoRA。bible.render_style 指定；沒指定就依 style_choice 判斷
+STYLES = {
+    "donghua3d": {
+        "prompt": "3d chinese donghua CG animation still, semi-realistic anime, unreal engine render, cinematic lighting",
+        "ref": "3d chinese donghua CG character portrait, semi-realistic anime, detailed face",
+        "lora": {"repo": "MarkBW/2.5Dstyle-xl", "file": "2.5DRealistic.safetensors", "scale": 0.8},
+    },
+    "realistic": {
+        "prompt": "cinematic film still, realistic photo, dramatic lighting",
+        "ref": "portrait photo, realistic",
+        "lora": None,
+    },
+}
+
+
+def style_of(bible: dict) -> dict:
+    key = bible.get("render_style")
+    if key not in STYLES:
+        key = "donghua3d" if re.search(r"國漫|3D|動漫|卡通|漫", str(bible.get("style_choice", ""))) else "realistic"
+    return STYLES[key]
+
+
 def shot_prompt(shot: dict, bible: dict) -> str:
     chars = {c["id"]: c for c in bible["characters"]}
     locs = {l["id"]: l for l in bible["locations"]}
     ids = [c for c in shot["characters"] if c in chars]
+    look = lambda c, n: _short(chars[c].get("key_features") or chars[c]["appearance"], n)  # noqa: E731
+    if len(ids) >= 2:  # 雙人：明確左右站位，避免兩人特徵混在一起
+        who = f"two people, on the left {look(ids[0], 11)}, on the right {look(ids[1], 11)}"
+    elif ids:
+        who = f"single person, {look(ids[0], 18)}"
+    else:
+        who = ""
     parts = [
         CAMERA.get(shot.get("camera"), "medium shot"),
-        _short(bible.get("style_prompt", ""), 8),
-        _short(chars[ids[0]]["appearance"], 20) if ids else "",
+        _short(style_of(bible)["prompt"], 12),
+        who,
         _short(shot.get("visual", ""), 14),
-        _short(chars[ids[1]]["appearance"], 8) if len(ids) > 1 else "",
         _short(locs.get(shot["location"], {}).get("visual", ""), 8),
     ]
     return ", ".join(p.strip(" ,") for p in parts if p and p.strip(" ,"))
@@ -60,8 +88,8 @@ def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
         characters.append({
             "id": c["id"],
             "seed": c["seed"],
-            "ref_prompt": f"portrait photo of a single person, head and shoulders, facing camera, sharp focus on face, "
-                          f"{_short(c['appearance'], 22)}, soft studio light, {_short(bible.get('style_prompt', ''), 6)}",
+            "ref_prompt": f"{style_of(bible)['ref']}, single person, head and shoulders, facing camera, "
+                          f"{_short(c['appearance'], 24)}, neutral background",
             "ref_b64": base64.b64encode(ref.read_bytes()).decode() if ref.exists() else None,
         })
     shots, video_shots = [], []
@@ -72,7 +100,7 @@ def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
             key = f"ep{ep:02d}_{s['id']}"
             prompt = shot_prompt(s, bible)
             if not (shot_dir / f"{s['id']}.png").exists():
-                shots.append({"key": key, "prompt": prompt, "ref": (s["characters"] or [None])[0],
+                shots.append({"key": key, "prompt": prompt, "refs": s["characters"][:2],
                               "seed": _shot_seed(slug, ep, s["id"])})
             if video and s.get("key") and not (shot_dir / f"{s['id']}.mp4").exists():
                 video_shots.append({"key": key, "prompt": prompt + ", subtle natural motion, cinematic"})
@@ -80,7 +108,8 @@ def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
         "job_id": uuid.uuid4().hex[:12],
         "slug": slug,
         "video_model": VIDEO_MODEL,
-        "width": 768, "height": 1344, "steps": 8, "ip_scale": 0.6,
+        "width": 1344, "height": 768, "steps": 8, "ip_scale": 0.55,   # 16:9 橫式
+        "style_lora": style_of(bible)["lora"],
         "time_budget_min": int(os.environ.get("SAGA_TIME_BUDGET_MIN", "240")),
         "characters": characters,
         "shots": shots,
@@ -221,7 +250,7 @@ def _run_mock(job: dict, out: Path) -> dict:
             d.line([(0, y), (job["width"], y)], fill=(int(hue * (1 - t)), int(60 + 100 * t), int(200 - hue * t * 0.5)))
         d.rectangle([60, 520, job["width"] - 60, 820], outline="white", width=4)
         d.text((90, 560), s["key"], fill="white", font=font)
-        d.text((90, 620), f"ref: {s['ref']}", fill="white", font=font)
+        d.text((90, 620), f"refs: {s.get('refs')}", fill="white", font=font)
         d.text((90, 680), s["prompt"][:28], fill="white", font=font)
         img.save(out / f"{s['key']}.png")
         manifest["images"].append(f"{s['key']}.png")

@@ -1,0 +1,44 @@
+name: 畫風對照
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        default: s1
+      style:
+        default: donghua3d
+      lora:
+        description: 要比較的畫風 LoRA 強度
+        default: "0,0.6,0.9"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saga-kaggle
+  cancel-in-progress: false
+
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Kaggle 對照
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          SAGA_KERNEL_SLUG: saga-bench
+        run: python -m saga.cli stylebench --slug "${{ inputs.slug }}" --style "${{ inputs.style }}" --lora "${{ inputs.lora }}"
+      - name: 存對照圖
+        run: |
+          mkdir -p bench
+          cp "build/${{ inputs.slug }}/stylebench.jpg" "bench/${{ inputs.slug }}-${{ inputs.style }}.jpg"
+          git config user.name "saga-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bench && git commit -m "畫風對照：${{ inputs.slug }} ${{ inputs.style }}" && git pull --rebase && git push

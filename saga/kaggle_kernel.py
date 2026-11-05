@@ -58,6 +58,10 @@ KW = dict(num_inference_steps=JOB.get("steps", 8), guidance_scale=0.0)
 
 if mode == "refs":
     pipe = load(ip=False)
+    if JOB.get("style_lora"):
+        st = JOB["style_lora"]
+        pipe.load_lora_weights(st["repo"], weight_name=st["file"], adapter_name="style")
+        pipe.set_adapters(["style"], adapter_weights=[st.get("scale", 0.8)])
     for c in JOB["characters"]:
         if c.get("ref_b64"):
             continue
@@ -68,23 +72,47 @@ if mode == "refs":
 
 elif mode == "shots":
     pipe = load()
+    style = JOB.get("style_lora")
+    if style:  # 畫風 LoRA（例如 3D 國漫風），每個鏡頭可個別調強度
+        pipe.load_lora_weights(style["repo"], weight_name=style["file"], adapter_name="style")
+    from diffusers.image_processor import IPAdapterMaskProcessor
+    maskproc = IPAdapterMaskProcessor()
+
+    def face(img):  # 只給鎖臉模組看臉，避免把定妝照的背景、構圖一起帶進去
+        w, h = img.size
+        return img.crop((int(w * 0.18), int(h * 0.04), int(w * 0.82), int(h * 0.62)))
+
     refs = {}
     for c in JOB["characters"]:
         p = f"{OUT}/ref_{c['id']}.jpg"
         if os.path.exists(p):
-            refs[c["id"]] = Image.open(p).convert("RGB")
-    blank = Image.new("RGB", (448, 576), (128, 128, 128))
+            refs[c["id"]] = face(Image.open(p).convert("RGB"))
+    blank = Image.new("RGB", (224, 224), (128, 128, 128))
     mine = JOB["shots"][shard::nshards]
-    W, H = JOB.get("width", 768), JOB.get("height", 1344)
+    W, H = JOB.get("width", 1344), JOB.get("height", 768)
+    left = Image.new("L", (W, H), 0); left.paste(255, (0, 0, W // 2 + W // 10, H))
+    right = Image.new("L", (W, H), 0); right.paste(255, (W // 2 - W // 10, 0, W, H))
+    duo_masks = maskproc.preprocess([left, right], height=H, width=W)
+    duo_masks = [duo_masks.reshape(1, duo_masks.shape[0], duo_masks.shape[2], duo_masks.shape[3])]
+    scale = JOB.get("ip_scale", 0.5)
     done = 0
     for s in mine:
         if out_of_time():
             log("時間預算用完"); break
         try:
-            ref = refs.get(s.get("ref"))
-            pipe.set_ip_adapter_scale(JOB.get("ip_scale", 0.5) if ref is not None else 0.0)
-            img = pipe(prompt=s["prompt"], width=W, height=H, ip_adapter_image=ref if ref is not None else blank,
-                       generator=torch.Generator("cuda").manual_seed(s["seed"]), **KW).images[0]
+            if style:
+                pipe.set_adapters(["style"], adapter_weights=[s.get("lora", style.get("scale", 0.8))])
+            ids = [r for r in (s.get("refs") or [s.get("ref")]) if r in refs]
+            gen = torch.Generator("cuda").manual_seed(s["seed"])
+            if len(ids) >= 2:  # 雙人鏡頭：左半邊鎖第一人、右半邊鎖第二人
+                pipe.set_ip_adapter_scale([[scale, scale]])
+                img = pipe(prompt=s["prompt"], width=W, height=H, ip_adapter_image=[[refs[ids[0]], refs[ids[1]]]],
+                           cross_attention_kwargs={"ip_adapter_masks": duo_masks}, generator=gen, **KW).images[0]
+            else:
+                ref = refs.get(ids[0]) if ids else None
+                pipe.set_ip_adapter_scale(scale if ref is not None else 0.0)
+                img = pipe(prompt=s["prompt"], width=W, height=H, ip_adapter_image=ref if ref is not None else blank,
+                           generator=gen, **KW).images[0]
             img.save(f"{OUT}/{s['key']}.png")
             done += 1
             if done % 10 == 0 or done == len(mine):
@@ -124,6 +152,8 @@ with open(WORKER_PATH, "w", encoding="utf-8") as f:
 
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--no-deps", "-U",
                 "diffusers>=0.35", "huggingface_hub", "ftfy", "hf_transfer"], check=False)
+# Kaggle 內建的舊版 torchao 會讓 peft 載入 LoRA 時報錯；移除後 peft 會自動略過它
+subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "-q", "torchao"], check=False)
 os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
 os.environ["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
 from huggingface_hub import hf_hub_download, snapshot_download  # noqa: E402
