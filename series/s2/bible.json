@@ -1,0 +1,119 @@
+{
+  "title": "重生皇叔：制霸三國",
+  "logline": "夷陵火起前夕，劉備覺醒重生，這一次他不顧私仇，先取曹魏再吞東吳，逆天改命統一天下！",
+  "genre": "重生復仇",
+  "tone": "熱血、權謀、爽快",
+  "style_prompt": "3D cartoon style, stylized 3D render, Unreal Engine 5, cinematic lighting, vibrant colors, expressive facial features, epic historical atmosphere, sharp edges, smooth textures, highly detailed character models",
+  "negative_prompt": "realistic, photograph, 2d, sketch, grainy, low resolution, blurry, deformed limbs, messy lines, dull colors",
+  "narrator_voice": "旁白-男",
+  "characters": [
+    {
+      "id": "liu_bei",
+      "name": "劉備",
+      "role": "主角",
+      "age": 55,
+      "gender": "male",
+      "key_features": "middle-aged man, green robe, golden armor, double swords",
+      "appearance": "Middle-aged man, neat black beard, sharp determined eyes, wearing emerald green imperial silk robes over golden dragon-scale armor, jade crown with green tassels, holding double-edged swords (Shuanggu Jian)",
+      "tagline": "蜀漢昭烈皇帝",
+      "personality": "沉穩冷靜、殺伐果斷、具有超前預判力",
+      "voice": "男聲-沉穩",
+      "seed": 2057444460
+    },
+    {
+      "id": "zhuge_liang",
+      "name": "諸葛亮",
+      "role": "配角",
+      "age": 40,
+      "gender": "male",
+      "key_features": "young man, white robe, feather fan, silver ornament",
+      "appearance": "Elegant young man, thin face, wearing a white Taoist robe with light blue embroidery, holding a white crane feather fan, silver hair ornament, calm and mysterious expression",
+      "tagline": "大漢臥龍丞相",
+      "personality": "機智過人、忠心耿耿、偶爾對劉備的改變感到震驚",
+      "voice": "男聲-少年",
+      "seed": 2087883976
+    },
+    {
+      "id": "sun_quan",
+      "name": "孫權",
+      "role": "反派",
+      "age": 39,
+      "gender": "male",
+      "key_features": "young man, purple beard, red royal robe, arrogant",
+      "appearance": "Young man with a distinct short purple beard, green eyes, wearing extravagant red silk royal robes with gold brocade, jade belt, often showing a sneering or panicked expression",
+      "tagline": "東吳大皇帝",
+      "personality": "猜忌心重、色厲內荏、計謀百出但格局有限",
+      "voice": "男聲-少年",
+      "seed": 201151605
+    },
+    {
+      "id": "cao_pi",
+      "name": "曹丕",
+      "role": "反派",
+      "age": 34,
+      "gender": "male",
+      "key_features": "young man, dark purple armor, black cape, cold",
+      "appearance": "Young man, pale skin, sharp hawk-like eyes, wearing dark purple imperial armor with black iron accents, long black flowing cape, majestic silver crown",
+      "tagline": "曹魏開國皇帝",
+      "personality": "陰險狠毒、野心勃勃、極度自負",
+      "voice": "男聲-霸氣",
+      "seed": 294245536
+    },
+    {
+      "id": "sun_shangxiang",
+      "name": "孫尚香",
+      "role": "配角",
+      "age": 28,
+      "gender": "female",
+      "key_features": "young woman, red archery outfit, high ponytail, bow",
+      "appearance": "Athletic young woman, high ponytail with gold ring, red and white archery outfit, leather arm guards, carrying a decorative recurve bow on her back, heroic and spirited look",
+      "tagline": "梟姬孫夫人",
+      "personality": "性格火辣、愛恨分明、在親情與大義間掙扎",
+      "voice": "女聲-御姐",
+      "seed": 998115924
+    }
+  ],
+  "locations": [
+    {
+      "id": "shu_throne_room",
+      "name": "成都大殿",
+      "visual": "Grand ancient Chinese hall, emerald green silk banners, golden dragon pillars, sunset light streaming through windows, 3d cartoon style"
+    },
+    {
+      "id": "war_tent",
+      "name": "行軍主帳",
+      "visual": "Military tent interior, giant wooden strategy map with wooden tokens, flickering iron torches, weapon racks, cinematic shadows"
+    },
+    {
+      "id": "yiling_battlefield",
+      "name": "夷陵前線",
+      "visual": "River bank at night, dense woods, mist over the water, distant fire glow, cold blue moonlight"
+    },
+    {
+      "id": "wei_palace",
+      "name": "洛陽魏宮",
+      "visual": "Cold and imposing stone palace, dark purple and black decorations, high obsidian throne, sharp geometric architecture"
+    },
+    {
+      "id": "wu_ship",
+      "name": "東吳戰船",
+      "visual": "Massive wooden warship deck, red flags fluttering in the wind, sunrise over the misty Yangtze River, 3d stylized water"
+    }
+  ],
+  "tts": {
+    "engine": "indextts",
+    "cast": {
+      "liu_bei": "m07",
+      "zhuge_liang": "m01",
+      "sun_quan": "m02",
+      "cao_pi": "m03",
+      "sun_shangxiang": "f01",
+      "narrator": "f03"
+    }
+  },
+  "slug": "s2",
+  "idea": "我重生變成夷陵之戰前的劉備，這次不再腦衝夷陵而是先打趴曹魏再生擒孫權統一天下！",
+  "episode_count": 70,
+  "episode_seconds": 60,
+  "style_choice": "3D 卡通"
+}
