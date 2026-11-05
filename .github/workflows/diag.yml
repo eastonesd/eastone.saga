@@ -5,7 +5,6 @@ on:
 
 permissions:
   contents: read
-  models: read
 
 jobs:
   diag:
@@ -18,18 +17,21 @@ jobs:
           python-version: "3.12"
       - run: pip install -q -r requirements.txt
 
-      - name: GitHub Models
+      - name: LLM 供應商
         env:
-          TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          H=(-H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28")
-          echo "== catalog"; curl -sS -o cat.json -w "HTTP %{http_code} %{content_type}\n" "${H[@]}" https://models.github.ai/catalog/models
-          head -c 400 cat.json; echo
-          python -c "import json;d=json.load(open('cat.json'));print(len(d),'models');print([m['id'] for m in d][:40])" || true
-          echo "== chat"
-          curl -sS -w "\nHTTP %{http_code} %{content_type}\n" "${H[@]}" -H "Content-Type: application/json" \
-            -d '{"model":"openai/gpt-4.1","messages":[{"role":"user","content":"回一個 JSON：{\"ok\":true}"}]}' \
-            https://models.github.ai/inference/chat/completions | tail -c 600
+          python - <<'EOF'
+          from saga import llm
+          for p in llm._get_providers():
+              for m in p.models()[:2]:
+                  try:
+                      print("OK ", p.name, m, llm._extract_json(p.call(m, '回傳 JSON：{"ok": true, "說": "你好"}', 0.2)))
+                  except Exception as e:
+                      print("ERR", p.name, m, str(e)[:200])
+          EOF
 
       - name: Kaggle 日誌
         env:
@@ -37,7 +39,7 @@ jobs:
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         run: |
           case "$KAGGLE_KEY" in KGAT_*) export KAGGLE_API_TOKEN="$KAGGLE_KEY";; esac
-          for k in saga-models-v1 saga-render; do
+          for k in saga-models-v2 saga-render; do
             echo "=================== $k status"; kaggle kernels status "$KAGGLE_USERNAME/$k" || true
             echo "=================== $k logs (tail)"; kaggle kernels logs "$KAGGLE_USERNAME/$k" 2>&1 | tail -c 6000 || true
           done

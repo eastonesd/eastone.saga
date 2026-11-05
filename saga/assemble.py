@@ -6,7 +6,7 @@ import subprocess
 from pathlib import Path
 
 from . import paths
-from .voice import audio_duration
+from .voice import audio_duration, spoken_text
 
 W, H, FPS = 1080, 1920, 30
 LEAD, GAP, TAIL = 0.15, 0.25, 0.45
@@ -75,7 +75,8 @@ def assemble_episode(slug: str, ep: int) -> Path:
         cursor = t + LEAD
         for i, ln in enumerate(s["lines"]):
             audio_inputs.append((ep_dir / "audio" / ln["audio"], cursor))
-            cues.append((cursor, cursor + ln["duration"], _wrap(ln["text"])))
+            if not ln.get("sfx"):
+                cues.append((cursor, cursor + ln["duration"], _wrap(spoken_text(ln["text"]) or ln["text"])))
             cursor += ln["duration"] + (GAP if i < len(s["lines"]) - 1 else 0)
         dur = max(MIN_SHOT, cursor - t + TAIL)
         src = shot_dir / f"{s['id']}.mp4"

@@ -149,6 +149,7 @@ def episode_prompt(bible: dict, outline: dict, ep: int, seconds: int) -> str:
 - 用特寫表現情緒、中景表現對話、遠景交代場景，交替使用。
 - 挑 3～5 個最有張力的鏡頭標記 "key": true（之後會做成真影片）。
 - speaker 必須是角色 id 或 "narrator"。
+- lines 只放「會被念出來的台詞」。禁止在台詞裡寫括號動作、音效或語氣說明（例如「（砰！）」「（冷笑）」）；音效與動作請寫進 visual。
 
 只輸出 JSON：
 {json.dumps(EPISODE_SCHEMA, ensure_ascii=False, indent=1)}

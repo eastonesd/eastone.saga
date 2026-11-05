@@ -1,6 +1,6 @@
 """LLM 呼叫層：多家供應商備援鏈，任何一家擁塞就立刻換下一家，不空等。
 
-順序：Gemini（自動偵測可用模型）→ GitHub Models（Actions 內建通行證，免申請）
+順序：Gemini → Groq → OpenRouter（有設金鑰的才會啟用；各自自動偵測可用模型）
 --mock 時產生假資料供測試。
 """
 from __future__ import annotations
@@ -88,52 +88,47 @@ class Gemini:
         return "".join(p.get("text", "") for p in data["candidates"][0]["content"]["parts"])
 
 
-# ── 供應商 2：GitHub Models ────────────────────────────────
+# ── 供應商 2+：OpenAI 相容的免費服務（Groq、OpenRouter）─────────
 
-GH_MODELS = "https://models.github.ai"
-_GH_PREFER = [r"gpt-5(?!.*(nano|mini))", r"gpt-4\.1$", r"deepseek-v3", r"gpt-4o$", r"gpt-5-mini",
-              r"gpt-4\.1-mini", r"gpt-4o-mini", r"llama-4", r"mistral-medium"]
+class OpenAICompat:
+    """任何 OpenAI 相容 API。prefer 為模型 id 的偏好規則（正規表示式，越前面越優先）。"""
 
-
-class GitHubModels:
-    name = "GitHub Models"
-
-    def __init__(self, token: str):
-        self.token = token
+    def __init__(self, name: str, base: str, key: str, prefer: list[str], only=None, json_mode=True):
+        self.name, self.base, self.key = name, base.rstrip("/"), key
+        self.prefer, self.only, self.json_mode = prefer, only, json_mode
         self._models: list[str] | None = None
+
+    def _h(self):
+        return {"Authorization": f"Bearer {self.key}", "Content-Type": "application/json"}
 
     def models(self) -> list[str]:
         if self._models is None:
             ids = []
             try:
-                r = requests.get(f"{GH_MODELS}/catalog/models", headers={"Authorization": f"Bearer {self.token}"},
-                                 timeout=20)
+                r = requests.get(f"{self.base}/models", headers=self._h(), timeout=20)
                 r.raise_for_status()
-                for m in r.json():
-                    if "text" in (m.get("supported_output_modalities") or ["text"]) and "embed" not in m["id"]:
-                        ids.append(m["id"])
-            except requests.RequestException as e:
-                print(f"  GitHub Models 目錄查詢失敗：{e}", flush=True)
+                ids = [m["id"] for m in r.json().get("data", []) if not self.only or self.only(m)]
+            except (requests.RequestException, ValueError) as e:
+                print(f"  {self.name} 模型清單查詢失敗：{e}", flush=True)
 
             def rank(i: str) -> int:
-                return next((k for k, p in enumerate(_GH_PREFER) if re.search(p, i)), 99)
-
-            ids = [i for i in sorted(ids, key=rank) if rank(i) < 99][:4]
-            self._models = ids or ["openai/gpt-4.1", "openai/gpt-4o"]
+                return next((k for k, p in enumerate(self.prefer) if re.search(p, i, re.I)), 99)
+            self._models = [i for i in sorted(ids, key=rank) if rank(i) < 99][:4]
         return self._models
 
     def call(self, model: str, prompt: str, temperature: float) -> str:
-        r = requests.post(
-            f"{GH_MODELS}/inference/chat/completions",
-            headers={"Authorization": f"Bearer {self.token}", "Content-Type": "application/json"},
-            json={"model": model, "temperature": temperature,
-                  "messages": [{"role": "system", "content": "只輸出合法 JSON，不要任何說明文字。"},
-                               {"role": "user", "content": prompt}]},
-            timeout=180,
-        )
+        body = {"model": model, "temperature": temperature,
+                "messages": [{"role": "system", "content": "只輸出合法 JSON，不要任何說明文字。"},
+                             {"role": "user", "content": prompt}]}
+        if self.json_mode:
+            body["response_format"] = {"type": "json_object"}
+        r = requests.post(f"{self.base}/chat/completions", headers=self._h(), json=body, timeout=180)
         if not r.ok:
             raise _Unavailable(f"HTTP {r.status_code} {r.text[:200]}")
-        return r.json()["choices"][0]["message"]["content"]
+        try:
+            return r.json()["choices"][0]["message"]["content"]
+        except ValueError:
+            raise _Unavailable(f"非 JSON 回應：{r.text[:120]}")
 
 
 # ── 調度 ──────────────────────────────────────────────────
@@ -141,7 +136,7 @@ class GitHubModels:
 _lock = threading.Lock()
 _providers: list | None = None
 _cooldown: dict[str, float] = {}  # 模型 → 冷卻到何時
-COOLDOWN_S = 90
+COOLDOWN_S = 65
 
 
 def _get_providers() -> list:
@@ -151,11 +146,17 @@ def _get_providers() -> list:
             providers = []
             if os.environ.get("GEMINI_API_KEY"):
                 providers.append(Gemini(os.environ["GEMINI_API_KEY"]))
-            gh_token = os.environ.get("GH_MODELS_TOKEN") or os.environ.get("GITHUB_TOKEN")
-            if gh_token:
-                providers.append(GitHubModels(gh_token))
+            if os.environ.get("GROQ_API_KEY"):
+                providers.append(OpenAICompat(
+                    "Groq", "https://api.groq.com/openai/v1", os.environ["GROQ_API_KEY"],
+                    prefer=[r"qwen", r"kimi", r"gpt-oss-120b", r"deepseek", r"llama-4", r"llama-3\.3-70b", r"gpt-oss"]))
+            if os.environ.get("OPENROUTER_API_KEY"):
+                providers.append(OpenAICompat(
+                    "OpenRouter", "https://openrouter.ai/api/v1", os.environ["OPENROUTER_API_KEY"],
+                    prefer=[r"deepseek", r"qwen", r"glm", r"kimi", r"gpt-oss", r"llama"],
+                    only=lambda m: m["id"].endswith(":free"), json_mode=False))
             if not providers:
-                raise LLMError("沒有可用的 LLM：請設定 GEMINI_API_KEY（或在 GitHub Actions 中執行以使用 GitHub Models）")
+                raise LLMError("沒有可用的 LLM：請至少設定 GEMINI_API_KEY 或 GROQ_API_KEY")
             for p in providers:
                 print(f"  {p.name} 候選：{', '.join(p.models())}", flush=True)
             _providers = providers
@@ -181,8 +182,9 @@ def _generate(prompt: str, temperature: float) -> dict:
                     errors.append(f"{tag}: {msg[:160]}")
                     print(f"  ✗ {tag} → {msg[:120]}", flush=True)
                     # 不存在／無權限：這次執行不再試；擁塞／額度：冷卻一陣子
-                    gone = "HTTP 404" in msg or "HTTP 403" in msg
-                    _cooldown[tag] = time.time() + (10**6 if gone else COOLDOWN_S)
+                    gone = "HTTP 404" in msg or "HTTP 403" in msg or "HTTP 401" in msg
+                    daily = "HTTP 429" in msg and re.search(r"quota|per ?day|PerDay|daily", msg, re.I)
+                    _cooldown[tag] = time.time() + (10**6 if gone else 3600 if daily else COOLDOWN_S)
                 except (json.JSONDecodeError, KeyError, IndexError, TypeError) as e:
                     errors.append(f"{tag}: 回傳不是合法 JSON（{e}）")
                     print(f"  ✗ {tag} → 回傳不是合法 JSON", flush=True)

@@ -92,7 +92,7 @@ def write_episode(slug: str, ep: int, *, mock: bool = False, force: bool = False
 
 
 def write_episodes(slug: str, eps: list[int], *, mock: bool = False, force: bool = False,
-                   workers: int = 3) -> list[int]:
+                   workers: int = 2) -> list[int]:
     """平行寫多集分鏡（每集只依賴大綱，彼此獨立）。回傳失敗的集數。"""
     from concurrent.futures import ThreadPoolExecutor, as_completed
 

@@ -33,13 +33,19 @@ def out_of_time(): return (time.time() - T0) / 60 > JOB.get("time_budget_min", 2
 
 import torch
 from PIL import Image
-from diffusers import AutoencoderKL, EulerDiscreteScheduler, StableDiffusionXLPipeline
+from diffusers import AutoencoderKL, EulerDiscreteScheduler, StableDiffusionXLPipeline, UNet2DConditionModel
+from safetensors.torch import load_file
 
 def load(ip=True):
+    # SDXL-Lightning 8 步完整 UNet：直接以 fp16 載入 GPU，不經過 LoRA／peft
+    config = UNet2DConditionModel.load_config(f"{M}/sdxl", subfolder="unet")
+    with torch.device("meta"):
+        unet = UNet2DConditionModel.from_config(config)
+    state = {k: v.to("cuda", torch.float16) for k, v in load_file(f"{M}/lightning/sdxl_lightning_8step_unet.safetensors").items()}
+    unet.load_state_dict(state, assign=True)
+    del state
     vae = AutoencoderKL.from_pretrained(f"{M}/vae", torch_dtype=torch.float16)
-    pipe = StableDiffusionXLPipeline.from_pretrained(f"{M}/sdxl", vae=vae, torch_dtype=torch.float16, variant="fp16")
-    pipe.load_lora_weights(f"{M}/lightning", weight_name="sdxl_lightning_8step_lora.safetensors")
-    pipe.fuse_lora()
+    pipe = StableDiffusionXLPipeline.from_pretrained(f"{M}/sdxl", unet=unet, vae=vae, torch_dtype=torch.float16, variant="fp16")
     pipe.scheduler = EulerDiscreteScheduler.from_config(pipe.scheduler.config, timestep_spacing="trailing")
     if ip:
         pipe.load_ip_adapter(f"{M}/ip", subfolder="sdxl_models", weight_name="ip-adapter_sdxl_vit-h.safetensors",
@@ -121,7 +127,7 @@ log("模型包：", base)
 
 # 離線安裝需要的新版套件（幾秒鐘）
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "--no-deps", "--no-index",
-                "--find-links", os.path.join(base, "wheels"), "diffusers", "peft", "huggingface_hub", "ftfy"],
+                "--find-links", os.path.join(base, "wheels"), "diffusers", "huggingface_hub", "ftfy"],
                check=False)
 
 gpus = subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True).stdout.strip().splitlines()
@@ -129,9 +135,21 @@ n = max(1, len(gpus))
 log(f"GPU ×{n}：", "; ".join(g.split(" (")[0] for g in gpus))
 
 
+ERRORS = []
+
+
 def run(mode, shard=0, nshards=1, gpu=0):
     env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu), PYTHONUNBUFFERED="1")
-    return subprocess.Popen([sys.executable, WORKER_PATH, mode, str(shard), str(nshards)], env=env)
+    p = subprocess.Popen([sys.executable, WORKER_PATH, mode, str(shard), str(nshards)], env=env)
+    p.label = f"{mode}#{shard}@GPU{gpu}"
+    return p
+
+
+def wait_all(*procs):
+    for p in procs:
+        if p.wait() != 0:
+            ERRORS.append(f"{p.label} 異常結束（exit {p.returncode}），詳見 Kaggle 日誌")
+            log("⚠", ERRORS[-1])
 
 
 # ── 2. 角色定妝照（只做還沒有的） ─────────────────────────
@@ -140,17 +158,19 @@ for c in JOB["characters"]:
         with open(f"{OUT}/ref_{c['id']}.jpg", "wb") as f:
             f.write(base64.b64decode(c["ref_b64"]))
 if any(not c.get("ref_b64") for c in JOB["characters"]):
-    run("refs").wait()
+    wait_all(run("refs"))
 
 # ── 3. 分鏡圖：每張 GPU 各分一半 ───────────────────────────
 if JOB["shots"]:
-    procs = [run("shots", i, n, i) for i in range(n)]
-    for p in procs:
-        p.wait()
+    procs = []
+    for i in range(n):
+        procs.append(run("shots", i, n, i))
+        time.sleep(20)  # 錯開載入，避免兩個程序同時吃滿記憶體
+    wait_all(*procs)
 
 # ── 4.（選用）關鍵鏡頭影片 ────────────────────────────────
 if JOB.get("video_shots") and (time.time() - T0) / 60 < JOB.get("time_budget_min", 240):
-    run("video").wait()
+    wait_all(run("video"))
 
 # ── 5. 清單 ──────────────────────────────────────────────
 images = sorted(os.path.basename(p) for p in glob.glob(f"{OUT}/ep*_s*.png"))
@@ -163,7 +183,7 @@ manifest = {
     "images": images,
     "videos": videos,
     "partial": len(wanted - {i[:-4] for i in images}) > 0,
-    "errors": [],
+    "errors": ERRORS,
     "elapsed_min": round((time.time() - T0) / 60, 1),
     "gpus": n,
 }

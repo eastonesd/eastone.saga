@@ -7,7 +7,6 @@ on:
 permissions:
   contents: write
   issues: write
-  models: read   # Gemini 擁塞時改用 GitHub Models
 
 concurrency:
   group: saga-${{ github.event.issue.number }}
@@ -51,7 +50,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
           printf '%s' "$ISSUE_BODY" > "$RUNNER_TEMP/issue.md"
@@ -82,9 +82,10 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          timeout 130m python -m saga.cli scripts --slug "$SLUG" --workers 3 | tee "$RUNNER_TEMP/scripts.log"
+          timeout 130m python -m saga.cli scripts --slug "$SLUG" --workers 2 | tee "$RUNNER_TEMP/scripts.log"
 
       - name: 存分鏡並回報
         if: always() && steps.check.outputs.done != 'true'

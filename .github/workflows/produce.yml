@@ -39,7 +39,6 @@ permissions:
   contents: write
   issues: write
   actions: write   # 自動接力下一批
-  models: read     # Gemini 擁塞時改用 GitHub Models
 
 concurrency:
   group: saga-kaggle   # Kaggle 同一時間只跑一個，避免搶 GPU 額度
@@ -124,7 +123,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-          GITHUB_TOKEN: ${{ github.token }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
           SAGA_TIME_BUDGET_MIN: "180"   # 留時間給模型包首次建置、下載與剪輯，不超過 Actions 上限
@@ -183,8 +183,10 @@ jobs:
           ALL=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['episode_count'])")
           if [ -n "$DONE" ]; then ATTEMPT=0; else ATTEMPT=$((ATTEMPT + 1)); fi
 
-          if [ -z "$REMAINING" ]; then
+          if [ -z "$REMAINING" ] && [ "$TOTAL" -ge "$ALL" ]; then
             MSG="🎉 全部完成！共 $TOTAL／$ALL 集。（本批：第 ${DONE:-無} 集）"
+          elif [ -z "$REMAINING" ]; then
+            MSG="✅ 第 ${DONE:-無} 集完成（累計 $TOTAL／$ALL 集）。指定範圍已做完。"
           elif [ "$ATTEMPT" -ge 3 ]; then
             MSG="⚠️ 連續 3 批沒有進度，已停止接力。剩下第 $REMAINING 集。請看[執行紀錄](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})。"
           else

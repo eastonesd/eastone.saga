@@ -4,6 +4,7 @@ from __future__ import annotations
 import base64
 import json
 import os
+import re
 import shutil
 import subprocess
 import tempfile
@@ -17,7 +18,7 @@ KERNEL_TEMPLATE = Path(__file__).with_name("kaggle_kernel.py")
 MODELS_TEMPLATE = Path(__file__).with_name("kaggle_models.py")
 VIDEO_MODEL = os.environ.get("SAGA_VIDEO_MODEL", "Wan-AI/Wan2.2-TI2V-5B-Diffusers")
 KERNEL_SLUG = os.environ.get("SAGA_KERNEL_SLUG", "saga-render")
-MODELS_VERSION = 1  # 改了 kaggle_models.py 的模型配方就加一，會自動重建模型包
+MODELS_VERSION = 2  # 改了 kaggle_models.py 的模型配方就加一，會自動重建模型包
 MODELS_SLUG = f"saga-models-v{MODELS_VERSION}"
 ACCELERATOR = os.environ.get("SAGA_ACCELERATOR", "NvidiaTeslaT4")  # Kaggle 的 T4 ×2
 
@@ -155,6 +156,18 @@ def _wait(kernel_id: str, label: str, max_min: int, require_active: bool = True)
         time.sleep(30)
 
 
+def _kaggle_error_tail(kernel_id: str, n: int = 25) -> str:
+    raw = _kaggle("kernels", "logs", kernel_id, check=False)
+    lines = []
+    try:
+        for item in json.loads(raw[raw.index("["):]):
+            lines.extend(str(item.get("data", "")).splitlines())
+    except (ValueError, TypeError):
+        lines = raw.splitlines()
+    keep = [l for l in lines if re.search(r"Error|Exception|Traceback|⚠|exit|File \"/tmp/saga", l)]
+    return "\n".join((keep or lines)[-n:])
+
+
 def ensure_models() -> str:
     """確認 Kaggle 上的模型包存在；沒有就建一次（約 15～25 分鐘，之後永久沿用）。"""
     kid = f"{_user()}/{MODELS_SLUG}"
@@ -257,6 +270,9 @@ def render(slug: str, eps: list[int], *, mock: bool = False, video: bool = False
     shutil.rmtree(dl, ignore_errors=True)
     for e in manifest.get("errors", []):
         print("  ⚠", e, flush=True)
+    if job["shots"] and not manifest.get("images") and not mock:
+        # 一張都沒有＝程式壞了，不是時間不夠：把 Kaggle 日誌中的錯誤印出來並停止接力
+        raise RuntimeError("Kaggle 一張圖都沒產出。錯誤摘要：\n" + _kaggle_error_tail(f"{_user()}/{KERNEL_SLUG}"))
     print(f"▶ 算圖完成：{len(manifest.get('images', []))} 張圖、{len(manifest.get('videos', []))} 段影片"
           + ("（時間不夠，部分未完成，再跑一次會接續）" if manifest.get("partial") else ""), flush=True)
     return manifest

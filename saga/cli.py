@@ -92,7 +92,10 @@ def cmd_produce(a) -> None:
     th = threading.Thread(target=gpu)
     th.start()
     for ep in batch:
-        voice_episode(a.slug, ep, mock=a.mock)
+        try:
+            voice_episode(a.slug, ep, mock=a.mock)
+        except Exception as e:  # 單集配音出錯不拖垮整批，剪輯時會以缺檔處理
+            print(f"  ⚠ 第 {ep} 集配音失敗：{e}", flush=True)
     stamp["voice"] = time.time() - t0
     th.join()
     stamp["render"] = time.time() - t0
@@ -103,7 +106,7 @@ def cmd_produce(a) -> None:
     def assemble(ep):
         try:
             return ep, assemble_episode(a.slug, ep), None
-        except FileNotFoundError as e:
+        except (FileNotFoundError, KeyError, RuntimeError) as e:
             return ep, None, str(e)
     with ThreadPoolExecutor(max_workers=min(4, os.cpu_count() or 2)) as pool:
         outcomes = list(pool.map(assemble, batch))
@@ -190,7 +193,7 @@ def main(argv=None) -> None:
     pw = sub.add_parser("scripts", help="先把分鏡劇本全部寫好")
     pw.add_argument("--slug", required=True)
     pw.add_argument("--eps", default="all")
-    pw.add_argument("--workers", type=int, default=3)
+    pw.add_argument("--workers", type=int, default=2)
     pw.add_argument("--mock", action="store_true")
     pw.set_defaults(fn=cmd_scripts)
 

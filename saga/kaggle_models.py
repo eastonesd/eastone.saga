@@ -28,7 +28,7 @@ RECIPE = {
         "text_encoder/config.json", "text_encoder/model.fp16.safetensors",
         "text_encoder_2/config.json", "text_encoder_2/model.fp16.safetensors",
         "tokenizer/*", "tokenizer_2/*",
-        "unet/config.json", "unet/diffusion_pytorch_model.fp16.safetensors",
+        "unet/config.json",   # UNet 權重改用下面的 SDXL-Lightning 8 步版
     ]),
     "vae": ("madebyollin/sdxl-vae-fp16-fix", ["config.json", "diffusion_pytorch_model.safetensors"]),
     "ip": ("h94/IP-Adapter", [
@@ -40,13 +40,13 @@ for name, (repo, patterns) in RECIPE.items():
     log("下載", repo)
     snapshot_download(repo, local_dir=os.path.join(M, name), allow_patterns=patterns)
 
-log("下載 SDXL-Lightning 8 步 LoRA")
-hf_hub_download("ByteDance/SDXL-Lightning", "sdxl_lightning_8step_lora.safetensors", local_dir=os.path.join(M, "lightning"))
+log("下載 SDXL-Lightning 8 步 UNet")
+hf_hub_download("ByteDance/SDXL-Lightning", "sdxl_lightning_8step_unet.safetensors", local_dir=os.path.join(M, "lightning"))
 
 log("打包離線套件")
 # --no-deps：只抓這幾個純 Python 套件，torch 等大型依賴 Kaggle 映像檔本來就有
 subprocess.run([sys.executable, "-m", "pip", "download", "-q", "--no-deps", "-d", os.path.join(OUT, "wheels"),
-                "diffusers>=0.35", "peft>=0.15", "huggingface_hub", "ftfy"], check=True)
+                "diffusers>=0.35", "huggingface_hub", "ftfy"], check=True)
 
 # 移除 huggingface 的快取暫存，避免占用輸出空間
 for root, dirs, files in os.walk(M):
