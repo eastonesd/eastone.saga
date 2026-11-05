@@ -1,0 +1,246 @@
+{
+  "ep": 9,
+  "title": "血戰襄陽，皇叔神威",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A hand tears off a heavy robe, revealing scarred muscles and a glowing red eye. Dust flies in slow motion.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "備誓不還家！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The protagonist stands on a war horse, red cloak swirling in the wind. He holds a long spear, pointing at the distant city wall.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "今日不取襄陽，",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up on the strategist's face. His eyes widen in shock, holding a feather fan that trembles slightly.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此乃自毀！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of the protagonist's eye. The pupil contracts, showing intense determination and cold calculation.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誒！看好了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Wide shot from behind. The protagonist charges forward, horse galloping, legs blurred by speed. Dust kicks up high.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist leaps from the horse in mid-air, spear extended forward, body parallel to the ground.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The tip of the spear pierces the armor of an enemy general. Sparks fly. The protagonist's face is masked by helmet but eyes are fierce.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "魏將何在？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The protagonist swings the spear, knocking three soldiers away. Bodies fly backwards into the dust cloud.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Over the strategist's shoulder, looking at the protagonist in the distance. The strategist steps forward, pointing his fan.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "三軍聽令！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "The strategist raises his arm high. The fan glows faintly blue. His face is ecstatic.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "隨我衝鋒！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "Thousands of soldiers rush forward like a tide. Flags wave violently. The protagonist stands at the front, spear raised.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "三軍齊呼萬歲！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the protagonist's feet stepping firmly on the ground. Armor plates click together. Sweat drips from his brow.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The protagonist breaks through a shield wall. He shatters a wooden shield with one strike.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "破！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A close-up of the spear tip sticking into the enemy armor. The protagonist pulls it out, blood spraying in slow motion.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist stands over the fallen general. He looks up at the city wall, breathing heavily, chest heaving.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "襄陽，備來了。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

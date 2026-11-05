@@ -1,0 +1,60 @@
+{
+  "ep": 7,
+  "title": "諸葛震驚，主公變了",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Feather fan trembling, eyes narrowed, lantern light flickering",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此處明日必有大霧。",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing with slight smile, hand on sword hilt",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "我早有預感。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Eyebrows raise, mouth slightly open",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "怎麼可能？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

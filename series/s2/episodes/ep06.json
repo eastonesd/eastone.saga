@@ -1,0 +1,22 @@
+{
+  "ep": 6,
+  "title": "神算再世，預判魏軍",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "empty valley, distant mountains, wind stirring",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "張郃大笑：劉備老矣！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}
