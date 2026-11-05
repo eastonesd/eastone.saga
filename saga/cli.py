@@ -74,9 +74,10 @@ def cmd_produce(a) -> None:
         return
     print(f"▶ 本批：第 {batch[0]}～{batch[-1]} 集（共 {len(batch)} 集；之後還剩 {len(todo) - len(batch)} 集）", flush=True)
 
-    if a.revoice:  # 只重錄配音，沿用已算好的畫面
+    if a.revoice:  # 重補配音：保留已成功的 IndexTTS 檔，刪掉備援的 Edge 檔讓它重錄
         for ep in batch:
-            shutil.rmtree(paths.build_ep_dir(a.slug, ep) / "audio", ignore_errors=True)
+            for f in (paths.build_ep_dir(a.slug, ep) / "audio").glob("*_edge.mp3"):
+                f.unlink()
     if a.rewrite or a.redo:
         for ep in batch:
             shutil.rmtree(paths.build_ep_dir(a.slug, ep), ignore_errors=True)

@@ -111,17 +111,22 @@ infer_sig = inspect.signature(tts.infer).parameters
 t0 = time.time(); n = 0
 for ln in data["lines"]:
     out = f"/kaggle/working/{ln['key']}.wav"
-    try:
-        args = dict(spk_audio_prompt=data["refs"][ln["voice"]], text=ln["text"], output_path=out)
-        if "lang" in infer_sig: args["lang"] = "ZH"
-        if ln.get("emo") and "emo_vector" in infer_sig: args["emo_vector"] = ln["emo"]
-        if ln.get("speed") and "duration_factor" in infer_sig: args["duration_factor"] = ln["speed"]
-        tts.infer(**args)
-        n += 1
-        print("OK", ln["key"], flush=True)
-    except Exception as e:
-        traceback.print_exc()
-        print("ERR", ln["key"], e, flush=True)
+    args = dict(spk_audio_prompt=data["refs"][ln["voice"]], text=ln["text"], output_path=out)
+    if "lang" in infer_sig: args["lang"] = "ZH"
+    if ln.get("emo") and "emo_vector" in infer_sig: args["emo_vector"] = ln["emo"]
+    if ln.get("speed") and "duration_factor" in infer_sig: args["duration_factor"] = ln["speed"]
+    for attempt in range(3):
+        try:
+            tts.infer(**args)
+            n += 1
+            print("OK", ln["key"], flush=True)
+            break
+        except Exception as e:
+            import torch, gc
+            gc.collect(); torch.cuda.empty_cache()   # 記憶體不足 → 清空後重試
+            if attempt == 2:
+                traceback.print_exc()
+                print("ERR", ln["key"], e, flush=True)
 print(f"DONE {n} lines in {time.time() - t0:.0f}s", flush=True)
 '''
 with open(f"{REPO}/saga_run.py", "w", encoding="utf-8") as f:
@@ -129,7 +134,7 @@ with open(f"{REPO}/saga_run.py", "w", encoding="utf-8") as f:
 try:
     env = {k: v for k, v in os.environ.items() if k != "HF_HUB_ENABLE_HF_TRANSFER"}  # uv 環境沒裝 hf_transfer
     gpus = len(subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True).stdout.strip().splitlines()) or 1
-    per_gpu = JOB.get("workers_per_gpu", 2)  # T4 16GB 可同時跑兩個 IndexTTS（各約 6GB）
+    per_gpu = JOB.get("workers_per_gpu", 1)  # 實測每個程序約 7.8GB，T4 只放得下一個
     n = max(1, min(gpus * per_gpu, len(lines)))
     # 暖機：先單獨載入一次，讓輔助模型（w2v-bert、codec、BigVGAN…）下載完成，避免多個程序同時下載互相踩壞
     warm = subprocess.run(["uv", "run", "--python", "3.11", "python", "-c",

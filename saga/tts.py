@@ -175,7 +175,7 @@ def synthesize(items: list[dict], dl: Path) -> dict[str, Path]:
         "voices": {v: {"ref_url": f"{VOICE_BASE_URL}/{v}.wav"} for v in voices},
         "lines": [{"key": it["key"], "voice": it["voice"], "text": it["text"],
                    "emo": EMO.get(it.get("emo") or ""), "speed": it.get("speed")} for it in items],
-        "workers_per_gpu": int(os.environ.get("SAGA_TTS_WORKERS_PER_GPU", "2")),
+        "workers_per_gpu": int(os.environ.get("SAGA_TTS_WORKERS_PER_GPU", "1")),
     }
     shutil.rmtree(dl, ignore_errors=True)
     run_job(job, dl)

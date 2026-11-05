@@ -162,8 +162,13 @@ def _finish_episode(slug, ep, episode, plan, *, mock, cast, edge_voice, edge_nar
                 _silence(out, 0.8)
         elif not out.exists():
             ev = voice if str(voice).startswith("zh-") else edge_voice.get(line["speaker"], edge_narrator)
-            fallback += 0 if (mock or str(voice).startswith("zh-")) else 1
-            jobs.append((say, ev, out))
+            if not (mock or str(voice).startswith("zh-")):
+                # IndexTTS 缺的句子用 Edge 補，但另存成 _edge 檔名，下次會再嘗試用 IndexTTS 重錄
+                fallback += 1
+                out = out.with_name(out.stem + "_edge.mp3")
+                line["audio"] = out.name
+            if not out.exists():
+                jobs.append((say, ev, out))
 
     warnings = []
     if jobs:

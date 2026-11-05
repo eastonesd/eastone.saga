@@ -142,6 +142,13 @@ jobs:
           key: saga-shots-v3-${{ steps.args.outputs.slug }}-${{ github.run_id }}
           restore-keys: saga-shots-v3-${{ steps.args.outputs.slug }}-
 
+      - name: 取回上次的配音（只補缺的句子）
+        uses: actions/cache/restore@v4
+        with:
+          path: build/${{ steps.args.outputs.slug }}/ep*/audio
+          key: saga-audio-v1-${{ steps.args.outputs.slug }}-${{ github.run_id }}
+          restore-keys: saga-audio-v1-${{ steps.args.outputs.slug }}-
+
       - name: 分鏡、配音、算圖
         id: run
         env:
@@ -174,6 +181,14 @@ jobs:
         with:
           path: build/${{ steps.args.outputs.slug }}/ep*/shots
           key: saga-shots-v3-${{ steps.args.outputs.slug }}-${{ github.run_id }}
+
+      - name: 保存配音
+        if: always() && steps.args.outputs.slug != ''
+        continue-on-error: true
+        uses: actions/cache/save@v4
+        with:
+          path: build/${{ steps.args.outputs.slug }}/ep*/audio
+          key: saga-audio-v1-${{ steps.args.outputs.slug }}-${{ github.run_id }}
 
       - name: 交給剪輯
         if: steps.run.outputs.batch != '[]' && steps.run.outputs.batch != ''
