@@ -312,6 +312,16 @@ async function renderSeries(num) {
     [...range].sort((x, y) => x - y).filter((k) => !files[k]?.mp4).slice(0, 10).forEach((k) => queued.add(k));
   }
   const left = total - Object.values(files).filter((f) => f.mp4).length;
+  // 調整集數：最後一次 /reoutline 之後還沒有回報 → 處理中
+  const lastRe = [...comments].reverse().find((c) => c.body.startsWith("/reoutline"));
+  const lastReDone = [...comments].reverse().find((c) => c.user.type === "Bot" && /已調整為|調整集數失敗/.test(c.body));
+  const reoutlining = Boolean(lastRe && (!lastReDone || new Date(lastReDone.created_at) < new Date(lastRe.created_at)));
+  const MODES = [
+    ["", "只做還沒完成的", "預設：已上架的集數會跳過"],
+    ["--revoice", "只重錄配音", "沿用畫面，換聲線或配音失敗時用"],
+    ["--redo", "重做畫面與配音", "沿用劇本，畫面不滿意時用"],
+    ["--rewrite", "重寫劇本並全部重做", "劇情或長度不滿意時用"],
+  ];
   const nextEp = Array.from({ length: total }, (_, k) => k + 1).find((k) => !files[k]?.mp4 && !queued.has(k)) || 1;
 
   const frames = Array.from({ length: total }, (_, k) => {
@@ -338,18 +348,32 @@ async function renderSeries(num) {
         <p class="muted small" style="margin:-4px 0 14px">${pending
           ? "每批 10 集，做完自動接力下一批，可以關掉 App 去忙別的。"
           : "一鍵生產到完結：每批 10 集自動接力，中途出錯會自動重試。"}</p>
-        <button class="btn primary" id="go-all" type="button" ${pending || !left ? "disabled" : ""}>${pending ? "生產中…" : left ? `全部生產到完結` : "全部完成"}</button>
-        <details style="margin-top:14px">
-        <summary class="muted small" style="cursor:pointer">指定範圍或重做某幾集</summary>
+        <button class="btn primary" id="go-all" type="button" ${pending || reoutlining ? "disabled" : ""}></button>
+        <div class="field" style="margin-top:16px">
+          <span class="label">重做方式</span>
+          <div class="chips" role="radiogroup" id="mode">${MODES.map(([v, t], i) =>
+            `<button type="button" class="chip" role="radio" aria-pressed="${i === 0}" data-v="${v}">${t}</button>`).join("")}</div>
+          <p class="muted small" id="mode-hint" style="margin:8px 0 0">${MODES[0][2]}</p>
+        </div>
+        <details style="margin-top:6px">
+        <summary class="muted small" style="cursor:pointer">只做某幾集</summary>
         <div style="margin-top:14px"></div>
         <div class="row field">
           <div><label for="from">從第</label>${stepper("from", nextEp, 1, total, 1)}</div>
           <div><label for="to">到第</label>${stepper("to", Math.min(total, nextEp + 2), 1, total, 1)}</div>
         </div>
         <label class="toggle"><input type="checkbox" id="video"> 關鍵鏡頭做成真影片 <span class="muted small">較耗 GPU 時數</span></label>
-        <label class="toggle"><input type="checkbox" id="rewrite"> 重寫這幾集的分鏡 <span class="muted small">整集重做</span></label>
-        <button class="btn ghost" id="go" type="button" style="width:100%" ${pending ? "disabled" : ""}>${pending ? "工廠正在處理上一批" : ""}</button>
+        <button class="btn ghost" id="go" type="button" style="width:100%" ${pending || reoutlining ? "disabled" : ""}>${pending ? "工廠正在處理上一批" : ""}</button>
         </details>
+      </section>
+      <section class="panel">
+        <h2>調整集數與長度</h2>
+        <p class="muted small" style="margin:-4px 0 14px">目前 ${total} 集 × 約 ${bible.episode_seconds} 秒。調整後會依原大綱重新濃縮（保留結局），並清除舊分鏡；之後用「重做畫面與配音」把已上架的集數重做。</p>
+        <div class="row field">
+          <div><label for="re-eps">總集數</label>${stepper("re-eps", total, 5, 120, 5)}</div>
+          <div><label for="re-secs">每集秒數</label>${stepper("re-secs", bible.episode_seconds, 30, 180, 10)}</div>
+        </div>
+        <button class="btn ghost" id="go-re" type="button" style="width:100%" ${pending || reoutlining ? "disabled" : ""}>${reoutlining ? "大綱重排中…" : pending ? "等工廠完成這一批" : "重排大綱"}</button>
       </section>` : `
       <section class="panel">
         <h2>編劇部正在寫劇本聖經</h2>
@@ -359,7 +383,7 @@ async function renderSeries(num) {
     <ul class="feed">${[...comments].reverse().map((c) => {
       const bot = c.user.type === "Bot";
       return `<li><div class="who">${bot ? "工廠" : "您"}・${ago(c.created_at)}</div>
-        ${c.body.startsWith("/produce") ? `<div class="cmd">${esc(c.body)}</div>` : `<div class="md">${md(c.body)}</div>`}</li>`;
+        ${c.body.startsWith("/") ? `<div class="cmd">${esc(c.body)}</div>` : `<div class="md">${md(c.body)}</div>`}</li>`;
     }).join("") || `<li class="muted">還沒有紀錄</li>`}
       <li><div class="who">您・${ago(issue.created_at)}</div><div class="md">${md(issue.body || "")}</div></li>
     </ul>
@@ -376,6 +400,23 @@ async function renderSeries(num) {
     from.addEventListener("change", () => { if (Number(to.value) < Number(from.value)) to.value = from.value; label(); });
     to.addEventListener("change", label);
     label();
+    let mode = "";
+    const allLabel = () => {
+      const b = $("#go-all");
+      if (pending) b.textContent = "生產中…";
+      else if (reoutlining) b.textContent = "大綱重排中…";
+      else if (mode) b.textContent = `${MODES.find((m) => m[0] === mode)[1]}（全部集數）`;
+      else b.textContent = left ? "全部生產到完結" : "全部完成";
+      b.disabled = pending || reoutlining || (!mode && !left);
+    };
+    $("#mode").addEventListener("click", (e) => {
+      const c = e.target.closest(".chip"); if (!c) return;
+      $("#mode").querySelectorAll(".chip").forEach((x) => x.setAttribute("aria-pressed", String(x === c)));
+      mode = c.dataset.v;
+      $("#mode-hint").textContent = MODES.find((m) => m[0] === mode)[2];
+      allLabel();
+    });
+    allLabel();
     const send = async (btn, cmd, reset) => {
       btn.disabled = true; btn.textContent = "送出中…";
       try {
@@ -386,10 +427,18 @@ async function renderSeries(num) {
     };
     go.addEventListener("click", () => {
       const a = Number(from.value), b = Math.max(a, Number(to.value));
-      send(go, `/produce ${a === b ? a : `${a}-${b}`}${$("#video").checked ? " --video" : ""}${$("#rewrite").checked ? " --rewrite" : ""}`, label);
+      send(go, `/produce ${a === b ? a : `${a}-${b}`}${$("#video").checked ? " --video" : ""}${mode ? " " + mode : ""}`, label);
     });
-    $("#go-all").addEventListener("click", (e) =>
-      send(e.currentTarget, `/produce all${$("#video").checked ? " --video" : ""}`, () => { e.currentTarget.textContent = "全部生產到完結"; }));
+    $("#go-all").addEventListener("click", (e) => {
+      if (mode && !confirm(`確定要對全部 ${total} 集「${MODES.find((m) => m[0] === mode)[1]}」嗎？`)) return;
+      send(e.currentTarget, `/produce all${$("#video").checked ? " --video" : ""}${mode ? " " + mode : ""}`, allLabel);
+    });
+    $("#go-re").addEventListener("click", (e) => {
+      const n = Number($("#re-eps").value), sec = Number($("#re-secs").value);
+      if (n === total && sec === bible.episode_seconds) { toast("集數與長度沒有變動"); return; }
+      if (!confirm(`改成 ${n} 集 × ${sec} 秒？會重排大綱並清除所有舊分鏡。`)) return;
+      send(e.currentTarget, `/reoutline ${n} ${sec}`, () => { e.currentTarget.textContent = "重排大綱"; });
+    });
     $("#film").addEventListener("click", (e) => {
       const f = e.target.closest(".frame.done");
       if (f) openPlayer(files, titles, Number(f.dataset.ep), bible.title);
@@ -398,7 +447,7 @@ async function renderSeries(num) {
     if (firstTodo) $("#film").scrollLeft = Math.max(0, firstTodo.offsetLeft - 220);
   }
   // 企劃中或生產中時自動刷新
-  if ((!bible || pending) && location.hash === `#/s/${num}`) {
+  if ((!bible || pending || reoutlining) && location.hash === `#/s/${num}`) {
     poll = setInterval(() => { if (!document.hidden && location.hash === `#/s/${num}`) renderSeries(num).catch(handleError); }, 60000);
   }
 }
