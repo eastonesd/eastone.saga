@@ -184,6 +184,41 @@ def cmd_stylebench(a) -> None:
     print(f"▶ 對照圖：{out}（{len(manifest.get('images', []))} 張）")
 
 
+def cmd_reoutline(a) -> None:
+    """調整總集數／每集秒數：依原大綱重新濃縮成新集數（保留結局），清掉舊分鏡讓它照新長度重寫"""
+    from . import prompts
+    from .llm import generate_json
+
+    bible = paths.read_json(paths.bible_path(a.slug))
+    old = paths.read_json(paths.outline_path(a.slug))["episodes"]
+    total = a.episodes
+    plan_text = "\n".join(f"{e['ep']}. {e['title']}" for e in old)
+    bible["episode_count"], bible["episode_seconds"] = total, a.seconds
+    eps: list[dict] = []
+    for start in range(1, total + 1, 10):
+        end = min(total, start + 9)
+        print(f"▶ 重排大綱：第 {start}～{end} 集", flush=True)
+        prompt = prompts.outline_prompt(bible, start, end, total, eps) + f"""
+【原本的 {len(old)} 集規劃（標題）】
+{plan_text}
+
+請把原規劃重新濃縮成 {total} 集：保留主線、關鍵反轉與大結局，合併節奏較慢的集數。第 {start}～{end} 集要對應原規劃中相應的進度。"""
+        out = generate_json(prompt, kind="outline", mock=a.mock, context={"start": start, "end": end})
+        got = {int(e["ep"]): e for e in out["episodes"] if start <= int(e.get("ep", 0)) <= end}
+        for n in range(start, end + 1):
+            e = got.get(n) or {"ep": n, "title": f"第{n}集", "summary": "（待補）", "hook": "", "cliffhanger": ""}
+            e["ep"] = n
+            eps.append(e)
+    paths.write_json(paths.outline_path(a.slug), {"episodes": eps})
+    paths.write_json(paths.bible_path(a.slug), bible)
+    removed = 0
+    for f in (paths.series_dir(a.slug) / "episodes").glob("ep*.json"):
+        f.unlink()
+        removed += 1
+    print(f"▶ 完成：{total} 集 × {a.seconds} 秒；清掉 {removed} 份舊分鏡（生產時會依新長度重寫）")
+    print(summary(a.slug))
+
+
 def cmd_scripts(a) -> None:
     from .writer import write_episodes
 
@@ -253,6 +288,13 @@ def main(argv=None) -> None:
     pa.set_defaults(fn=lambda a: __import__("saga.assemble", fromlist=["x"]).assemble_episode(a.slug, a.ep))
     pr.add_argument("--mock", action="store_true")
     pr.set_defaults(fn=cmd_produce)
+
+    po = sub.add_parser("reoutline", help="調整總集數與每集長度，重排大綱")
+    po.add_argument("--slug", required=True)
+    po.add_argument("--episodes", type=int, required=True)
+    po.add_argument("--seconds", type=int, required=True)
+    po.add_argument("--mock", action="store_true")
+    po.set_defaults(fn=cmd_reoutline)
 
     pw = sub.add_parser("scripts", help="先把分鏡劇本全部寫好")
     pw.add_argument("--slug", required=True)

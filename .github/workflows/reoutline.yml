@@ -1,0 +1,50 @@
+name: 調整集數
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 劇代號（例如 s2）
+        required: true
+      episodes:
+        description: 總集數
+        required: true
+      seconds:
+        description: 每集秒數
+        required: true
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: saga-reoutline-${{ inputs.slug }}
+  cancel-in-progress: false
+
+jobs:
+  reoutline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 重排大綱
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: python -m saga.cli reoutline --slug "${{ inputs.slug }}" --episodes "${{ inputs.episodes }}" --seconds "${{ inputs.seconds }}" | tee "$RUNNER_TEMP/out.md"
+      - name: 存檔並回報
+        run: |
+          git rm -q --cached -r "series/${{ inputs.slug }}/episodes" 2>/dev/null || true
+          scripts/commit.sh "${{ inputs.slug }}：調整為 ${{ inputs.episodes }} 集 × ${{ inputs.seconds }} 秒，重排大綱"
+          ISSUE="${{ inputs.slug }}"; ISSUE="${ISSUE#s}"
+          { echo "📐 已調整為 **${{ inputs.episodes }} 集 × ${{ inputs.seconds }} 秒**，大綱已依原規劃重新濃縮（保留結局），舊分鏡已清除。"; echo; sed -n '/^## /,$p' "$RUNNER_TEMP/out.md"; } > "$RUNNER_TEMP/body.md"
+          gh issue comment "$ISSUE" --body-file "$RUNNER_TEMP/body.md"
