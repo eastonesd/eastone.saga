@@ -35,9 +35,9 @@ def _short(text: str, words: int) -> str:
 # 畫風預設：提示詞前綴＋（選用）畫風 LoRA。bible.render_style 指定；沒指定就依 style_choice 判斷
 STYLES = {
     "donghua3d": {
-        "prompt": "3d chinese donghua CG animation still, semi-realistic anime, unreal engine render, cinematic lighting",
-        "ref": "3d chinese donghua CG character portrait, semi-realistic anime, detailed face",
-        "lora": {"repo": "MarkBW/2.5Dstyle-xl", "file": "2.5DRealistic.safetensors", "scale": 0.8},
+        "prompt": "3d chinese donghua CG animation, semi-realistic anime, dramatic rim light, dark moody cinematic lighting",
+        "ref": "3d chinese donghua CG character portrait, semi-realistic anime, detailed face, rim light",
+        "lora": {"repo": "MarkBW/2.5Dstyle-xl", "file": "2.5DRealistic.safetensors", "scale": 0.6},  # 實測 0.6 最佳
     },
     "realistic": {
         "prompt": "cinematic film still, realistic photo, dramatic lighting",
@@ -60,7 +60,7 @@ def shot_prompt(shot: dict, bible: dict) -> str:
     ids = [c for c in shot["characters"] if c in chars]
     look = lambda c, n: _short(chars[c].get("key_features") or chars[c]["appearance"], n)  # noqa: E731
     if len(ids) >= 2:  # 雙人：明確左右站位，避免兩人特徵混在一起
-        who = f"two people, on the left {look(ids[0], 11)}, on the right {look(ids[1], 11)}"
+        who = f"only two people, on the left {look(ids[0], 11)}, on the right {look(ids[1], 11)}"
     elif ids:
         who = f"single person, {look(ids[0], 18)}"
     else:
