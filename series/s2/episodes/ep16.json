@@ -1,0 +1,386 @@
+{
+  "ep": 16,
+  "title": "計中計，戲弄司馬懿",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "An emperor in dark regal robes holding a bamboo scroll under flickering candlelight, eyes narrowing with suspicion.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備病重需靈芝？絕不可信！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The angry emperor slams his fist onto the bronze table, pointing sternly forward.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "傳令斥候，即刻摸清虛實！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "A calm middle-aged warlord sitting behind a desk, swirling tea in a cup with a cold smirk.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕上鉤了，魏軍已派斥候。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A strategist in a feather robe fanning himself gently, eyes twinkling with sharp intelligence.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公神算，早已佈下口袋陣。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "A dark forest valley illuminated by sudden torchlight as hidden soldiers burst forth.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "深夜夷陵山谷，殺聲震天！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Armored soldiers tackling enemy spies to the muddy ground and binding them with ropes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "一個不留，全都給我生擒！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A captured enemy scout kneeling in dirt, sweating in utter terror.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魏軍精銳斥候，全軍覆沒。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The strategist standing proudly beside a row of massive brass loudspeakers facing distant city walls.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "架起大喇叭，向宛城喊話！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Soldiers shouting together into giant brass horns, sending booming sounds towards distant battlements.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "滾滾雷音，傳遍宛城城頭。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The emperor clutching his ears as deep reverberating shouts reach his inner chamber.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "外面在喊什麼？快閉嘴！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist looking into the dark horizon with an expression of sharp ridicule.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "司馬畏縮不前，乃天下笑柄！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The furious emperor hurls a jade cup onto the stone floor, shattering it completely.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "司馬懿！你竟敢怯戰不前！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "A rival ruler in purple robes pacing nervously across an ornate hall with a grim face.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備大勝？絕不能讓他稱霸！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The warlord sits alone inside his dimly lit tent, flickering oil lamps casting long shadows.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "勝了一局，真正的戰鬥剛開始。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The strategist on the left solemnly hands a ceramic bowl of dark steaming liquid to the warlord on the right.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，該服藥了。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up on the black, ominous concoction reflecting the warlord's cold eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這劇毒，又能壓制幾時？",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The warlord tilts his head back, drinking the black liquid in one decisive gulp.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "黑藥入喉，如烈火撕裂內臟。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Veins pop on the warlord's neck from agony, but a terrifying smile spreads across his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "司馬仲達，以為我在裝病？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Over the worried strategist's shoulder, watching the warlord wipe a streak of dark fluid from his lips.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，您身體承受不住了！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The warlord gazes forward with a vicious, murderous gleam in his dark eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "毒發前最後的清醒，送你一程！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up on the warlord's eye reflecting a blood-red light flick, freezing on intense resolve.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "瘋狂的豪賭，序幕拉開！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

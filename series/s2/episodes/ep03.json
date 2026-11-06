@@ -1,0 +1,386 @@
+{
+  "ep": 3,
+  "title": "手刃內奸，震懾全軍",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A sharp dagger thrusts forward in a dimly lit army tent, stopped abruptly by a bare hand gripping the blade, blood dripping down.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你想刺殺朕？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the warlord looking down with cold, fearless eyes, showing no pain despite his bleeding hand.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "手段太稚嫩了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The advisor bursts into the tent, eyes wide with horror upon seeing the assassination attempt.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公！小心有刺客！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The warlord effortlessly twists his wrist, disarming the attacker and kicking him hard to the ground.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "臥龍稍安勿躁。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The advisor stands stunned on the left, looking at the warlord on the right stepping heavily on the attacker's chest.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公手受傷了！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Blood trickles down the warlord's fingers, but his face remains unbothered and ruthlessly calm.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這點小傷算什麼。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The warlord lowers his chin, pointing the captured bloody dagger at the assassin on the floor.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權給了你多少金銀？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The advisor gasps, astonished by how accurately the lord identified the assassin's employer.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "東吳的死士？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The warlord leans down with intense murderous intent filling his eyes, shadow obscuring half his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "前世你刺我一刀，",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of the warlord's eyes glowing with fierce vengeance in the dim firelight.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "今生該還債了！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "A quick slash of light crosses the screen, blood splashes onto the tactical map on the table.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "拉出去！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Night battlefield with thousands of soldiers assembled, holding torches under a dark cloudy sky.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "全軍聽令！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The warlord stands on the commander's high platform, holding a bloody head aloft.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "通吳內奸，已就地正法！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The advisor stands among guards below, staring up at his lord with overwhelming shock and awe.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公竟如此果決…",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The warlord forcefully hurls the traitor's head down from the high wooden platform into the dust.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰敢背叛，這就是下場！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the warlord roaring over the silent army, torch flames reflecting in his fierce eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "聽清楚了嗎！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Inside a luxury warship cabin, the young Wu ruler receives an urgent secret report with disbelief.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "刺殺劉備失敗了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of the Wu ruler slamming his fist onto the desk, his expression turning anxious and fearful.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "他怎麼會預先知曉？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Back at the platform, the warlord points sharply toward the eastern horizon.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "將首級扔回東吳陣營！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the warlord's bloody face, his lips curling into an intimidating, cold sneer.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "告訴孫權，他欠我的，",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Dramatic freeze-frame close-up of the warlord shouting directly into the camera with absolute authority.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "我要他拿江東來還！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

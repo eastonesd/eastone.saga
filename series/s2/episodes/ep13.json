@@ -1,0 +1,385 @@
+{
+  "ep": 13,
+  "title": "朝堂清算，老臣膽寒",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A heavy boot steps firmly onto a silk-clad shoulder, pressing down with immense force.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你的舌頭，太軟了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist stands tall, looking down with a cold, predatory gaze at the official below.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "軟到只會向東吳搖頭乞憐。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The official is kneeling, tears streaming down his face, trembling uncontrollably.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "主公饒命！臣是為了大局啊！",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "pan_right",
+      "visual": "The protagonist leans in close to the official's ear, his expression terrifyingly calm.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你的大局，就是賣主求榮？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist stands on the left, his fan frozen in mid-air, eyes wide with shock.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此舉恐失老臣之心。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist turns sharply, eyes flashing with a dangerous light.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不得民心者，殺之何惜？",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist draws a long sword, the blade reflecting the cold hall light.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令下去，斬！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Guards drag the screaming official away as the other ministers bow their heads in fear.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "殿內鴉雀無聲，唯有血腥氣。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist wipes the blade with a white silk cloth, slowly and methodically.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "從此刻起，廢除與吳盟約。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist tosses the blood-stained silk onto the floor.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "關閉所有外交，準備開戰！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The strategist's hands are trembling slightly as he realizes the scale of the change.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這簡直是瘋狂。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The protagonist looks at the empty throne, his back to the camera, looking dominant.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不瘋魔，不成活。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist turns around, spreading his arms wide as if embracing the coming war.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "全城進入戰時體制！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up on the protagonist's eyes, filled with a terrifying, prophetic certainty.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "我要讓孫權，夜不能寐。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist bows deeply, his face hidden in the shadows.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "亮，領命。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "The protagonist walks down the steps, the crowd of officials parting like the sea.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "成都，即將迎來腥風血雨。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A palace gate slowly creaks open in the background as the protagonist stops walking.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰在那裡？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A simple black carriage rolls silently into the inner courtyard under the twilight.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "一輛不速之客的馬車。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The carriage stops. A pale hand with delicate rings reaches out to pull the curtain.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "既然來了，何必躲藏？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The curtain parts slightly, revealing a flash of a distinctive phoenix hairpin.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "那是……東吳的配飾？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A pair of sharp, determined eyes look out from the carriage. Freeze frame.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "夫君，你真要殺我皇兄？",
+          "emo": "sad"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

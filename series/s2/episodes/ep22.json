@@ -1,0 +1,384 @@
+{
+  "ep": 22,
+  "title": "十面埋伏，重創魏軍",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "A wide shot of a narrow valley where thousands of arrows rain down from the cliffs onto the panicking Wei army.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "十面埋伏，魏軍插翅難飛！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing on a high cliff, waving a feather fan with a composed smile as chaos unfolds below.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "亮等候司馬將軍多時了。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sharp eyes fixed on the retreating enemy, fan pointing forward commandingly.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "全軍聽令，放箭！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Mounted on a horse, unsheathing a glowing double-edged sword with cold determination.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "隨我殺敵，一個不留！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Tight shot of his intense gaze, fire reflecting in his pupils.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "欠我的，今天全部還回來！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Leading a massive cavalry charge into the flank of the retreating Wei infantry.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "蜀軍精銳傾巢而出！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Slashing through two Wei officers in one swift motion, blood spraying across the screen.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "死！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Stomping on a fallen Wei banner, looking down with absolute authority.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕，這只是個開始。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Behind him, the entire valley is filled with burning grain carts and surrendering soldiers.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魏軍糧草焚毀，徹底潰敗。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sitting on the throne, his hands trembling while holding a scroll, breathing heavily.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "戰報呢？快呈上來！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "His eyes widen as he reads the scroll, face turning pale with shock.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "報！我軍在夷陵全線潰敗！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Slamming his hand on the throne armrest, standing up violently.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "司馬懿是幹什麼吃的？",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Veins popping on his forehead, voice cracking with rage.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "十萬大軍，就這麼沒了？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Pacing back and forth frantically, his crown tilting slightly.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "劉備親率騎兵，斬我兩將。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Staring into the distance, a moment of realization and fear hits him.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備...他難道真的重生了？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Grabbing a precious jade cup from a table, his grip tightening.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "這不可能！他本該死在白帝城！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sudden sharp movement as he lifts the cup high.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "追兵呢？！到底在哪？！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Smashes the jade cup onto the floor; it shatters into a thousand pieces.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "玉碎聲響，魏主驚魂。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking at the shards on the ground, his reflection broken in the pieces.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "難道這天下，真要易主？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "low-angle",
+      "motion": "zoom_in",
+      "visual": "Liu Bei stands on a pile of enemy shields, sword dripping blood, pointing towards the north.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "下一個，就輪到洛陽了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Quan is shown in shadow, hands shaking as he drops a letter from the battlefield.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "快...快去求和！快！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

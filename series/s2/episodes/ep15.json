@@ -1,0 +1,371 @@
+{
+  "ep": 15,
+  "title": "曹丕震怒，司馬出山",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "An ornate jade cup shatters violently on the cold marble floor of an imperial palace.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "朕的天下，要毀在劉備手上？！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "An arrogant young emperor paces furiously in his hall, chest heaving with extreme rage.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "一夜之間，宛城竟然失守！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "pan_right",
+      "visual": "Close-up of the emperor's clenched fist shaking with intense paranoia and fury.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "這大耳賊……到底用了什麼邪術？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "The emperor turns around sharply, gesturing commandingly toward the palace exit.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "去旨！請司馬仲達出山！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Wide shot of a quiet, dimly lit ancient study filled with bamboo scrolls and maps.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "隱居多年的司馬懿，接到密旨。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A pair of weathered hands unrolls a strategic tactical map of Wancheng under candlelight.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "司馬懿看戰報，倒吸一口涼氣。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A mysterious strategist in dark robes sits in shadows, a subtle smile of intrigue on his face.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "「繞道切糧，非人所能及也。」",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "Extreme close-up of sharp eyes glinting in the dark with deep wariness.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "劉備……你背後必有神人指點！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "In a grand imperial hall, a calm warlord stands on the left, conferring with a minister on the right.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "宛城已下，曹丕坐不住了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A wise strategist holding a feather fan smiles with composed confidence.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公英明，魏軍內部必大亂。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The warlord's face remains placid, his gaze calculating and profound.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕定會請出司馬懿。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The minister stops fanning himself, eyes widening slightly in admiration and shock.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公連司馬懿出山都算到了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The warlord smirks with ruthless assurance and sharp, dangerous intensity.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這一次，我要讓他有來無回。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "The emperor stands before a large military sandbox, raising an imperial tally.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "全軍聽令，聽憑司馬總督調遣！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The emperor grits his teeth, eyes burning with desperate aggression.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "務必將劉備的人頭提來見朕！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Inside a dim war tent at night, the warlord stands studying tactical markers on a table.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令下去，全軍就地固守。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The minister looks slightly surprised by the sudden order to hold position.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "不趁勝追擊，直取洛陽？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The warlord turns his head slowly, a cold, knowing smile flickering on his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "司馬懿多疑，誘餌已經撒下了。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "A hand wearing a dark sleeve firmly places a black chess piece onto a war board.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "司馬懿親自督軍，星夜趕往前線。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A finger slowly traces the river contours of a leather battlefield map.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "「劉備，你藏著驚天秘密……」",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of dark eyes looking straight up in a dramatic tension freeze-frame.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "「我一定要把它挖出來！」",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "ep": 20,
+  "title": "百萬圍城，劉備瘋了？",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A blood-stained sword is thrust into the ground, its blade vibrating with intensity.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，滾出來受死！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Looking at the massive army surrounding them, his hands are trembling slightly.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，敵軍百萬，我們被包圍了！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Looking straight at the city walls, ignoring the threat behind his back.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "包圍？朕是要將他們一網打盡！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "His face turns pale as he realizes the magnitude of the gamble.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這簡直是以卵擊石，瘋了！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Raising his hand to signal the archers, fire reflecting in his eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令下去，全員攻城，不留後路！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Standing on the city battlements, looking down at the charging Shu army.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備竟然不等援軍？他在找死！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "His eyes narrow, sensing something is wrong despite the numerical advantage.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "不對，他哪來的底氣？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Behind him, the Shu army ignites thousands of torches, turning night into day.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "給孫權送戰書！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "An arrow with a scroll thuds into the pillar next to his head.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "拿過來！朕倒要看看他寫什麼！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Reading the scroll, his hands start to shake with rage.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "三日內不降，朕便火燒建業！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He tears the scroll into pieces and throws them over the wall.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "狂妄自大！孤有百萬精兵！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Watching the paper scraps fall, a cold smile appears on his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "百萬精兵？不過是土雞瓦犬。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Approaching him with an urgent report in hand.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，魏國曹丕也出兵了！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Laughing as he looks at a map showing Shu and Wu clashing.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "等他們兩敗俱傷，天下歸魏！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Eyes flashing with a terrifying, otherworldly intelligence.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕若敢來，朕連他一起葬了！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing in the Shu camp, looking at the city of her birth with mixed emotions.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "皇叔，你真的要毀了東吳嗎？",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "His voice is cold, showing no room for negotiation.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "是孫權先背叛了朕的信任。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Watching the first wave of Shu soldiers hitting the gate.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "瘋子！他真的開始攻城了！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Suddenly, his fearful expression shifts into a terrifying, manic grin.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "哈哈哈哈！劉備，你上當了！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Realizing something is off as the city gate opens from the inside with no one there.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "空城？這不可能！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "His image on the wall begins to blur, revealing it's a decoy setup.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "我早就不在建業了！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}
