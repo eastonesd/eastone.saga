@@ -128,7 +128,7 @@ jobs:
         run: |
           # 套件伺服器偶爾卡住：每次最多等 4 分鐘，失敗重試 3 次
           for i in 1 2 3; do
-            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg > /dev/null && break
+            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg fonts-noto-cjk fonts-noto-cjk-extra > /dev/null && break
             echo "apt 第 $i 次失敗，重試…"; sleep 10
           done
           command -v ffmpeg
@@ -219,6 +219,11 @@ jobs:
           SLUG="${{ steps.args.outputs.slug }}"
           TITLE=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['title'])")
           gh release view "$SLUG" >/dev/null 2>&1 || gh release create "$SLUG" --title "《$TITLE》" --notes "由 SAGA.AI 自動生產" --latest=false
+          if [ -f "series/$SLUG/poster/poster.jpg" ]; then
+            cp "series/$SLUG/poster/poster.jpg" "$RUNNER_TEMP/$SLUG-poster.jpg"
+            cp "series/$SLUG/poster/poster_3x4.jpg" "$RUNNER_TEMP/$SLUG-poster-3x4.jpg"
+            gh release upload "$SLUG" "$RUNNER_TEMP/$SLUG-poster.jpg" "$RUNNER_TEMP/$SLUG-poster-3x4.jpg" --clobber
+          fi
 
       - name: 失敗通知
         if: failure() && steps.args.outputs.issue != ''

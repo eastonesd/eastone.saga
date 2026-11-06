@@ -228,6 +228,10 @@ async function releaseOf(slug) {
   try { return await gh(`/repos/{repo}/releases/tags/${slug}`); }
   catch (e) { if (e.status === 404) return null; throw e; }
 }
+const posterOf = (rel, slug) => {
+  const find = (n) => (rel?.assets || []).find((a) => a.name === n)?.browser_download_url;
+  return { main: find(`${slug}-poster.jpg`), sq: find(`${slug}-poster-3x4.jpg`) };
+};
 const episodeFiles = (rel) => {
   const map = {};
   for (const a of rel?.assets || []) {
@@ -267,6 +271,7 @@ async function renderList() {
     const done = Object.values(files).filter((f) => f.mp4).length;
     const total = bible?.episode_count || 60;
     const first = Object.keys(files).sort((a, b) => a - b).find((k) => files[k].jpg);
+    const pst = posterOf(rel, slugOf(i)).main;
     const meta = $(`[data-meta="${i.number}"]`);
     if (meta) meta.innerHTML = bible
       ? `${done} / ${total} 集完成・${ago(i.updated_at)}更新`
@@ -274,7 +279,7 @@ async function renderList() {
     const bar = $(`[data-bar="${i.number}"]`);
     if (bar) bar.style.width = `${(done / total) * 100}%`;
     const poster = $(`[data-poster="${i.number}"]`);
-    if (poster && first) poster.style.backgroundImage = `url("${files[first].jpg}")`;
+    if (poster && (pst || first)) poster.style.backgroundImage = `url("${pst || files[first].jpg}")`;
   });
 }
 
@@ -293,7 +298,12 @@ async function renderSeries(num) {
     getJSON(`series/${slug}/outline.json`).catch(() => null),
   ]);
   const files = episodeFiles(rel);
+  const pst = posterOf(rel, slug);
   const total = bible?.episode_count || 0;
+  const lastPoster = [...comments].reverse().find((c) => c.body.startsWith("/poster"));
+  const lastPosterDone = [...comments].reverse().find((c) => c.user.type === "Bot" && /海報完成|海報失敗/.test(c.body));
+  const postering = Boolean(lastPoster && (!lastPosterDone || new Date(lastPosterDone.created_at) < new Date(lastPoster.created_at)));
+  const raw = `https://raw.githubusercontent.com/${cfg.repo}/main/series/${slug}/poster`;
   const titles = Object.fromEntries((outline?.episodes || []).map((e) => [e.ep, e.title]));
 
   // 生產中：最後一次 /produce 之後還沒有回報，或最後的回報說「接力下一批」
@@ -366,6 +376,24 @@ async function renderSeries(num) {
         <button class="btn ghost" id="go" type="button" style="width:100%" ${pending || reoutlining ? "disabled" : ""}>${pending ? "工廠正在處理上一批" : ""}</button>
         </details>
       </section>
+      <section class="panel" id="poster-panel">
+        <h2>劇集海報</h2>
+        ${pst.main ? `
+          <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap">
+            <a href="${pst.main}" target="_blank" rel="noopener"><img src="${pst.main}" alt="海報" style="width:150px;aspect-ratio:9/16;object-fit:cover;border-radius:10px;border:1px solid var(--line)"></a>
+            <div style="flex:1;min-width:160px">
+              <p class="muted small" style="margin:0 0 10px">直式 1080×1920，TikTok／Reels／Shorts／紅果共用；另有 3:4 版給 Instagram 主頁格狀預覽。</p>
+              <a class="btn ghost" href="${pst.main}" download style="width:100%;margin-bottom:8px">下載直式海報</a>
+              ${pst.sq ? `<a class="btn ghost" href="${pst.sq}" download style="width:100%">下載 3:4 版</a>` : ""}
+            </div>
+          </div>` : `<p class="muted small" style="margin:-4px 0 12px">第一批生產時會自動畫海報；舊劇可以直接按下方「重畫 4 張底圖」。</p>`}
+        <details style="margin-top:12px" ${postering ? "open" : ""}>
+          <summary class="muted small" style="cursor:pointer">換底圖</summary>
+          <img src="${raw}/candidates.jpg" alt="" onerror="this.remove()" style="width:100%;margin:12px 0;border-radius:8px">
+          <div class="chips" id="poster-pick">${[1, 2, 3, 4].map((n) => `<button type="button" class="chip" data-n="${n}" ${postering ? "disabled" : ""}>用第 ${n} 張</button>`).join("")}</div>
+          <button class="btn ghost" id="poster-regen" type="button" style="width:100%;margin-top:12px" ${postering ? "disabled" : ""}>${postering ? "海報製作中…" : "重畫 4 張底圖"}</button>
+        </details>
+      </section>
       <section class="panel">
         <h2>調整集數與長度</h2>
         <p class="muted small" style="margin:-4px 0 14px">目前 ${total} 集 × 約 ${bible.episode_seconds} 秒。調整後會依原大綱重新濃縮（保留結局），並清除舊分鏡；之後用「重做畫面與配音」把已上架的集數重做。</p>
@@ -433,6 +461,14 @@ async function renderSeries(num) {
       if (mode && !confirm(`確定要對全部 ${total} 集「${MODES.find((m) => m[0] === mode)[1]}」嗎？`)) return;
       send(e.currentTarget, `/produce all${$("#video").checked ? " --video" : ""}${mode ? " " + mode : ""}`, allLabel);
     });
+    $("#poster-pick").addEventListener("click", (e) => {
+      const c = e.target.closest(".chip"); if (!c || postering) return;
+      send(c, `/poster ${c.dataset.n}`, () => { c.textContent = `用第 ${c.dataset.n} 張`; });
+    });
+    $("#poster-regen").addEventListener("click", (e) => {
+      if (!confirm("重新畫 4 張海報底圖？約需 5～10 分鐘。")) return;
+      send(e.currentTarget, "/poster --regen", () => { e.currentTarget.textContent = "重畫 4 張底圖"; });
+    });
     $("#go-re").addEventListener("click", (e) => {
       const n = Number($("#re-eps").value), sec = Number($("#re-secs").value);
       if (n === total && sec === bible.episode_seconds) { toast("集數與長度沒有變動"); return; }
@@ -447,7 +483,7 @@ async function renderSeries(num) {
     if (firstTodo) $("#film").scrollLeft = Math.max(0, firstTodo.offsetLeft - 220);
   }
   // 企劃中或生產中時自動刷新
-  if ((!bible || pending || reoutlining) && location.hash === `#/s/${num}`) {
+  if ((!bible || pending || reoutlining || postering) && location.hash === `#/s/${num}`) {
     poll = setInterval(() => { if (!document.hidden && location.hash === `#/s/${num}`) renderSeries(num).catch(handleError); }, 60000);
   }
 }

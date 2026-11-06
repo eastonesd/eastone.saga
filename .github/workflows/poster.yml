@@ -1,0 +1,95 @@
+name: 劇集海報
+
+# /poster          重新合成（沿用目前底圖）
+# /poster 3        改用第 3 張底圖
+# /poster --regen  重新畫 4 張底圖
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 劇代號（例如 s1）
+        required: true
+      pick:
+        description: 用第幾張底圖（0＝不變）
+        default: "0"
+      regen:
+        description: 重新畫 4 張底圖
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: saga-poster-${{ inputs.slug || github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  poster:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.comment.body, '/poster') &&
+       github.event.comment.user.login == github.repository_owner &&
+       contains(github.event.issue.labels.*.name, '新劇'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 解析指令
+        id: args
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            SLUG="${{ inputs.slug }}"; PICK="${{ inputs.pick }}"; REGEN="${{ inputs.regen }}"
+          else
+            SLUG="s${{ github.event.issue.number }}"
+            LINE=$(printf '%s' "$COMMENT" | head -1)
+            PICK=$(printf '%s' "$LINE" | grep -oE '[1-9]' | head -1); PICK=${PICK:-0}
+            REGEN=false; printf '%s' "$LINE" | grep -q -- '--regen' && REGEN=true
+            gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" -f content=eyes >/dev/null || true
+          fi
+          FLAGS="--pick $PICK"; [ "$REGEN" = "true" ] && FLAGS="$FLAGS --regen"
+          { echo "slug=$SLUG"; echo "flags=$FLAGS"; } >> "$GITHUB_OUTPUT"
+      - name: 安裝字型
+        timeout-minutes: 12
+        run: |
+          for i in 1 2 3; do
+            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends fonts-noto-cjk fonts-noto-cjk-extra > /dev/null && break
+            sleep 10
+          done
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 製作海報
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          SAGA_KERNEL_SLUG: saga-poster-${{ steps.args.outputs.slug }}
+        run: python -m saga.cli poster --slug "${{ steps.args.outputs.slug }}" ${{ steps.args.outputs.flags }}
+      - name: 存檔、上傳、回報
+        run: |
+          SLUG="${{ steps.args.outputs.slug }}"
+          scripts/commit.sh "$SLUG：劇集海報"
+          TITLE=$(python -c "import json;print(json.load(open('series/$SLUG/bible.json',encoding='utf-8'))['title'])")
+          gh release view "$SLUG" >/dev/null 2>&1 || gh release create "$SLUG" --title "《$TITLE》" --notes "由 SAGA.AI 自動生產" --latest=false
+          cp "series/$SLUG/poster/poster.jpg" "$RUNNER_TEMP/$SLUG-poster.jpg"
+          cp "series/$SLUG/poster/poster_3x4.jpg" "$RUNNER_TEMP/$SLUG-poster-3x4.jpg"
+          gh release upload "$SLUG" "$RUNNER_TEMP/$SLUG-poster.jpg" "$RUNNER_TEMP/$SLUG-poster-3x4.jpg" --clobber
+          SHA=$(git rev-parse --short HEAD)
+          RAW="https://raw.githubusercontent.com/${{ github.repository }}/$SHA/series/$SLUG/poster"
+          gh issue comment "${SLUG#s}" --body "🎨 海報完成（直式 1080×1920，另附 3:4 版）
+
+          <img src=\"$RAW/poster.jpg\" width=\"320\">
+
+          底圖候選（留言 \`/poster 2\` 改用第 2 張，\`/poster --regen\` 重畫 4 張）：
+
+          <img src=\"$RAW/candidates.jpg\" width=\"600\">"

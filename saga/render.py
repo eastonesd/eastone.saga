@@ -80,7 +80,7 @@ def _shot_seed(slug: str, ep: int, sid: str) -> int:
     return int(uuid.uuid5(uuid.NAMESPACE_URL, f"{slug}/{ep}/{sid}").int % (2**31 - 1))
 
 
-def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
+def build_job(slug: str, eps: list[int], *, video: bool = False, poster: bool | None = None) -> dict:
     bible = paths.read_json(paths.bible_path(slug))
     refs = paths.refs_dir(slug)
     characters = []
@@ -107,6 +107,9 @@ def build_job(slug: str, eps: list[int], *, video: bool = False) -> dict:
                               "seed": _shot_seed(slug, ep, s["id"])})
             if video and s.get("key") and not (shot_dir / f"{s['id']}.mp4").exists():
                 video_shots.append({"key": key, "prompt": prompt + ", subtle natural motion, cinematic"})
+    from . import poster as _poster
+    if poster or (poster is None and _poster.needs_art(slug)):  # 第一次生產時順便畫海報底圖
+        shots += _poster.poster_shots(slug, bible, style_of(bible))
     return {
         "job_id": uuid.uuid4().hex[:12],
         "slug": slug,
@@ -280,6 +283,13 @@ def render(slug: str, eps: list[int], *, mock: bool = False, video: bool = False
     for name in manifest.get("images", []) + manifest.get("videos", []):
         f = find(name)
         if not f:
+            continue
+        if name.startswith("poster_"):
+            from . import poster as _poster
+            dest = _poster.poster_dir(slug)
+            dest.mkdir(parents=True, exist_ok=True)
+            from PIL import Image as _Img  # 存成高品質 JPG，避免 repo 塞滿大 PNG
+            _Img.open(f).convert("RGB").save(dest / name.replace("poster_", "art_").replace(".png", ".jpg"), quality=95)
             continue
         ep_tag, sid = Path(name).stem.split("_", 1)
         dest = paths.build_ep_dir(slug, int(ep_tag[2:])) / "shots"

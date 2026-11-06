@@ -1,5 +1,5 @@
 // SAGA.ai service worker：讓 App 可安裝、離線也能打開外殼
-const VERSION = "saga-v6";
+const VERSION = "saga-v7";
 const SHELL = ["./", "index.html", "app.js", "manifest.webmanifest",
   "icons/icon-192.png", "icons/icon-512.png", "icons/logo-640.jpg", "icons/favicon.png"];
 

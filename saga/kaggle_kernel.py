@@ -90,10 +90,15 @@ elif mode == "shots":
     blank = Image.new("RGB", (224, 224), (128, 128, 128))
     mine = JOB["shots"][shard::nshards]
     W, H = JOB.get("width", 1344), JOB.get("height", 768)
-    left = Image.new("L", (W, H), 0); left.paste(255, (0, 0, W // 2 + W // 10, H))
-    right = Image.new("L", (W, H), 0); right.paste(255, (W // 2 - W // 10, 0, W, H))
-    duo_masks = maskproc.preprocess([left, right], height=H, width=W)
-    duo_masks = [duo_masks.reshape(1, duo_masks.shape[0], duo_masks.shape[2], duo_masks.shape[3])]
+    _masks = {}
+
+    def duo_masks_for(w, h):  # 每種畫面尺寸各自的左右分區
+        if (w, h) not in _masks:
+            left = Image.new("L", (w, h), 0); left.paste(255, (0, 0, w // 2 + w // 10, h))
+            right = Image.new("L", (w, h), 0); right.paste(255, (w // 2 - w // 10, 0, w, h))
+            m = maskproc.preprocess([left, right], height=h, width=w)
+            _masks[(w, h)] = [m.reshape(1, m.shape[0], m.shape[2], m.shape[3])]
+        return _masks[(w, h)]
     scale = JOB.get("ip_scale", 0.5)
     done = 0
     for s in mine:
@@ -104,14 +109,15 @@ elif mode == "shots":
                 pipe.set_adapters(["style"], adapter_weights=[s.get("lora", style.get("scale", 0.8))])
             ids = [r for r in (s.get("refs") or [s.get("ref")]) if r in refs]
             gen = torch.Generator("cuda").manual_seed(s["seed"])
+            sw, sh = s.get("w", W), s.get("h", H)  # 海報等特殊尺寸
             if len(ids) >= 2:  # 雙人鏡頭：左半邊鎖第一人、右半邊鎖第二人
                 pipe.set_ip_adapter_scale([[scale, scale]])
-                img = pipe(prompt=s["prompt"], width=W, height=H, ip_adapter_image=[[refs[ids[0]], refs[ids[1]]]],
-                           cross_attention_kwargs={"ip_adapter_masks": duo_masks}, generator=gen, **KW).images[0]
+                img = pipe(prompt=s["prompt"], width=sw, height=sh, ip_adapter_image=[[refs[ids[0]], refs[ids[1]]]],
+                           cross_attention_kwargs={"ip_adapter_masks": duo_masks_for(sw, sh)}, generator=gen, **KW).images[0]
             else:
                 ref = refs.get(ids[0]) if ids else None
                 pipe.set_ip_adapter_scale(scale if ref is not None else 0.0)
-                img = pipe(prompt=s["prompt"], width=W, height=H, ip_adapter_image=ref if ref is not None else blank,
+                img = pipe(prompt=s["prompt"], width=sw, height=sh, ip_adapter_image=ref if ref is not None else blank,
                            generator=gen, **KW).images[0]
             img.save(f"{OUT}/{s['key']}.png")
             done += 1
@@ -229,7 +235,7 @@ if JOB.get("video_shots") and (time.time() - T0) / 60 < JOB.get("time_budget_min
     wait_all(run("video"))
 
 # ── 5. 清單 ──────────────────────────────────────────────
-images = sorted(os.path.basename(p) for p in glob.glob(f"{OUT}/ep*_s*.png"))
+images = sorted(os.path.basename(p) for p in glob.glob(f"{OUT}/ep*_s*.png") + glob.glob(f"{OUT}/poster_v*.png"))
 videos = sorted(os.path.basename(p) for p in glob.glob(f"{OUT}/ep*_s*.mp4"))
 wanted = {s["key"] for s in JOB["shots"]}
 manifest = {

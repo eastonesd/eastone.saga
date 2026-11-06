@@ -105,6 +105,12 @@ def cmd_produce(a) -> None:
     if "error" in result:
         raise result["error"]
     manifest = result["manifest"]
+    from . import poster
+    if not (poster.poster_dir(a.slug) / "poster.jpg").exists():
+        try:
+            poster.finalize(a.slug)
+        except Exception as e:  # 海報失敗不影響生產
+            print(f"  ⚠ 海報合成失敗：{e}", flush=True)
     if a.no_assemble:  # 剪輯交給平行的 matrix 工作
         ok = [e for e in batch if (paths.build_ep_dir(a.slug, e) / "audio" / "timing.json").exists()]
         print(f"▶ 算圖與配音完成，交給平行剪輯：{ok}", flush=True)
@@ -147,7 +153,7 @@ def cmd_stylebench(a) -> None:
     bible = dict(original, render_style=a.style)
     paths.write_json(paths.bible_path(a.slug), bible)  # 暫時套用，建 job 用
     try:
-        job = render.build_job(a.slug, [], video=False)
+        job = render.build_job(a.slug, [], video=False, poster=False)
     finally:
         paths.write_json(paths.bible_path(a.slug), original)
     for c in job["characters"]:
@@ -235,6 +241,36 @@ def cmd_reoutline(a) -> None:
     print(summary(a.slug))
 
 
+def cmd_poster(a) -> None:
+    """重畫或重選海報：--regen 重新畫 4 張底圖；--pick N 改用第 N 張"""
+    from . import poster, render
+
+    d = poster.poster_dir(a.slug)
+    if a.pick:
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "choice.txt").write_text(str(a.pick))
+    if a.regen or poster.needs_art(a.slug):
+        for f in d.glob("art_v*.jpg"):
+            f.unlink()
+        job = render.build_job(a.slug, [], video=False, poster=True)
+        dl = paths.BUILD_DIR / a.slug / "_poster"
+        shutil.rmtree(dl, ignore_errors=True)
+        manifest = render._run_mock(job, dl) if a.mock else render._run_on_kaggle(job, dl)
+        refs = paths.refs_dir(a.slug)
+        refs.mkdir(parents=True, exist_ok=True)
+        from PIL import Image
+        for name in manifest.get("images", []):
+            f = next(iter(dl.rglob(name)), None)
+            if f and name.startswith("poster_"):
+                d.mkdir(parents=True, exist_ok=True)
+                Image.open(f).convert("RGB").save(d / name.replace("poster_", "art_").replace(".png", ".jpg"), quality=95)
+        for name in manifest.get("refs", []):  # 若定妝照是這次才畫的，一併存回
+            f = next(iter(dl.rglob(name)), None)
+            if f:
+                shutil.copy(f, refs / name.removeprefix("ref_"))
+    poster.finalize(a.slug)
+
+
 def cmd_scripts(a) -> None:
     from .writer import write_episodes
 
@@ -318,6 +354,13 @@ def main(argv=None) -> None:
     pw.add_argument("--workers", type=int, default=2)
     pw.add_argument("--mock", action="store_true")
     pw.set_defaults(fn=cmd_scripts)
+
+    pp2 = sub.add_parser("poster", help="劇集海報：重畫或重選底圖")
+    pp2.add_argument("--slug", required=True)
+    pp2.add_argument("--pick", type=int, default=0)
+    pp2.add_argument("--regen", action="store_true")
+    pp2.add_argument("--mock", action="store_true")
+    pp2.set_defaults(fn=cmd_poster)
 
     pb = sub.add_parser("stylebench", help="比較畫風設定")
     pb.add_argument("--slug", required=True)
