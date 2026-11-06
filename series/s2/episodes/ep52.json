@@ -1,0 +1,278 @@
+{
+  "ep": 52,
+  "title": "藤甲神兵，連弩失效",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "battlefield chaos, dust, torches blazing",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "箭矢全失效！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "liu_bei eyes widen, sweat drips",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "敵軍持火衝來！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "zhuge_liang studies map, finger points",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "藤甲防火？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "brows knit, expression intense",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "必有內應！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_left",
+      "visual": "liu_bei and zhuge_liang stand amid flames, troops behind",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰把圖給敵？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "zhuge_liang leans forward, demanding tone",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "參謀，說！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "grimace, disdainful glare",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "內部泄密。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "sun_shangxiang rushes in, eyes wide with alarm",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "我聞火味，危急！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "liu_bei clenches fist, jaw tight",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "背叛者必死！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "cao_pi stands on hill, smug smile, observing battle",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "計謀成功。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "cao_pi eyes glitter with contempt",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "看他慌亂。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "sun_quan on shore, shouting to his fleet",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "魏軍助我！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "sun_quan clenches jaw, angry glare",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "背後有人。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "liu_bei and zhuge_liang discuss strategy, map spread",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "先撤後燃。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "zhuge_liang smiles, draws fire plan on parchment",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "以火克藤。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    }
+  ]
+}
