@@ -1,0 +1,242 @@
+{
+  "ep": 44,
+  "title": "香香回歸，親情勒索",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Smoke billows around the burning ship deck. Figure stands defiantly at the bow, face lit by fire, eyes wild with desperation and maniacal laughter.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備，你輸了！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Face illuminated by distant flames. Eyes narrow, expression cold and calculating, ignoring the chaos behind him.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Figure runs in from the right, holding a golden talisman high. Wind blows hair, expression tense but determined.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "住手！我有鑰匙！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sharp turn of head towards the voice. Eyebrow raises slightly, revealing suspicion.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫尚香？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Two figures face each other. Left figure holds talisman, right figure stands still, guard raised. Tense silence.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "開閘鑰匙在我手。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Left figure steps back, creating distance. Right figure's eyes scan the left figure's hands, seeing through the bluff.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "放我兄長走。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Cold smirk forms on lips. Eyes devoid of mercy, looking directly into the camera/subject.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你是在拖時間？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Face pales, clutching the talisman tighter. Fear mixes with defiance, jaw tightens.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "你想殺我？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "zoom_in",
+      "visual": "Over right figure's shoulder, looking at left figure. Weapon tip points slightly up, threatening posture.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "為父兄求情？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Gaze shifts past the right figure to the distant city lights in the background. Expression softens into tragic resolve.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "荊州百姓無辜。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Head tilts slightly, intrigued by the sudden shift in tone. Waiting for the punchline.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "那是你的錯。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Brings the golden talisman to mouth. Teeth dig into the metal, face contorts in pain and rage.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "extreme_close_up",
+      "motion": "static",
+      "visual": "Mouth opens, biting down hard. Metal shatters, teeth gritted, blood starts to drip from the corner of the lip.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Bites the key, swallows it whole. Wipes mouth with sleeve, blood stains the fabric. Eyes tear-filled but unyielding.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "鑰匙已毀。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "ep": 45,
+  "title": "置之死地，皇叔覺醒",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of Liu Bei's eye. The pupil dilates sharply. Reflected in the eye is a massive wave of brown floodwater crashing down like a dragon. The lighting is harsh and chaotic.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "洪水倒灌，荊州失守。",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Liu Bei stands on a muddy ridge, water swirling at his boots. He looks down with a cold, indifferent expression. Rain mixes with the flood mist.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "固守死路，不如變數。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang stares at Liu Bei, holding his feather fan tightly. His face shows shock and confusion at the sudden change in strategy. Sweat drips from his chin.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這……太險了。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Liu Bei turns his head slowly, ignoring Zhuge Liang's concern. He gestures sharply with his sword hand, pointing towards the high ground.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "全軍撤退，上高地！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Wide shot of the battlefield. Shu troops are retreating in an orderly but hurried manner towards the elevated terrain. The floodwater is advancing rapidly behind them, churning the ground.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "大漢軍如魚群般後撤。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Quan grips the railing of his flagship, knuckles white. He looks relieved for a moment, believing he has saved his water fleet from the flood's direct impact.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "讓開！吾兒水師無恙！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Sun Quan's smile fades as he sees the water level rising rapidly around his smaller boats. The current is pulling his ships towards a dead-end bay.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "不對！水流方向不對！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei stands atop the high rock, cold wind blowing his robe. He watches the floods converge, a slight, chilling smirk on his lips.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "引蛇入洞，水到渠成。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The massive wall of floodwater crashes into the bay where the Wu fleet is trapped. Explosions of wood and splintering masts fill the screen. Chaos erupts among the sailors.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "大水如巨龍，吞噬泊船。",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sun Quan is thrown off balance, his face distorted with terror. His flagship is tilting dangerously. Water splashes directly onto his face.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "不！我的水師！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "The flagship breaks in two. It sinks into the murky floodwater. Debris floats everywhere. The Wu water fleet is completely destroyed.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "東吳水師，一朝覆滅。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Liu Bei watches the destruction with a calm gaze. He sheathes his sword slowly. The rain begins to lighten.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，你還剩什麼？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang looks at Liu Bei, his eyes wide with awe and fear. He realizes the scale of Liu Bei's ruthlessness and foresight.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公……絕情至此。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

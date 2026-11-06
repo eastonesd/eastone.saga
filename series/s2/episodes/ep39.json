@@ -1,0 +1,316 @@
+{
+  "ep": 39,
+  "title": "絕地逃生，斬草除根",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Dim throne room, candlelight flickers, antagonist smirks in shadow",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備，你回不來了，這裡是墳場",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Narrow corridor, disguised Liu Bei slips past guards, eyes sharp",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "潛入皇宮",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up on Liu Bei’s face, mask slightly askew, determination",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "偽裝必須完美",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Cao Pi watches from a balcony, spotting a moving shadow",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "有賊影子？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei tightens grip on hidden sword, expression unchanged",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不動聲色",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang emerges from behind a pillar, hand raised",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "機會來了",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei",
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Liu Bei steps into the main hall, sword concealed, Cao Pi seated on throne",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "此時必死",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Cao Pi rises, sneering, hand on his own sword hilt",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "你已無路",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei",
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei rips off disguise, face revealed, eyes blazing",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "墳場？是你的喪禮",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi",
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Cao Pi draws his sword, charging forward with fury",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "斬！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei",
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Liu Bei parries, counter‑strike aimed at Cao Pi’s chest",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "斬你！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Zhuge Liang releases a volley of flaming arrows from a balcony",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "燃燒！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Cao Pi staggers, eyes wide, blood dripping from wound",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "不可能！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei",
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei swings, decapitating Cao Pi in one clean motion",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "斬首！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s15",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Head rolls on the marble floor, crimson spreading",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "死了",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wei_palace",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Sun Quan bursts through side doors, armor clanking",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "吾等趕到",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "wei_palace",
+      "characters": [
+        "sun_shangxiang",
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Sun Shangxiang stands beside Liu Bei, fists clenched",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "還有什麼？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

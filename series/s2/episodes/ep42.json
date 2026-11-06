@@ -1,0 +1,239 @@
+{
+  "ep": 42,
+  "title": "血詔疑雲，驚天秘密",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Rapid zoom into Liu Bei's face, sweat and blood on forehead, eyes wide with shock, background dark throne room.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這詔書，是假的？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei stands up abruptly, knocking over a small table, holding a bamboo scroll in one hand, gripping a dagger in the other.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_right",
+      "visual": "Over Liu Bei's shoulder, showing Zhuge Liang entering the room, looking at the blood-stained scroll with concern.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up on Zhuge Liang's eyes, pupils contracting, realizing the gravity of the situation.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這是密謀。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei hands the scroll to Zhuge Liang, his expression stern and dangerous.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕想淹荊州？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang reads the scroll, his face turning pale, hands trembling slightly as he points to a specific seal.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "東吳水閘，三日後。",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Liu Bei paces back and forth, his cloak flowing, showing his internal calculation and rage.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "百萬軍民，危矣！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang looks up, his fan half-open, a smile forming as he thinks of a counter-move.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "正好，引出細作。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei stops, turns to face the camera, his eyes sharp and deadly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令，水師備戰。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Wide shot of the battlefield at night, torches flickering, soldiers rushing around, chaos and urgency.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Liu Bei on a horse, shouting orders into the night, his cape billowing in the wind.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "三萬水師，即刻啟程。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Quan sits in his ship's cabin, drinking wine, a sneer on his face as he looks at a map.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "水閘一開，荊州沒。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Sun Quan stands up, slamming the map table, his expression arrogant and confident.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備，你拿我怎樣？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang's face, his eyes wide as he realizes something is off about the timing.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "不對，閘門動了。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

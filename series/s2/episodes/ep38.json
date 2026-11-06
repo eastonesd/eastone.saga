@@ -1,0 +1,265 @@
+{
+  "ep": 38,
+  "title": "巔峰對決，皇叔入洛陽",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sword blade impacts the heavy wooden gate, wood splinters fly. Intense determination on face, chaotic battlefield background blurred.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，準備受死！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Shield breaks, figure stunned and falling backward. Panic in the eyes of the rival leader.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Soldiers charging through the broken gate. Dust and smoke rising. Triumphant advance.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei",
+        "sun_quan"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Liu Bei forces the distance, sword tip near Sun Quan. Sun Quan looks up, defiant but trapped.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "你休想！我兄弟不會捨得！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei smirks slightly, lifting the sword again. Cold calculation in the eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "廢話真多！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sword swings down. Impact sound implied by motion. Sun Quan ducks, barely escaping.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wu_ship",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Zhuge Liang stands on the deck, furrowed brow, looking towards the north. Fan held loosely.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wu_ship",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang's eyes widen. He senses something is wrong. Wind blows his robes.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "A messenger runs towards the ship deck, out of breath. Holds a sealed letter.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "急報！洛陽失守！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang catches the letter. Opens it quickly. Face pales.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Zhuge Liang turns sharply towards the battle. Voice cuts through the noise.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公！司馬懿反了！",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei freezes mid-strike. Shadow falls over his face. Eyebrows lower.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei lowers his sword slowly. Conflict in his eyes between the immediate enemy and the distant threat.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "洛陽？血洗？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wu_ship",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang steps forward, holding the letter. Urgent expression.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "洛陽已陷！速決策！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Liu Bei glances back at Sun Quan, then looks up at the sky. Deep breath.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "建業暫緩。回師北伐！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Liu Bei turns on his heel, cavalry following. Ship begins to turn. Chasing dust.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Quan watches the retreating army. Confusion and relief mix in his rugged face.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "竟…就這樣撤了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

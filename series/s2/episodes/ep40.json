@@ -1,0 +1,165 @@
+{
+  "ep": 40,
+  "title": "稱帝之爭，民心所向",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu steps on corpse, grim expression, low lighting",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "從今天起，天下姓劉。",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Zhuge arrives with troops, confident stance",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "外軍已包圍。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Palace courtyard filled with kneeling ministers",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "諸侯齊拜。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Quan on deck, fierce eyes, stormy sea backdrop",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "吾等不可退。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Shangxiang gripping rail, determined look",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "大哥，我願死。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu stands before empty throne, triumphant glare",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "天下屬於我。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei",
+        "sun_quan"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_left",
+      "visual": "Liu looks toward distant Wu fleet, Sun Quan silhouette on horizon",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "江東仍有餘孽。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge points sword forward, issuing command",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "速斬其首！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Soldiers surge forward, weapons raised",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "衝鋒！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

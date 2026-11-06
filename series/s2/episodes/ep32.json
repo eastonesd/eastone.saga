@@ -1,0 +1,264 @@
+{
+  "ep": 32,
+  "title": "死士突襲，皇叔遇險",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up on a sword blade slicing through air, blood splatter hits the lens immediately.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei's face, blood dripping from a fresh cut on his cheek, but a smirk forms.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "就這？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang's fan drops, eyes wide with shock, hands trembling slightly.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Liu Bei raises his left arm, using his sleeve to hide a deep gash, stance stable.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei's eyes narrow, calculating, ignoring the pain.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕的狗，來了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang rushes forward, trying to inspect the wound, face pale.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "傷得不輕，撤軍！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "Liu Bei waves his hand dismissively, staring at the tent entrance.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "撤？留着他。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei draws his sword slowly, blade reflecting the firelight.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei's cold stare, eyes sharp and predatory.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "他想死，難。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Liu Bei throws a coin at a specific spot on the wall behind him.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The coin hits a hidden lever, dust falls from the tent floor.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang realizes the trap, eyes widening in admiration and fear.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這是...自殺陷阱？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei turns, back to the camera, gesturing to the shadows outside.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "諸葛，點火。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang nods rapidly, eyes glowing with understanding.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Liu Bei steps forward, sword tip pointing towards the tent opening.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei's lips curl into a terrifying smile, blood still on cheek.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "送客。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Silhouettes of soldiers emerge from the darkness outside the tent.",
+      "lines": [],
+      "key": false
+    }
+  ]
+}

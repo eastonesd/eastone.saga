@@ -1,0 +1,252 @@
+{
+  "ep": 34,
+  "title": "反向火攻，東吳夢碎",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "極近特寫，火光映照在角色臉上，表情從興奮瞬間轉為極度恐懼，瞳孔地震，眼神慌乱地看向後方。",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "這不可能！火燒我船？",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "中景，角色冷靜站立，手持火鉤，背景是熊熊燃燒的江面和翻滾的吳軍戰船，姿態從容不迫。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "遠景，旗艦嚴重受損，煙霧瀰漫，角色瀕臨崩潰，周圍將士倉皇逃竄，船體傾斜。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "特寫，角色眉頭微蹙，眼神冰冷銳利，嘴角勾起一抹不屑的冷笑，火光在眼中跳動。",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "燒錯了對象。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "過肩鏡頭，從角色肩後拍攝前方爆炸的火光，角色身體顫抖，顯得渺小無助。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "中景，角色手持羽扇，面露震驚之色，看著遠處的火海，嘴巴微張，顯然沒料到發展如此迅速。",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這計策...太狠了。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "特寫，角色眼神堅定，充滿掌控全局的自信，光影對比強烈，突出其冷血與果斷。",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "狠，才能活。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "遠景，角色被將士保護著向小艇撤退，旗艦在身後徹底被火海吞噬，絕望感蔓延。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "中景，角色轉身面向追擊的吳軍殘部，揮手下令，氣勢壓場。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "特寫，角色冷汗直流，臉色蒼白，眼神中充滿對劉備的恐懼與不甘。",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備！你陰我！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "過肩鏡頭，從角色側後方拍攝，前景虛化角色臉龐，背景清晰顯示孫權的小艇在火海中驚慌失措。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "中景，角色跪在小艇上，膝蓋抵住甲板，表情扭曲，完全失去了作為君主的威嚴。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "特寫，角色眼神複雜，既有對主公手段的震驚，也有一絲敬畏，微微點頭。",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "東吳水師，盡殲。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "遠景，小艇艱難逃離火場，背後是漫長的火牆，看似安全實則無路可逃。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "中景，角色負手而立，微風吹動衣袍，神情平靜如同在觀看一場預演好的戲劇。",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "特寫，角色淚流滿面，Mixing with soot, expressing utter defeat and horror at the realization. The light is dim and chaotic.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "我輸了...徹底輸了。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_right",
+      "visual": "過肩鏡頭，從角色背後拍攝，前景是角色堅定的背影，背景是逐漸遠去的孫權小艇。",
+      "lines": [],
+      "key": false
+    }
+  ]
+}
