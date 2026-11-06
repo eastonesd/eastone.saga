@@ -1,0 +1,385 @@
+{
+  "ep": 41,
+  "title": "真假天子，皇宮殺機",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A drop of red blood falls onto the golden throne armrest while heavy iron chains rattle behind.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰敢在朕身後裝神弄鬼？",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "A scarred hand reaches out from behind the curtain and grips the hilt of the sword.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這柄刀，你動不得！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei spins around with a cold sneer and tightly grabs the attacker's wrist.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "司馬昭？不，是曹丕殘黨！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei violently twists the assassin's arm, throwing him onto the stone floor.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "敢在宮中伏擊，死路一條！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang steps out holding a feather fan, looking down at the corpse in shock.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此人搜出魏宮密圖！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei stands on the left taking the bloody parchment handed by Zhuge Liang on the right.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "呈上來，朕倒要看看。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei unrolls the ancient scroll revealing red glowing subterranean passages.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這是……皇宮地下密道？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang points at the red markings with a solemn and stern look.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "密道終點指向海底寶庫！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Liu Bei paces near the altar, contemplating the dark subterranean route.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕當年竟藏了此等秘密。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang inspects an strange copper token recovered from the dead assassin.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "只怕這寶庫隱藏毀滅陰謀。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei puts on Sima Zhao's outer robe and mask, disguising his identity.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕便化身司馬昭入內探查！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "Zhuge Liang bows nervously trying to persuade Liu Bei to stay back.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公不可親身犯險啊！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei pushes open a heavy stone doorway under the throne altar.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不入虎穴，焉得虎子！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Liu Bei walks alone holding a torch through a dark damp underground corridor.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "劉備獨自步入皇宮地底密道。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Torchlight shines on a giant bronze mechanism carved into the underground wall.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這是曹丕留下的機關陣？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei looks at a blueprint showing watergates connected directly to the Yangtze river.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "他竟想用龍脈淹毀大漢水師！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s17",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Above ground, Zhuge Liang rapidly calculates using stargazing tools, looking pale.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "不好，密道殺陣被啟動了！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Heavy iron gates drop in front of Liu Bei, blocking his retreat.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "區區鐵門，也妄想困住朕？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei swings his blade with full strength, shattering the bronze lock on a chest.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "給朕開！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Inside the chest lies a sinister blood-soaked bamboo scroll.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這難道是曹丕的毒血詔？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei reads the bloody scroll as ominous red light illuminates his furious expression.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "若朕稱帝，便開閘淹荊州？",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

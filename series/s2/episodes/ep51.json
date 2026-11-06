@@ -1,0 +1,246 @@
+{
+  "ep": 51,
+  "title": "登基大典，南蠻奇襲",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of hands firmly gripping the jade seal. A massive wooden door shatters inward, debris flying. Dust clouds rise. Intense, chaotic lighting.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A large, muscular barbarian warrior steps over splintered wood, laughing maniacally. He holds a heavy hammer. Background is blurred throne room.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "新皇，受死吧！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Face of Emperor, eyes cold and sharp, no fear. Dragon robe contrasts with the chaos. Staring directly into camera.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "就憑這隻野狗？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Zhuge Liang enters quickly, fan in hand, blocking the barbarian's view. He points his fan towards the window.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，退後！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wei_palace",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Shangxiang draws a sword, her expression tense and fierce. Sweat on forehead. Looking at the intruder.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "大膽虜賊！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Wide shot of a distant battlefield. Fire burns on the horizon. Thousands of red flags waving. Smoke rises. Eerie atmosphere.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "邊境，已陷落。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei stands up, adjusting his robe. He looks calm amidst the panic of guards. Guards are retreating in fear.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳朕旨意！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang's eyes narrow. He whispers urgently to Liu Bei. Fan covers half his face, hiding his clever smile.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "聲東，擊西。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Han army formation shifts rapidly. Arrows fire in a different direction, creating a distraction. Dust clouds explode.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "漢軍，調頭。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Quan, disguised as a barbarian commander, looks confused. He sees the fire starting on his own flank. Panic in his eyes.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "有埋伏？！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei picks up the jade seal again. He places it on the table with a heavy thud. Guards stand at attention.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "皇權，不容侵犯。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Sun Shangxiang rides a horse, leading a cavalry charge. Her hair flies in the wind. She shouts orders to her soldiers.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "衝殺！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The rear guard is overwhelmed. A new wave of enemies appears from the jungle. Green flags mix with red. Total chaos.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "後方，失守了。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang looks at the map, his face pale. He realizes the trap is closing. He drops his fan slightly.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主力，被夾擊了。",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

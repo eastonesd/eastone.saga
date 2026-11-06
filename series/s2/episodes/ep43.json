@@ -1,0 +1,386 @@
+{
+  "ep": 43,
+  "title": "水底驚雷，東吳偷襲",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "A massive fire burns at the Jingzhou docks, reflecting on the dark river water.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "荊州碼頭火光沖天，敵襲！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of eyes reflecting the orange flames, brow furrowed in intense focus.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，你想用淹城換我主力？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "One character points at a map while the other stands firm, both illuminated by fire.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，水閘已被細作破壞！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A cold, decisive look replaces the initial shock.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "水患已緩，他必急搶糧草。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "The protagonist draws a sword and points it toward the river bank.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令，口袋陣合圍，斷其後路！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Dozens of small warships stealthily approach the burning dock through the mist.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "東吳水師，正落入致命陷阱。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Soldiers on the ship are cheering, holding torches and ready to jump ashore.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "攻破碼頭，荊州糧草盡歸東吳！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A slight, mocking smile appears on the protagonist's face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "想要糧？我送你滿船烈火！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist signals with a feather fan toward the sky.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "放箭！焚江！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Thousands of fire arrows rain down from the dark hills onto the river.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "漫天箭雨，封死退路。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The smile on the villain's face freezes into a look of pure terror.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "不好！劉備早有預判！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The deck catches fire instantly, soldiers are falling into the water in chaos.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "快撤！快撤回江心！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Looking down from the cliff at the burning fleet below.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，東吳敗局已定。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist stares intently at one specific, larger ship.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不對，旗艦上那是誰？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "A massive flagship, untouched by the initial fire, slowly turns its side.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "煙塵中，一人負手而立。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The villain stands on the burning bow, his face illuminated by a sinister green fire.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備，你以為贏了嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist's expression shifts from triumph to confusion.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這狂笑……他在打什麼主意？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The villain throws a set of heavy keys into the river with a wild look.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "鑰匙已毀，水閘將永世閉鎖！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist drops his fan in shock.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "不好！水閘失控，洪水倒灌！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The villain laughs maniacally while his own ship starts to tilt.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "陪我東吳水師，一起死吧！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A giant wave of water starts to crest behind the protagonist, towering over the docks.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "瘋子……他竟然要同歸於盡！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

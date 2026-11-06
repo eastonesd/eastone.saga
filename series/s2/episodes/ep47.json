@@ -1,0 +1,315 @@
+{
+  "ep": 47,
+  "title": "以血換血，破解禁術",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei bites his tongue, blood drips into a dark potion bowl, potion changes color, steam rises",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "血滴入藥碗",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Potion turns from black to red, sizzling sound",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "藥汁由黑轉紅",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei clenches fist, eyes fierce",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "為亮，必血戰",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang lies weak, hand trembling",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "心痛難忍",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Liu Bei leans over, drops blood onto Zhuge's wound",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "快吸收",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge's eyes flash as poison recedes",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "毒止了",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei wipes blood, looks determined",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "還有更狠的",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Cao Pi smirks in his study, holding a vial of lock-heart poison",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "他們以為能救我",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Poison vial glows green ominously",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "鎖心毒，永不破",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei mixes his blood with herbs, stirring the mixture",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "以血作引",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Potion emits dark vapor then brightens, forming a new toxin",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "生化武器誕生",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang stands, examining the new toxin",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "可反制敵人",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Both look at the vial, Zhuge nods approvingly",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "我們逆轉局勢",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Sun Quan on a warship, eyes narrowed at the horizon",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "曹丕陰謀不止",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Quan clenches fists, ready to act",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "必須阻止",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei and Sun Quan face each other across the battlefield",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你敢挑釁",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Black smoke rises from Liu Bei's palm",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "黑氣從掌心升",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

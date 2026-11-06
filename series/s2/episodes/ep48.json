@@ -1,0 +1,255 @@
+{
+  "ep": 48,
+  "title": "孤注一擲，鄴城決戰",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備站在城樓邊，手持長劍，黑煙繚繞",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "放毒霧，衝！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "諸葛亮手持卷軸，眉頭緊皺",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "毒已散，敵必亂",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "城下曹軍陣列，旗幟飄揚",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "曹軍陣勢如山",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備眼神鋒利，嘴角微笑",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "看他們慌了！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "諸葛亮指向城門",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "城門後有埋伏",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備眉頭一皺",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不怕，先破門！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "毒霧彌散，曹軍視線模糊",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "毒霧蔓延，兵亂四起",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "孫權坐在船上觀戰，眉頭緊鎖",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "這局他們怎麼贏？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "孫權眼中閃過計謀",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "派援軍！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "劉備站左，諸葛亮站右，背對城門",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "衝！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "曹丕從城門後走出，手持符紙",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "你以為能奪我？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備凝視曹丕，手握劍鋒",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這符是何物？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "曹丕笑容陰冷",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "你的生辰八字，我已掌握",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "諸葛亮眉頭緊鎖，低聲計算",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "此符可逆，須快！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

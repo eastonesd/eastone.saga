@@ -1,0 +1,264 @@
+{
+  "ep": 50,
+  "title": "大一統前夕，新的威脅",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up on eyes snapping open, blood stains on white bandages, intense cold gaze.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sube sits up abruptly on the bed, wincing in pain but holding the posture steady, sweat dripping.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Zhuge Liang stands by the side, holding a fan, looking relieved but cautious, watching the Prince.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，您醒了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sube's face is pale but his expression shifts from pain to a sharp, vicious smile.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕，死了吧？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang nods slowly, the fan lowering slightly to show approval and trust.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "首級已掛洛陽城頭。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sube clenches his fist, red veins popping, eyes narrowing as he processes the victory.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹魏血脈，絕了。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sube tries to stand, collapses slightly, then forces himself upright with gritted teeth.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang's expression turns serious, a shadow across his face, sensing another threat.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "但，還沒穩住。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_left",
+      "visual": "View from behind Sube looking at Zhuge Liang, background is the dim throne room.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "哪兒有事？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang spreads a map on the table, his finger trembling slightly over the western border.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "鮮卑，大舉入侵。",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sube's eyes widen slightly, but he remains calm, analyzing the situation instantly.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Zhuge Liang points to another area on the map, south of the kingdom.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "東吳殘黨，聯合蠻族。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sube looks down, a sinister smile spreading across his face, the contrast of pain and power.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sube leans forward, voice low but commanding, the air in the room seems to freeze.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "想趁虛而入？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up on Sube's cold, determined eyes, reflecting the map lights.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕要滅他九族。",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Zhuge Liang bows slightly, ready to execute orders, the fan tucked away.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "屬下，領命。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

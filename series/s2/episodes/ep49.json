@@ -1,0 +1,287 @@
+{
+  "ep": 49,
+  "title": "雙雄末路，曹丕之死",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi",
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Blade flashes, blood drips from mouth.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "刀光閃過，血笑。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Liu Bei's eyes widen, hand reaching for sword.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這刀刺心？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Paper dummy stands, delicate folds trembling.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "紙人替身。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Liu Bei steps aside, anticipating the thrust.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "早有預感。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Cao Pi lunges, knife aimed at chest.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "刺！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Liu Bei ducks, body bending low.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "閃！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sword arcs, cutting through air.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "斬！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Arm severed, blood spurts.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "手斷！",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Cao Pi clenches fists, energy gathering.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "自爆！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Explosion of internal force engulfs battlefield.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "內力炸裂。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sword descends, decapitating the foe.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "斬首！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Head falls, crimson rain.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "血雨。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei clutches chest, eyes dim.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "亮，我撐不住…",
+          "emo": "sad"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Zhuge Liang steps forward, urging retreat.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，快退。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Liu Bei collapses onto ground.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "倒…",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Paper dummy ignites, turning to ash.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "紙人化灰。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    }
+  ]
+}
