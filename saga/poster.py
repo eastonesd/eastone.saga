@@ -40,9 +40,11 @@ def poster_shots(slug: str, bible: dict, style: dict, n: int = 4) -> list[dict]:
     hero, villain = _pick_cast(bible)
     loc = bible["locations"][0]["visual"] if bible.get("locations") else ""
     look = lambda c: _short(c.get("key_features") or c["appearance"], 14)  # noqa: E731
-    prompt = (f"epic movie poster key art, {_short(style['prompt'], 10)}, exactly two people facing off, "
-              f"on the left {look(hero)}, on the right {look(villain)}, dramatic low angle, "
-              f"{_short(loc, 8)}, volumetric god rays, high contrast, no text")
+    # 不寫「poster」：SDXL 一看到海報就會自己亂畫假文字
+    hero_extra = "" if "glasses" in look(hero) else ", no glasses"  # 避免反派的眼鏡跑到主角臉上
+    prompt = (f"cinematic illustration, {_short(style['prompt'], 10)}, exactly two people in a tense face-off, "
+              f"on the left {look(hero)}{hero_extra}, on the right {look(villain)}, dramatic low angle, "
+              f"{_short(loc, 8)}, volumetric god rays, high contrast")
     ids = [hero["id"], villain["id"]] if villain is not hero else [hero["id"]]
     return [{"key": f"poster_v{i}", "prompt": prompt, "refs": ids, "w": ART_W, "h": ART_H,
              "seed": 9001 + i * 7919} for i in range(1, n + 1)]
@@ -83,6 +85,15 @@ def _cover(img: Image.Image, w: int, h: int, focus_y: float = 0.4) -> Image.Imag
     x = (img.width - w) // 2
     y = int((img.height - h) * focus_y)
     return img.crop((x, y, x + w, y + h))
+
+
+def _cover_zoom(img: Image.Image) -> Image.Image:
+    """放大裁切：去掉底圖最下方 18%（最常出現假字的位置），人物留在畫面上半部"""
+    s = H / (img.height * 0.82)
+    s = max(s, W / img.width)
+    img = img.resize((round(img.width * s), round(img.height * s)), Image.LANCZOS)
+    x = (img.width - W) // 2
+    return img.crop((x, 0, x + W, H))
 
 
 def _vgrad(w: int, h: int, top: tuple, bottom: tuple) -> Image.Image:
@@ -141,7 +152,7 @@ def _fit(text: str, family: str, start: int, max_w: int, spacing_ratio: float = 
 def compose(slug: str, art: Path, out: Path) -> Path:
     bible = paths.read_json(paths.bible_path(slug))
     main, sub = _split_title(bible["title"])
-    canvas = _cover(Image.open(art).convert("RGB"), W, H).convert("RGBA")
+    canvas = _cover_zoom(Image.open(art).convert("RGB")).convert("RGBA")
     # 暗角＋上下漸層，讓文字跳出來
     canvas.alpha_composite(_vgrad(W, int(H * 0.22), (0, 0, 0, 170), (0, 0, 0, 0)), (0, 0))
     canvas.alpha_composite(_vgrad(W, int(H * 0.52), (0, 0, 0, 0), (4, 2, 8, 245)), (0, H - int(H * 0.52)))
