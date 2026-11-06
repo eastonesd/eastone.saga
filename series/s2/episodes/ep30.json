@@ -1,0 +1,254 @@
+{
+  "ep": 30,
+  "title": "驚天逆轉，司馬背刺",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Dust swirls violently around the figure. White lightning flashes in the background. Intense tension.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "塵土未定，殺機已至。",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The protagonist stares into the distance, eyes sharp. He takes a confident step forward.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up on lips parting. A cold smile forms.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "追。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist looks up sharply, sensing a change in wind direction. Sweat drips.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，有變！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "POV from behind the protagonist, looking towards the mountain pass. Silence.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Distant mountains. A black cloud of dust erupts from the narrow valley behind the army.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up on hooves pounding the earth. Dirt flies up. High speed.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "萬馬嘶鳴，地動山搖。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The villain on horseback, face pale but eyes manic. He waves a banner frantically.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "殺他！別讓他跑！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist turns his head slowly. Eyes narrow. A hint of amusement.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "Strategist looks back, face full of shock and fear. Fan shakes in hand.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "天險出敵了！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "A massive cavalry line bursts out of the valley, blocking the retreat. Dust wall.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Villain points a sword at the distance, laughing maniacally. Wind blows robe.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備，你做夢了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Protagonist's expression remains calm. He glances sideways at the strategist.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "諸葛，看好了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Strategist is confused and alarmed. He steps back, checking the formation.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "我們被包圍了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Protagonist stands alone in the center of the chaos. His armor gleams under the sun.",
+      "lines": [],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Villain's eyes widen in arrogance. He thinks he has won. Sweat on brow.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "今日，你必死。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

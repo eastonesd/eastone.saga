@@ -1,0 +1,384 @@
+{
+  "ep": 27,
+  "title": "曹丕毒計，暗殺皇叔",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Three poisoned daggers gleam in the moonlight, thrusting toward the face of someone sleeping.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "月黑風高，殺機陡現！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A close-up of a face with a sinister smile, lit by flickering candlelight.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備，這次你必死無疑。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Walking past a line of masked assassins kneeling in the shadows.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "取他首級者，封萬戶侯！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The dark interior of a tent, silent and eerie, with shadows moving on the walls.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "死士潛入，蜀營卻異常安靜。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A masked assassin's eyes filled with murderous intent, looking through a slit in the curtain.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "獵物，就在眼前。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Three silhouettes approach the bed, daggers raised high simultaneously.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "動手！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The daggers stop just inches away from the sleeping man's throat.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "卻在此刻，異變突生。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A low, calm voice speaks from the bed, but the eyes remain closed.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕就這點手段？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Suddenly, the tent is flooded with torchlight as hidden soldiers emerge from the floor.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "埋伏已久，甕中捉鱉！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assassins look around in panic, surrounded by spear-wielding guards.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "刺客們瞬間淪為獵物。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The leader of the assassins trembles, his dagger clattering to the ground.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "這不可能，他竟早有防備！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Slowly sitting up on the bed, looking relaxed as if he'd been awake the whole time.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕等你們很久了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Picking up one of the dropped poisoned daggers and inspecting it coolly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這毒，是他親手選的吧？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assassin spits on the floor, still trying to resist.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "死士不肯招供。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A sharp, cold glare that pierces through the assassin's soul.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不必開口，朕知道是誰。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Guards press their spears against the assassins' necks.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "生死只在劉備一念之間。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A faint, mysterious smile appears on his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "抓起來，別殺。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The guards drag the struggling assassins away into the darkness.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "留著他們，還有大用。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking toward the direction of the Wei palace with cold eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕，這份回禮，你等著。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Standing at the tent entrance, looking at the sunrise on the horizon.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "反擊的序幕，正式拉開。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of a bloody confession being written on a silk cloth.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "明天，魏軍將會自相殘殺。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

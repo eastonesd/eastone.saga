@@ -1,0 +1,370 @@
+{
+  "ep": 19,
+  "title": "單挑甘寧，皇叔神勇",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A fierce enemy warrior laughs maniacally on the deck, brandishing heavy blades amidst flames and smoke.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "劉備，你老了，別拿命換！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The warrior points his sharp blade forward aggressively with a sinister expression.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "我甘寧要取你首級！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A calm warlord draws his twin swords, his cold eyes flashing with murderous intent.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "甘興霸，狂妄自大！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The warlord steps forward firmly onto the wooden plank, his red cape blowing in the wind.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕上一世能殺你，這一世更能！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "A brave young woman stands on a nearby deck, holding a bow with a look of extreme anxiety.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "夫君小心！那是東吳第一勇將！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The enemy warrior leaps into the air with dual daggers aimed directly at the warlord's throat.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "給我去死吧！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The warlord sidesteps with inhuman reaction speed, deflecting the heavy strike with ease.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你的招式，朕早已洞悉！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The enemy warrior's eyes widen in absolute disbelief as his fatal blow completely misses.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "怎麼可能？！你怎知我要砍哪！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The warlord spins swiftly, delivering a counter-slash that cuts through the warrior's armor.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你的水戰習慣，全是漏洞！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Sparks fly and blood sprays as the enemy warrior staggers back, clutching his chest in pain.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "可惡！東吳水軍，給我上！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The woman releases three arrows simultaneously, taking down enemy soldiers charging forward.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "休想以多欺少！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The warlord's face is lit by surrounding fire, eyes burning with ruthless conviction.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "甘寧，大勢已去，納命來！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The enemy warrior roars with desperation, swinging his weapon wildly in a final struggle.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "我乃錦帆賊甘寧，絕不會輸！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The warlord slides beneath the wild swing and thrusts his sword directly into the opponent's chest.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "勝負已分！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The enemy warrior coughs blood, his strength fading as his eyes lose focus.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "主公……主公大業未成啊！",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "The defeated warrior falls backward over the ship railing, plunging into the dark rushing river.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "東吳水軍大將甘寧，陣亡！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s17",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The woman lowers her bow, gazing at the splashing water with complex sadness.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "甘將軍……終究還是敗了。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The warlord flickers the blood off his blade and sheathes it, standing tall on the bow.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "東吳已無可用之將！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_left",
+      "visual": "Camera over the warlord's shoulder looking across the foggy river toward the distant city walls.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，你的王牌沒了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Tight shot on the warlord's sharp, dominating expression as dark clouds gather above.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "接下來，該輪到你顫抖了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Epic freeze frame of the warlord standing on the flagship deck pointing toward Jianye city.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "狂妄皇叔直逼建業，大難臨頭！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

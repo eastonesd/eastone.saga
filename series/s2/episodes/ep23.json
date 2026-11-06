@@ -1,0 +1,384 @@
+{
+  "ep": 23,
+  "title": "孫權恐慌，修書求和",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A close-up of a hand trembling violently, ink from a brush dripping onto a silk scroll.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "曹丕竟然敗了……這不可能！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "He paces frantically on the deck, his face pale and drenched in cold sweat.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備下一個目標，定是東吳！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He stares at the map of the Yangtze River, his eyes wide with terror.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "孤不能坐以待斃，快傳使者！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "He points toward the direction of the Shu kingdom with a shaky finger.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "把孫尚香送回去，立刻送走！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He begins writing a letter with desperate speed, ink splashing on his robe.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "再割讓三郡，換劉備罷兵！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A messenger from Wu kneels before the throne in the center of the military tent.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "三日後，東吳使者抵達前線。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The messenger holds a golden box and a scroll high above his head.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "吳主願與大漢永結同盟。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He fans himself slowly, a knowing and slightly mocking smile on his lips.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "看來孫權是真的怕了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "He sits motionless, his gaze cold and sharp as a blade.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權的誠意，都在這了？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The messenger looks up, sweating profusely under the pressure.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "金帛萬兩，並奉還舍妹尚香。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The messenger adds the final, desperate offer.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "另割讓荊州三郡，請皇叔息怒。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "He stands up slowly, walking toward the messenger with heavy steps.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "三郡之地，就想買他的命？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The messenger trembles, his voice cracking with fear.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "這已是東吳最大的退讓！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He takes the silk scroll, his expression unreadable and icy.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "退讓？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He suddenly grips the scroll and rips it in half with great force.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孤不需要他的施捨！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Tattered pieces of the peace treaty flutter to the ground like snow.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此刻開戰消耗甚巨。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He turns back to the tactical map, pointing at the Wu territory.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "東吳欠下的債，該還了。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The messenger is paralyzed, staring at the torn scroll on the floor.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "您難道要與東吳不死不休？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "An extreme close-up of his eyes, burning with an unyielding flame of ambition.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "和談？我要的是天下！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He places his hand firmly on the hilt of his sword, ready for war.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令下去，兵發建業！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The entire tent goes silent as the declaration of war resonates. Fade to black.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "三國版圖，即將易主！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

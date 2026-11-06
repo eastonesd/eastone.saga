@@ -1,0 +1,385 @@
+{
+  "ep": 24,
+  "title": "霸氣宣戰，目標建業",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A bloody sword tip rests on a pile of torn parchment. The protagonist looks down with chilling eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，這就是我的回覆！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist swings his sword horizontally, cutting through the air with a sharp sound.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "想要和談？簡直是做夢！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist looks at the floor where blood is spreading, his fan stopping mid-air.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "使者已死，戰局再無回頭路。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "The protagonist stares intensely at the camera, his face half-shadowed by the torchlight.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "回頭？我要的是踏平建業！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist throws a hidden letter onto the table, revealing Sun Quan's secret seal.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "看看這陰謀，他何曾有誠意？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist picks up the letter, his eyes widening as he reads the contents.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "他竟想聯手餘孽偷襲成都？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "The protagonist walks to the map of Dongwu and slams a dagger into the capital, Jianye.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "此賊不除，天下永無寧日！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist turns his head sharply, his voice echoing with authority.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令三軍，即刻開拔！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Row upon row of grain sacks are stacked high, marked with the seal of Cao Wei.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹魏的糧草，就是我的底氣！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist stands before his cheering army, raising his sword high.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "糧草充足，殺向東吳！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist observes the soldiers' fervor, but a shadow of doubt crosses his brow.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公殺氣已現，無人能擋。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The protagonist's face fills the frame, his eyes reflecting the burning torches.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "我要讓孫權，血債血償！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist points his sword toward the east, toward the horizon.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "建業城破之日，就是他死期！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist bows deeply, acknowledging the commander's resolve.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "亮，定當竭力輔佐！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist gives a cold, triumphant smirk.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這江山，註定要易主了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The protagonist turns and walks away from the crowd, his cape fluttering.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "任何擋路者，殺無赦！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist catches up, his expression turning grave as he looks around.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，請借一步說話。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The two stand alone near a supply wagon. The protagonist looks at him curiously.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "軍師何事如此神祕？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist leans in, his voice barely a whisper.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "建業城防堅固，久攻難下。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist's smile fades slightly as he waits for the point.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "我有百萬糧草，怕什麼？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist stares into the protagonist's eyes, dropping the bombshell.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "其實，我們只有兩百萬糧。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

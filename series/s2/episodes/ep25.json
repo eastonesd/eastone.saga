@@ -1,0 +1,387 @@
+{
+  "ep": 25,
+  "title": "情義兩難，香香自囚",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A sharp dagger slices through a thick bundle of black hair, strands falling to the dusty floor.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "從此情斷，不再相欠。",
+          "emo": "sad"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "A woman with messy short hair stands tall, her eyes filled with cold determination.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "把這束髮，扔到大營門口。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She holds a secret letter from Sun Quan, her hands trembling slightly.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "孫權欲利用親情，勸她刺殺。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "She tears the letter into pieces, scattering them like snow in the wind.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "做你的春秋大夢去吧！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "She walks toward a small, dark wooden shed used for storage.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "若要滅吳，先殺了我。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She steps into the dark shed and pulls the heavy wooden door shut.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "我就在此，自囚贖罪。",
+          "emo": "sad"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "A man in armor walks towards the main camp, stopping at the entrance.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "大軍集結完畢了嗎？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "His gaze falls on a bundle of hair lying on the ground, tied with a red ribbon.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這是……她的頭髮？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A strategist in a white robe approaches from the right, looking worried.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，夫人已鎖入柴房。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist hands a final letter written in blood to the man in armor.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "她說，願以命換江東生靈。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man's fingers tremble as he touches the blood-stained paper.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "香香，妳這是在逼我。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A flashback of a woman laughing in a garden, her long hair flowing.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "昔日恩情，如影隨形。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "The man looks up at the dark shed in the distance, his face hardening.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權不死，天下不寧！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist looks at the man, waiting for his final decision.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "那攻吳之計……暫緩嗎？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man slowly grips the bundle of hair in his fist until his knuckles turn white.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "緩不得！我等這一刻太久了。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Inside the shed, the woman hears the man's shouting and closes her eyes.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "終究還是走到了這一步。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man turns his back to the shed, looking towards the battlefield.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令下去，明日拔營！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The strategist looks shocked at the man's ruthless resolve.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，您真的不見她一面？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man's eyes are cold and void of emotion, like an ice blade.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "見了，心會軟。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The man walks away from the shed, dropping the bundle of hair into the mud.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "而我的心，早就死在江東了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The man stands alone in the dark camp, a silhouette against the rising moon.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "情義已盡，殺戮將至！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

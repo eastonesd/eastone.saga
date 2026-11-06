@@ -1,0 +1,386 @@
+{
+  "ep": 26,
+  "title": "神兵問世，諸葛拜服",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A heavy iron shield is shattered by a glowing bolt, sparks flying everywhere.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這弩箭...竟然射穿了玄鐵盾？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing calmly behind a table with blueprints, arms crossed.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這叫改良型連弩，威力加倍。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Examining a smaller, more compact crossbow with wide eyes.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "弩身縮小一半，射程卻更遠？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "pan_right",
+      "visual": "Pointing at the internal mechanical structure of the weapon.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "因為我改了內部的齒輪構造。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Staring at his lord with a mix of awe and confusion.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公何時精通此等機巧之術？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Pouring tea calmly, the steam rising in front of his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "夢中偶得，不足掛齒。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Walking towards a massive iron-clad battering ram with spikes.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "蜀軍營地，神兵列陣。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "Touching the cold steel of the giant engine, trembling slightly.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這攻城槌，竟帶有連環機括？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing in front of the engine, looking like a conqueror.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "一次撞擊，抵得過百人衝鋒。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking at the blueprint again, realizing the tactical shift.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "以此攻打東吳，如熱刀切黃油。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The wind blows his cape as he looks toward the horizon.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權的船隊，在它面前就是木板。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Kneeling down on one knee, showing absolute submission.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "亮，心悅誠服，主公真神人也。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Looking down at his strategist, hand on his sword hilt.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "亮，眼光要放長遠一點。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Walking to the war map, slamming a black pawn onto the capital.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "我要的，是整個天下。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Gulping, feeling the immense pressure from the lord.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "臣，必鞠躬盡瘁，輔佐主公。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Rows of soldiers lifting the new crossbows simultaneously.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "蜀軍士氣，瞬時攀至巔峰。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A shadow passes over his eyes, revealing a cold ambition.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "東吳欠我的，該還了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Looking at the destructive power of the tests in the distance.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這簡直是超越時代的力量。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Turning his head slightly, a sinister smirk on his lips.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這還只是開始。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The screen focuses on his burning, determined eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "後面還有更猛的。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The entire army cheers as a wall in the distance crumbles. Fade to black.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "神兵之威，即將席捲東吳。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

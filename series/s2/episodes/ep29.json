@@ -1,0 +1,238 @@
+{
+  "ep": 29,
+  "title": "兩皇對峙，氣勢碾壓",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up on a terrified officer's sweating face, looking down. Hand holds a map with a red X.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Cao Pi sits on a lavish but cold throne, face pale, gripping the armrest tightly. His eyes are wide with fear.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "撤！快撤！不能讓他過來！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Wide shot of a massive Wei army across the river. Tents are being hastily packed. Atmosphere is chaotic and fearful.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魏營大亂，人心惶惶。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Liu Bei stands alone on the Shu side bank, wind blowing his robes. He is small in the frame against the vast river and enemy army.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up on Liu Bei's face. He is calm, eyes open, staring across the water. No emotion of fear, only determination.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Liu Bei raises his head slightly. A faint, cold smile appears. He takes a deep breath.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei's mouth opens. His eyes flash with a sudden, intense power. The air seems to vibrate slightly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕，出來！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "A shockwave ripples out from Liu Bei visually (VFX). The sound is a deep, resonant roar that silences the wind.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你不敢嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The entire Wei army stands frozen. Banners stop moving. Total silence. The fear is palpable.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "聲如洪鐘，壓得陣營鴉雀無聲。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Pan across the front line of Wei soldiers. They are trembling, lowering their weapons. Some are on their knees.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up on a Wei soldier's hand releasing a spear, which clatters to the ground. Sweat drops on his face.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei stands tall, looking down at the river. His presence feels like a mountain. He exudes absolute confidence.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "何須來人，親自來見。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Cao Pi is shaking. His advisor (background, blurred) tries to comfort him, but Cao Pi waves him off.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Cao Pi slams the table. His face is twisted in rage and terror. He looks at his advisor with sharp, paranoid eyes.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "他憑什麼？就憑他一個人？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Cao Pi's eyes dart around, glancing at the door as if expecting an attack. He hugs his arms, looking small and weak.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "撤軍！立刻！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "The Wei army begins to retreat. Banners are pulled down. The formation breaks, looking disorganized and defeated.",
+      "lines": [],
+      "key": false
+    }
+  ]
+}

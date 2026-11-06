@@ -1,0 +1,334 @@
+{
+  "ep": 28,
+  "title": "反戈一擊，策反魏將",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "bloodletter on table, Liu Bei hand passes it",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "血字勸降，命懸一線",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Wei officer holds letter, eyes narrow",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "此信何意？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei leans forward, confident smile",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "高官厚祿待你",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Officer trembles, glances at shadows",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "曹丕必殺我",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei eyes narrow, disdainful",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "他欲棄卒保命",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang watches, nods thoughtfully",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "此計可行",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Liu Bei extends the letter toward officer",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你決定吧",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Officer reads, eyes widen dramatically",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魏王欲拋棄",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Officer looks conflicted, hand grips sword",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "若我背叛",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei smiles, confidence radiates",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "城門開，我等你",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Wei camp tents, soldiers whisper",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "將軍欲叛?",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Officer signals to hidden troops",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "準備開城",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang nods approvingly",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "計策成功",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Liu Bei mounts horse, sword drawn",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "兵馬待命",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Officer pulls massive gate open",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "城門已開",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sun Shangxiang watches, surprise evident",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "竟是魏軍助攻",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sun Quan grips rail, angry glare",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "背叛者自食其果",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei looks over open city, triumphant",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "天下已屬我",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Cao Pi receives urgent report, furious",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "怎敢背叛!",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    }
+  ]
+}
