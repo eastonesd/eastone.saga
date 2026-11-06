@@ -1,0 +1,385 @@
+{
+  "ep": 7,
+  "title": "諸葛震驚，主公變了",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Burning valley with smoke rising, scattered enemy flags on the ground, fire reflecting in the eyes.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "曹軍……竟然真的在此全軍覆沒！",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A trembling hand holding a broken feather fan, sweat dripping from the forehead.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "分毫不差，主公難道真能預知未來？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing on a high ridge with back to the camera, looking down at the burning battlefield.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這點小勝，不值得驚訝。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Turning slightly, showing a cold and sharp side profile with a subtle smirk.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孔明，回營再議。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Walking into the tent, eyes immediately fixed on the new war map on the table.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這地圖上的標註是？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Finger pointing sharply at a specific mountain range on the map.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這是曹丕明日會派兵增援的路徑。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "A look of pure shock, pupils Dilating while staring at the map.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "連增援路線都算到了？這不可能！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sitting down slowly, the atmosphere becomes heavy and oppressive.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "在孤眼裡，沒有什麼是不可能的。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Lowering voice, stepping closer with hands clasped in respect but with hesitation.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公近日用兵，似乎過於險峻。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Eyes showing deep concern, searching for the familiar benevolence in the other's eyes.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這與以往的仁義之道，大相徑庭。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Eyes snapping up, cold and piercing like a predator.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "仁義能換回二弟三弟的命嗎？",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Flinching slightly at the sudden burst of anger.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "亮並非此意，只是擔心……",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Standing up and walking toward the tent exit, ignoring the advice.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你只需要執行孤的命令。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Stopping at the curtain, face partially in shadow.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "其他的，不需要你多言。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Left alone in the tent, looking at the empty high chair.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公以前，從不對亮如此說話。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Picking up a piece of paper on the table, hands shaking.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這計畫……竟要將曹軍降卒全滅？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Horrified expression as the cruelty of the strategy sinks in.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這簡直是……暴君所為！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Outside the tent, silhouette standing tall under the moonlight, looking like a different person.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "成大事者，不拘仁義。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A cold, determined gaze directed at the stars.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這天下，終將姓劉！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Looking through the tent slit at the back of the figure outside.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這還是我認識的那位皇叔嗎？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A single tear falling on the feather fan, the light in the tent flickers and dies.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "仁心已死，霸主降世。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

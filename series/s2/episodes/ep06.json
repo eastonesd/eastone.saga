@@ -1,0 +1,378 @@
+{
+  "ep": 6,
+  "title": "神算再世，預判魏軍",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "zoom_in",
+      "visual": "Over-the-shoulder shot looking at a tactical sand table inside a dimly lit tent. A hand points firmly at a desolate valley on the map while a strategist shakes his head in utter disbelief.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "此處荒涼，魏軍絕不可能經過！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of a stern ruler looking down with cold confidence, backlit by dramatic warm candlelight in the military tent.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "三日後，曹真必死於此！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Medium shot of a strategist holding a feather fan, staring with wide eyes in complete shock and doubt.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公何出此言？這簡直是賭博！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of an intense ruler turning around with an unshakeable, terrifyingly commanding gaze.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "軍師不必多言，照朕的吩咐去辦！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of a worried advisor bowing slightly, trembling with deep anxiety under heavy atmospheric lighting.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "若魏軍不來，我軍必陷絕境啊！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "Close-up of a cold smirk under dim lantern light, eyes sharp with prophetic certainty.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕狂妄，曹真必急於搶功！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of a strategist sighing softly, reluctantly lowering his feather fan in resignation.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "亮……遵命便是。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Medium shot of a commander flicking his robe and stepping out into the shadows with supreme dominance.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令三軍，即刻出發埋伏！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Wide cinematic shot of a misty, desolate mountain canyon under dark gray skies, eerie and quiet.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "三日後，無名山谷寒風凜冽。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of a strategist standing on a cliff edge, looking down nervously into the empty foggy canyon.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "時辰快到了，依舊毫無動靜。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of an anxious face sweating slightly under the biting cold wind, forehead tightly furrowed.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "難道主公這次真的算錯了？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of a calm ruler standing beside his advisor, gazing forward with absolute composure.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不急，獵物已經進網了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Wide shot of sudden war fires and smoke erupting simultaneously across the valley floor beneath heavy dust.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "突然間，山谷內殺聲震天！",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Medium shot of enemy cavalry banners blundering straight into the narrow canyon ambush trap.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魏軍大旗竟然真的出現了！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of a strategist's dilated eyes reflecting flames and chaos, overwhelmed by utter shock.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "什麼……敵軍真的中計了？！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of a ruthless ruler overlooking the carnage, a cold triumphant smile gracing his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹真，你的死期到了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Wide panoramic shot of thousands of flaming arrows raining down onto the trapped army inside the rocky gorge.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "伏兵齊出，魏軍死傷無數！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of a strategist standing frozen on the cliff, lips trembling in disbelief.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "未卜先知……這怎麼可能？！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "Close-up shot of a hand trembling violently until its fingers involuntarily loosen their grip.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "羽扇從無力鬆開的手中滑落。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up in slow motion of a pristine white feather fan striking the muddy ground, fluttering softly.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "這一敗，徹底顛覆了軍師認知。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "zoom_in",
+      "visual": "Over-the-shoulder shot looking past a tall, imposing emperor toward a trembling advisor who stares at his back in awe and dread.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公……您究竟是如何預知的？",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

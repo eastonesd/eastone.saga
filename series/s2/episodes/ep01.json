@@ -1,0 +1,389 @@
+{
+  "ep": 1,
+  "title": "夷陵火起，逆天重生",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of a warlord's face, flames reflecting in his eyes, blood leaking from mouth under intense red fire light.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這一次，朕要讓這天下易主！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of a warrior collapsing into a sea of raging flames on a dark night battlefield.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "夷陵烈火，吞噬大蜀氣數。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up zoom into a sleeping warlord suddenly opening his eyes in shock inside a candlelit tent.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕……竟然重生了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Medium pan shot revealing intact war maps, armor, and weapons laid out on a wooden table inside tent.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這是火起前的夷陵主帳！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot with a smart adviser on left holding feather fan, bowing to the commander sitting on right.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，全軍已準備追擊吳軍！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of commander's eyes turning cold and dangerous as he clenches his fist on the desk.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳朕軍令，全軍停止追擊！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up zoom on the adviser's stunned face, his feather fan halting abruptly in mid-air.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公！東吳已破，為何停手？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Medium shot of commander standing up abruptly, sweeping his cape with dominant authority.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "陸遜聯營四十里，正等我們入坑！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of adviser staring wide-eyed, shocked by such precise foresighted knowledge.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公如何得知陸遜的伏計？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up zoom of commander pointing sternly at the northern border on the map.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令！轉向北方，防備曹魏！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of an ambitious emperor on throne sipping wine with a cruel smile in a grand palace hall.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備必敗於夷陵，天下是朕的！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Medium shot of a sinister lord standing on a warship deck, looking over the foggy river with arrogance.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "大火一響，蜀軍將灰飛煙滅！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Wide shot in tent with adviser pleading on the left and commander standing rigidly on the right.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公！全軍皆欲為二位將軍報仇！",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of commander's face, cold and ruthless while concealing deep sorrow within his eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "兄弟私仇，怎敵大蜀社稷！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Medium zoom shot of adviser stepping forward urgently, expressing deep anxiety.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "此時撤退，軍心必定動搖！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_right",
+      "visual": "Over-the-shoulder shot as commander walks past adviser on right without looking back.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "動搖者，以軍法處置！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up zoom of adviser sweating, completely stunned by his lord's terrifying personality change.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，今日為何如此冷酷？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium shot of commander turning back sharply, his hand resting tightly on sword hilt.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕死過一次，自然清醒了！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Medium shot with adviser on left raising hands in emotional argument against ruler on right.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "若不報仇，何以面對天下人！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up zoom of commander unsheathing sharp steel sword half out with metallic ring.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "從今往後，朕說了算！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Medium freeze frame: ruler on left drawing sword completely and pointing blade straight at adviser on right.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰敢再提攻吳，斬！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    }
+  ]
+}
