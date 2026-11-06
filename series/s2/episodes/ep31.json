@@ -1,0 +1,236 @@
+{
+  "ep": 31,
+  "title": "梟雄末路，曹丕瘋狂",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of a trembling hand gripping the edge of a table, knuckles white. Dust motes floating in a single beam of light.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "司馬公...救我！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "sun_quan",
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Wide angle showing Cao Pi kneeling on the cold stone floor, head bowed. Sun Quan stands behind him, arms crossed, looking down with disdain.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Camera pans down to Sun Quan's feet, revealing a single black boot stepping on Cao Pi's shoulder, pushing him further down.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wei_palace",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sun Quan stands tall, adjusting his armor, looking out the window with a cold, calculating expression.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "你的國，我要了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Cao Pi's face, eyes wide with horror and rage, sweat dripping from his forehead. His mouth opens to scream but no sound comes out initially.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Cao Pi pulls a hidden dagger from his sleeve, his hands shaking violently as he raises it toward Sun Quan's back.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "我要拉你同歸於盡！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wei_palace",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "Sun Quan turns his head slowly, catching the glint of the blade. A faint, eerie smile spreads across his face.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "太慢了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [
+        "sun_quan",
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Sun Quan's hand swiftly strikes Cao Pi's wrist, forcing the dagger to drop. Cao Pi gasps in pain.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Liu Bei stands alone in the center of the throne room, hands behind his back, staring at a map on the table. The atmosphere is tense and silent.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Zhuge Liang enters quietly, holding a scroll, his expression serious as he approaches Liu Bei.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang's eyes narrow as he reads the urgent report, his hand trembling slightly with shock.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "司馬反噬，拘禁曹丕！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei's face, a subtle, knowing smirk playing on his lips. He knows exactly what happened before it was reported.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "果然，咬主了。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang looks up, worried about Liu Bei's calm reaction amidst such chaos. He gestures towards the map.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "如今天下大亂，如何？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Liu Bei walks slowly to the map, finger tracing a specific location where the Wei army is concentrated.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei's finger stops abruptly. His expression hardens, eyes showing no mercy, only strategic precision.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "斬首。先拿司馬懿。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

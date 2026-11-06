@@ -1,0 +1,385 @@
+{
+  "ep": 33,
+  "title": "坐山觀虎鬥，孫權奪利",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A man stands at the bow of a warship, looking ahead with a greedy smile.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "陳留，注定要落入我手中！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "A massive fleet of Eastern Wu warships sails through a narrow river passage.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "趁著魏蜀大戰，孫權傾巢而出。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A man in royal robes slams his fist onto a table, his face twisted in rage.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "孫權這鼠輩，竟敢背後捅刀！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "He stands up, pointing his finger toward the south, shaking with anger.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "我要讓他有來無回！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A strategist holding a feather fan stands to the left of a calm man sitting by a map.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，孫權的水師已入腹地。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A man stares at the map, a subtle, knowing smile on his lips.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "他若不來，我這戲可演不下去。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist looks surprised, his fan stopping mid-air.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "您是故意放慢行軍速度？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The man stands up and moves a piece on the map representing the Wu army.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不給他點甜頭，他怎肯入局？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The commander of Wu stands on the deck, looking at the distant city through a spyglass.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備已被曹丕牽制，根本無暇他顧！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "He laughs loudly, his eyes filled with ambition.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "天下，終究是我的！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "A commander leads a small troop away from the main front, retreating toward the woods.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "劉備軍隊假裝潰散，引誘吳軍深入。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A soldier runs to the commander and whispers; the commander looks excited.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備逃了？全軍登陸追擊！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The commander steps onto the shore, looking at the abandoned camp items.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "皇叔？也不過如此！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "From the high cliff, a man looks down at the Wu army flooding the valley.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "看，魚兒上鉤了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist stands next to him, holding a signal torch.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "火攻之計，隨時可以發動。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man's eyes reflect the distant sunlight, cold and sharp.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "再等等，讓他們全部進來。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The Wu commander stands in the middle of the narrow valley, feeling a strange wind.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "為何此處如此安靜？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man on the horse turns around, his cape fluttering in the wind.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，你來得正好。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "He points his sword toward the valley where the Wu army is trapped.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "正好當我一統天下的燃料。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The commander looks up at the cliff, his pupils contracting in terror.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "中計了！撤退！快撤退！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man's cold face fills the screen as he drops a burning torch.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "晚了，燒！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

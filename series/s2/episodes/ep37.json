@@ -1,0 +1,377 @@
+{
+  "ep": 37,
+  "title": "黃雀在後，劉備的遠謀",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A stern leader smiling subtly while pouring tea inside a warm dimly lit army tent.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "將軍，帶五千騎兵去潼關喝茶。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A strategist in robes holding a feather fan looks surprised at the calm ruler sitting opposite.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公早料到司馬懿會反？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The sharp-eyed leader swirling his tea cup with cold determination.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "狼終究是狼，順便給他設個局。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "A grand empty palace hall shadowed in dark red torchlight, eerie atmosphere.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "洛陽城內，暗潮洶湧。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "A brave female warrior steps into the tent and swiftly unrolls a secret map scroll on the table.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "這是我從東吳帶出的密道圖！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "sun_shangxiang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The leader looks up from the tactical blueprint toward the brave heroine.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "香兒，這次辛苦你了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The female warrior clenches her fist tightly, showing mixed feelings of grief and resolve.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "只要能結束戰亂，臣妾無悔！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist points his feather fan directly onto the capital city located on the map.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "直取建業，東吳可一舉而定！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "A vast fleet of giant wooden warships sailing through thick river fog at dusk.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "大軍連夜拔寨，直逼東吳腹地。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The leader in golden armor stands firmly at the bow of the warship, red cape fluttering violently in the wind.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，這一天我等太久了！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A suspicious ruler in purple robes sweating profusely, eyes wide with horror.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備居然繞過了江防？！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Massive dust clouds rising from the horizon as cavalry charges across the muddy battlefield.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "蜀軍神兵天降，江東防線潰敗！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The enemy ruler violently unsheathes his bronze sword, shouting wildly.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "全軍集結！隨我死守城門！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The female warrior gazes at the distant burning city, a tear trickling down her cheek.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "兄長，你為何執迷不悟…",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The protagonist unsheathes a glowing silver blade, eyes burning with fierce ambition.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "全軍聽令，攻破建業城門！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The calm advisor watching the assault from atop a command hill, holding his fan still.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "大局已定，就看洛陽那邊了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A lonely mountain pass fortress surrounded by swirling snowstorms.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "此時潼關關口，殺機暗藏。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "The towering iron gates of the massive capital fortress slowly creak open.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "轟隆一聲，建業城門大開！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The enemy commander stands in front of elite guards, glaring venomously at the advancing army.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備！你以為你贏了嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The main protagonist raises his sword chin-high with cold contempt.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "成王敗寇，洗乾淨脖子吧。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme low-angle close up of the enraged enemy lord swinging his sword straight down at the camera, freeze frame.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "想要建業，先問問我的劍！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

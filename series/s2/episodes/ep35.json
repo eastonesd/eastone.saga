@@ -1,0 +1,258 @@
+{
+  "ep": 35,
+  "title": "大義滅親，香香的抉擇",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extremely close up on a woman's eyes, tears welling up but unshed, background is a blurred burning deck, cold blue light contrasts with orange fire in distance.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "剮吧，但我先走。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "A man in disheveled royal robes stands on a tilted deck, face twisted in rage, shouting into the wind, fire flickering on his face.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "你不救我，我就剮了你！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s03",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Wide shot of the chaotic deck, the woman stands firm amidst chaos, guards in the background looking on, smoke rising thickly.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close up on the woman's hand gripping a small brass key tightly, knuckles white.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Over the woman's shoulder looking at the angry man, he is leaning forward aggressively, pointing a finger.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "交出來！那弱點！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close up on the woman's face, expression cold and detached, looking down at the man.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "你想得美。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The man lunges forward suddenly, grabbing a guard's shoulder, shouting commands to execute, panic in his eyes.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "連她一起拖下去！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "low_angle",
+      "motion": "zoom_in",
+      "visual": "Low angle shot of the woman stepping forward, looking up with defiance, fire reflecting in her eyes.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "要殺先殺我。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close up on the man's face turning pale with shock, mouth opening but no sound, sweat dropping.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The woman walks past the stunned man, her hand moving to her belt, retrieving a hidden command token.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close up on the military token in her hand, the engraving glinting in the firelight.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "兵符在手，天下可平。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The man stumbles back, realizing the token's significance, horror on his face.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "你竟敢偷？！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The woman turns away, walking towards a small boat being lowered into the water, her back straight.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "A man stands on a cliff edge overlooking the burning river, cloak flowing in the wind, calm demeanor.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close up on the man's face, a slight smirk forming as he watches the distant fire.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "來了，建業快到了。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A man in scholar robes stands beside him, holding a feather fan, looking thoughtful.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，有人來了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

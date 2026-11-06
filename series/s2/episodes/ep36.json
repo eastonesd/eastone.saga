@@ -1,0 +1,370 @@
+{
+  "ep": 36,
+  "title": "司馬重現，奪取洛陽",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A middle-aged strategist bowing low, pressing head firmly against cold marble palace floor, eyes glinting with ambition in dim torchlight.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "臣司馬懿，願效犬馬之勞！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A mature emperor sitting on imperial throne, smiling subtly with a calm yet intimidating gaze.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "愛卿快快請起。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up on emperor's eyes, showing profound calculation behind a warm smile.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "洛陽，終於回歸大漢了。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Grand palace interior decorated with red pillars, armor scattered on ground, heavily guarded by victorious soldiers.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "洛陽大局已定，曹丕餘黨盡誅。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Hands offering a golden imperial jade seal wrapped in silk, stained with dried blood.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "逆賊曹丕已死，獻上魏國印璽。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A advisor holding feather fan standing on left, staring skeptically at kneeling strategist on right.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "司馬大人果真是雷霆手段。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Strategist looking up slightly with humble smile, cupping hands politely.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "丞相過獎，臣不過是順應天命。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Face rising slowly, sharp glint flashing across eyes, dark shadow covering half of face.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "大漢天威，誰敢不服？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Emperor walking slowly down steps, robes trailing gracefully on stone floor.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "好一個順應天命！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Emperor standing over kneeling strategist, shadow casting completely over him.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "從今以後，你便是漢朝重臣。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Strategist lowering head again, subtle smirking corner of mouth hidden in darkness.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "微臣定當肝腦塗地，死而後已。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Emperor placing hand firmly on strategist's shoulder, grip tightening visibly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "希望你記住今天說的話。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Advisor raising feather fan slightly, observing emperor's hand movement intently.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公心中早有定數。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Strategist rising slowly, holding hands together in respectful gesture before stepping back.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "臣先退下籌備兵馬，迎接主公。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Strategist walking towards giant grand doors, long shadow stretching across blood-stained floor.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "狼顧之相已現，洛陽暗潮湧動。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Advisor stepping closer to emperor on right, face full of concern and urgency.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此人萬萬不可輕信。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Emperor staring at palace entrance, cold scorn visible on face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕何嘗不知，他是一條毒蛇。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Emperor turning slightly towards advisor on right, cold smile playing on lips.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕就是要用這條蛇，咬死孫權。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Advisor shaking head slightly, worry deepened on forehead, feather fan stopped in mid-air.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "但養虎為患，恐遭反噬！",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s20",
+      "location": "wei_palace",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Emperor's hand gripping sword hilt firmly, veins popping on knuckles.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "在他牙拔掉前，他只能聽話。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "wei_palace",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Advisor's face frozen in fear, eyes looking into distance as light fades around him.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，他眼底血光比曹丕更重。",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

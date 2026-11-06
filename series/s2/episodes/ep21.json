@@ -1,0 +1,384 @@
+{
+  "ep": 21,
+  "title": "琴斷音起，司馬退兵",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A close-up of fingers violently snapping a zither string, blood dripping from the fingertip.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "這第一根弦，送你十萬兵。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing in front of the army, eyes narrowing with suspicion and a hint of fear.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "這琴聲……為何如此混亂？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Sitting alone on a high platform, a broken zither in front, surrounded by fog.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹仲達，你敢過來嗎？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Watching from the shadows, sweating and holding his feather fan tightly.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公這是在自尋死路啊！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "Fingers moving like a blur on the remaining strings, face expressionless.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "琴聲不亂，殺意何在？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Snapping the second string with a sharp metallic sound.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "第二根，斷你魏國國運！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Holding his horse's reins, the horse is agitated and neighing.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "後退！全軍停止前進！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing up slowly, the zither falls and shatters on the ground.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "既然來了，就別想走。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Looking at the hills where hidden flags begin to rise.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "難道……這也是主公的計謀？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Face pale, looking at the empty city gate behind Liu Bei.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "這空城……必有百萬伏兵！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A terrifying, knowing smile spreads across his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你猜對了，但晚了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Turning his horse around, shouting to the messenger.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "撤！全軍火速撤退！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A wide shot of the massive Wei army turning back in chaos.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "百萬大軍，竟因一琴而退。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Approaching Liu Bei with immense respect and confusion.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，您真的布了伏兵？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Wiping the blood from his hand with a silk cloth.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "沒有，我只有這張斷琴。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Eyes widening, realizing the sheer audacity of the bluff.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "您……您在賭命？！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking towards the horizon with a cold, sharp gaze.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "我不賭命，我要的是天下。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "Panting heavily while riding, looking back at the fog-covered city.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "那琴聲裡……全是冤魂！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Stopping his horse, trembling, as the realization hits him.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "他不是劉備……他是魔鬼！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s20",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of Liu Bei's eyes, reflecting the retreating army like dust.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "真正的絕望，才剛開始。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A lone silhouette standing on the platform, wind howling, screen fades to black.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "十面埋伏，魏軍死期已至！",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    }
+  ]
+}
