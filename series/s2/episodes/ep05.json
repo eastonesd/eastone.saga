@@ -1,0 +1,332 @@
+{
+  "ep": 5,
+  "title": "香香回歸，情斷義絕",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A tearful woman looks pleadingly at the speaker, eyes filled with emotion and grief under warm tent lighting.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "玄德，跟我回江東吧。",
+          "emo": "sad"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A stern warlord stands tall with a cold sneer on his face, looking down with extreme arrogance.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "江東，朕會去，但那是去受降！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman staggers slightly backward, heartbreak and shock written all over her face.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "你……你竟如此狠心？",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of the warlord's ice-cold eyes, devoid of any romantic warmth.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "昔日情分，早在前世便斷了。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A strategist in a feather robe stands quietly in the background holding a feather fan, observing tensely.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，江東此舉實乃離間之計。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The warlord turns his gaze to an old silk letter resting on the wooden table.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "離間？孫權太小看朕了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The woman takes an aggressive step forward, defending her family with flared temper.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "兄長只是為了江東百姓！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The warlord laughs harshly, his eyes filled with fierce anger.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "為百姓？他是為了自己的野心！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of a hand picking up the delicate silk love letter off the desk.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "當年你助我，朕心存感激。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A flicker of hope appears in the woman's teary eyes.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "那你為何不能為我放下執念？",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The warlord's tone turns completely ruthless and cold.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "但如今，你只是江東的籌碼。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of hands violently ripping the ancient silk letter down the middle with dramatic tear.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "此信一斷，你我再無恩義！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Torn silk pieces flutter down in slow motion in front of the stunned woman.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "劉玄德！你竟敢撕了它！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "pan_right",
+      "visual": "Close-up of a hand furiously gripping the hilt of a ornate sword on her waist.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "既然情斷，那便以血洗清！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang",
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The woman rapidly draws her sword, cold steel flashing brightly in the dim tent.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "看劍！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The strategist takes a shocked step forward, raising his hand in panic.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公小心！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang",
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The sharp sword tip points directly at the warlord's throat, just millimeters away from his skin.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "別逼我殺你！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The warlord steps straight forward against the blade tip, eyes fearless and menacing, cliffhanger freeze frame.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "有膽，你就刺下去！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

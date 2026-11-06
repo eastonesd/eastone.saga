@@ -1,0 +1,367 @@
+{
+  "ep": 12,
+  "title": "空手接箭，反殺刺客",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A sharp arrow head flying directly toward the lens, reflecting torchlight.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "殺機，就在一瞬之間。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He sits calmly at a desk, eyes closed, seemingly unaware of the danger.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "躲？我為何要躲？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The arrow is inches away from his temple, the wind ruffling his hair.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "His hand moves like a blur, snatching the arrow shaft firmly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "太慢了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "He slowly turns the arrow in his hand, looking toward the dark corner.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "還有幾支？一起射過來。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A black-clad assassin drops from the rafters, wielding a dagger.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He stands up and flicking the arrow back like a javelin.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "還給你！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The arrow pierces the assassin's shoulder, pinning him to a wooden pillar.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "He rushes in with guards, stopping in shock at the scene.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公！您沒受傷吧？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He waves his hand dismissively, walking toward the captured assassin.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "死不了，孫權的小伎倆罷了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He grips the assassin's chin, forcing him to look up.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "東吳死士？紋章出賣了你。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The assassin spits blood, glaring with hatred.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "荊州的三大埋伏，在哪？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assassin remains silent. He presses the arrow deeper into the wound.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不說？我有一百種方法讓你開口。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He looks at his master's cold expression, feeling a chill.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公殺氣之重，前所未見。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The assassin's eyes flicker with fear as he gasps for air.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "最後一次機會，說！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assassin collapses, trembling as he speaks through gritted teeth.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "刺客終於崩潰，吐露真相。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He listens to the secret, his brow furrowing slightly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "十萬大軍……好大的胃口。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "He steps forward, looking at the map on the table.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "若真如此，我軍危矣！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "He lets go of the assassin and wipes his hands with a silk cloth.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "危險的，是他們。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The assassin laughs maniacally, blood bubbling from his mouth.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "你以為殺了我就沒事？",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The assassin's bloody face close-up, his eyes wide and terrifying.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "長江上，十萬大軍正等你！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

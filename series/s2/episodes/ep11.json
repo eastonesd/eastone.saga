@@ -1,0 +1,385 @@
+{
+  "ep": 11,
+  "title": "撕毀盟約，怒斥東吳",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Holding a silk treaty document, looking at it with intense hatred and a cold smile.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，這份盟約就是個笑話。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Throwing the silk document into a burning bronze fire pit next to the throne.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "背信棄義之輩，不配與我為盟。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Wide eyes, holding a feather fan, looking completely shocked by the action.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公不可！此舉恐引發大戰！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Turning head sharply toward the camera, eyes piercing and resolute.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "大戰？朕等的就是這場大戰！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei",
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A messenger from Wu stands arrogantly in the middle of the hall, pointing at the burning silk.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "吳國使臣在殿下憤怒叫囂。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Walking down the stairs from the throne, hand gripping the hilt of the sword.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰給你的膽子，在朕面前狂吠？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sword being unsheathed, the blade reflecting cold light onto the protagonist's face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "拿你的頭，去祭奠荊州英靈！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Closing eyes and sighing, shaking the head as blood splashes across the floor tiles.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公變了，變得殺伐果斷。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Wiping blood off the blade with a white silk cloth, face expressionless.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令下去，全軍集結！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Standing among the shocked officials, pointing the sword toward the southeast.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "目標，建業！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing on the deck of a massive warship, looking at the distant horizon with suspicion.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備那邊有消息了嗎？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A soldier brings a wooden box, kneeling and trembling in front of the lord.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "劉備的宣戰書送抵東吳。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Opening the box with a frown, revealing a blood-stained short sword inside.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "這是……朕派去的使臣？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Picking up the bloody sword, seeing the protagonist's private seal engraved on the hilt.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "他竟敢公然殺我使臣！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Face turning pale, hands shaking as the realization of total war hits.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備真的瘋了，他要決死戰？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Turning to the generals behind, shouting with desperate energy.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "封鎖長江，調集所有水軍！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Clad in silver armor, sitting before a map, placing a black stone on the Wu capital.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，這一世，你無處可逃。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Peeking through the tent curtain, eyes full of conflict and hidden tears.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "夫君，你真要滅我東吳嗎？",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Looking toward the curtain, knowing she is there but remaining cold and firm.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "負我者，皆不可留。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "over-shoulder",
+      "motion": "zoom_out",
+      "visual": "The camera looks over the lord's shoulder at thousands of burning torches on the horizon.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "蜀漢大軍，已兵臨城下。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The bloody sword in the lord's hand suddenly trembles as a dark shadow looms over the ship.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "那……那是劉備的帥旗？",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

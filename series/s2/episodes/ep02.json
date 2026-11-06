@@ -1,0 +1,386 @@
+{
+  "ep": 2,
+  "title": "放棄私仇，大局為重",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A man in a scholar robe is kneeling on the floor, tears in his eyes, looking up with desperation.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，二爺三爺之仇不報了嗎？",
+          "emo": "sad"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A man in royal armor stands with his back turned, hands clasped behind him, staring at a strategic map.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "哭，能哭死東吳那幫鼠輩嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "zoom_in",
+      "visual": "The man in armor turns around slowly, his eyes cold and sharp like a predator.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "報仇，要先奪下這天下！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The scholar looks shocked, his eyes widening as if seeing a complete stranger.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，您竟變得如此冷靜……",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The man in armor walks to the table and slams a heavy jade seal onto the map.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳朕旨意，即刻聯吳抗魏！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The scholar's hand trembles as he reaches for the map, his face filled with confusion.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "聯吳？三軍將士定會譁變！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The man in armor narrows his eyes, a flicker of killing intent passing through them.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰敢譁變，朕就送他去見雲長。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The scholar stands up slowly, adjusting his fan, his expression turning solemn.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "亮，斗膽請問主公下一步。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man in armor points to the northern border on the map, his finger pressing hard.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕老兒，正等著火燒連營呢。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "camera": "wide",
+      "motion": "zoom_out",
+      "characters": [
+        "liu_bei"
+      ],
+      "visual": "The man in armor stands on a hill overlooking the vast army, the setting sun turning his cape blood-red.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "他想漁翁得利，朕偏不讓他如願。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The scholar is staring at the map, his eyes reflecting intense mental calculation.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公所料，竟與天機不謀而合。",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man in armor gives a faint, mysterious smile, looking toward the horizon.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "天機？朕這條命就是天機。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A man with a purple beard and green eyes stands on a ship deck, laughing with arrogance.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備那大耳賊，此刻必死無疑！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A beautiful woman in red armor clutches her sword, her face pale and worried.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "兄長，難道真的不顧聯姻之情？",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The man with the purple beard turns to her, his expression cold and ruthless.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "成大事者，何惜區區一個劉備！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Back in the tent, the man in armor suddenly hears a commotion outside.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "急報！北邊有重大軍情！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "A soldier rushes in and collapses on his knees before the two men.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "主公！魏軍動了！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man in armor doesn't flinch, his eyes remaining fixed on the map.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "說，曹丕派了多少人？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The scholar's face pales as he listens to the soldier's trembling voice.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魏軍五十萬，已渡過大河！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "A man in dark imperial robes sits on a throne, a cruel sneer on his face.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備，這一次朕要你死無全屍！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man in armor looks directly into the camera, his eyes filled with a terrifying resolve.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "五十萬？剛好給朕祭旗！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

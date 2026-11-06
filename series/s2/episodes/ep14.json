@@ -1,0 +1,382 @@
+{
+  "ep": 14,
+  "title": "神兵天降，突襲宛城",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of burning fortress gates under the night sky, raging flames reflecting terror.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "他們怎麼可能繞到後方？！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The leader stands on a high cliff overlooking the fire below, wind whipping his dark cloak.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "宛城糧道，今日必斷！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The strategist holds a feather fan, his eyes wide in disbelief at the sudden tactical victory.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公竟能預知天險隘口？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_right",
+      "visual": "The leader on the left turns sideways to glance at the shocked strategist on the right.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "魏軍的軟肋，我早瞭如指掌。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The leader draws his steel sword, reflecting the flickering firelight with deadly intent.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令下去，半刻鐘內破城！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "A massive armored cavalry charges fiercely toward the chaotic city gates.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "蜀軍神兵天降，如入無人之境。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist inspects surrendered army seals placed on a heavy wooden desk.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "宛城守將，竟直接投降了！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The leader sneers slightly, tossing an enemy commander insignia onto the floor.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "兵不血刃，這只是開始。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist on the left bows respectfully to the leader sitting on the right.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公用兵，如天神下凡！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The leader stands up sharply, cold light gleaming in his calculating eyes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "搜！宛城定有曹丕的密謀。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Heavy iron plates on the tent floor are shattered open by soldiers with axes.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "暗室地窖，轟然被撕開。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The leader steps down into a dimly lit underground stone vault, holding a torch.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "藏得夠深，但難逃我眼。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The strategist stoops down to pick up an intricate wooden box bound in red silk.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這木匣上有魏帝印記！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The leader aggressively breaks the bronze lock off the wooden box with his bare hands.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "給我打開！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The leader on the left pulls out a secret letter while the strategist on the right watches tensely.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕的親筆信件……",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The strategist stares at the royal imperial wax seal on the document with horror.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "字跡確實出自洛陽皇宮！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The leader reads the contents of the scroll, veins bulging on his forehead.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "內應？朝中竟有他的狗腿？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist recoils half a step, shocked as he reads the recipient's name.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "這收信人的名字……居然是他？！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The leader crushes the secret letter tightly inside his fist, eyes burning with rage.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "我當他是生死盟友，他卻背叛我！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The strategist on the left raises a hand in warning to the ruthless leader on the right.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此事萬萬不可洩漏！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of the leader's murderous eyes, holding the crushed letter to a burning torch flame. Freeze frame.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "下一個要死的，就是你。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

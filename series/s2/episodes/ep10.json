@@ -1,0 +1,260 @@
+{
+  "ep": 10,
+  "title": "首戰告捷，天下巨震",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Blood-soaked sword tip dripping, heavy breathing, intense eyes looking up at the sky.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "襄陽，破了。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Liu Bei standing on the broken rampart overlooking the chaotic battlefield, Wei flags trampled in mud.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei steps on a torn Wei banner, lifting his bloodied sword high.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "誰說我只會逃？",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang's eyes widen in shock, fan trembling slightly in his hand.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang steps forward, looking up at Liu Bei with a mix of awe and unease.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，這不像你。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei turns slowly, a cold smile forming on his face.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "因為該殺的，必須殺。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Liu Bei on left inspecting sword, Zhuge Liang on right watching carefully, tension in the air.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Cao Pi slams a report on the desk, face pale with fear and rage.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "什麼？襄陽已失？",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Cao Pi's hands shaking, holding the blood-stained report.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Sun Quan standing by the railing, wind blowing his robe, reading a letter.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備單騎破城？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sun Quan's eyes narrow, a sinister glint appearing in his pupils.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "Liu Bei walking confidently into the throne room, generals bowing deeply, sweat on their foreheads.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei's face filled with authority, no mercy in his gaze.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳我旨意，屠城三日。",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang rushes forward, face pale, trying to stop Wu.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此舉過矣！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Over Liu Bei's shoulder, seeing Zhuge Liang's desperate face, Liu Bei eyes cold.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孔明，你太天真。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Cao Pi's hand gripping the armrest of the throne, knuckles white.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "劉備瘋了……",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

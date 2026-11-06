@@ -1,0 +1,381 @@
+{
+  "ep": 8,
+  "title": "反間之計，曹丕多疑",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A fierce emperor slams his fist on the throne table in rage, eyes wide with anger under dim palace lighting.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "司馬懿，你竟然敢背叛朕！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Emperor aggressively throws a secret letter onto the stone floor.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "看他寫給劉備的投誠信！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A calm general sitting at a wooden desk in a war tent, expertly forging handwriting with a calligraphy brush.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕本就多疑性狠。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "An advisor standing on the left holding a feather fan, looking stunned at the general sitting on the right.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公這是要施反間計？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Hands stamping an official seal onto the secret forged letter with dark red ink.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "借曹丕之手，除朕大敵。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "The general stands in the tent illuminated by torch light, handing the forged scroll to a soldier.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "把這信『偶然』留給魏軍。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "A shadowy soldier figure running away through a dark, misty battlefield at midnight.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魏軍俘虜將密信帶回洛陽。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Emperor glaring down menacingly from the high throne.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "密信當真來自司馬府？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Clenched fist holding the opened scroll, trembling violently with deep mistrust.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "連私人印信都蓋上了！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A young warlord standing on a warship deck, holding a scout report with a sly smirk.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "曹魏若內亂，東吳便可獲利。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang",
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "A fierce female warrior in armor on the left speaking sternly to the lord standing on the right.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "兄長小心，劉備絕非等閒！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "The lord waves his hand dismissively, gazing out at the misty river with arrogance.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉備不過是運氣好罷了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wei_palace",
+      "characters": [
+        "cao_pi"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Emperor's eyes flash with murderous cruelty in the dark grand court.",
+      "lines": [
+        {
+          "speaker": "cao_pi",
+          "text": "拿朕令箭，即刻逮捕司馬懿！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Heavily armored guards march aggressively out of palace gates under gloomy skies.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魏國洛陽，頓時風聲鶴唳。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "An advisor holding a feather fan stands over a map table, shaking his head in shock.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "不費一兵一卒，竟然瓦解魏軍。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A stern general standing in profile, lit by firelight, eyes cold and calculating.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "魏國失其智囊，指日可破。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang",
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Advisor on the left staring at the general's rigid back on the right with deep worry.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公這般心計，實令人膽寒。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "General turns around half-face to camera, expression devoid of any hesitation or mercy.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "對敵人仁慈，就是對自己殘忍。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s19",
+      "location": "wei_palace",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Heavy iron dungeon gates slam shut with sparks flying in the dark prison hallway.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "司馬懿遭疑押入死牢。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A hand firmly places a black chess piece on a wooden board, capturing the opponent's piece.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "第一顆棋子落下了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s21",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Cold smirk on the warlord's face, dark cinematic lighting highlighting his ambition, frozen dramatic shot.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "接下來，輪到襄陽了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

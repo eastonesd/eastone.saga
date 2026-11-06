@@ -1,0 +1,313 @@
+{
+  "ep": 4,
+  "title": "與狼共舞，戲耍孫權",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備腳踢使者，畫面左側劉備，右側使者倒地",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "跪著跟朕說話！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "使者站起，眉頭緊皺",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "吾王何以如此狂？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備眼神鋒利",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "吾知汝糧路密",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "使者臉色一變",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "竟敢窺我密？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備握拳",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "若不交糧，必斬汝軍",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "使者怒目圓瞪",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "休要恃勢！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備遞出卷軸",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "圖在手",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "使者快速掃視卷軸",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "此路吾已佈防",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備微笑揭示暗伏",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "但我已布伏",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "使者驚愕後退",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "何以如此自信？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備淡淡點頭",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "因為我先知",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "使者眉頭緊鎖",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "說明條件",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備舉手示意",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "交糧，且不攻",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "使者臉色蒼白",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "若違誓，必血償",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "劉備冷笑",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不交，斬首",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "使者轉身欲離開",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "吾退回使者",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "鏡頭拉遠顯示整齊軍列",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "軍列整齊",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    }
+  ]
+}
