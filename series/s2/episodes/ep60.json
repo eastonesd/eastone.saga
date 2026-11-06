@@ -1,0 +1,241 @@
+{
+  "ep": 60,
+  "title": "三國終章，盛世開端",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of the Dragon Throne, empty. A single jade seal rests on the armrest, catching cold light.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "江山一紙，蒼生何幸。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Liu Bei stands up from the throne, holding a bundle of heavy silk documents. His expression is solemn but resolute.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "兵權，歸還丞相。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang's eyes widen slightly, his fan hand trembling as he looks up at the throne. Shock and gratitude mix on his face.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "陛下？這不合禮制。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Liu Bei steps down the dais, his flowing robe dragging slightly. He walks past the ministers, ignoring their whispers.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "禮制，是給死人守的。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Over Li Bi's shoulder, Zhuge Liang receives the seal. Zhuge Liang's hand reaches out, vibrating with emotion. The distance between them closes.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "從今日起，你是柱石。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang grips the seal tightly. A tear forms in the corner of his eye but does not fall. His jaw is tight.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "臣……接旨。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei begins to untie his heavy imperial robes. He looks towards the massive bronze doors, a rare smile playing on his lips.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "朕，該下朝了。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "Zhuge Liang turns to face the crowded hall of ministers. They are all staring in disbelief, some whispering furiously.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "散朝。所有人，閉嘴。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Liu Bei walks out of the grand hall. The massive bronze doors creak open, blinding sunlight flooding in, silhouetting him again.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "陽光刺眼，如新生命。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei stands in the anteroom. He pushes off his golden crown, letting his hair fall naturally. He looks refreshed, not tired.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "終於，能呼吸了。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Zhuge Liang follows Liu Bei into the anteroom. He stops at a respectful distance, holding the seal in his sleeve.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "陛下要去哪裡？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei looks back at Zhuge Liang through the doorway. His eyes are clear and bright, devoid of the burden of state.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "去市場，買個包子。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang blinks, stunned by the casualness. A small, genuine smile breaks through his usual stern demeanor.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "……朕陪着您。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

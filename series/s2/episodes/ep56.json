@@ -1,0 +1,384 @@
+{
+  "ep": 56,
+  "title": "尚香斷情，親征建業",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang",
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Shangxiang brandishes sword, eyes cold, Sun Quan stares shocked",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "大哥，你的最後一張牌，我拿走了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sun Quan's face reddens with fury",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "你敢背叛我！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan",
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sun Quan gestures, guards rush forward",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "抓住她！別讓她跑！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Shangxiang pulls a hidden dagger, smirks",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "想抓，我倒要看。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei leans over map, Zhuge Liang points",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "尚香背叛，我必報仇。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang's expression calm, hand on scroll",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "她被兄長威脅，別輕舉妄動。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei clenches fist, eyes fierce",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "兵已在建業，即刻前往。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "City gates swing open, Wu remnants flee amid smoke",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "城門大開，兵撤。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan",
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sun Quan holds Shangxiang by the wrist, grim",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "若不投降，死路一條。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Shangxiang lunges, dagger pierces guard's chest",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "為兄妹報仇！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Crimson splatter on armor",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "血濺衣裳。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sun Quan draws sword, eyes blazing",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "你敢！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei's cavalry thunder toward city walls",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "破城而入！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_left",
+      "visual": "Zhuge Liang signals with a flag, fire barrels ready",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "火攻已備。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Liu Bei leads charge through opened gates, banners waving",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "衝啊！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_shangxiang",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Shangxiang hands Liu Bei a sword, eyes determined",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "快跟我走。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei bursts into throne hall, sword raised",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "建業，吾在此！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s18",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "over-shoulder",
+      "motion": "pan_left",
+      "visual": "Sun Quan slips into hidden passage, glances back",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "不會讓你得逞。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "shu_throne_room",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Heavy footsteps echo down the corridor",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "沉重腳步聲逼近。",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s20",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_quan",
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Sun Quan emerges, sword drawn, eyes cold, Liu Bei braces",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "還不快投降！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s21",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei's face freezes, eyes widen, tension spikes",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "危機降臨。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

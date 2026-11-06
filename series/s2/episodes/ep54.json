@@ -1,0 +1,259 @@
+{
+  "ep": 54,
+  "title": "東吳背刺，連橫合縱",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A hand slams a sealed letter onto a wooden map table. Dust flies. The background is blurred chaos of a war tent.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "密信就在眼前，背刺發生。",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Eyes widen slightly, then narrow into a cold, calculating stare. Lighting is dim, highlighting the tension.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "孫權，你倒是會挑時機。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Standing on the deck of a warship, holding a scroll. Wind blows his robes. He laughs arrogantly, looking down at the water.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "劉皇叔，你防不住自己人。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Face full of smugness, eyes squinting with malice. The background is the turbulent river.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "還談何統一天下？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Standing beside the throne, holding a fan. Expression is serious, analyzing the situation. The throne room is silent.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主上，信中內容屬實。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Two-shot. Left figure looks calm and unbothered. Right figure looks concerned, leaning in slightly.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "忠臣？不過是棋子。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Eyes widen in shock, fan drops slightly or freezes. A look of realization dawns on his face.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主上早已預知此局？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A cold, thin smile spreads across the face. Eyes glint with predatory intent.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "信是真的，人卻死了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Turns away from the camera, walking towards the window. Back to the audience, gesturing with a hand.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "收信者，已伏法。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Face pales, mouth slightly open. The fan is clutched tightly in trembling hands.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "竟當著我的面……",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "shu_throne_room",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Turning back sharply, pointing a finger forward. Intense, commanding presence.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "傳令，起義興水師。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "shu_throne_room",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Drops into a deep bow, voice steady but urgent. The fan hides part of the face.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "謹遵王命，即刻執行。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Wide shot of the warship deck. Sun Quan stands alone, looking out at the horizon. The mood shifts from arrogance to caution.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "他……怎麼知道？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "shu_throne_room",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Sweat beads on the forehead. Eyes dart around nervously. The arrogant mask cracks.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "難道那封密信有詐？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

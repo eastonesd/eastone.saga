@@ -1,0 +1,323 @@
+{
+  "ep": 59,
+  "title": "二擒孟獲，蠻王歸心",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Dim lantern light, a figure kneels, sweat glistening, background blurred.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "火光映照，孟獲跪下",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei's eyes narrow, breath steady, aura of authority.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "說出你的意圖",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Meng Huo lifts his head, gaze fierce yet conflicted.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "劉公，我不服武力",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei smiles faintly, hand resting on sword hilt.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "那便見證仁德",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Zhuge Liang watches from the side, eyes calculating.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "此舉可安南中",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Liu Bei extends a hand toward Meng Huo.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "握手為盟",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Meng Huo's fingers tremble before clasping.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "願從此歸順",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "Liu Bei rises, addressing the assembled troops.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "諸將，南中已定",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang nods approvingly.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "百姓將得安寧",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei looks toward the camp entrance.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "釋放俘虜",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Soldiers untie chained prisoners, relief on faces.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "重獲自由的呼聲",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "war_tent",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Sun Shangxiang bursts in, breathless, eyes urgent.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "邊境傳來異族騎聲",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Liu Bei clenches jaw, tension rises.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "再保南疆",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Zhuge Liang spreads a map, pointing to black water region.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "此處乃黑水之濱",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei",
+        "zhuge_liang"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Liu Bei leans over the map, finger tracing the threat line.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "必須先發制人",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "war_tent",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Meng Huo bows deeply, eyes resolute.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "吾願隨公出征",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s17",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Both raise swords together, a pact sealed.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "同心，破敵",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang whispers to Liu Bei, a faint smile.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "天下可望久安",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

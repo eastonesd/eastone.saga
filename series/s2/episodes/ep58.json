@@ -1,0 +1,235 @@
+{
+  "ep": 58,
+  "title": "反向火計，孫權潰逃",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of a face contorted in madness, eyes wide and bloodshot, screaming into a chaotic background of fire and smoke.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "既然留不住，就一起燒了！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Mid-shot of a figure standing on a burning ship deck, tossing a lit torch into a pile of dry wood and oil drums nearby.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan",
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Two-shot, one figure on left reacting with horror to the explosion, another figure on right rushing forward to stop them, arms outstretched.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of a woman's face, tears mixing with soot, screaming desperately while trying to pull someone back from the edge of a fire.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "大哥！住手！醒醒！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Mid-shot of a man in disheveled robes, laughing maniacally while holding a torch, flames reflecting in his pale, terrified yet excited eyes.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "子民？他們早就恨我！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Wide shot of a battlefield, revealing a massive wall of fire cutting off all escape routes, with wooden fortifications burning intensely.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "Mid-shot of a general in armor, watching the fire spread precisely, a cold, calculated smirk on his face, smoke drifting past.",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "退路？早就斷了。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Mid-shot of a counselor in robes, observing the scene with a mix of admiration and shock, nodding slowly to the general's plan.",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "主公，此計狠辣。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of a hand gripping a torch, fingers trembling, flame casting harsh shadows on the ground, panic evident in the trembling.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "Mid-shot of the woman physically pushing the man away from a burning grain silo, her clothes soot-stained, facial expression full of desperation.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "那是萬家性命啊！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the man's face, twisted in rage, spitting words at the woman, background blurred with intense orange light from the fire.",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "死都要死在一起！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of the woman's face, pleading eyes, smoke filling her nose, tears streaming down soot-covered cheeks.",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "求你，別這樣。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Mid-shot of the man ignoring the plea, turning back to the flames, raising the torch high again with a delusional grin.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of eyes widening in terror as a massive wave of heat and flame erupts beside her, hair blowing wildly in the wind.",
+      "lines": [],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "Mid-shot of the woman being thrown backward by an explosion, hitting a wooden beam, sliding down in pain, surrounded by falling embers.",
+      "lines": [],
+      "key": false
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "ep": 55,
+  "title": "血染長江，新型水師",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "長江上鋪滿閃光鐵鏈，日光映射",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "什麼？鐵鏈橫江！",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "孫權眉頭緊皺，眼神燃燒怒火",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "竟敢阻我江路！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "war_tent",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "劉備手持卷軸，光線聚焦於他眼神的堅定",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "曹丕的祕密，終於用上。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "諸葛亮微笑，手指卷軸上的圖示",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "鎖鏈與火油，完美配合。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "火油彈點燃，火光如潮洶湧，船身被燃燒",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "火油彈點燃，火光沖天。",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan",
+        "sun_shangxiang"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "吳將與尚香持斧欲斬鏈，背後火焰映紅臉龐",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "別讓火勢蔓延！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "wu_ship",
+      "characters": [
+        "sun_shangxiang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "尚香眼中驚慌，嘴角微抖",
+      "lines": [
+        {
+          "speaker": "sun_shangxiang",
+          "text": "快躲！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "劉備指揮手勢，背光映射出火焰輪廓",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "全力燃燒！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "wu_ship",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "諸葛亮淡然點頭，眼神裡透出計算",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "計劃如願。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "整條江面燃起滔天火海，煙霧翻滾",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "江面化為火海。",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "孫權臉龐被火光映紅，眼中閃過驚疑",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "這是什麼術？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "wu_ship",
+      "characters": [
+        "sun_quan"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "孫權握緊船欄，牙關緊咬",
+      "lines": [
+        {
+          "speaker": "sun_quan",
+          "text": "曹丕的陰謀！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "wu_ship",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "劉備站在甲板上，背光映出勝利的輪廓",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "勝利在望。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "war_tent",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "諸葛亮手指地圖，燈火微光聚焦",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "下一步，佔領長安。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "wu_ship",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "增援船隊靠近，卻被鎖鏈阻擋，無法前進",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "增援被鎖鏈阻斷。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

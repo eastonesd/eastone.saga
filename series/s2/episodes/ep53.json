@@ -1,0 +1,328 @@
+{
+  "ep": 53,
+  "title": "火燒盤蛇谷，孟獲首敗",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Flames lick the armor, face contorted in panic",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "水！給我水道！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei stands at the valley mouth, cold smile",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "看你逃不掉。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Valley engulfed in roaring fire, smoke billowing",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "火光吞噬盤蛇谷。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Zhuge Liang holds a scroll, eyes calculating",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "計謀已備。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei draws his sword, expression merciless",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "不殺，給你活路。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Meng Huo gasps, tears forming",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "我求饒！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei points sword downward",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "跪下，回去。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Meng Huo drops to knees, trembling",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "我願服。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei’s eyes glint with resolve",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "看清楚，別妄想。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "Han banners flutter against the red sky",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "軍旗映紅天際。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Zhuge Liang whispers, a satisfied grin",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "計謀成功。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Liu Bei turns away, sword sheathed",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "回去，等我。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Meng Huo’s hand releases his sword, drops to ground",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "放下刀。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Ash falls like snow over the scorched ground",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "灰燼漫天飛。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s15",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "The valley becomes a sea of blood and fire",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "盤蛇谷成血墓。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s16",
+      "location": "yiling_battlefield",
+      "characters": [
+        "liu_bei"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Liu Bei smirks, eyes scanning the horizon",
+      "lines": [
+        {
+          "speaker": "liu_bei",
+          "text": "下一步，攻魏。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s17",
+      "location": "yiling_battlefield",
+      "characters": [
+        "zhuge_liang"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Zhuge Liang nods, confidence radiating",
+      "lines": [
+        {
+          "speaker": "zhuge_liang",
+          "text": "曹丕必恐懼。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s18",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "wide",
+      "motion": "pan_left",
+      "visual": "Sun sets, sky tinged with ominous red",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "天際血色漸起。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s19",
+      "location": "yiling_battlefield",
+      "characters": [],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Meng Huo’s eyes flare with vengeance",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "我必復仇。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    }
+  ]
+}
