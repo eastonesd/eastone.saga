@@ -268,10 +268,12 @@ jobs:
           path: build/${{ needs.render.outputs.slug }}
       - name: 剪輯第 ${{ matrix.ep }} 集
         run: python -m saga.cli assemble --slug "$SLUG" --ep ${{ matrix.ep }}
+      - name: 直式版（TikTok／Reels／Shorts）
+        run: python -m saga.cli vertical --slug "$SLUG" --eps ${{ matrix.ep }} --dir "build/$SLUG"
       - name: 上傳成片
         run: |
           N=$(printf '%02d' ${{ matrix.ep }})
-          gh release upload "$SLUG" "build/$SLUG/$SLUG-ep$N.mp4" "build/$SLUG/$SLUG-ep$N.jpg" --clobber
+          gh release upload "$SLUG" "build/$SLUG/$SLUG-ep$N.mp4" "build/$SLUG/$SLUG-ep$N-v.mp4" "build/$SLUG/$SLUG-ep$N.jpg" --clobber
 
   # ── 3. 回報並接力下一批 ───────────────────────────────────────
   report:

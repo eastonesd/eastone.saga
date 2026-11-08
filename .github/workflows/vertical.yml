@@ -1,0 +1,107 @@
+name: 直式版
+
+# 把已完成的 16:9 成片轉成 9:16（TikTok／Reels／Shorts），只用 CPU，不花 GPU。
+# 劇的 Issue 留言 /vertical（全集）或 /vertical 1-10
+# 新生產的集數會在剪輯時自動做直式版，這個只用來補舊集數。
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 劇代號（例如 s1）
+        required: true
+      eps:
+        description: 集數（all 或 1-10）
+        default: all
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  plan:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.comment.body, '/vertical') &&
+       github.event.comment.user.login == github.repository_owner &&
+       contains(github.event.issue.labels.*.name, '新劇'))
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    outputs:
+      slug: ${{ steps.p.outputs.slug }}
+      chunks: ${{ steps.p.outputs.chunks }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: p
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            SLUG="${{ inputs.slug }}"; EPS="${{ inputs.eps }}"
+          else
+            SLUG="s${{ github.event.issue.number }}"
+            EPS=$(printf '%s' "$COMMENT" | head -1 | grep -oE ' [0-9][0-9,\-]*' | head -1 | tr -d ' '); EPS=${EPS:-all}
+            gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" -f content=eyes >/dev/null || true
+          fi
+          HAVE=$(gh release view "$SLUG" --json assets -q '.assets[].name' | grep -oE "^$SLUG-ep[0-9]+\.mp4$" | grep -oE '[0-9]+\.mp4' | grep -oE '^[0-9]+' | sed 's/^0*//' | tr '\n' ' ')
+          CHUNKS=$(python3 - "$SLUG" "$EPS" "$HAVE" <<'E'
+          import json, sys, re
+          sys.path.insert(0, ".")
+          from saga import paths
+          slug, spec, have = sys.argv[1], sys.argv[2], {int(x) for x in sys.argv[3].split()}
+          total = paths.read_json(paths.bible_path(slug))["episode_count"]
+          eps = [e for e in paths.parse_eps(spec if spec != "all" else f"1-{total}", total) if e in have]
+          size = max(3, -(-len(eps) // 15))
+          print(json.dumps([",".join(map(str, eps[i:i + size])) for i in range(0, len(eps), size)]))
+          E
+          )
+          echo "slug=$SLUG" >> "$GITHUB_OUTPUT"; echo "chunks=$CHUNKS" >> "$GITHUB_OUTPUT"
+          echo "分組：$CHUNKS"
+
+  wrap:
+    needs: plan
+    if: needs.plan.outputs.chunks != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 15
+      matrix:
+        eps: ${{ fromJSON(needs.plan.outputs.chunks) }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SLUG: ${{ needs.plan.outputs.slug }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 安裝 FFmpeg 與中文字型
+        timeout-minutes: 12
+        run: |
+          for i in 1 2 3; do
+            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg fonts-noto-cjk > /dev/null && break
+            sleep 10
+          done
+      - name: 下載、轉直式、上傳
+        run: |
+          mkdir -p v
+          for e in $(echo "${{ matrix.eps }}" | tr ',' ' '); do
+            gh release download "$SLUG" -D v -p "$SLUG-ep$(printf '%02d' $e).mp4" --clobber
+          done
+          python3 -m saga.cli vertical --slug "$SLUG" --eps "${{ matrix.eps }}" --dir v --workers 2
+          gh release upload "$SLUG" v/*-v.mp4 --clobber
+
+  report:
+    needs: [plan, wrap]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - run: |
+          SLUG="${{ needs.plan.outputs.slug }}"
+          N=$(gh release view "$SLUG" -R "${{ github.repository }}" --json assets -q '.assets[].name' | grep -cE -- '-v\.mp4$' || true)
+          if [ "${{ needs.wrap.result }}" = "success" ]; then MSG="📱 直式版完成：目前共 $N 集（檔名 $SLUG-epNN-v.mp4）"
+          else MSG="📱 直式版部分失敗（目前共 $N 集），請看 ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"; fi
+          gh issue comment "${SLUG#s}" -R "${{ github.repository }}" --body "$MSG"

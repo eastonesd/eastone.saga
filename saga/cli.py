@@ -273,6 +273,24 @@ def cmd_publish(a) -> None:
         raise SystemExit(1)
 
 
+def cmd_vertical(a) -> None:
+    """把 --dir 裡的 16:9 成片轉成 9:16 直式版（<slug>-epNN-v.mp4）"""
+    from concurrent.futures import ThreadPoolExecutor
+    from pathlib import Path
+    from . import vertical
+
+    bible = paths.read_json(paths.bible_path(a.slug))
+    eps = paths.parse_eps(a.eps if a.eps != "all" else f"1-{bible['episode_count']}", bible["episode_count"])
+    d = Path(a.dir)
+    todo = [e for e in eps if (d / f"{a.slug}-ep{e:02d}.mp4").exists()]
+
+    def one(e):
+        vertical.wrap_episode(a.slug, e, d / f"{a.slug}-ep{e:02d}.mp4", Path(a.out or a.dir))
+        print(f"  ✓ 第 {e} 集直式版", flush=True)
+    with ThreadPoolExecutor(max_workers=a.workers) as pool:
+        list(pool.map(one, todo))
+
+
 def cmd_poster(a) -> None:
     """重畫或重選海報：--regen 重新畫 4 張底圖；--pick N 改用第 N 張"""
     from . import poster, render
@@ -403,6 +421,14 @@ def main(argv=None) -> None:
     pu.add_argument("--gap", type=int, default=0, help="每集之間隔幾秒")
     pu.add_argument("--report")
     pu.set_defaults(fn=cmd_publish)
+
+    pvt = sub.add_parser("vertical", help="16:9 成片轉 9:16 直式版")
+    pvt.add_argument("--slug", required=True)
+    pvt.add_argument("--eps", default="all")
+    pvt.add_argument("--dir", required=True)
+    pvt.add_argument("--out")
+    pvt.add_argument("--workers", type=int, default=2)
+    pvt.set_defaults(fn=cmd_vertical)
 
     pb = sub.add_parser("stylebench", help="比較畫風設定")
     pb.add_argument("--slug", required=True)

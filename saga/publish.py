@@ -82,7 +82,8 @@ def _save(slug: str, state: dict) -> None:
 
 
 def _video_file(slug: str, n: int, folder: Path) -> Path:
-    f = folder / f"{slug}-ep{n:02d}.mp4"
+    v = folder / f"{slug}-ep{n:02d}-v.mp4"  # 直式版優先（Shorts／Reels）
+    f = v if v.exists() else folder / f"{slug}-ep{n:02d}.mp4"
     if not f.exists():
         raise FileNotFoundError(f"找不到 {f}（release {slug} 裡沒有這集？）")
     return f
