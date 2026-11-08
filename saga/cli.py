@@ -241,6 +241,38 @@ def cmd_reoutline(a) -> None:
     print(summary(a.slug))
 
 
+def cmd_publish(a) -> None:
+    """批次上架 YouTube / Instagram Reels；結果寫進 --report（Markdown）"""
+    from pathlib import Path
+    from . import publish
+
+    bible = paths.read_json(paths.bible_path(a.slug))
+    eps = paths.parse_eps(a.eps if a.eps != "all" else f"1-{bible['episode_count']}", bible["episode_count"])
+    plats = ["youtube", "instagram"] if a.to == "all" else [a.to]
+    rep = publish.publish(a.slug, eps, plats, Path(a.dir), limit=a.limit, gap=a.gap)
+    name = {"youtube": "YouTube", "instagram": "Instagram Reels"}
+    lines = [f"## 📤 《{bible['title']}》上架結果", ""]
+    for plat, r in rep.items():
+        lines.append(f"**{name[plat]}**：成功 {len(r['ok'])} 集" + (f"，先前已上架 {r['skip']} 集" if r["skip"] else "")
+                     + (f"，失敗 {len(r['fail'])} 集" if r["fail"] else ""))
+        if r.get("note"):
+            lines.append(f"- {r['note']}")
+        if r.get("privacy") == "private":
+            lines.append("- 影片目前是「私人」：YouTube 規定未經審核的上傳程式只能先設私人。"
+                         "到 YouTube Studio → 內容 → 全選 → 編輯 → 瀏覽權限 → 公開（或排程），一次搞定。")
+        if r.get("playlist"):
+            lines.append(f"- 播放清單：https://www.youtube.com/playlist?list={r['playlist']}")
+        for n, msg in sorted(r["fail"].items()):
+            lines.append(f"- 第 {n} 集：{msg[:200]}")
+        lines.append("")
+    text = "\n".join(lines)
+    print(text)
+    if a.report:
+        Path(a.report).write_text(text, encoding="utf-8")
+    if not any(r["ok"] or r["skip"] for r in rep.values()):
+        raise SystemExit(1)
+
+
 def cmd_poster(a) -> None:
     """重畫或重選海報：--regen 重新畫 4 張底圖；--pick N 改用第 N 張"""
     from . import poster, render
@@ -361,6 +393,16 @@ def main(argv=None) -> None:
     pp2.add_argument("--regen", action="store_true")
     pp2.add_argument("--mock", action="store_true")
     pp2.set_defaults(fn=cmd_poster)
+
+    pu = sub.add_parser("publish", help="批次上架 YouTube / Instagram Reels")
+    pu.add_argument("--slug", required=True)
+    pu.add_argument("--to", choices=["youtube", "instagram", "all"], default="all")
+    pu.add_argument("--eps", default="all")
+    pu.add_argument("--dir", required=True, help="放 mp4/jpg 的資料夾")
+    pu.add_argument("--limit", type=int, default=0, help="每個平台這次最多上幾集（0＝不限）")
+    pu.add_argument("--gap", type=int, default=0, help="每集之間隔幾秒")
+    pu.add_argument("--report")
+    pu.set_defaults(fn=cmd_publish)
 
     pb = sub.add_parser("stylebench", help="比較畫風設定")
     pb.add_argument("--slug", required=True)

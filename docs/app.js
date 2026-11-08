@@ -304,6 +304,11 @@ async function renderSeries(num) {
   const lastPosterDone = [...comments].reverse().find((c) => c.user.type === "Bot" && /海報完成|海報失敗/.test(c.body));
   const postering = Boolean(lastPoster && (!lastPosterDone || new Date(lastPosterDone.created_at) < new Date(lastPoster.created_at)));
   const raw = `https://raw.githubusercontent.com/${cfg.repo}/main/series/${slug}/poster`;
+  const pub = await getJSON(`series/${slug}/published.json`).catch(() => ({}));
+  const lastPub = [...comments].reverse().find((c) => c.body.startsWith("/publish"));
+  const lastPubDone = [...comments].reverse().find((c) => c.user.type === "Bot" && /上架結果|上架失敗/.test(c.body));
+  const publishing = Boolean(lastPub && (!lastPubDone || new Date(lastPubDone.created_at) < new Date(lastPub.created_at)));
+  const pubCount = (k) => Object.keys(pub?.[k] || {}).length;
   const titles = Object.fromEntries((outline?.episodes || []).map((e) => [e.ep, e.title]));
 
   // 生產中：最後一次 /produce 之後還沒有回報，或最後的回報說「接力下一批」
@@ -394,6 +399,16 @@ async function renderSeries(num) {
           <button class="btn ghost" id="poster-regen" type="button" style="width:100%;margin-top:12px" ${postering ? "disabled" : ""}>${postering ? "海報製作中…" : "重畫 4 張底圖"}</button>
         </details>
       </section>
+      <section class="panel" id="pub-panel">
+        <h2>批次上架</h2>
+        <p class="muted small" style="margin:-4px 0 12px">YouTube 已上 ${pubCount("youtube")}／${total} 集 · Reels 已上 ${pubCount("instagram")}／${total} 集。重按只補還沒上的集數，不會重複發。</p>
+        <div class="chips" id="pub">
+          <button type="button" class="chip" data-to="youtube" ${publishing ? "disabled" : ""}>上 YouTube</button>
+          <button type="button" class="chip" data-to="instagram" ${publishing ? "disabled" : ""}>上 Instagram Reels</button>
+          <button type="button" class="chip" data-to="all" ${publishing ? "disabled" : ""}>兩邊都上</button>
+        </div>
+        ${publishing ? `<p class="muted small" style="margin:10px 0 0">上架中…完成後會在這裡更新數字。</p>` : ""}
+      </section>
       <section class="panel">
         <h2>調整集數與長度</h2>
         <p class="muted small" style="margin:-4px 0 14px">目前 ${total} 集 × 約 ${bible.episode_seconds} 秒。調整後會依原大綱重新濃縮（保留結局），並清除舊分鏡；之後用「重做畫面與配音」把已上架的集數重做。</p>
@@ -464,6 +479,12 @@ async function renderSeries(num) {
     $("#poster-pick").addEventListener("click", (e) => {
       const c = e.target.closest(".chip"); if (!c || postering) return;
       send(c, `/poster ${c.dataset.n}`, () => { c.textContent = `用第 ${c.dataset.n} 張`; });
+    });
+    $("#pub").addEventListener("click", (e) => {
+      const c = e.target.closest(".chip"); if (!c || publishing) return;
+      const name = { youtube: "YouTube", instagram: "Instagram Reels", all: "YouTube 與 Instagram Reels" }[c.dataset.to];
+      if (!confirm(`把還沒上架的集數全部上到 ${name}？`)) return;
+      send(c, `/publish ${c.dataset.to}`, () => { c.textContent = name; });
     });
     $("#poster-regen").addEventListener("click", (e) => {
       if (!confirm("重新畫 4 張海報底圖？約需 5～10 分鐘。")) return;

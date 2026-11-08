@@ -1,0 +1,100 @@
+name: 批次上架
+
+# 在劇的 Issue 留言：
+#   /publish youtube          YouTube 全集
+#   /publish instagram 1-10   Reels 第 1～10 集
+#   /publish all              兩邊都上
+# 已上架的集數記在 series/<slug>/published.json，重跑只補沒上的。
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 劇代號（例如 s1）
+        required: true
+      to:
+        description: 平台
+        type: choice
+        options: [youtube, instagram, all]
+        default: youtube
+      eps:
+        description: 集數（all 或 1-10）
+        default: all
+      limit:
+        description: 每個平台這次最多幾集（0＝不限）
+        default: "0"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: saga-publish-${{ inputs.slug || github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (startsWith(github.event.comment.body, '/publish') &&
+       github.event.comment.user.login == github.repository_owner &&
+       contains(github.event.issue.labels.*.name, '新劇'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 解析指令
+        id: args
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            SLUG="${{ inputs.slug }}"; TO="${{ inputs.to }}"; EPS="${{ inputs.eps }}"; LIMIT="${{ inputs.limit }}"
+          else
+            SLUG="s${{ github.event.issue.number }}"
+            LINE=$(printf '%s' "$COMMENT" | head -1)
+            TO=all
+            printf '%s' "$LINE" | grep -qiE 'youtube|yt' && TO=youtube
+            printf '%s' "$LINE" | grep -qiE 'instagram|ig|reels' && TO=instagram
+            printf '%s' "$LINE" | grep -qiE '(^| )all( |$)' && TO=all
+            EPS=$(printf '%s' "$LINE" | grep -oE ' [0-9][0-9,\-]*' | head -1 | tr -d ' '); EPS=${EPS:-all}
+            LIMIT=0
+            gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" -f content=rocket >/dev/null || true
+          fi
+          { echo "slug=$SLUG"; echo "to=$TO"; echo "eps=$EPS"; echo "limit=$LIMIT"; } >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install requests
+      - name: 下載成片
+        run: |
+          mkdir -p "$RUNNER_TEMP/v"
+          gh release download "${{ steps.args.outputs.slug }}" -D "$RUNNER_TEMP/v" -p '*-ep*.mp4' -p '*-ep*.jpg'
+          ls "$RUNNER_TEMP/v" | wc -l
+      - name: 上架
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: |
+          # 沒設的金鑰不要變成空字串（讓程式明確回報「缺少金鑰」）
+          for k in YT_CLIENT_ID YT_CLIENT_SECRET YT_REFRESH_TOKEN IG_TOKEN; do [ -z "${!k}" ] && unset $k; done
+          python -m saga.cli publish --slug "${{ steps.args.outputs.slug }}" --to "${{ steps.args.outputs.to }}" \
+            --eps "${{ steps.args.outputs.eps }}" --limit "${{ steps.args.outputs.limit }}" \
+            --dir "$RUNNER_TEMP/v" --report "$RUNNER_TEMP/report.md"
+      - name: 記錄與回報
+        if: always()
+        run: |
+          SLUG="${{ steps.args.outputs.slug }}"
+          scripts/commit.sh "$SLUG：上架紀錄" || true
+          if [ -f "$RUNNER_TEMP/report.md" ]; then
+            gh issue comment "${SLUG#s}" --body-file "$RUNNER_TEMP/report.md" || true
+          else
+            gh issue comment "${SLUG#s}" --body "📤 上架失敗，請看 ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
+          fi
