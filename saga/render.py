@@ -40,6 +40,12 @@ STYLES = {
         "ref": "3d chinese donghua CG character portrait, semi-realistic anime, detailed face, rim light",
         "lora": {"repo": "MarkBW/2.5Dstyle-xl", "file": "2.5DRealistic.safetensors", "scale": 0.6},  # 實測 0.6 最佳
     },
+    "chibi": {  # Q 版公仔：PVC 黏土人質感、大頭小身、微距攝影淺景深
+        "prompt": "nendoroid, chibi, cute 3d PVC figure, big head small body, glossy toy, macro photo, shallow depth of field",
+        "ref": "nendoroid, chibi, cute 3d PVC figure portrait, big expressive eyes, glossy toy, macro photo",
+        "lora": {"repo": "Muapi/nendoroid-chibi-art-style-capture-lora-xl",
+                 "file": "nendoroid-chibi-art-style-capture-lora-xl.safetensors", "scale": 0.9},
+    },
     "realistic": {
         "prompt": "cinematic film still, realistic photo, dramatic lighting",
         "ref": "portrait photo, realistic",
@@ -51,7 +57,8 @@ STYLES = {
 def style_of(bible: dict) -> dict:
     key = bible.get("render_style")
     if key not in STYLES:
-        key = "donghua3d" if re.search(r"國漫|3D|動漫|卡通|漫", str(bible.get("style_choice", ""))) else "realistic"
+        key = "chibi" if re.search(r"Q版|q版|公仔|chibi|黏土|萌", str(bible.get("style_choice", ""))) else \
+            "donghua3d" if re.search(r"國漫|3D|動漫|卡通|漫", str(bible.get("style_choice", ""))) else "realistic"
     return STYLES[key]
 
 
