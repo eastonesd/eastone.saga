@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SAGA.ai</title>
 <meta name="description" content="丟一句靈感，自動生產整部 AI 短劇。">
-<meta name="theme-color" content="#001227">
+<meta name="theme-color" content="#121D33">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -18,17 +18,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Saira:wdth,wght@112,500;112,700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --night: #070A1F;
-  --ink: #0F1535;
-  --ink-2: #161E48;
-  --line: #262F63;
-  --silver: #E8EBF7;
-  --mist: #9198C4;
-  --cyan: #3FD8FF;
-  --violet: #8B5CF6;
-  --danger: #FF6B8A;
-  --ok: #5BE3B0;
-  --glow: linear-gradient(110deg, var(--cyan), var(--violet));
+  /* 東石品牌：藏青 + 金。--cyan 為主強調色（金），--violet 為次要色（石板藍） */
+  --night: #0B1322;
+  --ink: #121D33;
+  --ink-2: #1B2A4A;
+  --line: #2E4370;
+  --silver: #F6F3EC;
+  --mist: #A9B3C9;
+  --cyan: #D4A84A;
+  --violet: #7F95C2;
+  --danger: #E0787A;
+  --ok: #5BC79A;
+  --glow: linear-gradient(110deg, #E8C778, #B8892B);
+  --on-glow: #121D33;
   --display: "Saira", "Noto Sans TC", sans-serif;
   --body: "Noto Sans TC", system-ui, sans-serif;
   --safe-b: env(safe-area-inset-bottom, 0px);
@@ -38,7 +40,7 @@
 html, body { margin: 0; }
 body {
   background: var(--night);
-  background-image: radial-gradient(120% 60% at 50% -10%, #1A1450 0%, transparent 60%);
+  background-image: radial-gradient(120% 60% at 50% -10%, #1E3058 0%, transparent 60%);
   background-attachment: fixed;
   color: var(--silver);
   font: 400 15px/1.65 var(--body);
@@ -55,9 +57,9 @@ a { color: var(--cyan); }
   position: sticky; top: 0; z-index: 5;
   display: flex; align-items: center; gap: 10px;
   padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px;
-  background: rgba(7, 10, 31, .82);
+  background: rgba(11, 19, 34, .84);
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(38, 47, 99, .6);
+  border-bottom: 1px solid rgba(46, 67, 112, .6);
 }
 .top img { width: 30px; height: 30px; border-radius: 8px; }
 .wordmark { font: 700 19px/1 var(--display); letter-spacing: .04em; }
@@ -107,7 +109,7 @@ textarea.idea { min-height: 150px; resize: vertical; font-size: 17px; line-heigh
   border: 0; border-radius: 14px; padding: 14px 20px; cursor: pointer;
   font-weight: 700; font-size: 16px; text-decoration: none;
 }
-.btn.primary { width: 100%; color: #fff; background: var(--glow); box-shadow: 0 8px 28px -10px rgba(139, 92, 246, .8); }
+.btn.primary { width: 100%; color: var(--on-glow); background: var(--glow); box-shadow: 0 8px 28px -10px rgba(184, 137, 43, .75); }
 .btn.primary:disabled { opacity: .5; cursor: progress; }
 .btn.ghost { background: var(--ink-2); color: var(--silver); }
 .btn.text { background: none; color: var(--mist); padding: 8px 0; font-weight: 500; }
@@ -125,8 +127,8 @@ textarea.idea { min-height: 150px; resize: vertical; font-size: 17px; line-heigh
 .progress { height: 3px; background: var(--line); border-radius: 2px; margin-top: 8px; overflow: hidden; }
 .progress b { display: block; height: 100%; background: var(--glow); }
 .pill { display: inline-block; font-size: 12px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--mist); }
-.pill.live { color: var(--cyan); border-color: rgba(63, 216, 255, .4); }
-.pill.bad { color: var(--danger); border-color: rgba(255, 107, 138, .4); }
+.pill.live { color: var(--cyan); border-color: rgba(212, 168, 74, .45); }
+.pill.bad { color: var(--danger); border-color: rgba(224, 120, 122, .45); }
 
 .empty { text-align: center; padding: 48px 12px; }
 .empty img { width: 132px; border-radius: 24px; margin-bottom: 18px; }
@@ -136,23 +138,23 @@ textarea.idea { min-height: 150px; resize: vertical; font-size: 17px; line-heigh
   --hole: 10px;
   margin: 18px -16px 6px; padding: 22px 16px;
   background:
-    repeating-linear-gradient(90deg, transparent 0 8px, #2A3166 8px 18px, transparent 18px 26px) top 7px left 0 / 100% var(--hole) no-repeat,
-    repeating-linear-gradient(90deg, transparent 0 8px, #2A3166 8px 18px, transparent 18px 26px) bottom 7px left 0 / 100% var(--hole) no-repeat,
-    #03051A;
-  border-block: 1px solid #1B2257;
+    repeating-linear-gradient(90deg, transparent 0 8px, #24375E 8px 18px, transparent 18px 26px) top 7px left 0 / 100% var(--hole) no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 8px, #24375E 8px 18px, transparent 18px 26px) bottom 7px left 0 / 100% var(--hole) no-repeat,
+    #070D18;
+  border-block: 1px solid #1B2A4A;
   display: grid; grid-auto-flow: column; grid-auto-columns: 92px; gap: 8px;
   overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none;
 }
 .film::-webkit-scrollbar { display: none; }
 .frame {
   position: relative; aspect-ratio: 9/16; border-radius: 4px; overflow: hidden; scroll-snap-align: start;
-  background: #0B1030; border: 1px solid #1C2356; padding: 0; cursor: default; text-align: left;
+  background: #0E1626; border: 1px solid #22345A; padding: 0; cursor: default; text-align: left;
 }
-.frame .n { position: absolute; left: 7px; top: 5px; font: 700 20px/1 var(--display); color: #3A4380; }
-.frame .ft { position: absolute; inset: auto 6px 6px; font-size: 11px; line-height: 1.35; color: #6E76A8;
+.frame .n { position: absolute; left: 7px; top: 5px; font: 700 20px/1 var(--display); color: #3E5079; }
+.frame .ft { position: absolute; inset: auto 6px 6px; font-size: 11px; line-height: 1.35; color: #7F8BA8;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.frame.done { cursor: pointer; border-color: rgba(63, 216, 255, .35); background-size: cover; background-position: center; }
-.frame.done::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(3, 5, 26, .9)); }
+.frame.done { cursor: pointer; border-color: rgba(212, 168, 74, .45); background-size: cover; background-position: center; }
+.frame.done::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(7, 13, 24, .9)); }
 .frame.done .n { color: #fff; z-index: 1; text-shadow: 0 1px 6px #000; }
 .frame.done .ft { color: var(--silver); z-index: 1; }
 .frame.queued { border-style: dashed; border-color: var(--violet); }
@@ -178,7 +180,7 @@ textarea.idea { min-height: 150px; resize: vertical; font-size: 17px; line-heigh
 .feed .cmd { font: 500 14px var(--display); color: var(--cyan); }
 
 /* ── 播放器 ── */
-.sheet { position: fixed; inset: 0; z-index: 20; background: rgba(3, 5, 26, .94); display: flex; flex-direction: column; }
+.sheet { position: fixed; inset: 0; z-index: 20; background: rgba(7, 13, 24, .94); display: flex; flex-direction: column; }
 .sheet header { display: flex; align-items: center; gap: 12px; padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px 10px; }
 .sheet header .t { font-weight: 700; flex: 1; }
 .sheet video { flex: 1; min-height: 0; width: 100%; background: #000; }
@@ -191,7 +193,7 @@ textarea.idea { min-height: 150px; resize: vertical; font-size: 17px; line-heigh
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
   display: flex; justify-content: center; gap: 4px;
   padding: 8px 12px calc(8px + var(--safe-b));
-  background: rgba(7, 10, 31, .92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background: rgba(11, 19, 34, .92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--line);
 }
 .tabs a {
@@ -210,7 +212,7 @@ textarea.idea { min-height: 150px; resize: vertical; font-size: 17px; line-heigh
 }
 .toast.bad { background: var(--danger); color: #fff; }
 
-.setup-logo { display: block; width: 168px; margin: 8px auto 18px; border-radius: 28px; box-shadow: 0 0 60px -10px rgba(63, 216, 255, .45); }
+.setup-logo { display: block; width: 168px; margin: 8px auto 18px; border-radius: 28px; box-shadow: 0 0 60px -10px rgba(212, 168, 74, .45); }
 .steps { padding-left: 20px; color: var(--mist); }
 .steps li { margin-bottom: 6px; }
 .steps b { color: var(--silver); font-weight: 500; }

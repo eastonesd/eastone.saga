@@ -16,7 +16,10 @@ const store = {
   del(k) { try { localStorage.removeItem("saga." + k); } catch { /* */ } },
 };
 const cfg = {
-  get repo() { return store.get("repo", "eastonesd/saga.ai"); },
+  get repo() {
+    const r = store.get("repo", "eastonesd/eastone.saga");
+    return r === "eastonesd/saga.ai" ? "eastonesd/eastone.saga" : r; // repo 已改名
+  },
   get token() { return store.get("token"); },
 };
 
@@ -357,7 +360,7 @@ async function renderSeries(num) {
       <div class="muted small">${esc(bible.genre)}・${total} 集 × 約 ${bible.episode_seconds} 秒・已完成 ${done} 集</div>
       <div class="cast">${bible.characters.map((c) => `<span><b>${esc(c.name)}</b> ${esc(c.role)}</span>`).join("")}</div>
       <div class="film" id="film">${frames}</div>
-      <div class="film-legend"><span>亮格：可播放</span><span>紫框：生產中</span><span>暗格：尚未生產</span></div>
+      <div class="film-legend"><span>亮格：可播放</span><span>藍框：生產中</span><span>暗格：尚未生產</span></div>
       <section class="panel" id="produce">
         <h2>${pending ? "工廠運轉中" : left ? `還有 ${left} 集待生產` : "全劇已完成"}</h2>
         <p class="muted small" style="margin:-4px 0 14px">${pending
@@ -550,7 +553,7 @@ function renderSettings() {
   view.innerHTML = `
     ${first ? `<img class="setup-logo" src="icons/logo-640.jpg" alt="SAGA.ai">
       <h1>連上您的短劇工廠</h1>
-      <p class="lede">這個 App 透過 GitHub 遙控 saga.ai。只需要貼一次金鑰，它只會存在這台裝置上。</p>` :
+      <p class="lede">這個 App 透過 GitHub 遙控 SAGA 短劇工廠（eastone.saga）。只需要貼一次金鑰，它只會存在這台裝置上。</p>` :
       `<h1>設定</h1>`}
     <form id="cfg">
       <div class="field">
@@ -566,7 +569,7 @@ function renderSettings() {
     <h2>如何取得金鑰</h2>
     <ol class="steps">
       <li>開啟 <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub 建立 fine-grained token</a></li>
-      <li><b>Repository access</b> 選 Only select repositories → <b>saga.ai</b></li>
+      <li><b>Repository access</b> 選 Only select repositories → <b>eastone.saga</b></li>
       <li><b>Permissions</b>：Issues 設為 Read and write；Contents、Actions 設為 Read-only</li>
       <li>產生後複製，貼到上面</li>
     </ol>
