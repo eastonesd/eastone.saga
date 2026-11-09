@@ -2,6 +2,10 @@ name: 診斷
 
 on:
   workflow_dispatch:
+    inputs:
+      kernel:
+        description: 要看的 Kaggle notebook（saga-render / saga-lab / saga-bench）
+        default: saga-render
 
 permissions:
   contents: read
@@ -58,7 +62,7 @@ jobs:
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         run: |
           case "$KAGGLE_KEY" in KGAT_*) export KAGGLE_API_TOKEN="$KAGGLE_KEY";; esac
-          for k in saga-render; do
+          for k in ${{ inputs.kernel || 'saga-render' }}; do
             echo "=================== $k status"; kaggle kernels status "$KAGGLE_USERNAME/$k" || true
             echo "=================== $k timeline"
             kaggle kernels logs "$KAGGLE_USERNAME/$k" 2>&1 | python -c "
@@ -73,7 +77,7 @@ jobs:
               if re.search(r'\[ *[0-9.]+m\]|Error|Traceback|Exception', d): print(f\"{it.get('time', 0):7.0f}s\", d[:200])
           " | head -120 || true
           done
-          mkdir -p out && kaggle kernels output "$KAGGLE_USERNAME/saga-render" -p out -o >/dev/null 2>&1 || true
+          mkdir -p out && kaggle kernels output "$KAGGLE_USERNAME/${{ inputs.kernel || 'saga-render' }}" -p out -o >/dev/null 2>&1 || true
           echo "== render output files"; ls -la out | head -30
           cat out/manifest.json 2>/dev/null | head -c 1500 || true
 
