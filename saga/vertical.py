@@ -46,18 +46,52 @@ Dialogue: 0,0:00:00.00,9:00:00.00,A,,0,0,0,,AI 生成內容
 """
 
 
-def wrap(src: Path, out: Path, *, title: str, ep: int, ep_title: str, total: int) -> Path:
+INTRO_S = 1.5  # 片頭：SAGA.ai 徽章緩緩浮現
+
+
+def _probe(src: Path) -> tuple[str, int, str]:
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "stream=codec_type,r_frame_rate,sample_rate,channels",
+                          "-of", "json", str(src)], capture_output=True, text=True, check=True).stdout
+    import json
+    st = json.loads(out)["streams"]
+    v = next(x for x in st if x["codec_type"] == "video")
+    a = next((x for x in st if x["codec_type"] == "audio"), {"sample_rate": "44100", "channels": 2})
+    return v["r_frame_rate"], int(a["sample_rate"]), "mono" if int(a.get("channels", 2)) == 1 else "stereo"
+
+
+def wrap(src: Path, out: Path, *, title: str, ep: int, ep_title: str, total: int, intro: bool = True) -> Path:
+    from .poster import brand_mark
+
     ass = out.with_suffix(".ass")
     ass.write_text(_ass(title, ep, ep_title, total), encoding="utf-8")
-    fc = (f"[0:v]split[a][b];"
-          f"[a]crop=ih:ih,scale={W}:{H},boxblur=30:3,eq=brightness=-0.25[bg];"
-          f"[b]crop=ih:ih:(iw-ih)/2:0,scale={BAND}:{BAND}[fg];"
-          f"[bg][fg]overlay=0:{TOP},ass={ass.name}")
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(src.resolve()), "-filter_complex", fc,
+    fps, sr, cl = _probe(src)
+    main = (f"[0:v]split[a][b];"
+            f"[a]crop=ih:ih,scale={W}:{H},boxblur=30:3,eq=brightness=-0.25[bg];"
+            f"[b]crop=ih:ih:(iw-ih)/2:0,scale={BAND}:{BAND}[fg];"
+            f"[bg][fg]overlay=0:{TOP},ass={ass.name},setsar=1,format=yuv420p")
+    inputs = ["-i", str(src.resolve())]
+    if intro:
+        mark = out.with_name(out.stem + "_mark.png")
+        brand_mark(720).save(mark)
+        inputs += ["-f", "lavfi", "-i", f"color=c=0x001227:s={W}x{H}:r={fps}:d={INTRO_S}",
+                   "-loop", "1", "-framerate", fps, "-t", str(INTRO_S), "-i", mark.name,
+                   "-f", "lavfi", "-t", str(INTRO_S), "-i", f"anullsrc=r={sr}:cl={cl}"]
+        fc = (main + "[mv];"
+              f"[2:v]format=rgba,fade=in:st=0.1:d=0.8:alpha=1[l];"
+              f"[1:v][l]overlay=(W-w)/2:(H-h)/2-40:shortest=1,fade=out:st={INTRO_S - 0.3}:d=0.3,setsar=1,format=yuv420p[iv];"
+              f"[0:a]aformat=sample_rates={sr}:channel_layouts={cl}[ma];"
+              f"[3:a]aformat=sample_rates={sr}:channel_layouts={cl}[ia];"
+              f"[iv][ia][mv][ma]concat=n=2:v=1:a=1[v][aout]")
+        maps = ["-map", "[v]", "-map", "[aout]", "-c:a", "aac", "-b:a", "160k"]
+    else:
+        fc, maps = main, ["-c:a", "copy"]
+    subprocess.run(["ffmpeg", "-v", "error", "-y", *inputs, "-filter_complex", fc, *maps,
                     "-c:v", "libx264", "-preset", "veryfast", "-crf", "23", "-pix_fmt", "yuv420p",
-                    "-c:a", "copy", "-movflags", "+faststart", str(out.resolve())],
+                    "-movflags", "+faststart", str(out.resolve())],
                    check=True, cwd=ass.parent)
     ass.unlink(missing_ok=True)
+    if intro:
+        mark.unlink(missing_ok=True)
     return out
 
 

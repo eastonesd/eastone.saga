@@ -149,6 +149,21 @@ def _fit(text: str, family: str, start: int, max_w: int, spacing_ratio: float = 
     return _font(family, size), int(size * spacing_ratio)
 
 
+LOGO = Path(__file__).resolve().parent.parent / "assets" / "logo.png"
+
+
+def brand_mark(size: int) -> Image.Image:
+    """圓形 SAGA 徽章（去掉方形底），供海報角標與片頭使用"""
+    from PIL import ImageDraw
+    big = size * 4
+    logo = Image.open(LOGO).convert("RGBA").resize((big, big), Image.LANCZOS)
+    mask = Image.new("L", (big, big), 0)
+    pad = int(big * 0.03)
+    ImageDraw.Draw(mask).ellipse((pad, pad, big - pad, big - pad), fill=255)
+    logo.putalpha(mask)
+    return logo.resize((size, size), Image.LANCZOS)
+
+
 def compose(slug: str, art: Path, out: Path) -> Path:
     bible = paths.read_json(paths.bible_path(slug))
     main, sub = _split_title(bible["title"])
@@ -213,9 +228,8 @@ def compose(slug: str, art: Path, out: Path) -> Path:
     d.rounded_rectangle((W - 54 - f_small.getlength(ai) - 36, 78, W - 54, 78 + 52), radius=12,
                         outline=(255, 255, 255, 180), width=2)
     d.text((W - 54 - f_small.getlength(ai) - 18, 84), ai, font=f_small, fill=(255, 255, 255, 220))
-    f_mark = _font("Noto Sans CJK TC:style=Bold", 30)
-    mark = "SAGA.ai 出品"
-    d.text(((W - f_mark.getlength(mark)) / 2, max(y + 24, H - 76)), mark, font=f_mark, fill=(200, 200, 215, 170))
+    # 品牌角標：右下角一枚小小的 SAGA 徽章
+    canvas.alpha_composite(brand_mark(96), (W - 96 - 34, H - 96 - 30))
 
     out.parent.mkdir(parents=True, exist_ok=True)
     final = canvas.convert("RGB")
