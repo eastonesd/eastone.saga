@@ -262,6 +262,8 @@ def cmd_publish(a) -> None:
                          "到 YouTube Studio → 內容 → 全選 → 編輯 → 瀏覽權限 → 公開（或排程），一次搞定。")
         if r.get("playlist"):
             lines.append(f"- 播放清單：https://www.youtube.com/playlist?list={r['playlist']}")
+        if r.get("sort"):
+            lines.append(f"- {r['sort']}")
         for n, msg in sorted(r["fail"].items()):
             lines.append(f"- 第 {n} 集：{msg[:200]}")
         lines.append("")

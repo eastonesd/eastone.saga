@@ -108,14 +108,28 @@ class YouTube:
             raise RuntimeError(f"YouTube 授權失敗（refresh token 失效？）：{r.text[:300]}")
         self.h = {"Authorization": f"Bearer {r.json()['access_token']}"}
 
-    def playlist(self, title: str) -> str | None:
-        try:
-            r = requests.get(f"{self.API}/playlists", headers=self.h,
-                             params={"part": "snippet", "mine": "true", "maxResults": 50}, timeout=30)
+    def _my_playlists(self) -> list[dict]:
+        out, token = [], None
+        while True:
+            r = requests.get(f"{self.API}/playlists", headers=self.h, params={
+                "part": "snippet,contentDetails", "mine": "true", "maxResults": 50,
+                **({"pageToken": token} if token else {})}, timeout=30)
             r.raise_for_status()
-            for p in r.json().get("items", []):
-                if p["snippet"]["title"] == title:
-                    return p["id"]
+            j = r.json()
+            out += j.get("items", [])
+            token = j.get("nextPageToken")
+            if not token:
+                return out
+
+    def playlist(self, title: str, keyword: str = "") -> str | None:
+        """找既有播放清單：完全同名，或標題含劇名主標（手動建的也算）→ 取集數最多的；都沒有才新建。"""
+        try:
+            mine = self._my_playlists()
+            hits = [p for p in mine if p["snippet"]["title"] == title or (keyword and keyword in p["snippet"]["title"])]
+            if hits:
+                best = max(hits, key=lambda p: p.get("contentDetails", {}).get("itemCount", 0))
+                print(f"  播放清單：{best['snippet']['title']}（{best['id']}）", flush=True)
+                return best["id"]
             r = requests.post(f"{self.API}/playlists", headers=self.h, params={"part": "snippet,status"}, json={
                 "snippet": {"title": title, "description": f"《{title}》全集，依集數排序"},
                 "status": {"privacyStatus": "public"}}, timeout=30)
@@ -126,16 +140,22 @@ class YouTube:
             return None
 
     def upload(self, file: Path, title: str, desc: str, tags: list[str]) -> str:
+        # 類別：電影與動畫（1）；非兒童專屬；AI 生成（變造或合成內容）；不含付費宣傳
         meta = {
             "snippet": {"title": title, "description": desc, "tags": tags, "categoryId": "1",
                         "defaultLanguage": "zh-Hant", "defaultAudioLanguage": "zh"},
             "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False,
                        "containsSyntheticMedia": True},
+            "paidProductPlacementDetails": {"hasPaidProductPlacement": False},
         }
         size = file.stat().st_size
-        r = requests.post(f"{self.UPLOAD}/videos", headers={
-            **self.h, "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size)},
-            params={"uploadType": "resumable", "part": "snippet,status"}, json=meta, timeout=60)
+        hdr = {**self.h, "X-Upload-Content-Type": "video/mp4", "X-Upload-Content-Length": str(size)}
+        r = requests.post(f"{self.UPLOAD}/videos", headers=hdr, timeout=60, json=meta,
+                          params={"uploadType": "resumable", "part": "snippet,status,paidProductPlacementDetails"})
+        if r.status_code == 400 and "paidProductPlacement" in r.text:  # 舊版 API 不認得這欄：預設本來就是「否」
+            meta.pop("paidProductPlacementDetails")
+            r = requests.post(f"{self.UPLOAD}/videos", headers=hdr, timeout=60, json=meta,
+                              params={"uploadType": "resumable", "part": "snippet,status"})
         if not r.ok:
             raise RuntimeError(f"HTTP {r.status_code} {r.text[:300]}")
         loc = r.headers["Location"]
@@ -168,6 +188,42 @@ class YouTube:
             requests.post(f"{self.API}/playlistItems", headers=self.h, params={"part": "snippet"}, json={
                 "snippet": {"playlistId": playlist,
                             "resourceId": {"kind": "youtube#video", "videoId": vid}}}, timeout=30)
+
+    def sort_playlist(self, playlist: str) -> str:
+        """依標題裡的集數（ep01／第1集）由上到下排好；認不出集數的放最後。回傳摘要。"""
+        import re
+        items, token = [], None
+        while True:
+            r = requests.get(f"{self.API}/playlistItems", headers=self.h, params={
+                "part": "snippet", "playlistId": playlist, "maxResults": 50,
+                **({"pageToken": token} if token else {})}, timeout=30)
+            r.raise_for_status()
+            j = r.json()
+            items += j.get("items", [])
+            token = j.get("nextPageToken")
+            if not token:
+                break
+
+        def ep_of(it):
+            m = re.search(r"(?:ep|EP|Ep)\s*0*(\d+)|第\s*0*(\d+)\s*集", it["snippet"]["title"])
+            return int(m.group(1) or m.group(2)) if m else 10_000
+
+        cur = sorted(items, key=lambda it: it["snippet"]["position"])
+        want = sorted(cur, key=lambda it: (ep_of(it), it["snippet"]["position"]))
+        moved = 0
+        for i, it in enumerate(want):
+            if cur[i]["id"] == it["id"]:
+                continue
+            body = {"id": it["id"], "snippet": {"playlistId": playlist, "position": i,
+                                                "resourceId": it["snippet"]["resourceId"]}}
+            r = requests.put(f"{self.API}/playlistItems", headers=self.h, params={"part": "snippet"}, json=body, timeout=30)
+            if not r.ok:
+                return f"排序中斷（已調整 {moved} 支）：HTTP {r.status_code} {r.text[:200]}"
+            cur.remove(it)
+            cur.insert(i, it)
+            moved += 1
+        odd = [it["snippet"]["title"] for it in want if ep_of(it) == 10_000]
+        return f"已依集數排序（共 {len(items)} 支，調整 {moved} 支）" + (f"；認不出集數放最後：{'、'.join(odd)[:200]}" if odd else "")
 
     def privacy(self, vid: str) -> str:
         r = requests.get(f"{self.API}/videos", headers=self.h, params={"part": "status", "id": vid}, timeout=30)
@@ -259,7 +315,11 @@ def publish(slug: str, eps: list[int], platforms: list[str], folder: Path, limit
                 todo = todo[:max(0, left)]
         if limit:
             todo = todo[:limit]
-        playlist = client.playlist(f"《{bible['title']}》") if plat == "youtube" else None
+        playlist = None
+        if plat == "youtube":
+            playlist = state.get("youtube_playlist") or client.playlist(f"《{bible['title']}》", bible["title"].split("：")[0])
+            if playlist:
+                state["youtube_playlist"] = playlist
         print(f"▶ {plat}：上架 {len(todo)} 集", flush=True)
         for i, n in enumerate(todo):
             ep = outline.get(n, {"title": f"第{n}集"})
@@ -268,7 +328,9 @@ def publish(slug: str, eps: list[int], platforms: list[str], folder: Path, limit
                 if plat == "youtube":
                     title, desc = youtube_text(bible, ep, n)
                     vid = client.upload(file, title, desc, _tags(bible))
-                    client.thumbnail(vid, folder / f"{slug}-ep{n:02d}.jpg")
+                    # 劇的統一封面（series/<slug>/poster/thumb.jpg）優先，沒有才用該集截圖
+                    thumb = paths.series_dir(slug) / "poster" / "thumb.jpg"
+                    client.thumbnail(vid, thumb if thumb.exists() else folder / f"{slug}-ep{n:02d}.jpg")
                     if playlist:
                         client.add(playlist, vid, n - 1)
                     done[str(n)] = vid
@@ -291,6 +353,11 @@ def publish(slug: str, eps: list[int], platforms: list[str], folder: Path, limit
                 time.sleep(gap)
         if playlist:
             rep["playlist"] = playlist
+            try:
+                rep["sort"] = client.sort_playlist(playlist)
+                print(f"  {rep['sort']}", flush=True)
+            except requests.RequestException as e:
+                rep["sort"] = f"排序失敗：{e}"
     return report
 
 
