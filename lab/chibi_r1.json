@@ -1,0 +1,81 @@
+{
+ "shots": 4,
+ "configs": [
+  {
+   "name": "A 快速版＋新提示詞（無負面）",
+   "unet": "lightning",
+   "steps": 8,
+   "cfg": 0,
+   "loras": {
+    "chibi": 0.9
+   },
+   "style": "chibi nendoroid figure, 3d PVC figurine, detailed sculpt, cinematic lighting, rim light, macro photo, bokeh",
+   "ref": "chibi nendoroid figure portrait, 3d PVC figurine, detailed sculpt, cinematic lighting, bokeh",
+   "add": {
+    "liu_bei": "chinese man, black hair in topknot, long black beard",
+    "zhuge_liang": "chinese man, black hair, scholar hat",
+    "sun_quan": "chinese man, black hair, short purple beard",
+    "cao_pi": "chinese man, black hair, cold eyes",
+    "sun_shangxiang": "chinese woman, black hair"
+   }
+  },
+  {
+   "name": "B SDXL 全品質＋負面",
+   "unet": "sdxl",
+   "steps": 28,
+   "cfg": 6,
+   "neg": "green hair, anime girl, twintails, loli, child, text, watermark, logo, signature, letters, multiple views, clones, duplicate, extra limbs, deformed hands, extra fingers, lowres, blurry, flat 2d, sketch, ugly",
+   "loras": {
+    "chibi": 0.9
+   },
+   "style": "chibi nendoroid figure, 3d PVC figurine, detailed sculpt, cinematic lighting, rim light, macro photo, bokeh",
+   "ref": "chibi nendoroid figure portrait, 3d PVC figurine, detailed sculpt, cinematic lighting, bokeh",
+   "add": {
+    "liu_bei": "chinese man, black hair in topknot, long black beard",
+    "zhuge_liang": "chinese man, black hair, scholar hat",
+    "sun_quan": "chinese man, black hair, short purple beard",
+    "cao_pi": "chinese man, black hair, cold eyes",
+    "sun_shangxiang": "chinese woman, black hair"
+   }
+  },
+  {
+   "name": "C Juggernaut＋負面",
+   "unet": "jugg",
+   "steps": 28,
+   "cfg": 5,
+   "neg": "green hair, anime girl, twintails, loli, child, text, watermark, logo, signature, letters, multiple views, clones, duplicate, extra limbs, deformed hands, extra fingers, lowres, blurry, flat 2d, sketch, ugly",
+   "loras": {
+    "chibi": 0.8
+   },
+   "style": "chibi nendoroid figure, 3d PVC figurine, detailed sculpt, cinematic lighting, rim light, macro photo, bokeh",
+   "ref": "chibi nendoroid figure portrait, 3d PVC figurine, detailed sculpt, cinematic lighting, bokeh",
+   "add": {
+    "liu_bei": "chinese man, black hair in topknot, long black beard",
+    "zhuge_liang": "chinese man, black hair, scholar hat",
+    "sun_quan": "chinese man, black hair, short purple beard",
+    "cao_pi": "chinese man, black hair, cold eyes",
+    "sun_shangxiang": "chinese woman, black hair"
+   }
+  },
+  {
+   "name": "D Juggernaut＋國漫臉 0.35",
+   "unet": "jugg",
+   "steps": 28,
+   "cfg": 5,
+   "neg": "green hair, anime girl, twintails, loli, child, text, watermark, logo, signature, letters, multiple views, clones, duplicate, extra limbs, deformed hands, extra fingers, lowres, blurry, flat 2d, sketch, ugly",
+   "loras": {
+    "chibi": 0.8,
+    "d25": 0.35
+   },
+   "style": "chibi nendoroid figure, 3d PVC figurine, detailed sculpt, cinematic lighting, rim light, macro photo, bokeh",
+   "ref": "chibi nendoroid figure portrait, 3d PVC figurine, detailed sculpt, cinematic lighting, bokeh",
+   "add": {
+    "liu_bei": "chinese man, black hair in topknot, long black beard",
+    "zhuge_liang": "chinese man, black hair, scholar hat",
+    "sun_quan": "chinese man, black hair, short purple beard",
+    "cao_pi": "chinese man, black hair, cold eyes",
+    "sun_shangxiang": "chinese woman, black hair"
+   }
+  }
+ ]
+}

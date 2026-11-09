@@ -291,6 +291,11 @@ def cmd_vertical(a) -> None:
         list(pool.map(one, todo))
 
 
+def cmd_stylelab(a) -> None:
+    from . import stylelab
+    stylelab.run(a.slug, a.preset, mock=a.mock)
+
+
 def cmd_poster(a) -> None:
     """重畫或重選海報：--regen 重新畫 4 張底圖；--pick N 改用第 N 張"""
     from . import poster, render
@@ -429,6 +434,12 @@ def main(argv=None) -> None:
     pvt.add_argument("--out")
     pvt.add_argument("--workers", type=int, default=2)
     pvt.set_defaults(fn=cmd_vertical)
+
+    psl = sub.add_parser("stylelab", help="畫風實驗：多組算圖設定對照")
+    psl.add_argument("--slug", required=True)
+    psl.add_argument("--preset", required=True)
+    psl.add_argument("--mock", action="store_true")
+    psl.set_defaults(fn=cmd_stylelab)
 
     pb = sub.add_parser("stylebench", help="比較畫風設定")
     pb.add_argument("--slug", required=True)

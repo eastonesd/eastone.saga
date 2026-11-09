@@ -36,17 +36,27 @@ from PIL import Image
 from diffusers import AutoencoderKL, EulerDiscreteScheduler, StableDiffusionXLPipeline, UNet2DConditionModel
 from safetensors.torch import load_file
 
-def load(ip=True):
-    # SDXL-Lightning 8 步完整 UNet：直接以 fp16 載入 GPU，不經過 LoRA／peft
+UNETS = {  # 可選的主模型 UNet：lightning＝8 步快速版；其餘為完整品質版（要搭配 CFG）
+    "lightning": f"{M}/lightning/sdxl_lightning_8step_unet.safetensors",
+    "sdxl": f"{M}/unet_sdxl/unet/diffusion_pytorch_model.fp16.safetensors",
+    "jugg": f"{M}/unet_jugg/unet/diffusion_pytorch_model.fp16.safetensors",
+}
+
+def load(ip=True, unet_key="lightning"):
     config = UNet2DConditionModel.load_config(f"{M}/sdxl", subfolder="unet")
     with torch.device("meta"):
         unet = UNet2DConditionModel.from_config(config)
-    state = {k: v.to("cuda", torch.float16) for k, v in load_file(f"{M}/lightning/sdxl_lightning_8step_unet.safetensors").items()}
+    state = {k: v.to("cuda", torch.float16) for k, v in load_file(UNETS[unet_key]).items()}
     unet.load_state_dict(state, assign=True)
     del state
     vae = AutoencoderKL.from_pretrained(f"{M}/vae", torch_dtype=torch.float16)
     pipe = StableDiffusionXLPipeline.from_pretrained(f"{M}/sdxl", unet=unet, vae=vae, torch_dtype=torch.float16, variant="fp16")
-    pipe.scheduler = EulerDiscreteScheduler.from_config(pipe.scheduler.config, timestep_spacing="trailing")
+    if unet_key == "lightning":
+        pipe.scheduler = EulerDiscreteScheduler.from_config(pipe.scheduler.config, timestep_spacing="trailing")
+    else:
+        from diffusers import DPMSolverMultistepScheduler
+        pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config, use_karras_sigmas=True,
+                                                                 algorithm_type="dpmsolver++")
     if ip:
         pipe.load_ip_adapter(f"{M}/ip", subfolder="sdxl_models", weight_name="ip-adapter-plus-face_sdxl_vit-h.safetensors",
                              image_encoder_folder="models/image_encoder", torch_dtype=torch.float16)
@@ -54,27 +64,55 @@ def load(ip=True):
     pipe.set_progress_bar_config(disable=True)
     return pipe
 
-KW = dict(num_inference_steps=JOB.get("steps", 8), guidance_scale=0.0)
+LORAS = dict(JOB.get("loras") or {})
+if JOB.get("style_lora"):
+    LORAS.setdefault("style", JOB["style_lora"])
+
+def add_loras(pipe, names):
+    for n in names:
+        if n in LORAS:
+            pipe.load_lora_weights(LORAS[n]["repo"], weight_name=LORAS[n]["file"], adapter_name=n)
+
+def apply_loras(pipe, weights):
+    names = [n for n, w in weights.items() if n in LORAS]
+    if names:
+        pipe.set_adapters(names, adapter_weights=[float(weights[n]) for n in names])
+
+def gen_kw(r):  # 每張圖的算圖參數；r 可帶 steps / cfg / neg
+    kw = dict(num_inference_steps=r.get("steps", JOB.get("steps", 8)), guidance_scale=r.get("cfg", 0.0))
+    if kw["guidance_scale"] > 1 and r.get("neg"):
+        kw["negative_prompt"] = r["neg"]
+    return kw
+
+def lora_weights(r, default_style=None):
+    if r.get("loras") is not None:
+        return dict(r["loras"])
+    if "style" in LORAS:
+        return {"style": r.get("lora", default_style if default_style is not None else LORAS["style"].get("scale", 0.8))}
+    return {}
+
 
 if mode == "refs":
-    pipe = load(ip=False)
-    if JOB.get("style_lora"):
-        st = JOB["style_lora"]
-        pipe.load_lora_weights(st["repo"], weight_name=st["file"], adapter_name="style")
-        pipe.set_adapters(["style"], adapter_weights=[st.get("scale", 0.8)])
-    for c in JOB["characters"]:
-        if c.get("ref_b64") or c.get("ref_url"):
-            continue
-        img = pipe(prompt=c["ref_prompt"], width=896, height=1152,
-                   generator=torch.Generator("cuda").manual_seed(c["seed"]), **KW).images[0]
-        img.convert("RGB").resize((448, 576)).save(f"{OUT}/ref_{c['id']}.jpg", quality=92)
-        log("定妝照", c["id"])
+    base_rr = JOB.get("ref_render") or {}
+    todo = [c for c in JOB["characters"] if not (c.get("ref_b64") or c.get("ref_url"))][shard::nshards]
+    groups = {}
+    for c in todo:  # 每個角色可帶自己的算圖設定（畫風實驗用）
+        rr = dict(base_rr, **(c.get("render") or {}))
+        groups.setdefault(rr.get("unet", "lightning"), []).append((c, rr))
+    pipe = None
+    for ukey, items in groups.items():
+        if pipe is not None:
+            del pipe; torch.cuda.empty_cache()
+        pipe = load(ip=False, unet_key=ukey)
+        add_loras(pipe, sorted({n for _, rr in items for n in lora_weights(rr)}))
+        for c, rr in items:
+            apply_loras(pipe, lora_weights(rr))
+            img = pipe(prompt=c["ref_prompt"], width=896, height=1152,
+                       generator=torch.Generator("cuda").manual_seed(c["seed"]), **gen_kw(rr)).images[0]
+            img.convert("RGB").resize((448, 576)).save(f"{OUT}/ref_{c['id']}.jpg", quality=92)
+            log("定妝照", c["id"])
 
 elif mode == "shots":
-    pipe = load()
-    style = JOB.get("style_lora")
-    if style:  # 畫風 LoRA（例如 3D 國漫風），每個鏡頭可個別調強度
-        pipe.load_lora_weights(style["repo"], weight_name=style["file"], adapter_name="style")
     from diffusers.image_processor import IPAdapterMaskProcessor
     maskproc = IPAdapterMaskProcessor()
 
@@ -99,32 +137,42 @@ elif mode == "shots":
             m = maskproc.preprocess([left, right], height=h, width=w)
             _masks[(w, h)] = [m.reshape(1, m.shape[0], m.shape[2], m.shape[3])]
         return _masks[(w, h)]
-    scale = JOB.get("ip_scale", 0.5)
     done = 0
-    for s in mine:
-        if out_of_time():
-            log("時間預算用完"); break
-        try:
-            if style:
-                pipe.set_adapters(["style"], adapter_weights=[s.get("lora", style.get("scale", 0.8))])
-            ids = [r for r in (s.get("refs") or [s.get("ref")]) if r in refs]
-            gen = torch.Generator("cuda").manual_seed(s["seed"])
-            sw, sh = s.get("w", W), s.get("h", H)  # 海報等特殊尺寸
-            if len(ids) >= 2:  # 雙人鏡頭：左半邊鎖第一人、右半邊鎖第二人
-                pipe.set_ip_adapter_scale([[scale, scale]])
-                img = pipe(prompt=s["prompt"], width=sw, height=sh, ip_adapter_image=[[refs[ids[0]], refs[ids[1]]]],
-                           cross_attention_kwargs={"ip_adapter_masks": duo_masks_for(sw, sh)}, generator=gen, **KW).images[0]
-            else:
-                ref = refs.get(ids[0]) if ids else None
-                pipe.set_ip_adapter_scale(scale if ref is not None else 0.0)
-                img = pipe(prompt=s["prompt"], width=sw, height=sh, ip_adapter_image=ref if ref is not None else blank,
-                           generator=gen, **KW).images[0]
-            img.save(f"{OUT}/{s['key']}.png")
-            done += 1
-            if done % 10 == 0 or done == len(mine):
-                log(f"{done}/{len(mine)}")
-        except Exception:
-            traceback.print_exc()
+    groups = {}
+    for s in mine:  # 依主模型分組，每組只載入一次
+        groups.setdefault(s.get("unet", "lightning"), []).append(s)
+    pipe = None
+    for ukey, todo in groups.items():
+      if pipe is not None:
+        del pipe; torch.cuda.empty_cache()
+      pipe = load(unet_key=ukey)
+      add_loras(pipe, sorted({n for s in todo for n in lora_weights(s)}))
+      log(f"主模型 {ukey}：{len(todo)} 張")
+      for s in todo:
+          if out_of_time():
+              log("時間預算用完"); break
+          try:
+              apply_loras(pipe, lora_weights(s))
+              KW = gen_kw(s)
+              scale = s.get("ip", JOB.get("ip_scale", 0.5))
+              ids = [r for r in (s.get("refs") or [s.get("ref")]) if r in refs]
+              gen = torch.Generator("cuda").manual_seed(s["seed"])
+              sw, sh = s.get("w", W), s.get("h", H)  # 海報等特殊尺寸
+              if len(ids) >= 2:  # 雙人鏡頭：左半邊鎖第一人、右半邊鎖第二人
+                  pipe.set_ip_adapter_scale([[scale, scale]])
+                  img = pipe(prompt=s["prompt"], width=sw, height=sh, ip_adapter_image=[[refs[ids[0]], refs[ids[1]]]],
+                             cross_attention_kwargs={"ip_adapter_masks": duo_masks_for(sw, sh)}, generator=gen, **KW).images[0]
+              else:
+                  ref = refs.get(ids[0]) if ids else None
+                  pipe.set_ip_adapter_scale(scale if ref is not None else 0.0)
+                  img = pipe(prompt=s["prompt"], width=sw, height=sh, ip_adapter_image=ref if ref is not None else blank,
+                             generator=gen, **KW).images[0]
+              img.save(f"{OUT}/{s['key']}.png")
+              done += 1
+              if done % 10 == 0 or done == len(mine):
+                  log(f"{done}/{len(mine)}")
+          except Exception:
+              traceback.print_exc()
 
 elif mode == "video":
     from diffusers import WanImageToVideoPipeline
@@ -181,6 +229,11 @@ for name, (repo, patterns) in RECIPE.items():
         os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "0"
         snapshot_download(repo, local_dir=f"{M}/{name}", allow_patterns=patterns, max_workers=16)
 hf_hub_download("ByteDance/SDXL-Lightning", "sdxl_lightning_8step_unet.safetensors", local_dir=f"{M}/lightning")
+_need = {s.get("unet", "lightning") for s in JOB.get("shots", [])} | {(JOB.get("ref_render") or {}).get("unet", "lightning")}
+for key, repo in (("sdxl", "stabilityai/stable-diffusion-xl-base-1.0"), ("jugg", "RunDiffusion/Juggernaut-XL-v9")):
+    if key in _need:
+        hf_hub_download(repo, "unet/diffusion_pytorch_model.fp16.safetensors", local_dir=f"{M}/unet_{key}")
+        log("下載主模型", key)
 log("模型下載完成")
 
 gpus = subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True).stdout.strip().splitlines()
@@ -220,7 +273,11 @@ for c in JOB["characters"]:
 with open(JOB_PATH, "w", encoding="utf-8") as f:  # 子程序讀的是這份，同步更新
     json.dump(JOB, f, ensure_ascii=False)
 if any(not (c.get("ref_b64") or c.get("ref_url")) for c in JOB["characters"]):
-    wait_all(run("refs"))
+    rp = []
+    for i in range(n):  # 定妝照也分兩張 GPU
+        rp.append(run("refs", i, n, i))
+        time.sleep(20)
+    wait_all(*rp)
 
 # ── 3. 分鏡圖：每張 GPU 各分一半 ───────────────────────────
 if JOB["shots"]:

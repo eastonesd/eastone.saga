@@ -1,0 +1,44 @@
+name: 畫風實驗室
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        default: s2
+      preset:
+        description: lab/ 底下的設定檔名（不含 .json）
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saga-kaggle
+  cancel-in-progress: false
+
+jobs:
+  lab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: sudo apt-get install -y -qq fonts-noto-cjk > /dev/null || true
+      - name: Kaggle 實驗
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+          SAGA_KERNEL_SLUG: saga-lab
+        run: python -m saga.cli stylelab --slug "${{ inputs.slug }}" --preset "${{ inputs.preset }}"
+      - name: 存對照圖
+        if: always()
+        run: |
+          mkdir -p bench
+          cp "build/${{ inputs.slug }}/lab-${{ inputs.preset }}.jpg" "bench/" || exit 0
+          git config user.name "saga-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add bench && git commit -m "畫風實驗：${{ inputs.slug }} ${{ inputs.preset }}" && git pull --rebase && git push
