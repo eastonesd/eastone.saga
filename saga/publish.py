@@ -204,6 +204,16 @@ class YouTube:
             if not token:
                 break
 
+        # 影片已被刪除的空殼（標題固定是 "Deleted video"）直接從清單移除
+        removed = 0
+        for it in [x for x in items if x["snippet"]["title"] == "Deleted video"]:
+            r = requests.delete(f"{self.API}/playlistItems", headers=self.h, params={"id": it["id"]}, timeout=30)
+            if r.ok:
+                items.remove(it)
+                removed += 1
+        for i, it in enumerate(sorted(items, key=lambda it: it["snippet"]["position"])):
+            it["snippet"]["position"] = i
+
         def ep_of(it):
             m = re.search(r"(?:ep|EP|Ep)\s*0*(\d+)|第\s*0*(\d+)\s*集", it["snippet"]["title"])
             return int(m.group(1) or m.group(2)) if m else 10_000
@@ -223,7 +233,7 @@ class YouTube:
             cur.insert(i, it)
             moved += 1
         odd = [it["snippet"]["title"] for it in want if ep_of(it) == 10_000]
-        return f"已依集數排序（共 {len(items)} 支，調整 {moved} 支）" + (f"；認不出集數放最後：{'、'.join(odd)[:200]}" if odd else "")
+        return f"已依集數排序（共 {len(items)} 支，調整 {moved} 支）" + (f"；移除 {removed} 筆已刪除影片" if removed else "") + (f"；認不出集數放最後：{'、'.join(odd)[:200]}" if odd else "")
 
     def privacy(self, vid: str) -> str:
         r = requests.get(f"{self.API}/videos", headers=self.h, params={"part": "status", "id": vid}, timeout=30)
@@ -300,7 +310,7 @@ def publish(slug: str, eps: list[int], platforms: list[str], folder: Path, limit
         done = state.setdefault(plat, {})
         todo = [n for n in eps if str(n) not in done]
         rep = report[plat] = {"ok": [], "fail": {}, "skip": len(eps) - len(todo), "note": ""}
-        if not todo:
+        if not todo and not (plat == "youtube" and state.get("youtube_playlist")):
             continue
         try:
             client = YouTube() if plat == "youtube" else Instagram()
@@ -315,6 +325,8 @@ def publish(slug: str, eps: list[int], platforms: list[str], folder: Path, limit
                 todo = todo[:max(0, left)]
         if limit:
             todo = todo[:limit]
+        if not todo:  # 全部上過了：只整理播放清單
+            print(f"▶ {plat}：沒有新集數，只整理播放清單", flush=True)
         playlist = None
         if plat == "youtube":
             playlist = state.get("youtube_playlist") or client.playlist(f"《{bible['title']}》", bible["title"].split("：")[0])
