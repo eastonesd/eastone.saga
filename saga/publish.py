@@ -39,7 +39,7 @@ def _tags(bible: dict) -> list[str]:
 
 def youtube_text(bible: dict, ep: dict, n: int) -> tuple[str, str]:
     total = bible["episode_count"]
-    title = f"{bible['title']} 第{n}集｜{ep.get('title', '')}"[:100]
+    title = f"《{bible['title']}》ep{n:02d}｜{ep.get('title', '')}"[:100]
     body = "\n".join(_keep([
         ep.get("hook") or ep.get("summary", ""),
         "",
@@ -52,18 +52,21 @@ def youtube_text(bible: dict, ep: dict, n: int) -> tuple[str, str]:
     return title, body[:4900]
 
 
+def short_tags(bible: dict) -> str:
+    """使用者固定格式的 hashtag：#saga #短劇 #類型 #劇名主標 ＋ 固定一行"""
+    main = bible["title"].split("：")[0]
+    genre = str(bible.get("genre", "")).replace("都市", "").replace("復仇", "")[:2]
+    tags = list(dict.fromkeys(t for t in ["saga", "短劇", genre, main] if t))
+    return " ".join("#" + t for t in tags) + "\n#因為一個片段看了整部劇"
+
+
 def instagram_caption(bible: dict, ep: dict, n: int) -> str:
-    total = bible["episode_count"]
-    return "\n".join(_keep([
-        f"《{bible['title']}》第 {n}/{total} 集｜{ep.get('title', '')}",
-        "",
-        ep.get("hook") or ep.get("summary", ""),
-        "",
-        "👉 追更看主頁，全集依序排好",
-        "⚠️ AI 生成內容",
-        "",
-        " ".join("#" + t for t in _tags(bible)),
-    ]))[:2100]
+    """與 TikTok 手動上架相同的格式（第一集多放一行劇情簡介）"""
+    hook = (ep.get("hook") or ep.get("summary") or "").strip()
+    if n == 1 and bible.get("logline"):
+        hook = f"{bible['logline']}\n\n{hook}"
+    return (f"《{bible['title']}》ep{n:02d}\n{hook}\n\n🔍點擊主頁連結，觀看完整版劇情🎞️\n\n"
+            f"{short_tags(bible)}")[:2100]
 
 
 # ── 記錄 ──────────────────────────────────────────────────
