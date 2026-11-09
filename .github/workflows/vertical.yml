@@ -83,6 +83,7 @@ jobs:
             sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg fonts-noto-cjk > /dev/null && break
             sleep 10
           done
+      - run: pip install pillow
       - name: 下載、轉直式、上傳
         run: |
           mkdir -p v
