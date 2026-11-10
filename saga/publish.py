@@ -60,12 +60,15 @@ def short_tags(bible: dict) -> str:
     return " ".join("#" + t for t in tags) + "\n#因為一個片段看了整部劇"
 
 
+IG_BATCH = 3
+
+
 def instagram_caption(bible: dict, ep: dict, n: int) -> str:
     """與 TikTok 手動上架相同的格式（第一集多放一行劇情簡介）"""
     hook = (ep.get("hook") or ep.get("summary") or "").strip()
     if n == 1 and bible.get("logline"):
         hook = f"{bible['logline']}\n\n{hook}"
-    return (f"《{bible['title']}》ep{n:02d}\n{hook}\n\n🔍點擊主頁連結，觀看完整版劇情🎞️\n\n"
+    return (f"《{bible['title']}》ep{n:02d}\n{hook}\n\n🔍點擊主頁連結，觀看完整版劇情\n\n"
             f"{short_tags(bible)}")[:2100]
 
 
@@ -325,6 +328,8 @@ def publish(slug: str, eps: list[int], platforms: list[str], folder: Path, limit
                 todo = todo[:max(0, left)]
         if limit:
             todo = todo[:limit]
+        elif plat == "instagram":  # Instagram 預設一次只上 3 集，細水長流
+            todo = todo[:IG_BATCH]
         if not todo:  # 全部上過了：只整理播放清單
             print(f"▶ {plat}：沒有新集數，只整理播放清單", flush=True)
         playlist = None

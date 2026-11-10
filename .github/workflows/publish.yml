@@ -2,7 +2,8 @@ name: 批次上架
 
 # 在劇的 Issue 留言：
 #   /publish youtube          YouTube 全集
-#   /publish instagram 1-10   Reels 第 1～10 集
+#   /publish instagram        Reels 依序補下 3 集（Instagram 預設一次 3 集）
+#   /publish instagram 1-10   Reels 第 1～10 集（一樣一次 3 集，再留言一次補下 3 集）
 #   /publish all              兩邊都上
 # 已上架的集數記在 series/<slug>/published.json，重跑只補沒上的。
 
@@ -23,7 +24,7 @@ on:
         description: 集數（all 或 1-10）
         default: all
       limit:
-        description: 每個平台這次最多幾集（0＝不限）
+        description: 每個平台這次最多幾集（0＝預設：YouTube 不限、Instagram 3 集）
         default: "0"
 
 permissions:
