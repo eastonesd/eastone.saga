@@ -1,0 +1,259 @@
+{
+  "ep": 10,
+  "title": "反轉吧！這不是終點",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Character holds a glowing virtual tablet, the sky behind is cracking with digital artifacts.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "想要毀掉一切？問過我嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Character is screaming, her body starting to flicker like a corrupted video file.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "這不可能！權限是我的！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Character fast-typing on a holographic interface with a cold smirk.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "現在，妳只是劇本裡的塵埃。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "ballroom",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A mechanical boy hologram appears, eyes glowing blue as data streams around him.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "系統修復啟動，抹除蘇曼。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Character is being pulled into a black vortex while the ballroom dissolves.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "不！放我出去！不要！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "dormitory",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Character wakes up in a dorm and immediately gets slapped by an unseen hand.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "第一集，無限循環開始。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "ballroom",
+      "characters": [
+        "gu_ting",
+        "lin_xia"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Character on the left is fading into particles, touching the face of the protagonist.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "一定要在現實裡，找到我。",
+          "emo": "sad"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Character has tears in her eyes but looks determined as the light consumes her.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "我會的，顧霆，我保證。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "Character stands in modern street clothes under an umbrella, looking at a bright billboard.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "夢醒了，但故事還沒結束。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "A book signing event set up in a high-end office lobby, many fans are lining up.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "暢銷作家林曉新書簽名會。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Character is signing a book with the title 'Script Guardian' and smiling warmly.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "謝謝大家的支持與喜愛。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Character looks up as a tall man in a tailored suit stops in front of her desk.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "下一位……妳好？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "ceo_office",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A man looking exactly like the script character stands there, smiling mysteriously.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "這本劇本，结局我很喜歡。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Character's pen drops, her eyes widen in absolute shock and recognition.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "你是……顧霆？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    }
+  ]
+}

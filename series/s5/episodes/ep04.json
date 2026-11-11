@@ -1,0 +1,261 @@
+{
+  "ep": 4,
+  "title": "假懷孕的拙劣戲碼",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "ballroom",
+      "characters": [
+        "su_man",
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A woman throws a medical report paper aggressively toward the camera, her face distorted with rage and fake tears.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "林曉，妳竟然害死我的孩子！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The protagonist looks down at the ultrasound photo on the floor with a cold, mocking expression.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "這演技，不去領獎可惜了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "ballroom",
+      "characters": [
+        "su_man",
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The antagonist grabs the man's arm, weeping hysterically while pointing at the protagonist.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "阿霆，你要為我做主啊！",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "ballroom",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The man stares at the protagonist with intense, sharp eyes, his jaw tightened in suspicion.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "妳還有什麼好解釋的？",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The protagonist slowly picks up the medical report, looking at it under the chandelier light.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "解釋？這劇本也太老土了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The antagonist stops crying for a second, a flicker of nervousness passing through her eyes.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "證據確鑿，妳還想抵賴？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist takes out her phone and taps the screen confidently.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "那就請院長親自說明吧。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The phone screen shows a video call connection to 'Hospital Director'.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "（電話音）本院昨日無此紀錄。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_out",
+      "visual": "The antagonist turns pale, her hands starting to tremble as she steps back.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "不...這不可能！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The protagonist pulls a folded paper from her pocket and unfolds it slowly.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "真巧，我也有一張一樣的。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia",
+        "su_man"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "The protagonist holds two identical ultrasound photos side-by-side in front of the antagonist.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "連浮水印的位置都一樣。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "ballroom",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man looks from the papers to the antagonist, his expression turning cold and dangerous.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "蘇曼，妳在騙我？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The protagonist leans closer to the antagonist, whispering with a sharp, victorious smile.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "蘇小姐，這模板哪買的？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up on the protagonist's eyes, filled with mockery and intelligence. Freeze frame.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "網購一張，才五塊錢？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "ep": 5,
+  "title": "綁架？那是我的主場",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A person sitting in a chair, eyes covered by a black cloth, background is a dark and damp alley with rain.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "便當領了嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "rainy_street",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A man in a leather jacket pointing a sharp object, his face distorted with fake toughness.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "死到臨頭還嘴硬？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Close-up of lips curling into a mocking smile under the blindfold.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "這台詞太老套了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s04",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The blindfold is pulled down, revealing bright, sharp eyes in the darkness.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "一點新意都沒有。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "rainy_street",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The man steps back, looking uncertain and holding his weapon loosely.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "妳在胡說什麼？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Close-up of wrists tied with a thick, messy rope knot.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "繩結打法不對。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A calm face looking directly at the camera with an air of total superiority.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "稍微用力就能掙開。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s08",
+      "location": "rainy_street",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man frantically pulls at the ropes on the chair, looking flustered.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "這可是死結！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A low-angle shot making the seated person look powerful and in control.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "蘇曼給你們多少？",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A confident smile, the lighting shifts to highlight the protagonist's face.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "我出雙倍，現金。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "rainy_street",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A woman in high heels walking into the dimly lit space, laughing triumphantly.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "林曉，妳也有今天！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "rainy_street",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The woman's expression freezes, her eyes widening in disbelief as she looks ahead.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "妳……妳怎麼解開了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "rainy_street",
+      "characters": [
+        "system_boy",
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The man blocks the woman's path, holding his hand out for payment with a cold stare.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "蘇小姐，尾款結一下？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "rainy_street",
+      "characters": [
+        "system_boy",
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man bows 90 degrees toward the seated person, ignoring the other woman.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "大姐，接下來我們綁誰？",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

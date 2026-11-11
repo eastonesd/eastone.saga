@@ -1,0 +1,261 @@
+{
+  "ep": 7,
+  "title": "反派系統的覺醒",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "ceo_office",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Extreme close-up of eyes flashing with red digital data streams. Dark, dramatic lighting.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "林曉，妳以為只有妳有外掛？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "ceo_office",
+      "characters": [
+        "su_man",
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A red translucent system panel floats before her. She smirks at the confused opponent.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "我也覺醒了『反派系統』！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Startled expression, looking at the glitching air in front of the enemy.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "什麼？這劇本徹底亂套了。",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "ceo_office",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Waving a hand, red energy ripples outward, causing the surrounding furniture to flicker.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "消失吧，妳這個礙眼的配角！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia",
+        "gu_ting"
+      ],
+      "camera": "wide",
+      "motion": "pan_right",
+      "visual": "The office walls begin to dissolve into digital pixels. Chaos fills the room.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "警告：世界數據正在崩壞中。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "ceo_office",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Looking down at his own hands, which are becoming transparent and flickering.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "曉曉……我的手怎麼了？",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia",
+        "gu_ting"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "Reaching out to grab his fading arm, but her hand passes right through him.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "顧霆！撐住，別消失！",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "ceo_office",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Appearing as a blue holographic boy, facial expressions showing rare urgency.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "宿主，快找出她的代碼漏洞！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "ceo_office",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Laughing hysterically while the red screen behind her glows brighter.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "沒用的，我才是劇本的主角！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Frantically swiping through a blue floating menu, eyes searching for a fix.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "小白，強行切斷她的權限！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "ceo_office",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A red warning 'ERROR' sign flashes over his holographic body.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "權限不足，男主即將被刪除！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s12",
+      "location": "ceo_office",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "Body is now 70% transparent, looking at her with deep affection and sorrow.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "如果我消失，妳也要活下去。",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "Tears in eyes, but expression turns from grief to fierce determination.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "不！我絕不接受這種垃圾結局！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "ceo_office",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "He completely vanishes into white light. The screen turns red with a deletion countdown.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "顧霆，正在從世界中抹除……",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

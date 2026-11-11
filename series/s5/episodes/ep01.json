@@ -1,0 +1,261 @@
+{
+  "ep": 1,
+  "title": "惡毒千金？我才是編劇！",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "ballroom",
+      "characters": [
+        "su_man",
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A hand slaps down furiously, interrupted as another hand firmly grabs the wrist mid-air under bright chandelier light.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "蘇大小姐，這一巴掌你配嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A woman in an elegant dress looks shocked and furious, attempting to pull her wrist free.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "賤人！你竟然敢還手？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A woman smiles mockingly and violently shoves the opponent's wrist away.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "打你，還需要看日子嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia",
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "A woman swings her arm decisively and lands a sharp slap onto the other woman's cheek.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "這一耳光，是替我自己打的！",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s05",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A woman stumbles backward, clutching her red cheek in utter disbelief.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "你……你瘋了嗎？！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A glowing blue futuristic UI digital interface expands abruptly in front of a woman's eyes.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "叮！劇本守護系統正式激活。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A woman looks at the floating interface with a mischievous and confident smile.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "系統？有意思，劇本我說了算。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A furious woman points wildly towards security guards in the background, shouting out orders.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "保安！給我把這個賤人抓起來！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A woman folds her arms calmly, looking utterly unbothered with a cold smirk.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "省省吧，這橋段早就過時了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "ballroom",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "Grand double doors push open dramatic background light reveals a tall man in a dark suit stepping in.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "整個宴會廳瞬間陷入死寂。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "ballroom",
+      "characters": [
+        "su_man",
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "A woman immediately puts on fake tears and rushes over to cling to the man's arm.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "霆哥哥，她竟然敢對我動手！",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "ballroom",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A man in a sharp tuxedo ignores the woman beside him, fixing cold, sharp eyes forward.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "林曉，你今天很不一樣。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A woman tilts her head slightly, meeting his sharp gaze with a playful and fearless smile.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "顧總，你是在跟我說話？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "ballroom",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A dominant man steps forward looming over the camera, his expression darkening with immense pressure.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "跪下，向曼曼道歉。",
+          "emo": "angry"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

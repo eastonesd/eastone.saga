@@ -1,0 +1,260 @@
+{
+  "ep": 8,
+  "title": "強行修改結局的危機",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "wide",
+      "motion": "zoom_in",
+      "visual": "Red and blue police lights flash on her face in the pouring rain. She is surrounded by silhouettes of officers.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "妳被捕了，劇本通緝犯。",
+          "emo": "calm"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "rainy_street",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She holds a glowing red phone, smiling with extreme malice and triumph.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "林曉，這就是妳的結局！",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She looks calm, her eyes reflecting digital green code moving rapidly.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "結局？妳對代碼一無所知。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "rainy_street",
+      "characters": [
+        "system_boy",
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A holographic boy appears next to her, visible only to her. He is typing on a virtual keyboard.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "警報！男主角正在被刪除。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "rainy_street",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "He stands in the rain, his body flickering like a broken television signal, becoming transparent.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "林曉……走……別管我。",
+          "emo": "sad"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia",
+        "gu_ting"
+      ],
+      "camera": "over-shoulder",
+      "motion": "zoom_in",
+      "visual": "She reaches out and firmly grabs his flickering hand. A golden light starts to glow at the contact point.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "借你的愛用一下，當能源。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "rainy_street",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "His eyes widen as the golden light stabilizes his form. He looks at her with deep realization.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "妳在利用我？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She winks, her face illuminated by the brilliant gold and green data stream.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "這叫『合理利用資源』。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "rainy_street",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "She notices the light and screams at the officers, pointing her finger wildly.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "開槍！快殺了她！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "rainy_street",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "zoom_out",
+      "visual": "She dissolves into a swirl of digital particles just as the officers rush forward.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "蘇曼，後會有期。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s11",
+      "location": "rainy_street",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "She stares at the empty space where the protagonist stood, her face twisted in confusion.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "人呢？消失了？",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A dark room filled with glowing monitors showing the rainy street scene from multiple angles.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "歡迎來到劇本後台。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "She is sitting in a large leather chair, her feet on the desk, looking at a screen showing a shocked Su Man.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "蘇曼，看背後。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "rainy_street",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A monitor screen suddenly appears in the air behind her, showing her own back. She turns around in terror.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "妳到底在哪裡！",
+          "emo": "afraid"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

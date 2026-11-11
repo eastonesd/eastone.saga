@@ -1,0 +1,262 @@
+{
+  "ep": 2,
+  "title": "霸總套路對我沒用",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "dormitory",
+      "characters": [
+        "gu_ting",
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "A tall arrogant man in a suit forcefully presses a young woman against the wall.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "妳是在玩欲擒故纵嗎？",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "dormitory",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A clever young woman smiles playfully with complete confidence and light contempt.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "顧總，這台詞過時幾十年了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "dormitory",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man in suit narrows his eyes, momentarily stunned and irritated.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "女人，妳成功引起我的注意了。",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "dormitory",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "A glamorously dressed woman points angrily at the female protagonist.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "顧總！別被這個賤人騙了！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "dormitory",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A glowing holographic robotic boy floats in mid-air with a glowing interface.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "提示，攻略霸總可獲修改點數。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s06",
+      "location": "dormitory",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The young woman's eyes light up with playful ambition and delight.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "還有這種好事？點數我要定了！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s07",
+      "location": "dormitory",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The dominant man glares downward with suffocating arrogance.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "跪下向蘇曼道歉，我就原諒妳。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "dormitory",
+      "characters": [
+        "lin_xia",
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The young woman takes a bold step closer to the dominant man without trembling.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "要是我不呢？顧總要封殺我嗎？",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "dormitory",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The villainous woman gasps in shock at her boldness.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "妳居然敢這樣對顧總說話！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "dormitory",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The young woman turns her head sideways with a cold, dismissive look.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "閉嘴，現在沒妳這個配角的事。",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "dormitory",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The sharp man in suit reaches out angrily to grab her arm.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "簡直放肆！妳以為妳是誰？",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "dormitory",
+      "characters": [
+        "lin_xia",
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The young woman swiftly reaches up and grabs the man's necktie, pulling him down forceably.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "我是掌控你命運的人。",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s13",
+      "location": "dormitory",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The CEO is pulled down close, eyes widened in absolute astonishment.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "妳……",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s14",
+      "location": "dormitory",
+      "characters": [
+        "lin_xia",
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The clever woman holds his tie tight and whispers right into his ear with a smug smile.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "顧總，你的台詞太老套了。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

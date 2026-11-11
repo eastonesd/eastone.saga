@@ -1,0 +1,244 @@
+{
+  "ep": 3,
+  "title": "宴會上的驚艷逆襲",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A luxurious silk evening dress tears open dramatically along the seam under glowing chandelier lights.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "哎呀，林小姐的裙子裂開了！",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "ballroom",
+      "characters": [
+        "su_man",
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A arrogant woman points mockingly at the woman standing calmly opposite her.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "這種便宜貨也敢穿來晚宴？",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A confident woman looks down at her damaged dress with a slight playful smirk.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "小白，消耗點數重構禮服。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "ballroom",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A glowing blue holographic system display flashes bright numbers in the air.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "點數已扣除，極光高訂生成中。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "wide",
+      "motion": "zoom_out",
+      "visual": "Dazzling golden light swirls around the woman, instantly transforming the torn dress into a breathtaking slit gown.",
+      "lines": [
+        {
+          "speaker": "narrator",
+          "text": "魔法般的金光瞬間包裹全場！",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "pan_left",
+      "visual": "A villainous woman's eyes open wide in shock, her face pale under the bright lighting.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "這……這怎麼可能？！",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The heroine steps forward gracefully in her radiant high-fashion gown, revealing a sharp side slit.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "蘇小姐，多謝你的特別剪裁。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia",
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The heroine walks past the embarrassed villain with her head held high, flicking her long hair.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "現在，這才是獨一無二的高訂。",
+          "emo": "disdain"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s09",
+      "location": "ballroom",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "An angry woman clenches her fists tighter, trembling in sheer embarrassment.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "林曉！妳少在這邊裝模作樣！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s10",
+      "location": "ballroom",
+      "characters": [
+        "gu_ting",
+        "lin_xia"
+      ],
+      "camera": "over-shoulder",
+      "motion": "static",
+      "visual": "A handsome CEO standing by a marble column holds a champagne glass, staring intensely at the glowing woman.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "這個女人……到底藏了什麼秘密？",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "ballroom",
+      "characters": [
+        "lin_xia",
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The heroine turns her head slightly and glances directly at the CEO across the room with a playful smile.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "顧總，好戲才剛剛開始呢。",
+          "emo": "happy"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "ballroom",
+      "characters": [
+        "system_boy"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "A digital HUD panel flashes red warning text overlaying the ballroom background.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "警告！顧霆心跳率突破一百二。",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "ballroom",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "Extreme close-up of the CEO pressing a hand over his suit jacket, his chest heaving, image freezing in warm light.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "該死……心跳怎麼停不下來？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    }
+  ]
+}

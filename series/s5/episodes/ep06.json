@@ -1,0 +1,265 @@
+{
+  "ep": 6,
+  "title": "失憶梗？我玩剩下的",
+  "shots": [
+    {
+      "id": "s01",
+      "location": "ceo_office",
+      "characters": [
+        "gu_ting",
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "A man with a bandage on his forehead opens his eyes slowly on a leather sofa, looking bewildered at a woman leaning close to him.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "妳是誰？林曉在哪裡？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s02",
+      "location": "ceo_office",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "A woman in an elegant red dress flinches with surprise, then instantly puts on a tender smile.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "我是你的救命恩人啊！",
+          "emo": "afraid"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s03",
+      "location": "ceo_office",
+      "characters": [
+        "su_man",
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "pan_right",
+      "visual": "The woman holds the man's hand gently, pretending to tear up with grief.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "那個林曉差點害死你！",
+          "emo": "sad"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s04",
+      "location": "ceo_office",
+      "characters": [
+        "gu_ting"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The man touches his wrapped forehead, frowning deeply with confusion and painful expression.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "我什麼都不記得了……",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s05",
+      "location": "ceo_office",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The woman turns her face away slightly, showing a sinister grin of delight.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "太好了，這下死無對證！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s06",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "wide",
+      "motion": "static",
+      "visual": "A young woman pushes open the double doors of the luxurious office, holding a half-eaten bag of potato chips.",
+      "lines": [
+        {
+          "speaker": "system_boy",
+          "text": "警告！宿主正在飆演技！",
+          "emo": "calm"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s07",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "zoom_in",
+      "visual": "The young woman stops in her tracks, eyes wide open with exaggerated confused expression.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "咦？這裡是哪裡？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s08",
+      "location": "ceo_office",
+      "characters": [
+        "su_man",
+        "lin_xia"
+      ],
+      "camera": "medium",
+      "motion": "static",
+      "visual": "The glamorous woman stands up hastily, pointing furiously at the young woman near the doorway.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "林曉！少在這裡裝神弄鬼！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s09",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The young woman tilts her head innocently, staring blankly at her own hands.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "林曉是誰？我是失憶的女主角！",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s10",
+      "location": "ceo_office",
+      "characters": [
+        "gu_ting",
+        "lin_xia"
+      ],
+      "camera": "over-shoulder",
+      "motion": "zoom_in",
+      "visual": "The injured man looks up at the young woman with intense curiosity and shock.",
+      "lines": [
+        {
+          "speaker": "gu_ting",
+          "text": "妳……也失憶了？",
+          "emo": "surprised"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s11",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia",
+        "su_man"
+      ],
+      "camera": "medium",
+      "motion": "pan_left",
+      "visual": "The young woman strolls past the furious woman carelessly, sitting on the edge of the desk with a smirk.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "按套路，現在我是豪門千金了！",
+          "emo": "disdain"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s12",
+      "location": "ceo_office",
+      "characters": [
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The villainous woman trembles with rage, her face flushed with fury.",
+      "lines": [
+        {
+          "speaker": "su_man",
+          "text": "妳這瘋子到底在胡說什麼！",
+          "emo": "angry"
+        }
+      ],
+      "key": false
+    },
+    {
+      "id": "s13",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia",
+        "gu_ting"
+      ],
+      "camera": "medium",
+      "motion": "zoom_in",
+      "visual": "The young woman leans closer to the injured man, winking cheerfully while pointing around the lavish room.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "對了，這棟別墅是我的產業吧？",
+          "emo": "happy"
+        }
+      ],
+      "key": true
+    },
+    {
+      "id": "s14",
+      "location": "ceo_office",
+      "characters": [
+        "lin_xia",
+        "su_man"
+      ],
+      "camera": "close-up",
+      "motion": "static",
+      "visual": "The young woman turns back to the flabbergasted woman, presenting a totally lost, innocent yet mocking smile in a freeze frame.",
+      "lines": [
+        {
+          "speaker": "lin_xia",
+          "text": "你們是誰？怎會在我的別墅裡？",
+          "emo": "surprised"
+        }
+      ],
+      "key": true
+    }
+  ]
+}
