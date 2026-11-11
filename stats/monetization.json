@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:28+08:00",
+  "updated": "2026-11-12T03:01+08:00",
   "raw": {
     "youtube": {
       "channel": "SAGA | 故事放映室🎥",
@@ -7,13 +7,15 @@
       "videos": 60,
       "views_total": 747,
       "uploads_90d": 60,
-      "analytics_error": "數據分析讀取失敗（授權時是否勾了 yt-analytics.readonly？）：{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"An internal error has occurred.\",\n    \"errors\": [\n      {\n        \"message\": \"An internal error has occurred.\",\n        \"domain\": \"global\",\n        \"rea"
+      "watch_hours_365d": 0.1,
+      "shorts_views_90d": 0
     },
     "instagram": {
-      "error": "權杖無效或過期（存的是 32 碼的「應用程式密鑰」，不是存取權杖）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
+      "error": "權杖無效或過期（應以 IGAA 開頭）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
     },
     "threads": {
-      "error": "權杖無效或過期（存的是 32 碼的「應用程式密鑰」，不是存取權杖）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
+      "account": "saga.storyroom",
+      "followers": 0
     },
     "tiktok": {
       "error": "等待手動回報（TikTok 不開放個人帳號數據）"
@@ -26,7 +28,7 @@
           "name": "影片營利（YPP 初階）",
           "pct": 0,
           "achieved": false,
-          "complete_data": false,
+          "complete_data": true,
           "requirements": [
             {
               "key": "subscribers",
@@ -53,9 +55,9 @@
             {
               "key": "watch_hours_365d",
               "label": "365 天長片觀看時數",
-              "current": null,
+              "current": 0.1,
               "target": 3000,
-              "pct": null,
+              "pct": 0.0,
               "per_day": null,
               "eta": null,
               "either": true,
@@ -64,9 +66,9 @@
             {
               "key": "shorts_views_90d",
               "label": "90 天 Shorts 觀看",
-              "current": null,
+              "current": 0,
               "target": 3000000,
-              "pct": null,
+              "pct": 0.0,
               "per_day": null,
               "eta": null,
               "either": true,
@@ -78,7 +80,7 @@
           "name": "廣告營利（YPP 完整）",
           "pct": 0,
           "achieved": false,
-          "complete_data": false,
+          "complete_data": true,
           "requirements": [
             {
               "key": "subscribers",
@@ -94,9 +96,9 @@
             {
               "key": "watch_hours_365d",
               "label": "365 天長片觀看時數",
-              "current": null,
+              "current": 0.1,
               "target": 4000,
-              "pct": null,
+              "pct": 0.0,
               "per_day": null,
               "eta": null,
               "either": true,
@@ -105,9 +107,9 @@
             {
               "key": "shorts_views_90d",
               "label": "90 天 Shorts 觀看",
-              "current": null,
+              "current": 0,
               "target": 10000000,
-              "pct": null,
+              "pct": 0.0,
               "per_day": null,
               "eta": null,
               "either": true,
@@ -177,7 +179,7 @@
           ]
         }
       ],
-      "error": "權杖無效或過期（存的是 32 碼的「應用程式密鑰」，不是存取權杖）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
+      "error": "權杖無效或過期（應以 IGAA 開頭）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
     },
     "tiktok": {
       "tiers": [
