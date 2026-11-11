@@ -5,7 +5,7 @@ set -u
 MSG="$1"
 git config user.name "saga-bot"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-git add series
+for p in series lab stats bench; do [ -e "$p" ] && git add "$p"; done  # 劇本、標竿分析、營利數據、實驗圖
 git diff --cached --quiet && { echo "沒有變更"; exit 0; }
 git commit -q -m "$MSG"
 for i in 1 2 3 4 5 6; do

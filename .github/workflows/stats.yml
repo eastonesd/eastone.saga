@@ -1,0 +1,36 @@
+name: 營利進度
+
+# 每天早上更新各平台數據 → stats/monetization.json（A.R.T.H.U.R. 讀這份畫進度條）
+on:
+  schedule:
+    - cron: "41 22 * * *"   # 台北時間每天 06:41
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saga-stats
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install requests
+      - name: 抓數據
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+        run: python -m saga.cli stats
+      - name: 存檔
+        run: scripts/commit.sh "營利進度 $(TZ=Asia/Taipei date +%F) [skip ci]"

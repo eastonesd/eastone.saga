@@ -320,6 +320,16 @@ def cmd_benchmark(a) -> None:
         Path(a.report).write_text(text, encoding="utf-8")
 
 
+def cmd_stats(a) -> None:
+    from . import monetize
+    text = monetize.summary(monetize.run())
+    print(text)
+    import os
+    if os.environ.get("GITHUB_STEP_SUMMARY"):
+        with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as f:
+            f.write(text + "\n")
+
+
 def cmd_poster(a) -> None:
     """重畫或重選海報：--regen 重新畫 4 張底圖；--pick N 改用第 N 張"""
     from . import poster, render
@@ -474,6 +484,9 @@ def main(argv=None) -> None:
     pbm.add_argument("--id", required=True)
     pbm.add_argument("--report")
     pbm.set_defaults(fn=cmd_benchmark)
+
+    pst = sub.add_parser("stats", help="營利進度：抓各平台數據對照門檻")
+    pst.set_defaults(fn=cmd_stats)
 
     pb = sub.add_parser("stylebench", help="比較畫風設定")
     pb.add_argument("--slug", required=True)
