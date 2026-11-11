@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T02:27+08:00",
+  "updated": "2026-11-12T02:28+08:00",
   "raw": {
     "youtube": {
       "channel": "SAGA | 故事放映室🎥",
@@ -10,10 +10,10 @@
       "analytics_error": "數據分析讀取失敗（授權時是否勾了 yt-analytics.readonly？）：{\n  \"error\": {\n    \"code\": 500,\n    \"message\": \"An internal error has occurred.\",\n    \"errors\": [\n      {\n        \"message\": \"An internal error has occurred.\",\n        \"domain\": \"global\",\n        \"rea"
     },
     "instagram": {
-      "error": "權杖無效或過期（Instagram 權杖通常以 IGAA 開頭；目前開頭是 7b92…，長度 32）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
+      "error": "權杖無效或過期（存的是 32 碼的「應用程式密鑰」，不是存取權杖）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
     },
     "threads": {
-      "error": "權杖無效或過期（Threads 權杖通常以 TH 開頭；目前開頭是 cf8a…，長度 32）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
+      "error": "權杖無效或過期（存的是 32 碼的「應用程式密鑰」，不是存取權杖）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
     },
     "tiktok": {
       "error": "等待手動回報（TikTok 不開放個人帳號數據）"
@@ -177,7 +177,7 @@
           ]
         }
       ],
-      "error": "權杖無效或過期（Instagram 權杖通常以 IGAA 開頭；目前開頭是 7b92…，長度 32）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
+      "error": "權杖無效或過期（存的是 32 碼的「應用程式密鑰」，不是存取權杖）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
     },
     "tiktok": {
       "tiers": [
