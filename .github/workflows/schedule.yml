@@ -1,0 +1,34 @@
+name: 排程上架
+
+# schedule/publish.json 裡的項目時間到了就觸發「批次上架」。GitHub 的定時執行可能晚 5～15 分鐘。
+on:
+  schedule:
+    - cron: "3,13,23,33,43,53 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: saga-schedule
+  cancel-in-progress: false
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/run_schedule.py
+      - name: 存檔
+        run: |
+          git config user.name "saga-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add schedule
+          git diff --cached --quiet && exit 0
+          git commit -q -m "排程上架：已觸發 [skip ci]"
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
+          exit 1
