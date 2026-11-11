@@ -123,6 +123,20 @@ def instagram() -> dict:
             if ig:
                 return {"account": ig.get("username"), "followers": int(ig.get("followers_count", 0)),
                         "posts": ig.get("media_count"), "via": f"粉絲專頁 {page.get('name')}"}
+        # 統一登入：IG 帳號直接授權給權杖（不經粉絲專頁）→ 從權杖的細部授權範圍找出 IG 帳號編號
+        dbg = requests.get("https://graph.facebook.com/v23.0/debug_token",
+                           params={"input_token": tok, "access_token": tok}, timeout=30).json().get("data", {})
+        ig_ids = sorted({t for g in dbg.get("granular_scopes", []) if g.get("scope", "").startswith("instagram")
+                         for t in g.get("target_ids", [])})
+        for ig_id in ig_ids:
+            ig = requests.get(f"https://graph.facebook.com/v23.0/{ig_id}", params={
+                "fields": "username,followers_count,media_count", "access_token": tok}, timeout=30)
+            if ig.ok and "followers_count" in ig.json():
+                d = ig.json()
+                exp = dbg.get("expires_at") or 0
+                return {"account": d.get("username"), "followers": int(d["followers_count"]),
+                        "posts": d.get("media_count"),
+                        "token_expires": datetime.fromtimestamp(exp, TZ).date().isoformat() if exp else "不會過期"}
         perms = requests.get("https://graph.facebook.com/v23.0/me/permissions", params={"access_token": tok},
                              timeout=30).json().get("data", [])
         granted = sorted(p["permission"] for p in perms if p.get("status") == "granted")
