@@ -1,0 +1,238 @@
+{
+  "updated": "2026-11-12T02:26+08:00",
+  "raw": {
+    "youtube": {
+      "channel": "SAGA | 故事放映室🎥",
+      "subscribers": 0,
+      "videos": 60,
+      "views_total": 747,
+      "uploads_90d": 60,
+      "watch_hours_365d": 0.1,
+      "shorts_views_90d": 0
+    },
+    "instagram": {
+      "error": "權杖無效或過期：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"A7YC9cm7tQTasDMywYr2aO7\"}}"
+    },
+    "threads": {
+      "error": "權杖無效或過期：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"AD1TgxyKwOANrqQYBd2GBLb\"}}"
+    },
+    "tiktok": {
+      "error": "等待手動回報（TikTok 不開放個人帳號數據）"
+    }
+  },
+  "progress": {
+    "youtube": {
+      "tiers": [
+        {
+          "name": "影片營利（YPP 初階）",
+          "pct": 0,
+          "achieved": false,
+          "complete_data": true,
+          "requirements": [
+            {
+              "key": "subscribers",
+              "label": "訂閱",
+              "current": 0,
+              "target": 500,
+              "pct": 0.0,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            },
+            {
+              "key": "uploads_90d",
+              "label": "90 天內公開上傳",
+              "current": 60,
+              "target": 3,
+              "pct": 100.0,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            },
+            {
+              "key": "watch_hours_365d",
+              "label": "365 天長片觀看時數",
+              "current": 0.1,
+              "target": 3000,
+              "pct": 0.0,
+              "per_day": null,
+              "eta": null,
+              "either": true,
+              "closest": true
+            },
+            {
+              "key": "shorts_views_90d",
+              "label": "90 天 Shorts 觀看",
+              "current": 0,
+              "target": 3000000,
+              "pct": 0.0,
+              "per_day": null,
+              "eta": null,
+              "either": true,
+              "closest": false
+            }
+          ]
+        },
+        {
+          "name": "廣告營利（YPP 完整）",
+          "pct": 0,
+          "achieved": false,
+          "complete_data": true,
+          "requirements": [
+            {
+              "key": "subscribers",
+              "label": "訂閱",
+              "current": 0,
+              "target": 1000,
+              "pct": 0.0,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            },
+            {
+              "key": "watch_hours_365d",
+              "label": "365 天長片觀看時數",
+              "current": 0.1,
+              "target": 4000,
+              "pct": 0.0,
+              "per_day": null,
+              "eta": null,
+              "either": true,
+              "closest": true
+            },
+            {
+              "key": "shorts_views_90d",
+              "label": "90 天 Shorts 觀看",
+              "current": 0,
+              "target": 10000000,
+              "pct": 0.0,
+              "per_day": null,
+              "eta": null,
+              "either": true,
+              "closest": false
+            }
+          ]
+        }
+      ]
+    },
+    "instagram": {
+      "tiers": [
+        {
+          "name": "Reels 禮物",
+          "pct": 0,
+          "achieved": false,
+          "complete_data": false,
+          "requirements": [
+            {
+              "key": "followers",
+              "label": "粉絲",
+              "current": null,
+              "target": 500,
+              "pct": null,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            }
+          ]
+        },
+        {
+          "name": "聯盟計畫",
+          "pct": 0,
+          "achieved": false,
+          "complete_data": false,
+          "requirements": [
+            {
+              "key": "followers",
+              "label": "粉絲",
+              "current": null,
+              "target": 1000,
+              "pct": null,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            }
+          ]
+        },
+        {
+          "name": "訂閱",
+          "pct": 0,
+          "achieved": false,
+          "complete_data": false,
+          "requirements": [
+            {
+              "key": "followers",
+              "label": "粉絲",
+              "current": null,
+              "target": 10000,
+              "pct": null,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            }
+          ]
+        }
+      ],
+      "error": "權杖無效或過期：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace_id\":\"A7YC9cm7tQTasDMywYr2aO7\"}}"
+    },
+    "tiktok": {
+      "tiers": [
+        {
+          "name": "影片禮物",
+          "pct": 0,
+          "achieved": false,
+          "complete_data": false,
+          "requirements": [
+            {
+              "key": "followers",
+              "label": "粉絲",
+              "current": null,
+              "target": 10000,
+              "pct": null,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            }
+          ]
+        },
+        {
+          "name": "訂閱（約 2 美元／人）",
+          "pct": 0,
+          "achieved": false,
+          "complete_data": false,
+          "requirements": [
+            {
+              "key": "followers",
+              "label": "粉絲",
+              "current": null,
+              "target": 10000,
+              "pct": null,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            },
+            {
+              "key": "views_last_month",
+              "label": "上個月有效觀看",
+              "current": null,
+              "target": 100000,
+              "pct": null,
+              "per_day": null,
+              "eta": null,
+              "either": false,
+              "closest": false
+            }
+          ]
+        }
+      ],
+      "error": "等待手動回報（TikTok 不開放個人帳號數據）"
+    }
+  }
+}
