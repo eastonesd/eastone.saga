@@ -32,7 +32,7 @@ permissions:
   issues: write
 
 concurrency:
-  group: saga-publish-${{ inputs.slug || github.event.issue.number }}
+  group: saga-publish-${{ inputs.to == 'check' && 'check' || (inputs.slug || github.event.issue.number) }}
   cancel-in-progress: false
 
 jobs:
