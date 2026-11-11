@@ -55,6 +55,7 @@ jobs:
       - name: 下載標竿片並分析
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BENCH_GEMINI: "1"   # 質化分析用 Gemini；改成 "0" 即關閉
         run: python -m saga.cli benchmark --issue-body body.md --ours v/s2-ep02.mp4 --id "ref-$N" --report report.md
       - name: 回報
         if: always()

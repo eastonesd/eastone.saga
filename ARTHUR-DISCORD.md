@@ -29,7 +29,7 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
 
 ## 標竿片：Discord 丟片 → 自動分析（`/saga-ref` 已上線）
 
-目的：主人或 `/allow` 的成員把覺得好看的短劇片段丟上 Discord，本 repo 自動量化分析（剪輯節奏、畫面動態、語速、停頓、響度）並與我們的作品對照；質化的導演視角改由賈維斯（Claude）在對話中親自看片（Gemini 的報告品質不足，已預設關閉），結果累積在 `lab/refs/`，作為畫風／動畫／配音迭代的標竿。
+目的：主人或 `/allow` 的成員把覺得好看的短劇片段丟上 Discord，本 repo 自動量化分析（剪輯節奏、畫面動態、語速、停頓、響度）並與我們的作品對照＋ Gemini 看片寫導演視角報告，結果累積在 `lab/refs/`，作為畫風／動畫／配音迭代的標竿。
 
 **本 repo 這邊已完成**（`.github/workflows/benchmark.yml`），A.R.T.H.U.R. 只要照下面的格式開 Issue：
 
