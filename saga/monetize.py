@@ -97,6 +97,13 @@ def youtube() -> dict:
     return out
 
 
+def _shape(tok: str, prefix: str) -> str:
+    """只描述權杖的「形狀」，不輸出任何字元（這份結果會存進公開 repo）"""
+    if len(tok) == 32 and all(c in "0123456789abcdef" for c in tok):
+        return "存的是 32 碼的「應用程式密鑰」，不是存取權杖"
+    return f"應以 {prefix} 開頭" if not tok.startswith(prefix) else "格式像權杖但已失效"
+
+
 def instagram() -> dict:
     tok = (os.environ.get("IG_TOKEN") or "").strip().strip("\"'")
     if not tok:
@@ -104,7 +111,7 @@ def instagram() -> dict:
     r = requests.get("https://graph.instagram.com/v23.0/me",
                      params={"fields": "username,followers_count,media_count", "access_token": tok}, timeout=30)
     if not r.ok:
-        return {"error": f"權杖無效或過期（Instagram 權杖通常以 IGAA 開頭；目前開頭是 {tok[:4]}…，長度 {len(tok)}）：{r.text[:120]}"}
+        return {"error": f"權杖無效或過期（{_shape(tok, "IGAA")}）：{r.text[:120]}"}
     d = r.json()
     return {"account": d.get("username"), "followers": int(d.get("followers_count", 0)), "posts": d.get("media_count")}
 
@@ -116,7 +123,7 @@ def threads() -> dict:
     base = "https://graph.threads.net/v1.0"
     r = requests.get(f"{base}/me", params={"fields": "id,username", "access_token": tok}, timeout=30)
     if not r.ok:
-        return {"error": f"權杖無效或過期（Threads 權杖通常以 TH 開頭；目前開頭是 {tok[:4]}…，長度 {len(tok)}）：{r.text[:120]}"}
+        return {"error": f"權杖無效或過期（{_shape(tok, "TH")}）：{r.text[:120]}"}
     out = {"account": r.json().get("username")}
     ins = requests.get(f"{base}/me/threads_insights", params={"metric": "followers_count", "access_token": tok}, timeout=30)
     if ins.ok:
