@@ -80,8 +80,12 @@ def speech_rate(f: Path) -> dict:
         from faster_whisper import WhisperModel
     except ImportError:
         return {}
+    import numpy as np
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(f), "-vn", "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                         capture_output=True, check=True).stdout  # 自己解碼，避開 faster-whisper 內建解碼器的版本問題
+    wav = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
     model = WhisperModel("small", device="cpu", compute_type="int8")
-    segs, _ = model.transcribe(str(f), language="zh", vad_filter=True)
+    segs, _ = model.transcribe(wav, language="zh", vad_filter=True)
     segs = list(segs)
     chars = sum(len(re.sub(r"[\s，。！？、,.!?…「」『』]", "", s.text)) for s in segs)
     talk = sum(s.end - s.start for s in segs)
@@ -96,7 +100,10 @@ def measure(f: Path, whisper: bool = True) -> dict:
     if p["has_audio"]:
         m.update(audio(f, p["duration"]))
         if whisper:
-            m.update(speech_rate(f))
+            try:
+                m.update(speech_rate(f))
+            except Exception as e:  # 語速只是其中一項，失敗不拖垮整份分析
+                print(f"  ⚠ 語速分析失敗：{e}", flush=True)
     return m
 
 
