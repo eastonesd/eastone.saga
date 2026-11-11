@@ -101,6 +101,10 @@ def _shape(tok: str, prefix: str) -> str:
     """只描述權杖的「形狀」，不輸出任何字元（這份結果會存進公開 repo）"""
     if len(tok) == 32 and all(c in "0123456789abcdef" for c in tok):
         return "存的是 32 碼的「應用程式密鑰」，不是存取權杖"
+    if tok.isdigit():
+        return "存的是一串數字（看起來是帳號或應用程式編號），不是存取權杖"
+    if len(tok) < 60:
+        return f"太短（{len(tok)} 字元），存取權杖通常有一兩百個字元，可能沒複製完整"
     return f"應以 {prefix} 開頭" if not tok.startswith(prefix) else "格式像權杖但已失效"
 
 
@@ -108,6 +112,18 @@ def instagram() -> dict:
     tok = (os.environ.get("IG_TOKEN") or "").strip().strip("\"'")
     if not tok:
         return {"error": "缺少 IG_TOKEN"}
+    if tok.startswith("EAA"):  # Facebook 登入的權杖：經由粉絲專頁找到綁定的 IG 專業帳號
+        r = requests.get("https://graph.facebook.com/v23.0/me/accounts", params={
+            "fields": "name,instagram_business_account{username,followers_count,media_count}", "access_token": tok},
+            timeout=30)
+        if not r.ok:
+            return {"error": f"Facebook 權杖無效或過期：{r.text[:120]}"}
+        for page in r.json().get("data", []):
+            ig = page.get("instagram_business_account")
+            if ig:
+                return {"account": ig.get("username"), "followers": int(ig.get("followers_count", 0)),
+                        "posts": ig.get("media_count"), "via": f"粉絲專頁 {page.get('name')}"}
+        return {"error": "權杖有效，但旗下粉絲專頁都沒有綁定 IG 專業帳號（或權杖缺少 instagram_basic 權限）"}
     r = requests.get("https://graph.instagram.com/v23.0/me",
                      params={"fields": "username,followers_count,media_count", "access_token": tok}, timeout=30)
     if not r.ok:
