@@ -18,7 +18,7 @@ on:
       to:
         description: 平台
         type: choice
-        options: [youtube, instagram, all]
+        options: [youtube, instagram, all, check]
         default: youtube
       eps:
         description: 集數（all 或 1-10）
@@ -73,6 +73,7 @@ jobs:
           cache: pip
       - run: pip install requests
       - name: 下載成片
+        if: steps.args.outputs.to != 'check'
         run: |
           mkdir -p "$RUNNER_TEMP/v"
           gh release download "${{ steps.args.outputs.slug }}" -D "$RUNNER_TEMP/v" -p '*-ep*.mp4' -p '*-ep*.jpg'
@@ -86,6 +87,9 @@ jobs:
         run: |
           # 沒設的金鑰不要變成空字串（讓程式明確回報「缺少金鑰」）
           for k in YT_CLIENT_ID YT_CLIENT_SECRET YT_REFRESH_TOKEN IG_TOKEN; do [ -z "${!k}" ] && unset $k; done
+          if [ "${{ steps.args.outputs.to }}" = check ]; then
+            python -m saga.cli publish --slug "${{ steps.args.outputs.slug }}" --check --dir . --report "$RUNNER_TEMP/report.md"; exit 0
+          fi
           python -m saga.cli publish --slug "${{ steps.args.outputs.slug }}" --to "${{ steps.args.outputs.to }}" \
             --eps "${{ steps.args.outputs.eps }}" --limit "${{ steps.args.outputs.limit }}" \
             --dir "$RUNNER_TEMP/v" --report "$RUNNER_TEMP/report.md"

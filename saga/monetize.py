@@ -108,61 +108,50 @@ def _shape(tok: str, prefix: str) -> str:
     return f"應以 {prefix} 開頭" if not tok.startswith(prefix) else "格式像權杖但已失效"
 
 
-def instagram() -> dict:
-    tok = (os.environ.get("IG_TOKEN") or "").strip().strip("\"'")
+def ig_token() -> str:
+    return (os.environ.get("IG_TOKEN") or "").strip().strip("\"'")
+
+
+def ig_account(tok: str) -> dict:
+    """找出權杖對應的 IG 專業帳號。回傳 {base, id, username, followers_count, media_count} 或 {error}。
+    支援三種權杖：Instagram 登入（IGAA…，graph.instagram.com）、統一登入的企業整合系統使用者權杖與
+    Facebook 登入（EAA…，graph.facebook.com）。"""
+    fields = "username,followers_count,media_count"
     if not tok:
         return {"error": "缺少 IG_TOKEN"}
-    if tok.startswith("EAA"):  # Facebook 登入的權杖：經由粉絲專頁找到綁定的 IG 專業帳號
-        r = requests.get("https://graph.facebook.com/v23.0/me/accounts", params={
-            "fields": "name,instagram_business_account{username,followers_count,media_count}", "access_token": tok},
-            timeout=30)
+    if not tok.startswith("EAA"):
+        base = "https://graph.instagram.com/v23.0"
+        r = requests.get(f"{base}/me", params={"fields": "user_id," + fields, "access_token": tok}, timeout=30)
         if not r.ok:
-            return {"error": f"Facebook 權杖無效或過期：{r.text[:120]}"}
-        for page in r.json().get("data", []):
-            ig = page.get("instagram_business_account")
-            if ig:
-                return {"account": ig.get("username"), "followers": int(ig.get("followers_count", 0)),
-                        "posts": ig.get("media_count"), "via": f"粉絲專頁 {page.get('name')}"}
-        # 統一登入：IG 帳號直接授權給權杖（不經粉絲專頁）→ 從權杖的細部授權範圍找出 IG 帳號編號
-        dbg = requests.get("https://graph.facebook.com/v23.0/debug_token",
-                           params={"input_token": tok, "access_token": tok}, timeout=30).json().get("data", {})
-        ig_ids = sorted({t for g in dbg.get("granular_scopes", []) if g.get("scope", "").startswith("instagram")
-                         for t in g.get("target_ids", [])})
-        for ig_id in ig_ids:
-            ig = requests.get(f"https://graph.facebook.com/v23.0/{ig_id}", params={
-                "fields": "username,followers_count,media_count", "access_token": tok}, timeout=30)
-            if ig.ok and "followers_count" in ig.json():
-                d = ig.json()
-                exp = dbg.get("expires_at") or 0
-                return {"account": d.get("username"), "followers": int(d["followers_count"]),
-                        "posts": d.get("media_count"),
-                        "token_expires": datetime.fromtimestamp(exp, TZ).date().isoformat() if exp else "不會過期"}
-        # 其他可能的位置：企業整合系統使用者權杖可直接查自己被指派的 IG 帳號
-        for path, key in (("me/instagram_accounts", "data"), ("me/assigned_instagram_accounts", "data")):
-            r2 = requests.get(f"https://graph.facebook.com/v23.0/{path}",
-                              params={"fields": "id,username,followers_count,media_count", "access_token": tok}, timeout=30)
-            if r2.ok and r2.json().get(key):
-                d = r2.json()[key][0]
-                if "followers_count" not in d:
-                    d = requests.get(f"https://graph.facebook.com/v23.0/{d['id']}", params={
-                        "fields": "username,followers_count,media_count", "access_token": tok}, timeout=30).json()
-                if "followers_count" in d:
-                    return {"account": d.get("username"), "followers": int(d["followers_count"]), "posts": d.get("media_count")}
-        if dbg:
-            return {"error": f"權杖類型 {dbg.get('type')}，授權範圍 {', '.join(dbg.get('scopes', []))}；"
-                             f"細部授權：{[(g.get('scope'), len(g.get('target_ids', []))) for g in dbg.get('granular_scopes', [])]}"}
-        perms = requests.get("https://graph.facebook.com/v23.0/me/permissions", params={"access_token": tok},
-                             timeout=30).json().get("data", [])
-        granted = sorted(p["permission"] for p in perms if p.get("status") == "granted")
-        pages = [p.get("name") for p in r.json().get("data", [])]
-        return {"error": f"權杖有效，但找不到綁定的 IG 專業帳號。看得到的粉絲專頁：{pages or '無'}；"
-                         f"已授權：{', '.join(granted) or '無'}"}
-    r = requests.get("https://graph.instagram.com/v23.0/me",
-                     params={"fields": "username,followers_count,media_count", "access_token": tok}, timeout=30)
-    if not r.ok:
-        return {"error": f"權杖無效或過期（{_shape(tok, "IGAA")}）：{r.text[:120]}"}
-    d = r.json()
-    return {"account": d.get("username"), "followers": int(d.get("followers_count", 0)), "posts": d.get("media_count")}
+            return {"error": f"權杖無效或過期（{_shape(tok, 'IGAA')}）：{r.text[:120]}"}
+        d = r.json()
+        return {"base": base, "id": d["user_id"], **{k: d.get(k) for k in fields.split(",")}}
+    base = "https://graph.facebook.com/v23.0"
+    get = lambda path, **p: requests.get(f"{base}/{path}", params={**p, "access_token": tok}, timeout=30)  # noqa: E731
+    cands: list[str] = []
+    for path in ("me/instagram_accounts", "me/assigned_instagram_accounts"):  # 統一登入
+        r = get(path, fields="id")
+        if r.ok:
+            cands += [x["id"] for x in r.json().get("data", [])]
+    r = get("me/accounts", fields="instagram_business_account")  # Facebook 登入（經粉絲專頁）
+    if r.ok:
+        cands += [p["instagram_business_account"]["id"] for p in r.json().get("data", [])
+                  if p.get("instagram_business_account")]
+    dbg = get("debug_token", input_token=tok).json().get("data", {})
+    cands += [t for g in dbg.get("granular_scopes", []) if g.get("scope", "").startswith("instagram")
+              for t in g.get("target_ids", [])]
+    for ig_id in dict.fromkeys(cands):
+        d = get(ig_id, fields=fields)
+        if d.ok and "username" in d.json():
+            return {"base": base, "id": ig_id, **{k: d.json().get(k) for k in fields.split(",")}}
+    return {"error": f"權杖有效，但找不到 IG 專業帳號（權杖類型 {dbg.get('type')}，授權 {', '.join(dbg.get('scopes', []))}）"}
+
+
+def instagram() -> dict:
+    a = ig_account(ig_token())
+    if a.get("error"):
+        return {"error": a["error"]}
+    return {"account": a.get("username"), "followers": int(a.get("followers_count") or 0), "posts": a.get("media_count")}
 
 
 def threads() -> dict:

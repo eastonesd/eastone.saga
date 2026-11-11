@@ -245,6 +245,12 @@ def cmd_publish(a) -> None:
     """批次上架 YouTube / Instagram Reels；結果寫進 --report（Markdown）"""
     from pathlib import Path
     from . import publish
+    if a.check:
+        text = publish.check()
+        print(text)
+        if a.report:
+            Path(a.report).write_text(text, encoding="utf-8")
+        return
 
     bible = paths.read_json(paths.bible_path(a.slug))
     eps = paths.parse_eps(a.eps if a.eps != "all" else f"1-{bible['episode_count']}", bible["episode_count"])
@@ -453,6 +459,7 @@ def main(argv=None) -> None:
 
     pu = sub.add_parser("publish", help="批次上架 YouTube / Instagram Reels")
     pu.add_argument("--slug", required=True)
+    pu.add_argument("--check", action="store_true", help="只檢查授權與額度，不發布")
     pu.add_argument("--to", choices=["youtube", "instagram", "all"], default="all")
     pu.add_argument("--eps", default="all")
     pu.add_argument("--dir", required=True, help="放 mp4/jpg 的資料夾")

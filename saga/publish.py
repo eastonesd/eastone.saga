@@ -247,15 +247,13 @@ class YouTube:
 # ── Instagram Reels ───────────────────────────────────────
 
 class Instagram:
-    G = "https://graph.instagram.com/v23.0"
-
     def __init__(self):
-        self.token = os.environ["IG_TOKEN"]
-        r = requests.get(f"{self.G}/me", params={"fields": "user_id,username", "access_token": self.token}, timeout=30)
-        if not r.ok:
-            raise RuntimeError(f"Instagram 權杖無效或過期：{r.text[:300]}")
-        me = r.json()
-        self.uid, self.username = me["user_id"], me.get("username", "")
+        from .monetize import ig_account, ig_token
+        self.token = ig_token()
+        a = ig_account(self.token)
+        if a.get("error"):
+            raise RuntimeError(f"Instagram：{a['error']}")
+        self.G, self.uid, self.username = a["base"], a["id"], a.get("username", "")
 
     def quota_left(self) -> int:
         try:
@@ -274,7 +272,8 @@ class Instagram:
         r = requests.post(f"{self.G}/{self.uid}/media", data=params, timeout=60)
         if not r.ok:
             raise RuntimeError(f"建立 Reels 失敗：HTTP {r.status_code} {r.text[:300]}")
-        cid, uri = r.json()["id"], r.json().get("uri") or f"https://rupload.facebook.com/ig-api-upload/v23.0/{r.json()['id']}"
+        cid = r.json()["id"]
+        uri = r.json().get("uri") or f"https://rupload.facebook.com/ig-api-upload/v23.0/{cid}"
         with file.open("rb") as f:
             up = requests.post(uri, headers={"Authorization": f"OAuth {self.token}", "offset": "0",
                                              "file_size": str(file.stat().st_size)}, data=f, timeout=900)
@@ -299,6 +298,29 @@ class Instagram:
         if not r.ok:
             raise RuntimeError(f"發布失敗：HTTP {r.status_code} {r.text[:300]}")
         return r.json()["id"]
+
+
+# ── 上架前檢查（不發布任何東西）──────────────────────────
+
+def check() -> str:
+    lines = ["## 📤 上架前檢查（未發布任何內容）", ""]
+    try:
+        yt = YouTube()
+        tok = yt.h["Authorization"].split()[1]
+        scopes = requests.get("https://oauth2.googleapis.com/tokeninfo", params={"access_token": tok}, timeout=30).json().get("scope", "")
+        ch = requests.get(f"{YouTube.API}/channels", headers=yt.h, params={"part": "snippet", "mine": "true"},
+                          timeout=30).json().get("items", [{}])[0].get("snippet", {}).get("title", "?")
+        import re
+        can = "youtube.upload" in scopes or bool(re.search(r"auth/youtube(\s|$)", scopes))
+        lines.append(f"- **YouTube** ✅ 頻道「{ch}」；上傳權限：{'有' if can else '❌ 沒有（授權時要勾 youtube 或 youtube.upload）'}")
+    except Exception as e:  # noqa: BLE001
+        lines.append(f"- **YouTube** ❌ {str(e)[:200]}")
+    try:
+        ig = Instagram()
+        lines.append(f"- **Instagram** ✅ 帳號 @{ig.username}；24 小時內還能發 {ig.quota_left()} 則")
+    except Exception as e:  # noqa: BLE001
+        lines.append(f"- **Instagram** ❌ {str(e)[:200]}")
+    return "\n".join(lines)
 
 
 # ── 調度 ──────────────────────────────────────────────────
