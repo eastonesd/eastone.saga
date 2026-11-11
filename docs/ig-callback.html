@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Instagram 授權</title>
+<style>
+  :root { --bg:#001227; --card:#0b2140; --ink:#eef2f8; --dim:#9fb0c8; --gold:#e8c063; }
+  body { margin:0; min-height:100vh; background:var(--bg); color:var(--ink);
+         font:16px/1.6 "Noto Sans TC", system-ui, sans-serif; display:grid; place-items:center; }
+  main { width:min(560px, calc(100% - 32px)); background:var(--card); border-radius:14px; padding:28px; }
+  h1 { margin:0 0 6px; font-size:22px; color:var(--gold); }
+  p { color:var(--dim); margin:6px 0 18px; }
+  label { display:block; margin:14px 0 6px; font-weight:700; }
+  input { width:100%; box-sizing:border-box; padding:12px; border-radius:8px; border:1px solid #2a4468;
+          background:#061a33; color:var(--ink); font:inherit; }
+  button { margin-top:18px; width:100%; padding:13px; border:0; border-radius:8px; background:var(--gold);
+           color:#1a1300; font:700 16px inherit; cursor:pointer; }
+  button:focus-visible, input:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+  .err { color:#ff9b8f; }
+  ol { color:var(--dim); padding-left:20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Instagram 授權</h1>
+  <div id="ok" hidden>
+    <p>已收到 Meta 回傳的一次性代碼（約 10 分鐘內有效）。貼上應用程式密鑰，換成長效權杖。</p>
+    <label for="secret">應用程式密鑰</label>
+    <input id="secret" type="password" autocomplete="off" placeholder="應用程式設定 → 基本資料 → 應用程式密鑰">
+    <button id="go" type="button">換取權杖</button>
+    <ol>
+      <li>按下後會開新分頁，顯示一段文字。</li>
+      <li>複製 <b>"access_token":"</b> 後面、到下一個引號前的整串。</li>
+      <li>存進 GitHub 的 <b>IG_TOKEN</b>（覆蓋舊的）。</li>
+    </ol>
+    <p>密鑰只在您這個瀏覽器裡組成網址，不會存到任何地方。</p>
+  </div>
+  <div id="none" hidden><p class="err" id="msg"></p></div>
+</main>
+<script>
+  const APP_ID = "1639094551035595";
+  const q = new URLSearchParams(location.search);
+  const code = q.get("code");
+  const redirect = location.origin + location.pathname;
+  if (code) {
+    document.getElementById("ok").hidden = false;
+    document.getElementById("go").onclick = () => {
+      const secret = document.getElementById("secret").value.trim();
+      if (!secret) { document.getElementById("secret").focus(); return; }
+      const u = new URL("https://graph.facebook.com/v23.0/oauth/access_token");
+      u.search = new URLSearchParams({ client_id: APP_ID, client_secret: secret, redirect_uri: redirect, code }).toString();
+      window.open(u.toString(), "_blank", "noopener");
+    };
+  } else {
+    document.getElementById("none").hidden = false;
+    document.getElementById("msg").textContent = q.get("error_description") || q.get("error") ||
+      "沒有收到授權代碼。請從 Meta 應用程式的「登入網址」重新登入一次。";
+  }
+</script>
+</body>
+</html>
