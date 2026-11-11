@@ -137,6 +137,20 @@ def instagram() -> dict:
                 return {"account": d.get("username"), "followers": int(d["followers_count"]),
                         "posts": d.get("media_count"),
                         "token_expires": datetime.fromtimestamp(exp, TZ).date().isoformat() if exp else "不會過期"}
+        # 其他可能的位置：企業整合系統使用者權杖可直接查自己被指派的 IG 帳號
+        for path, key in (("me/instagram_accounts", "data"), ("me/assigned_instagram_accounts", "data")):
+            r2 = requests.get(f"https://graph.facebook.com/v23.0/{path}",
+                              params={"fields": "id,username,followers_count,media_count", "access_token": tok}, timeout=30)
+            if r2.ok and r2.json().get(key):
+                d = r2.json()[key][0]
+                if "followers_count" not in d:
+                    d = requests.get(f"https://graph.facebook.com/v23.0/{d['id']}", params={
+                        "fields": "username,followers_count,media_count", "access_token": tok}, timeout=30).json()
+                if "followers_count" in d:
+                    return {"account": d.get("username"), "followers": int(d["followers_count"]), "posts": d.get("media_count")}
+        if dbg:
+            return {"error": f"權杖類型 {dbg.get('type')}，授權範圍 {', '.join(dbg.get('scopes', []))}；"
+                             f"細部授權：{[(g.get('scope'), len(g.get('target_ids', []))) for g in dbg.get('granular_scopes', [])]}"}
         perms = requests.get("https://graph.facebook.com/v23.0/me/permissions", params={"access_token": tok},
                              timeout=30).json().get("data", [])
         granted = sorted(p["permission"] for p in perms if p.get("status") == "granted")
