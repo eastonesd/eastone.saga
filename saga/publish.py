@@ -307,7 +307,7 @@ class Instagram:
 
 # ── 上架前檢查（不發布任何東西）──────────────────────────
 
-def check() -> str:
+def check(slug: str | None = None) -> str:
     lines = ["## 📤 上架前檢查（未發布任何內容）", ""]
     try:
         yt = YouTube()
@@ -341,6 +341,24 @@ def check() -> str:
         media = requests.get(f"{ig.G}/{ig.uid}/media", params={
             "fields": "caption,media_type,media_product_type,timestamp", "limit": 10, "access_token": ig.token},
             timeout=30).json().get("data", [])
+        if slug:  # 預演：建立 Reels 草稿並等 IG 轉檔完成，但不發布（草稿 24 小時後自動失效）
+            name = f"{slug}-ep01-v.mp4"
+            vurl = _resolve(f"https://github.com/{REPO}/releases/download/{slug}/{name}")
+            r = requests.post(f"{ig.G}/{ig.uid}/media", data={"media_type": "REELS", "video_url": vurl,
+                              "caption": "預演（不會發布）", "access_token": ig.token}, timeout=60)
+            if not r.ok:
+                lines.append(f"  - 預演 ❌ 建立草稿失敗：{r.text[:200]}")
+            else:
+                cid, st = r.json()["id"], {}
+                for _ in range(40):
+                    time.sleep(8)
+                    st = requests.get(f"{ig.G}/{cid}", params={"fields": "status_code,status", "access_token": ig.token},
+                                      timeout=30).json()
+                    if st.get("status_code") in ("FINISHED", "ERROR", "EXPIRED"):
+                        break
+                ok = st.get("status_code") == "FINISHED"
+                lines.append(f"  - 預演 {'✅' if ok else '❌'} {name}：IG 轉檔狀態 {st.get('status_code')}"
+                             f"{'' if ok else '（' + str(st.get('status'))[:150] + '）'}；未發布")
         for m in media:
             first = " ／ ".join(l for l in (m.get("caption") or "").splitlines() if l.strip(" -"))[:70] or "（無文案）"
             lines.append(f"  - 已發：{m.get('timestamp', '')[:10]} {m.get('media_product_type')}「{first}」")

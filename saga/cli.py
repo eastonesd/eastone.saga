@@ -246,7 +246,7 @@ def cmd_publish(a) -> None:
     from pathlib import Path
     from . import publish
     if a.check:
-        text = publish.check()
+        text = publish.check(a.slug if a.rehearse else None)
         print(text)
         if a.report:
             Path(a.report).write_text(text, encoding="utf-8")
@@ -460,6 +460,7 @@ def main(argv=None) -> None:
     pu = sub.add_parser("publish", help="批次上架 YouTube / Instagram Reels")
     pu.add_argument("--slug", required=True)
     pu.add_argument("--check", action="store_true", help="只檢查授權與額度，不發布")
+    pu.add_argument("--rehearse", action="store_true", help="搭配 --check：建立 IG 草稿並等轉檔完成，但不發布")
     pu.add_argument("--to", choices=["youtube", "instagram", "all"], default="all")
     pu.add_argument("--eps", default="all")
     pu.add_argument("--dir", required=True, help="放 mp4/jpg 的資料夾")
