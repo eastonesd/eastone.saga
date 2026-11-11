@@ -184,9 +184,9 @@ MAX_BYTES = 200 * 1024 * 1024
 
 def parse_issue(body: str) -> dict:
     def sec(name: str) -> str:
-        m = re.search(rf"###\s*{name}\s*\n+(.*?)(?=\n###|\Z)", body, re.S)
+        m = re.search(rf"###\s*{name}\s*\n+(.*?)(?=\n###|\n---|\n由 A\.R\.T\.H\.U\.R\.|\Z)", body, re.S)
         v = m.group(1).strip() if m else ""
-        return "" if v == "_No response_" else v
+        return "" if v.startswith("_No response_") else v
     urls = re.findall(r"https://[^\s)\]>\"']+", body)
     video = next((u for u in urls if VIDEO_URL.search(u)), "")
     like = re.sub(r"https?://\S+|<[^>]+>|!\[[^\]]*\]\([^)]*\)", "", sec("喜歡哪裡")).replace("\n", " ").strip()
