@@ -313,11 +313,32 @@ def check() -> str:
         import re
         can = "youtube.upload" in scopes or bool(re.search(r"auth/youtube(\s|$)", scopes))
         lines.append(f"- **YouTube** ✅ 頻道「{ch}」；上傳權限：{'有' if can else '❌ 沒有（授權時要勾 youtube 或 youtube.upload）'}")
+        # 讀回頻道上最近幾支影片的實際設定（作為自動上架的範本）
+        ups = requests.get(f"{YouTube.API}/channels", headers=yt.h, params={"part": "contentDetails", "mine": "true"},
+                           timeout=30).json()["items"][0]["contentDetails"]["relatedPlaylists"]["uploads"]
+        ids = [i["contentDetails"]["videoId"] for i in requests.get(f"{YouTube.API}/playlistItems", headers=yt.h, params={
+            "part": "contentDetails", "playlistId": ups, "maxResults": 3}, timeout=30).json().get("items", [])]
+        vids = requests.get(f"{YouTube.API}/videos", headers=yt.h, params={
+            "part": "snippet,status,contentDetails", "id": ",".join(ids)}, timeout=30).json().get("items", [])
+        for v in vids:
+            sn, st = v["snippet"], v["status"]
+            lines.append(f"  - 範本「{sn['title'][:40]}」：瀏覽權限 {st.get('privacyStatus')}、兒童內容 {st.get('madeForKids')}"
+                         f"（自行聲明 {st.get('selfDeclaredMadeForKids')}）、AI 合成標示 {st.get('containsSyntheticMedia')}、"
+                         f"類別 {sn.get('categoryId')}、授權 {st.get('license')}、可嵌入 {st.get('embeddable')}、"
+                         f"公開統計 {st.get('publicStatsViewable')}、語言 {sn.get('defaultLanguage')}/{sn.get('defaultAudioLanguage')}、"
+                         f"標籤 {len(sn.get('tags', []))} 個、長度 {v['contentDetails'].get('duration')}")
+            lines.append(f"    說明欄：{sn.get('description', '')[:160]!r}")
     except Exception as e:  # noqa: BLE001
         lines.append(f"- **YouTube** ❌ {str(e)[:200]}")
     try:
         ig = Instagram()
         lines.append(f"- **Instagram** ✅ 帳號 @{ig.username}；24 小時內還能發 {ig.quota_left()} 則")
+        media = requests.get(f"{ig.G}/{ig.uid}/media", params={
+            "fields": "caption,media_type,media_product_type,timestamp", "limit": 10, "access_token": ig.token},
+            timeout=30).json().get("data", [])
+        for m in media:
+            first = (m.get("caption") or "").splitlines()[0][:50] if m.get("caption") else "（無文案）"
+            lines.append(f"  - 已發：{m.get('timestamp', '')[:10]} {m.get('media_product_type')}「{first}」")
     except Exception as e:  # noqa: BLE001
         lines.append(f"- **Instagram** ❌ {str(e)[:200]}")
     return "\n".join(lines)
