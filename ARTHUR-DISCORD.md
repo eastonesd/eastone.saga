@@ -65,6 +65,28 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
 > **契約**：label `標竿`／`已分析` 與內文的 `### 影片`、`### 喜歡哪裡`、`### 出處` 三個標題不變。
 > 分析只保存文字與數據，不保存對方的影片或畫面（版權）。
 
+## 營利進度：進度條資料（待 A.R.T.H.U.R. 實作顯示）
+
+本 repo 每天台北 06:41 自動更新（`.github/workflows/stats.yml`），A.R.T.H.U.R. 直接讀：
+
+`https://raw.githubusercontent.com/eastonesd/eastone.saga/main/stats/monetization.json`
+
+結構：
+- `updated`：更新時間（台北）
+- `raw.<平台>`：原始數字（youtube／instagram／threads／tiktok）；有 `error` 欄位代表該平台暫時抓不到，畫灰色並顯示訊息
+- `progress.<平台>.tiers[]`：每個營利門檻一筆
+  - `name`：例如「影片營利（YPP 初階）」
+  - `pct`：整體進度 0～100（取最落後的那個條件；「擇一」條件取較接近的那條）
+  - `achieved`：是否已達成
+  - `requirements[]`：`label`、`current`、`target`、`pct`、`per_day`（近 7 天每日成長）、`eta`（預計達標日，資料不足時為 null）、
+    `either`（true＝與同組條件擇一即可）、`closest`（擇一條件中目前較接近的那條，建議高亮）
+
+建議顯示：每個平台一張卡、每個門檻一條進度條；`either` 的條件並排顯示並標「擇一」，`closest` 高亮；
+每跨過 25%／50%／75%／100% 在 `#東石影音` 通知一次（比對前一天的 `pct`）。
+
+**TikTok 需手動回報**（TikTok 不開放個人帳號數據）：請 A.R.T.H.U.R. 新增 `/saga-stats tiktok 粉絲 <數字>`、`/saga-stats tiktok 觀看 <上個月有效觀看>`，
+寫入本 repo 的 `stats/manual.json`：`{"tiktok": {"followers": 123, "views_last_month": 45678}}`（用主人權杖 commit，訊息加 `[skip ci]`）。
+
 ## 想主動發通知？
 
 目前不需要。若之後要讓本 repo 的 workflow 直接發 Discord（例如「第 12 集已上傳 YouTube」這種即時事件），
