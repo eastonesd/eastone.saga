@@ -337,7 +337,7 @@ def check() -> str:
             "fields": "caption,media_type,media_product_type,timestamp", "limit": 10, "access_token": ig.token},
             timeout=30).json().get("data", [])
         for m in media:
-            first = (m.get("caption") or "").splitlines()[0][:50] if m.get("caption") else "（無文案）"
+            first = " ／ ".join(l for l in (m.get("caption") or "").splitlines() if l.strip(" -"))[:70] or "（無文案）"
             lines.append(f"  - 已發：{m.get('timestamp', '')[:10]} {m.get('media_product_type')}「{first}」")
     except Exception as e:  # noqa: BLE001
         lines.append(f"- **Instagram** ❌ {str(e)[:200]}")
