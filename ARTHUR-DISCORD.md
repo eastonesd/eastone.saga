@@ -27,7 +27,7 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
 
 > **契約**：集數統計依賴 Release 附件檔名 `…-epNN.mp4`。改命名規則前請先告知 A.R.T.H.U.R.。
 
-## 標竿片：Discord 丟片 → 自動分析（待 A.R.T.H.U.R. 實作 `/saga-ref`）
+## 標竿片：Discord 丟片 → 自動分析（`/saga-ref` 已上線）
 
 目的：主人或 `/allow` 的成員把覺得好看的短劇片段丟上 Discord，本 repo 自動量化分析（剪輯節奏、畫面動態、語速、停頓、響度）＋ Gemini 看片寫導演視角報告，並與我們的作品對照，結果累積在 `lab/refs/`，作為畫風／動畫／配音迭代的標竿。
 
@@ -58,7 +58,7 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
      ```
    - Discord 附件網址約 24 小時後失效；Issue 一開 workflow 就會在幾分鐘內下載，沒問題。若要長期保存，請 A.R.T.H.U.R. 先轉存到 Supabase Storage 再放公開網址。
 3. 分析完成時，本 repo 會在該 Issue 留言報告並加上 label `已分析`。
-   **建議 A.R.T.H.U.R. 的 `arthur-hub` 加一個偵測**：label `已分析` 的 Issue 數量增加 → 在 `#東石影音` 貼「🎯 標竿分析完成：<Issue 標題> <Issue 網址>」。
+   **A.R.T.H.U.R. 已實作**（arthur-hub 每 10 分鐘）：label `已分析` 的 Issue 數量增加 → 在 `#東石影音` 貼「🎯 標竿分析完成：<Issue 標題> <Issue 網址>」。
 
 > **契約**：label `標竿`／`已分析` 與內文的 `### 影片`、`### 喜歡哪裡`、`### 出處` 三個標題不變。
 > 分析只保存文字與數據，不保存對方的影片或畫面（版權）。
