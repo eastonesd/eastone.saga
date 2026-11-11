@@ -1,0 +1,152 @@
+{
+  "title": "反轉吧！劇本守護者",
+  "logline": "刷劇少女意外穿越劇本世界，靠著熟知所有套路，將惡毒千金與霸道總裁玩弄於股掌之間。",
+  "genre": "都市奇幻 / 系統爽劇",
+  "tone": "快節奏、爽快、諷刺、華麗",
+  "style_prompt": "cinematic film still, realistic cinematic lighting, sharp focus, 8k resolution, high contrast, vibrant colors, shallow depth of field, 35mm lens",
+  "negative_prompt": "anime, cartoon, low quality, blurry, distorted faces, messy background, CGI, 3D render",
+  "narrator_voice": "旁白-女",
+  "characters": [
+    {
+      "id": "lin_xia",
+      "name": "林曉",
+      "role": "主角",
+      "age": 20,
+      "gender": "female",
+      "key_features": "young woman, brown bob, white oversized hoodie, denim shorts",
+      "appearance": "20-year-old young woman, short brown bob haircut, bright energetic eyes, wearing a white oversized hoodie and blue denim shorts, white sneakers, minimalist aesthetic.",
+      "tagline": "全知視角創世神",
+      "personality": "機靈、毒舌、反應極快，對短劇套路瞭若指掌。",
+      "voice": "女聲-活潑",
+      "seed": 1594208369
+    },
+    {
+      "id": "su_man",
+      "name": "蘇曼",
+      "role": "反派",
+      "age": 24,
+      "gender": "female",
+      "key_features": "young woman, wavy red hair, tight red silk dress",
+      "appearance": "24-year-old young woman, long wavy red hair, heavy makeup, wearing a tight red silk evening dress, expensive gold jewelry, pointed high heels.",
+      "tagline": "惡毒千金專業戶",
+      "personality": "狂妄自大、善於演戲、心狠手辣。",
+      "voice": "女聲-御姐",
+      "seed": 1552834992
+    },
+    {
+      "id": "gu_ting",
+      "name": "顧霆",
+      "role": "配角",
+      "age": 28,
+      "gender": "male",
+      "key_features": "young man, slicked black hair, navy blue suit",
+      "appearance": "28-year-old young man, slicked back black hair, sharp jawline, cold expression, wearing a tailored navy blue suit and a white shirt with sapphire cufflinks.",
+      "tagline": "萬年不變霸道總裁",
+      "personality": "冷酷、霸道、多疑，但容易被不按套路出牌的人吸引。",
+      "voice": "男聲-霸氣",
+      "seed": 1855102509
+    },
+    {
+      "id": "system_boy",
+      "name": "小白",
+      "role": "配角",
+      "age": 15,
+      "gender": "male",
+      "key_features": "young boy, silver hair, holographic vest, glowing eyes",
+      "appearance": "15-year-old teenage boy, fluffy silver hair, wearing a white holographic futuristic vest, glowing blue eyes, carrying a floating tablet.",
+      "tagline": "劇本系統管家",
+      "personality": "機械化、冷幽默、絕對忠誠。",
+      "voice": "男聲-少年",
+      "seed": 2073824246
+    }
+  ],
+  "locations": [
+    {
+      "id": "dormitory",
+      "name": "大學宿舍",
+      "visual": "messy college dormitory, glowing laptop screen, short drama posters on wall, warm lamp light, snacks on desk."
+    },
+    {
+      "id": "ballroom",
+      "name": "豪門宴會廳",
+      "visual": "luxury grand ballroom, massive crystal chandeliers, golden decorations, bokeh city lights from windows, cinematic lighting."
+    },
+    {
+      "id": "ceo_office",
+      "name": "總裁辦公室",
+      "visual": "modern high-end CEO office, floor-to-ceiling windows, city skyline view, minimalist black furniture, cold blue tones."
+    },
+    {
+      "id": "rainy_street",
+      "name": "雨夜街頭",
+      "visual": "dark city street at night, heavy rain, glowing neon signs reflecting in puddles, cinematic shadows, dramatic atmosphere."
+    }
+  ],
+  "episodes": [
+    {
+      "episode": 1,
+      "hook": "曉曉對著手機大罵「這什麼爛劇本」，下秒手機發出強光將她吸入。",
+      "cliffhanger": "曉曉睜眼，發現蘇曼的巴掌正朝自己臉上揮來。"
+    },
+    {
+      "episode": 2,
+      "hook": "曉曉反手抓住蘇曼的手，冷笑「這招過時三年了」。",
+      "cliffhanger": "顧霆帶著保鏢衝進來，曉曉直接當眾強吻顧霆。"
+    },
+    {
+      "episode": 3,
+      "hook": "全場震驚，曉曉在顧霆耳邊低語「我知道你保險箱的密碼」。",
+      "cliffhanger": "顧霆臉色劇變，將曉曉單手推到牆角死死抵住。"
+    },
+    {
+      "episode": 4,
+      "hook": "顧霆低吼「妳到底是誰派來的」，曉曉卻在心裡數秒「三、二、一」。",
+      "cliffhanger": "原本該出現的殺手沒出現，系統突然發出紅色警報。"
+    },
+    {
+      "episode": 5,
+      "hook": "系統管家小白現身，告知劇情已亂套，曉曉必須強制走劇情。",
+      "cliffhanger": "蘇曼拿出一疊照片，威脅曉曉立刻滾出顧家。"
+    },
+    {
+      "episode": 6,
+      "hook": "曉曉直接撕碎照片「別演了，這照片是 P 的」。",
+      "cliffhanger": "蘇曼崩潰，竟然掏出一把匕首刺向曉曉。"
+    },
+    {
+      "episode": 7,
+      "hook": "曉曉一個閃身，匕首刺中了剛進門的顧霆。",
+      "cliffhanger": "顧霆倒地前，對曉曉說了一句劇本裡沒有的話。"
+    },
+    {
+      "episode": 8,
+      "hook": "顧霆低聲說「曉曉，快跑，這不是真的世界」。",
+      "cliffhanger": "周圍場景開始像像素化一樣崩塌。"
+    },
+    {
+      "episode": 9,
+      "hook": "曉曉發現蘇曼只是個沒靈魂的 NPC，而顧霆竟也是穿越者。",
+      "cliffhanger": "小白系統露出真面目，原來他才是劇本的終極反派。"
+    },
+    {
+      "episode": 10,
+      "hook": "曉曉奪過系統控制權，大喊「這部劇，我說了算！」",
+      "cliffhanger": "現實世界中，曉曉從宿舍醒來，手機螢幕顯示她是該劇的總編劇。"
+    }
+  ],
+  "tts": {
+    "engine": "indextts",
+    "cast": {
+      "lin_xia": "f06",
+      "su_man": "f07",
+      "gu_ting": "m01",
+      "system_boy": "m09",
+      "narrator": "m07"
+    }
+  },
+  "slug": "s5",
+  "idea": "一個每天刷短劇的女大生 成了能支配短劇世界的大Boss",
+  "episode_count": 10,
+  "episode_seconds": 30,
+  "style_choice": ""
+}
