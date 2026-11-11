@@ -35,8 +35,18 @@ def probe(f: Path) -> dict:
             "has_audio": any(s["codec_type"] == "audio" for s in d["streams"])}
 
 
-def shots(f: Path, dur: float) -> dict:
-    log = _ff(["-i", str(f), "-vf", "scale=320:-2,select='gt(scene,0.28)',showinfo", "-an", "-f", "null", "-"])
+def content_crop(f: Path) -> str:
+    """螢幕錄影常有手機介面與黑邊，會稀釋切鏡與動態的數值：先偵測真正的影片區域。"""
+    log = _ff(["-i", str(f), "-vf", "fps=2,cropdetect=limit=0.12:round=2:reset=0", "-an", "-f", "null", "-"])
+    crops = re.findall(r"crop=(\d+:\d+:\d+:\d+)", log)
+    if not crops:
+        return ""
+    w, h, x, y = map(int, crops[-1].split(":"))
+    return f"crop={w}:{h}:{x}:{y}," if w * h > 0 else ""
+
+
+def shots(f: Path, dur: float, crop: str = "") -> dict:
+    log = _ff(["-i", str(f), "-vf", f"{crop}scale=320:-2,select='gt(scene,0.22)',showinfo", "-an", "-f", "null", "-"])
     cuts = [float(x) for x in re.findall(r"pts_time:([0-9.]+)", log)]
     bounds = [0.0] + [c for c in cuts if 0.3 < c < dur - 0.3] + [dur]
     lens = [round(b - a, 2) for a, b in zip(bounds, bounds[1:]) if b - a > 0.15]
@@ -45,9 +55,9 @@ def shots(f: Path, dur: float) -> dict:
             "shot_max_s": max(lens)}
 
 
-def motion(f: Path) -> dict:
+def motion(f: Path, crop: str = "") -> dict:
     """畫面動態量：相鄰影格差異的平均亮度（0＝完全靜止）。轉場那一格會被中位數過濾掉。"""
-    log = _ff(["-i", str(f), "-vf", "fps=12,scale=256:-2,format=gray,tblend=all_mode=difference,signalstats,metadata=print",
+    log = _ff(["-i", str(f), "-vf", f"{crop}fps=12,scale=256:-2,format=gray,tblend=all_mode=difference,signalstats,metadata=print",
                "-an", "-f", "null", "-"])
     ys = [float(x) for x in re.findall(r"lavfi\.signalstats\.YAVG=([0-9.]+)", log)]
     if not ys:
@@ -96,7 +106,8 @@ def speech_rate(f: Path) -> dict:
 
 def measure(f: Path, whisper: bool = True) -> dict:
     p = probe(f)
-    m = {**p, **shots(f, p["duration"]), **motion(f)}
+    crop = content_crop(f)
+    m = {**p, "crop": crop.rstrip(","), **shots(f, p["duration"], crop), **motion(f, crop)}
     if p["has_audio"]:
         m.update(audio(f, p["duration"]))
         if whisper:
@@ -138,6 +149,8 @@ def _gemini_models(key: str) -> list[str]:
 
 def gemini_review(f: Path, like: str) -> str:
     key = os.environ.get("GEMINI_API_KEY")
+    if os.environ.get("BENCH_GEMINI") != "1":
+        return "（質化分析改由賈維斯親自看片：在對話裡說「分析標竿 #編號」）"
     if not key:
         return "（沒有 GEMINI_API_KEY，略過質化分析）"
     size = f.stat().st_size

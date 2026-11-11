@@ -29,7 +29,7 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
 
 ## 標竿片：Discord 丟片 → 自動分析（`/saga-ref` 已上線）
 
-目的：主人或 `/allow` 的成員把覺得好看的短劇片段丟上 Discord，本 repo 自動量化分析（剪輯節奏、畫面動態、語速、停頓、響度）＋ Gemini 看片寫導演視角報告，並與我們的作品對照，結果累積在 `lab/refs/`，作為畫風／動畫／配音迭代的標竿。
+目的：主人或 `/allow` 的成員把覺得好看的短劇片段丟上 Discord，本 repo 自動量化分析（剪輯節奏、畫面動態、語速、停頓、響度）並與我們的作品對照；質化的導演視角改由賈維斯（Claude）在對話中親自看片（Gemini 的報告品質不足，已預設關閉），結果累積在 `lab/refs/`，作為畫風／動畫／配音迭代的標竿。
 
 **本 repo 這邊已完成**（`.github/workflows/benchmark.yml`），A.R.T.H.U.R. 只要照下面的格式開 Issue：
 
@@ -56,7 +56,9 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
 
      由 A.R.T.H.U.R. 從 Discord 送出（<Discord 使用者名稱>）
      ```
-   - Discord 附件網址約 24 小時後失效；Issue 一開 workflow 就會在幾分鐘內下載，沒問題。若要長期保存，請 A.R.T.H.U.R. 先轉存到 Supabase Storage 再放公開網址。
+   - ⚠️ **請改成先轉存再開單（2026-11-11 實測）**：`/saga-ref` 收到的是 `ephemeral-attachments` 網址，幾分鐘到幾小時內就會 403，
+     自動分析雖然來得及下載，但之後賈維斯要親自看片時已經拿不到。
+     請 A.R.T.H.U.R. 收到附件後立刻下載、上傳到 Supabase Storage（bucket 例如 `saga-refs`），`### 影片` 放**有效期至少 30 天**的簽名網址（或公開網址）。
 3. 分析完成時，本 repo 會在該 Issue 留言報告並加上 label `已分析`。
    **A.R.T.H.U.R. 已實作**（arthur-hub 每 10 分鐘）：label `已分析` 的 Issue 數量增加 → 在 `#東石影音` 貼「🎯 標竿分析完成：<Issue 標題> <Issue 網址>」。
 
