@@ -123,7 +123,12 @@ def instagram() -> dict:
             if ig:
                 return {"account": ig.get("username"), "followers": int(ig.get("followers_count", 0)),
                         "posts": ig.get("media_count"), "via": f"粉絲專頁 {page.get('name')}"}
-        return {"error": "權杖有效，但旗下粉絲專頁都沒有綁定 IG 專業帳號（或權杖缺少 instagram_basic 權限）"}
+        perms = requests.get("https://graph.facebook.com/v23.0/me/permissions", params={"access_token": tok},
+                             timeout=30).json().get("data", [])
+        granted = sorted(p["permission"] for p in perms if p.get("status") == "granted")
+        pages = [p.get("name") for p in r.json().get("data", [])]
+        return {"error": f"權杖有效，但找不到綁定的 IG 專業帳號。看得到的粉絲專頁：{pages or '無'}；"
+                         f"已授權：{', '.join(granted) or '無'}"}
     r = requests.get("https://graph.instagram.com/v23.0/me",
                      params={"fields": "username,followers_count,media_count", "access_token": tok}, timeout=30)
     if not r.ok:
