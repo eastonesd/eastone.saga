@@ -298,6 +298,28 @@ def cmd_stylelab(a) -> None:
     stylelab.run(a.slug, a.preset, mock=a.mock)
 
 
+def cmd_benchmark(a) -> None:
+    from pathlib import Path
+    from . import benchmark
+    like, source, video = a.like or "", a.source or "", a.video
+    if a.issue_body:
+        info = benchmark.parse_issue(Path(a.issue_body).read_text(encoding="utf-8"))
+        like, source = like or info["like"], source or info["source"]
+        if not video:
+            if not info["video"]:
+                msg = "🎯 找不到影片：請在內文附影片網址，或直接把影片檔拖進 Issue。"
+                if a.report:
+                    Path(a.report).write_text(msg, encoding="utf-8")
+                raise SystemExit(msg)
+            video = str(benchmark.download(info["video"], Path("ref_video.bin")))
+    if not video:
+        raise SystemExit("需要 --video 或 --issue-body")
+    text = benchmark.run(Path(video), Path(a.ours) if a.ours else None, like, source, a.id)
+    print(text)
+    if a.report:
+        Path(a.report).write_text(text, encoding="utf-8")
+
+
 def cmd_poster(a) -> None:
     """重畫或重選海報：--regen 重新畫 4 張底圖；--pick N 改用第 N 張"""
     from . import poster, render
@@ -442,6 +464,16 @@ def main(argv=None) -> None:
     psl.add_argument("--preset", required=True)
     psl.add_argument("--mock", action="store_true")
     psl.set_defaults(fn=cmd_stylelab)
+
+    pbm = sub.add_parser("benchmark", help="分析標竿片段")
+    pbm.add_argument("--video")
+    pbm.add_argument("--issue-body", help="Issue 內文檔案（自動找影片網址、喜歡哪裡、出處）")
+    pbm.add_argument("--ours")
+    pbm.add_argument("--like")
+    pbm.add_argument("--source")
+    pbm.add_argument("--id", required=True)
+    pbm.add_argument("--report")
+    pbm.set_defaults(fn=cmd_benchmark)
 
     pb = sub.add_parser("stylebench", help="比較畫風設定")
     pb.add_argument("--slug", required=True)

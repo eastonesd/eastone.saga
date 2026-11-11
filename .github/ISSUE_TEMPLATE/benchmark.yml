@@ -1,0 +1,22 @@
+name: 🎯 標竿片
+description: 丟一段覺得好看的短劇片段，自動分析它的畫風、剪輯節奏、動態與配音，和我們的作品對照
+title: "標竿："
+labels: ["標竿"]
+body:
+  - type: input
+    id: video
+    attributes:
+      label: 影片
+      description: 影片檔網址（直接拖檔案進下面的「喜歡哪裡」欄位也可以，GitHub 會自動產生網址）
+  - type: textarea
+    id: like
+    attributes:
+      label: 喜歡哪裡
+      description: 一句話就好：這段的運鏡？男主吼的那句？打光？這句話決定我重點學什麼
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 出處
+      description: 劇名／平台（選填）

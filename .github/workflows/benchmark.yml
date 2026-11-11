@@ -1,0 +1,68 @@
+name: 標竿分析
+
+# 開一張 label「標竿」的 Issue（Discord 經 A.R.T.H.U.R. 開，或手動用「🎯 標竿片」表單），
+# 內文附影片網址／直接拖影片檔 → 自動量化分析並與我們的作品對照，結果回覆在 Issue。
+# 想重跑：在該 Issue 留言 /analyze
+#
+# 安全：只處理 repo 主人開的 Issue／留言（A.R.T.H.U.R. 以主人的權杖開單）；
+# Issue 內文一律經由檔案與環境變數傳給 Python，不會被拼進 shell 指令。
+
+on:
+  issues:
+    types: [opened, labeled]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: saga-benchmark-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    if: >-
+      contains(github.event.issue.labels.*.name, '標竿') &&
+      github.event.issue.user.login == github.repository_owner &&
+      (github.event_name == 'issues' ||
+       (startsWith(github.event.comment.body, '/analyze') && github.event.comment.user.login == github.repository_owner))
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      N: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt faster-whisper
+      - name: 安裝 FFmpeg
+        timeout-minutes: 10
+        run: |
+          for i in 1 2 3; do
+            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg > /dev/null && break
+            sleep 10
+          done
+      - name: 取得 Issue 內文與我們的對照片
+        run: |
+          gh issue view "$N" --json body -q .body > body.md
+          mkdir -p v
+          gh release download s2 -p 's2-ep02.mp4' -D v || true
+      - name: 下載標竿片並分析
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -m saga.cli benchmark --issue-body body.md --ours v/s2-ep02.mp4 --id "ref-$N" --report report.md
+      - name: 回報
+        if: always()
+        run: |
+          if [ -f report.md ]; then
+            gh issue comment "$N" --body-file report.md
+            gh issue edit "$N" --add-label 已分析 || true
+            scripts/commit.sh "標竿分析 #$N" || true
+          else
+            gh issue comment "$N" --body "🎯 分析失敗，請看 $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" || true
+          fi
