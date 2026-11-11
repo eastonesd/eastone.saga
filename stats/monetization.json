@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T03:01+08:00",
+  "updated": "2026-11-12T03:02+08:00",
   "raw": {
     "youtube": {
       "channel": "SAGA | 故事放映室🎥",
@@ -11,7 +11,7 @@
       "shorts_views_90d": 0
     },
     "instagram": {
-      "error": "權杖無效或過期（應以 IGAA 開頭）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
+      "error": "權杖有效，但旗下粉絲專頁都沒有綁定 IG 專業帳號（或權杖缺少 instagram_basic 權限）"
     },
     "threads": {
       "account": "saga.storyroom",
@@ -179,7 +179,7 @@
           ]
         }
       ],
-      "error": "權杖無效或過期（應以 IGAA 開頭）：{\"error\":{\"message\":\"Invalid OAuth access token - Cannot parse access token\",\"type\":\"OAuthException\",\"code\":190,\"fbtrace"
+      "error": "權杖有效，但旗下粉絲專頁都沒有綁定 IG 專業帳號（或權杖缺少 instagram_basic 權限）"
     },
     "tiktok": {
       "tiers": [
