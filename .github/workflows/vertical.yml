@@ -76,13 +76,13 @@ jobs:
       SLUG: ${{ needs.plan.outputs.slug }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: ~/.saga-tools
+          key: saga-media-v1
       - name: 安裝 FFmpeg 與中文字型
-        timeout-minutes: 12
-        run: |
-          for i in 1 2 3; do
-            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg fonts-noto-cjk > /dev/null && break
-            sleep 10
-          done
+        timeout-minutes: 15
+        run: scripts/setup_media.sh
       - run: pip install pillow
       - name: 下載、轉直式、上傳
         run: |

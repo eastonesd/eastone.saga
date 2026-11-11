@@ -40,13 +40,13 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt faster-whisper
+      - uses: actions/cache@v4
+        with:
+          path: ~/.saga-tools
+          key: saga-media-v1
       - name: 安裝 FFmpeg
-        timeout-minutes: 10
-        run: |
-          for i in 1 2 3; do
-            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg > /dev/null && break
-            sleep 10
-          done
+        timeout-minutes: 15
+        run: scripts/setup_media.sh
       - name: 取得 Issue 內文與我們的對照片
         run: |
           gh issue view "$N" --json body -q .body > body.md

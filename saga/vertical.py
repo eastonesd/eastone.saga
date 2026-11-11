@@ -46,6 +46,12 @@ Dialogue: 0,0:00:00.00,9:00:00.00,A,,0,0,0,,AI 生成內容
 """
 
 
+def _assarg(name: str) -> str:
+    import os
+    fonts = os.path.expanduser("~/.local/share/fonts")
+    return f"filename={name}:fontsdir={fonts}" if os.path.isdir(fonts) else name
+
+
 INTRO_S = 1.5  # 片頭：SAGA.ai 徽章緩緩浮現
 
 
@@ -68,7 +74,7 @@ def wrap(src: Path, out: Path, *, title: str, ep: int, ep_title: str, total: int
     main = (f"[0:v]split[a][b];"
             f"[a]crop=ih:ih,scale={W}:{H},boxblur=30:3,eq=brightness=-0.25[bg];"
             f"[b]crop=ih:ih:(iw-ih)/2:0,scale={BAND}:{BAND}[fg];"
-            f"[bg][fg]overlay=0:{TOP},ass={ass.name},setsar=1,format=yuv420p")
+            f"[bg][fg]overlay=0:{TOP},ass={_assarg(ass.name)},setsar=1,format=yuv420p")
     inputs = ["-i", str(src.resolve())]
     if intro:
         mark = out.with_name(out.stem + "_mark.png")

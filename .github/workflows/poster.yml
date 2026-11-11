@@ -57,13 +57,13 @@ jobs:
           fi
           FLAGS="--pick $PICK"; [ "$REGEN" = "true" ] && FLAGS="$FLAGS --regen"
           { echo "slug=$SLUG"; echo "flags=$FLAGS"; } >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: ~/.saga-tools
+          key: saga-media-v1
       - name: 安裝字型
-        timeout-minutes: 12
-        run: |
-          for i in 1 2 3; do
-            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends fonts-noto-cjk fonts-noto-cjk-extra > /dev/null && break
-            sleep 10
-          done
+        timeout-minutes: 15
+        run: scripts/setup_media.sh
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

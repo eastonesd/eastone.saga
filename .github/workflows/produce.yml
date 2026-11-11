@@ -123,15 +123,13 @@ jobs:
           echo "skip=$SKIP" >> "$GITHUB_OUTPUT"
           echo "已完成：${SKIP:-無}"
 
+      - uses: actions/cache@v4
+        with:
+          path: ~/.saga-tools
+          key: saga-media-v1
       - name: 安裝
-        timeout-minutes: 12
-        run: |
-          # 套件伺服器偶爾卡住：每次最多等 4 分鐘，失敗重試 3 次
-          for i in 1 2 3; do
-            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg fonts-noto-cjk fonts-noto-cjk-extra > /dev/null && break
-            echo "apt 第 $i 次失敗，重試…"; sleep 10
-          done
-          command -v ffmpeg
+        timeout-minutes: 15
+        run: scripts/setup_media.sh
 
       - uses: actions/setup-python@v5
         with:
@@ -248,15 +246,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+      - uses: actions/cache@v4
+        with:
+          path: ~/.saga-tools
+          key: saga-media-v1
       - name: 安裝 FFmpeg 與中文字型
-        timeout-minutes: 12
-        run: |
-          # 套件伺服器偶爾卡住：每次最多等 4 分鐘，失敗重試 3 次
-          for i in 1 2 3; do
-            sudo timeout 240 apt-get update -qq && sudo timeout 240 apt-get install -y -qq --no-install-recommends ffmpeg fonts-noto-cjk > /dev/null && break
-            echo "apt 第 $i 次失敗，重試…"; sleep 10
-          done
-          command -v ffmpeg
+        timeout-minutes: 15
+        run: scripts/setup_media.sh
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"

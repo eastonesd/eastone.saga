@@ -76,7 +76,8 @@ def run(slug: str, preset: str, mock: bool = False) -> Path:
     shutil.rmtree(dl, ignore_errors=True)
     manifest = render._run_mock(job, dl) if mock else render._run_on_kaggle(job, dl)
     try:
-        font = ImageFont.truetype("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc", 22)
+        from .poster import _font
+        font = _font("Noto Sans CJK TC:bold", 22)
     except OSError:
         font = ImageFont.load_default()
     cols, tw, th, rh = len(configs), 560, 320, 280

@@ -19,6 +19,13 @@ MIN_SHOT = 1.6
 GLITCH_S = 0.18
 
 
+def _ass_arg(path) -> str:
+    """字幕濾鏡參數；有下載的思源字型時明確指定字型資料夾（靜態版 FFmpeg 不一定讀得到系統字型設定）"""
+    import os
+    fonts = os.path.expanduser("~/.local/share/fonts")
+    return f"filename='{path}':fontsdir='{fonts}'" if os.path.isdir(fonts) else f"'{path}'"
+
+
 def _ff(*args: str) -> None:
     r = subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", *args], capture_output=True, text=True)
     if r.returncode != 0:
@@ -202,7 +209,7 @@ def assemble_episode(slug: str, ep: int) -> Path:
     else:
         filters.append(f"[vox]atrim=0:{total:.3f},afade=t=out:st={max(total - 0.8, 0):.2f}:d=0.8[aout]")
     sub_path = str(ass).replace("\\", "/").replace(":", "\\:").replace("'", "\\'")
-    filters.append(f"[0:v]ass='{sub_path}'[vout]")
+    filters.append(f"[0:v]ass={_ass_arg(sub_path)}[vout]")
 
     out = paths.final_video_path(slug, ep)
     _ff(*args, "-filter_complex", ";".join(filters), "-map", "[vout]", "-map", "[aout]",
