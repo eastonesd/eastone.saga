@@ -93,6 +93,12 @@ jobs:
           python -m saga.cli publish --slug "${{ steps.args.outputs.slug }}" --to "${{ steps.args.outputs.to }}" \
             --eps "${{ steps.args.outputs.eps }}" --limit "${{ steps.args.outputs.limit }}" \
             --dir "$RUNNER_TEMP/v" --report "$RUNNER_TEMP/report.md"
+      - name: Discord 通知
+        if: always() && steps.args.outputs.to != 'check'
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          [ -f "$RUNNER_TEMP/report.md" ] && python -m saga.notify --report "$RUNNER_TEMP/report.md" || true
       - name: 記錄與回報
         if: always()
         run: |

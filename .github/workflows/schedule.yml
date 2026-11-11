@@ -4,6 +4,8 @@ name: 排程上架
 on:
   schedule:
     - cron: "3,13,23,33,43,53 * * * *"
+  push:
+    paths: [schedule/publish.json]   # 新增／修改排程 → 在 Discord 公告（bot 標記完成的 commit 帶 [skip ci] 不會觸發）
   workflow_dispatch:
 
 permissions:
@@ -22,7 +24,18 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/run_schedule.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: 公告排程
+        if: github.event_name != 'schedule'
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: python -m saga.notify --schedule
+      - name: 到期的就上架
+        if: github.event_name == 'schedule'
+        run: python3 scripts/run_schedule.py
       - name: 存檔
         run: |
           git config user.name "saga-bot"
