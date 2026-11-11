@@ -56,7 +56,7 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
 
      由 A.R.T.H.U.R. 從 Discord 送出（<Discord 使用者名稱>）
      ```
-   - ⚠️ **請改成先轉存再開單（2026-11-11 實測）**：`/saga-ref` 收到的是 `ephemeral-attachments` 網址，幾分鐘到幾小時內就會 403，
+   - ✅ **已改為先轉存再開單（A.R.T.H.U.R. 2026-11-12 上線）**：附件下載後存到 Supabase Storage 私有 bucket `saga-refs`，`### 影片` 放 **90 天**簽名網址；轉存失敗才退回 Discord 原始網址（回覆訊息會警告）。原始需求：`/saga-ref` 收到的是 `ephemeral-attachments` 網址，幾分鐘到幾小時內就會 403，
      自動分析雖然來得及下載，但之後賈維斯要親自看片時已經拿不到。
      請 A.R.T.H.U.R. 收到附件後立刻下載、上傳到 Supabase Storage（bucket 例如 `saga-refs`），`### 影片` 放**有效期至少 30 天**的簽名網址（或公開網址）。
 3. 分析完成時，本 repo 會在該 Issue 留言報告並加上 label `已分析`。
@@ -65,7 +65,7 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
 > **契約**：label `標竿`／`已分析` 與內文的 `### 影片`、`### 喜歡哪裡`、`### 出處` 三個標題不變。
 > 分析只保存文字與數據，不保存對方的影片或畫面（版權）。
 
-## 營利進度：進度條資料（待 A.R.T.H.U.R. 實作顯示）
+## 營利進度：進度條資料（A.R.T.H.U.R. 已上線）
 
 本 repo 每天台北 06:41 自動更新（`.github/workflows/stats.yml`），A.R.T.H.U.R. 直接讀：
 
@@ -81,10 +81,10 @@ A.R.T.H.U.R. 的 `arthur-hub` 每 10 分鐘掃描一次本 repo（只讀），�
   - `requirements[]`：`label`、`current`、`target`、`pct`、`per_day`（近 7 天每日成長）、`eta`（預計達標日，資料不足時為 null）、
     `either`（true＝與同組條件擇一即可）、`closest`（擇一條件中目前較接近的那條，建議高亮）
 
-建議顯示：每個平台一張卡、每個門檻一條進度條；`either` 的條件並排顯示並標「擇一」，`closest` 高亮；
+**A.R.T.H.U.R. 已實作**：arthur-hub 每 10 分鐘用主人權杖讀本檔（GitHub API，不靠 raw 網址，私人 repo 也能讀），存進專案狀態；儀表板「東石影音」磚顯示各平台下一個門檻的小進度條，點磚開「營利進度」視窗（平台卡＋門檻進度條，擇一條件虛線框、`closest` 金框高亮）；里程碑通知已上線。原始建議：`either` 的條件並排顯示並標「擇一」，`closest` 高亮；
 每跨過 25%／50%／75%／100% 在 `#東石影音` 通知一次（比對前一天的 `pct`）。
 
-**TikTok 需手動回報**（TikTok 不開放個人帳號數據）：請 A.R.T.H.U.R. 新增 `/saga-stats tiktok 粉絲 <數字>`、`/saga-stats tiktok 觀看 <上個月有效觀看>`，
+**TikTok 需手動回報**（TikTok 不開放個人帳號數據）：✅ A.R.T.H.U.R. 已新增 `/saga-stats`（選單：平台 TikTok／項目 粉絲或觀看／數字），合併寫入 `stats/manual.json`、訊息帶 `[skip ci]`。原始需求： `/saga-stats tiktok 粉絲 <數字>`、`/saga-stats tiktok 觀看 <上個月有效觀看>`，
 寫入本 repo 的 `stats/manual.json`：`{"tiktok": {"followers": 123, "views_last_month": 45678}}`（用主人權杖 commit，訊息加 `[skip ci]`）。
 
 ## 想主動發通知？
