@@ -98,25 +98,25 @@ def youtube() -> dict:
 
 
 def instagram() -> dict:
-    tok = os.environ.get("IG_TOKEN")
+    tok = (os.environ.get("IG_TOKEN") or "").strip().strip("\"'")
     if not tok:
         return {"error": "缺少 IG_TOKEN"}
     r = requests.get("https://graph.instagram.com/v23.0/me",
                      params={"fields": "username,followers_count,media_count", "access_token": tok}, timeout=30)
     if not r.ok:
-        return {"error": f"權杖無效或過期：{r.text[:200]}"}
+        return {"error": f"權杖無效或過期（Instagram 權杖通常以 IGAA 開頭；目前開頭是 {tok[:4]}…，長度 {len(tok)}）：{r.text[:120]}"}
     d = r.json()
     return {"account": d.get("username"), "followers": int(d.get("followers_count", 0)), "posts": d.get("media_count")}
 
 
 def threads() -> dict:
-    tok = os.environ.get("THREADS_TOKEN")
+    tok = (os.environ.get("THREADS_TOKEN") or "").strip().strip("\"'")
     if not tok:
         return {"error": "缺少 THREADS_TOKEN"}
     base = "https://graph.threads.net/v1.0"
     r = requests.get(f"{base}/me", params={"fields": "id,username", "access_token": tok}, timeout=30)
     if not r.ok:
-        return {"error": f"權杖無效或過期：{r.text[:200]}"}
+        return {"error": f"權杖無效或過期（Threads 權杖通常以 TH 開頭；目前開頭是 {tok[:4]}…，長度 {len(tok)}）：{r.text[:120]}"}
     out = {"account": r.json().get("username")}
     ins = requests.get(f"{base}/me/threads_insights", params={"metric": "followers_count", "access_token": tok}, timeout=30)
     if ins.ok:
