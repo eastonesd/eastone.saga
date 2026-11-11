@@ -264,25 +264,30 @@ class Instagram:
         except Exception:
             return 25
 
-    def _container(self, file: Path, caption: str, cover: str | None) -> str:
-        params = {"media_type": "REELS", "upload_type": "resumable", "caption": caption,
-                  "share_to_feed": "true", "access_token": self.token}
+    def _container(self, file: Path, caption: str, cover: str | None, video_url: str | None = None) -> str:
+        base = {"media_type": "REELS", "caption": caption, "share_to_feed": "true", "access_token": self.token}
         if cover:
-            params["cover_url"] = cover
-        r = requests.post(f"{self.G}/{self.uid}/media", data=params, timeout=60)
+            base["cover_url"] = cover
+        errors = []
+        if video_url:  # 首選：給公開網址，由 Instagram 自己抓（統一登入權杖的直傳通道常回 ProcessingFailedError）
+            r = requests.post(f"{self.G}/{self.uid}/media", data={**base, "video_url": video_url}, timeout=60)
+            if r.ok:
+                return r.json()["id"]
+            errors.append(f"網址模式 HTTP {r.status_code} {r.text[:200]}")
+        r = requests.post(f"{self.G}/{self.uid}/media", data={**base, "upload_type": "resumable"}, timeout=60)
         if not r.ok:
-            raise RuntimeError(f"建立 Reels 失敗：HTTP {r.status_code} {r.text[:300]}")
+            raise RuntimeError("；".join(errors + [f"建立 Reels 失敗：HTTP {r.status_code} {r.text[:200]}"]))
         cid = r.json()["id"]
         uri = r.json().get("uri") or f"https://rupload.facebook.com/ig-api-upload/v23.0/{cid}"
         with file.open("rb") as f:
             up = requests.post(uri, headers={"Authorization": f"OAuth {self.token}", "offset": "0",
                                              "file_size": str(file.stat().st_size)}, data=f, timeout=900)
         if not up.ok:
-            raise RuntimeError(f"影片傳送失敗：HTTP {up.status_code} {up.text[:300]}")
+            raise RuntimeError("；".join(errors + [f"影片傳送失敗：HTTP {up.status_code} {up.text[:200]}"]))
         return cid
 
-    def post(self, file: Path, caption: str, cover: str | None) -> str:
-        cid = self._container(file, caption, cover)
+    def post(self, file: Path, caption: str, cover: str | None, video_url: str | None = None) -> str:
+        cid = self._container(file, caption, cover, video_url)
         for _ in range(60):  # Instagram 轉檔，最多等 10 分鐘
             time.sleep(10)
             s = requests.get(f"{self.G}/{cid}", params={"fields": "status_code,status",
@@ -398,7 +403,8 @@ def publish(slug: str, eps: list[int], platforms: list[str], folder: Path, limit
                         rep["privacy"] = client.privacy(vid)
                 else:
                     cover = f"https://github.com/{REPO}/releases/download/{slug}/{slug}-ep{n:02d}.jpg"
-                    done[str(n)] = client.post(file, instagram_caption(bible, ep, n), _resolve(cover))
+                    vurl = _resolve(f"https://github.com/{REPO}/releases/download/{slug}/{file.name}")
+                    done[str(n)] = client.post(file, instagram_caption(bible, ep, n), _resolve(cover), vurl)
                 rep["ok"].append(n)
                 print(f"  ✓ 第 {n} 集 → {done[str(n)]}", flush=True)
             except Exception as e:  # 單集失敗不拖垮整批
