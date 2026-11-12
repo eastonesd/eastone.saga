@@ -341,11 +341,20 @@ def video(pick: str, only: str) -> None:
         dst = OUT / f"lab12-{f.name}"
         shutil.copy(f, dst)
         files.append(dst)
-    upload(*files)
+    if files:
+        upload(*files)
+    tail = ""
+    if len(files) < len(vs):   # 有鏡頭沒產出 → 把 Kaggle 日誌重點記下來
+        try:
+            tail = render._kaggle_error_tail(f"{os.environ.get('KAGGLE_USERNAME', '')}/{os.environ.get('SAGA_KERNEL_SLUG', 'saga-lab12')}", 40)
+        except Exception as e:  # noqa: BLE001
+            tail = f"取不到日誌：{e}"
+        print("▶ Kaggle 日誌重點：\n" + tail)
+        err = err or f"{len(vs) - len(files)} 段沒有產出影片"
     rep = _load_report()
     runs = rep.setdefault("video_runs", [])
     runs.append({"job_id": job["job_id"], "pick": choice, "shots": want, "model": render.VIDEO_MODEL,
-                 "kaggle_min": manifest.get("elapsed_min"), "info": info, "error": err,
+                 "kaggle_min": manifest.get("elapsed_min"), "info": info, "error": err, "log_tail": tail[-3000:],
                  "settings": {v["key"]: {k: v[k] for k in ("w", "h", "frames", "fps", "steps", "cfg", "seed")} for v in vs}})
     rep.setdefault("video_pick", {}).update(choice)
     _save_report(rep)
