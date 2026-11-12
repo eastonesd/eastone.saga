@@ -344,13 +344,13 @@ def video(pick: str, only: str) -> None:
     if files:
         upload(*files)
     tail = ""
-    if len(files) < len(vs):   # 有鏡頭沒產出 → 把 Kaggle 日誌重點記下來
+    if True:   # 一律記下 Kaggle 日誌重點（步數、顯存峰值、錯誤）
         try:
             tail = render._kaggle_error_tail(f"{os.environ.get('KAGGLE_USERNAME', '')}/{os.environ.get('SAGA_KERNEL_SLUG', 'saga-lab12')}", 40)
         except Exception as e:  # noqa: BLE001
             tail = f"取不到日誌：{e}"
         print("▶ Kaggle 日誌重點：\n" + tail)
-        err = err or f"{len(vs) - len(files)} 段沒有產出影片"
+        err = err or (f"{len(vs) - len(files)} 段沒有產出影片" if len(files) < len(vs) else None)
     rep = _load_report()
     runs = rep.setdefault("video_runs", [])
     runs.append({"job_id": job["job_id"], "pick": choice, "shots": want, "model": render.VIDEO_MODEL,

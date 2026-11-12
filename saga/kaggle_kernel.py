@@ -187,15 +187,8 @@ elif mode == "video":
     dt = torch.float16 if JOB.get("video_dtype", "fp16") == "fp16" else torch.bfloat16
     vae = AutoencoderKLWan.from_pretrained(JOB["video_model"], subfolder="vae", torch_dtype=torch.float32)
     vp = WanImageToVideoPipeline.from_pretrained(JOB["video_model"], vae=vae, torch_dtype=dt)
-    # T4 只有 15GB：整個 5B 模型一次搬上 GPU 會爆（11/12 實測 OOM）→ 分組卸載，算到哪一組才搬哪一組
-    # 不用 use_stream：它會把權重複製到鎖頁記憶體，Kaggle 29GB 主記憶體會被撐爆（實測 exit -9）
-    from diffusers.hooks import apply_group_offloading
-    _on, _off = torch.device("cuda"), torch.device("cpu")
-    vp.transformer.enable_group_offload(onload_device=_on, offload_device=_off, offload_type="block_level",
-                                        num_blocks_per_group=JOB.get("video_blocks_per_group", 3), use_stream=False)
-    apply_group_offloading(vp.text_encoder, onload_device=_on, offload_device=_off, offload_type="block_level",
-                           num_blocks_per_group=4)
-    vae.to(_on)
+    # T4 只有 15GB：model_cpu_offload 與 block 分組卸載實測都 OOM（11/12）→ 逐層卸載，最省顯存
+    vp.enable_sequential_cpu_offload()
     for fn in ("enable_tiling", "enable_slicing"):
         if hasattr(vae, fn):
             getattr(vae, fn)()
@@ -203,6 +196,10 @@ elif mode == "video":
     NEG = JOB.get("video_neg") or ("色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，"
                                    "JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，"
                                    "手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走")
+    def _step_log(pipe, i, t, kw):
+        if i in (0, 4) or i % 10 == 9:
+            log(f"  影片第 {i + 1} 步", f"顯存峰值 {torch.cuda.max_memory_allocated() / 2**30:.1f}GB")
+        return kw
     info = {}
     for v in JOB.get("video_shots", [])[shard::nshards]:
         src = f"{OUT}/{v['key']}.png"
@@ -221,7 +218,9 @@ elif mode == "video":
             frames = vp(image=img, prompt=v["prompt"], negative_prompt=NEG, height=H, width=W, num_frames=nf,
                         num_inference_steps=v.get("steps", JOB.get("video_steps", 30)),
                         guidance_scale=v.get("cfg", 5.0),
+                        callback_on_step_end=_step_log, callback_on_step_end_tensor_inputs=["latents"],
                         generator=torch.Generator("cpu").manual_seed(v.get("seed", 0))).frames[0]
+            log("影片解碼完成", v["key"], f"顯存峰值 {torch.cuda.max_memory_allocated() / 2**30:.1f}GB")
             arr = np.asarray(frames)
             bad = bool(np.isnan(arr).any() or arr.max() - arr.min() < 0.02)
             export_to_video(frames, f"{OUT}/{v['key']}.mp4", fps=v.get("fps", 24))

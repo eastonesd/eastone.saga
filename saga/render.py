@@ -208,7 +208,7 @@ def _kaggle_error_tail(kernel_id: str, n: int = 25) -> str:
             lines.extend(str(item.get("data", "")).splitlines())
     except (ValueError, TypeError):
         lines = raw.splitlines()
-    keep = [l for l in lines if re.search(r"Error|Exception|Traceback|⚠|exit|File \"/tmp/saga", l)]
+    keep = [l for l in lines if re.search(r"Error|Exception|Traceback|⚠|exit|影片|顯存|File \"/tmp/saga", l)]
     return "\n".join((keep or lines)[-n:])
 
 
