@@ -1,26 +1,27 @@
 {
-  "updated": "2026-11-12T03:21+08:00",
+  "updated": "2026-11-12T11:18+08:00",
   "raw": {
     "youtube": {
       "channel": "SAGA | 故事放映室🎥",
       "subscribers": 0,
       "videos": 60,
-      "views_total": 747,
+      "views_total": 944,
       "uploads_90d": 60,
-      "watch_hours_365d": 0.1,
+      "watch_hours_365d": 1.6,
       "shorts_views_90d": 0
     },
     "instagram": {
       "account": "saga.storyroom",
       "followers": 1,
-      "posts": 3
+      "posts": 6
     },
     "threads": {
       "account": "saga.storyroom",
       "followers": 0
     },
     "tiktok": {
-      "error": "等待手動回報（TikTok 不開放個人帳號數據）"
+      "followers": 2,
+      "views_last_month": 871
     }
   },
   "progress": {
@@ -57,9 +58,9 @@
             {
               "key": "watch_hours_365d",
               "label": "365 天長片觀看時數",
-              "current": 0.1,
+              "current": 1.6,
               "target": 3000,
-              "pct": 0.0,
+              "pct": 0.1,
               "per_day": null,
               "eta": null,
               "either": true,
@@ -98,7 +99,7 @@
             {
               "key": "watch_hours_365d",
               "label": "365 天長片觀看時數",
-              "current": 0.1,
+              "current": 1.6,
               "target": 4000,
               "pct": 0.0,
               "per_day": null,
@@ -188,14 +189,14 @@
           "name": "影片禮物",
           "pct": 0,
           "achieved": false,
-          "complete_data": false,
+          "complete_data": true,
           "requirements": [
             {
               "key": "followers",
               "label": "粉絲",
-              "current": null,
+              "current": 2,
               "target": 10000,
-              "pct": null,
+              "pct": 0.0,
               "per_day": null,
               "eta": null,
               "either": false,
@@ -207,14 +208,14 @@
           "name": "訂閱（約 2 美元／人）",
           "pct": 0,
           "achieved": false,
-          "complete_data": false,
+          "complete_data": true,
           "requirements": [
             {
               "key": "followers",
               "label": "粉絲",
-              "current": null,
+              "current": 2,
               "target": 10000,
-              "pct": null,
+              "pct": 0.0,
               "per_day": null,
               "eta": null,
               "either": false,
@@ -223,9 +224,9 @@
             {
               "key": "views_last_month",
               "label": "上個月有效觀看",
-              "current": null,
+              "current": 871,
               "target": 100000,
-              "pct": null,
+              "pct": 0.9,
               "per_day": null,
               "eta": null,
               "either": false,
@@ -233,8 +234,7 @@
             }
           ]
         }
-      ],
-      "error": "等待手動回報（TikTok 不開放個人帳號數據）"
+      ]
     }
   }
 }
