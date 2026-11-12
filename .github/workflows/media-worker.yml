@@ -30,6 +30,8 @@ jobs:
           [ -n "$T" ] && echo "CLOUDFLARE_API_TOKEN：已讀到（${#T} 字元）" || echo "CLOUDFLARE_API_TOKEN：讀不到"
           # 只描述格式，絕不印出任何權杖字元
           case "$T" in *" "*|*$'\n'*|*$'\t'*) echo "⚠ 權杖內含空白或換行（可能連同說明文字或 curl 指令一起貼上）";; esac
+          h=$(( ${#T} / 2 )); [ $(( ${#T} % 2 )) -eq 0 ] && [ "${T:0:$h}" = "${T:$h}" ] && echo "⚠ 權杖前後兩半完全相同：貼了兩次"
+          printf '%s' "$T" | LC_ALL=C grep -q '[^A-Za-z0-9_.=-]' && echo "⚠ 權杖內含英數字以外的字元（例如全形字或引號）"
           case "$T" in *Bearer*|*curl*|*http*) echo "⚠ 權杖內含 Bearer／curl／網址字樣：貼到的是測試指令，不是權杖本身";; esac
           [ -n "$A" ] && echo "CLOUDFLARE_ACCOUNT_ID：已讀到（${#A} 字元）" || echo "CLOUDFLARE_ACCOUNT_ID：讀不到"
           if [ -z "$T" ] || [ -z "$A" ]; then
