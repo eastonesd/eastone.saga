@@ -235,14 +235,25 @@ const posterOf = (rel, slug) => {
   const find = (n) => (rel?.assets || []).find((a) => a.name === n)?.browser_download_url;
   return { main: find(`${slug}-poster.jpg`), sq: find(`${slug}-poster-3x4.jpg`) };
 };
+// iPhone／iPad 不能直接播 GitHub Release（伺服器把影片標成「下載檔」）→ 有轉送站就改走轉送站（見 worker/media.js）
+let MEDIA = "";
+const mediaReady = fetch("media.json", { cache: "no-cache" }).then((r) => r.ok ? r.json() : {})
+  .then((j) => { MEDIA = (j.base || "").replace(/\/$/, ""); }).catch(() => {});
+const portrait = () => matchMedia("(orientation: portrait) and (max-width: 900px)").matches;
 const episodeFiles = (rel) => {
   const map = {};
   for (const a of rel?.assets || []) {
-    const m = a.name.match(/-ep(\d+)\.(mp4|jpg)$/);
-    if (m) (map[Number(m[1])] ||= {})[m[2]] = a.browser_download_url;
+    const m = a.name.match(/-ep(\d+)(-v)?\.(mp4|jpg)$/);
+    if (!m) continue;
+    const f = (map[Number(m[1])] ||= {});
+    const key = m[2] ? "v" : m[3];          // v＝9:16 直式版
+    f[key] = MEDIA && rel.tag_name ? `${MEDIA}/${rel.tag_name}/${a.name}` : a.browser_download_url;
+    if (m[3] === "mp4") f[m[2] ? "vdl" : "dl"] = a.browser_download_url;  // 下載鍵維持原檔
   }
+  for (const f of Object.values(map)) if (!f.mp4 && f.v) { f.mp4 = f.v; f.dl ||= f.vdl; }
   return map;
 };
+const playUrl = (f) => (portrait() && f.v) || f.mp4;   // 手機直拿時優先播直式版
 
 async function renderList() {
   view.innerHTML = `<h1>我的劇</h1><div class="skeleton"></div><div class="skeleton"></div>`;
@@ -270,6 +281,7 @@ async function renderList() {
       releaseOf(slugOf(i)).catch(() => null),
       getJSON(`series/${slugOf(i)}/bible.json`).catch(() => null),
     ]);
+    await mediaReady;
     const files = episodeFiles(rel);
     const done = Object.values(files).filter((f) => f.mp4).length;
     const total = bible?.episode_count || 60;
@@ -300,6 +312,7 @@ async function renderSeries(num) {
     getJSON(`series/${slug}/bible.json`).catch(() => null),
     getJSON(`series/${slug}/outline.json`).catch(() => null),
   ]);
+  await mediaReady;
   const files = episodeFiles(rel);
   const pst = posterOf(rel, slug);
   const total = bible?.episode_count || 0;
@@ -526,15 +539,24 @@ function openPlayer(files, titles, ep, show) {
     sheet.innerHTML = `
       <header><div class="t">${esc(show)}・第 ${ep} 集 ${esc(titles[ep] || "")}</div>
         <button class="icon-btn" aria-label="關閉">✕</button></header>
-      <video src="${files[ep].mp4}" controls autoplay playsinline ${files[ep].jpg ? `poster="${files[ep].jpg}"` : ""}></video>
+      <video src="${playUrl(files[ep])}" controls autoplay playsinline preload="metadata" ${files[ep].jpg ? `poster="${files[ep].jpg}"` : ""}></video>
       <footer>
         <button class="btn ghost" data-go="-1" ${i <= 0 ? "disabled" : ""}>上一集</button>
-        <a class="btn ghost" href="${files[ep].mp4}" download>下載</a>
+        <a class="btn ghost" href="${files[ep].dl || files[ep].mp4}" download>下載</a>
         <button class="btn ghost" data-go="1" ${i >= eps.length - 1 ? "disabled" : ""}>下一集</button>
       </footer>`;
     $(".icon-btn", sheet).onclick = close;
     sheet.querySelectorAll("[data-go]").forEach((b) => b.onclick = () => { ep = eps[i + Number(b.dataset.go)]; draw(); });
-    $("video", sheet).onended = () => { if (i < eps.length - 1) { ep = eps[i + 1]; draw(); } };
+    const v = $("video", sheet);
+    // 自動下一集：沿用同一個播放器換片源（iOS 不允許新建的播放器在沒點擊的情況下自動出聲播放）
+    v.onended = () => {
+      if (i >= eps.length - 1) return;
+      ep = eps[i + 1]; const keep = v; draw();
+      const nv = $("video", sheet); nv.replaceWith(keep);
+      keep.src = playUrl(files[ep]); keep.poster = files[ep].jpg || ""; keep.onended = nv.onended; keep.play().catch(() => {});
+    };
+    v.onerror = () => { if (!MEDIA && /iPhone|iPad|Macintosh/.test(navigator.userAgent) && "ontouchend" in document)
+      toast("這台 iPhone／iPad 需要影片轉送站才能播放，請改按「下載」，或請管理員完成轉送站設定"); };
     $(".icon-btn", sheet).focus();
   };
   addEventListener("keydown", onKey);

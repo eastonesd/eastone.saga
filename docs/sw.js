@@ -1,7 +1,7 @@
 // SAGA.ai service worker：讓 App 可安裝、離線也能打開外殼
-const VERSION = "saga-v11";
+const VERSION = "saga-v12";
 const SHELL = ["./", "index.html", "app.js", "manifest.webmanifest",
-  "icons/icon-192.png", "icons/icon-512.png", "icons/logo-640.jpg", "icons/favicon.png"];
+  "icons/icon-192.png", "icons/icon-512.png", "icons/logo-640.jpg", "icons/favicon.png", "media.json"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(VERSION).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));

@@ -1,0 +1,4 @@
+name = "saga-media"
+main = "media.js"
+compatibility_date = "2026-11-01"
+workers_dev = true

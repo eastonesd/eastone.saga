@@ -1,0 +1,62 @@
+name: 影片轉送站部署
+
+# 部署 Cloudflare Worker，讓 iPhone／iPad 能播放 Release 影片；完成後把網址寫進 docs/media.json，App 自動改用。
+# 需要 Secrets：CLOUDFLARE_API_TOKEN（範本「編輯 Cloudflare Workers」）、CLOUDFLARE_ACCOUNT_ID
+on:
+  push:
+    branches: [main]
+    paths: [worker/**]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saga-media-worker
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: 檢查金鑰
+        id: key
+        env:
+          T: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          A: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$T" ] || [ -z "$A" ]; then
+            echo "::warning::尚未設定 CLOUDFLARE_API_TOKEN／CLOUDFLARE_ACCOUNT_ID，先略過部署（設定後手動重跑本工作）"
+          else echo "ok=1" >> "$GITHUB_OUTPUT"; fi
+      - name: 部署
+        if: steps.key.outputs.ok == '1'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+      - name: 取得網址並驗證 iOS 需要的標頭
+        if: steps.key.outputs.ok == '1'
+        env:
+          T: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          A: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          sub=$(curl -fsS -H "Authorization: Bearer $T" "https://api.cloudflare.com/client/v4/accounts/$A/workers/subdomain" \
+                | python3 -c "import json,sys;print(json.load(sys.stdin)['result']['subdomain'])")
+          base="https://saga-media.$sub.workers.dev"
+          tag=$(curl -fsS "https://api.github.com/repos/${{ github.repository }}/releases?per_page=1" | python3 -c "import json,sys;print(json.load(sys.stdin)[0]['tag_name'])")
+          name=$(curl -fsS "https://api.github.com/repos/${{ github.repository }}/releases/tags/$tag" \
+                 | python3 -c "import json,sys;print(next(a['name'] for a in json.load(sys.stdin)['assets'] if a['name'].endswith('.mp4')))")
+          sleep 10
+          hdr=$(curl -sS -D - -o /dev/null -H "Range: bytes=0-1" "$base/$tag/$name")
+          echo "$hdr"
+          echo "$hdr" | grep -qi "^HTTP/.* 206" || { echo "::error::轉送站沒有回 206 分段內容"; exit 1; }
+          echo "$hdr" | grep -qi "content-type: video/mp4" || { echo "::error::轉送站的格式標頭不對"; exit 1; }
+          printf '{"base": "%s"}\n' "$base" > docs/media.json
+          git config user.name "saga-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/media.json
+          git diff --cached --quiet || { git commit -qm "影片轉送站網址 [skip ci]"; git pull -q --rebase origin main; git push -q origin HEAD:main; }
+          echo "轉送站上線：$base"
