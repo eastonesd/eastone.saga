@@ -12,9 +12,11 @@ permissions:
   contents: write
   actions: write
 
+# 定時巡檢（cron）與「睡到時間」的守時工作分開排隊：
+# 11/12 曾發生 cron 巡檢把正在睡等 12:00 的工作取消掉，導致沒人守時。
 concurrency:
-  group: saga-schedule
-  cancel-in-progress: true   # 新的一輪取代舊的（例如排程改了）
+  group: saga-schedule-${{ github.event_name == 'schedule' && 'cron' || 'sleeper' }}
+  cancel-in-progress: true   # 同類的新一輪取代舊的（例如排程改了）
 
 jobs:
   tick:
@@ -23,17 +25,28 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
+      - name: 已有守時工作在睡等 → 巡檢讓位
+        id: guard
+        if: github.event_name == 'schedule'
+        run: |
+          n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow schedule.yml --status in_progress --json event \
+                -q '[.[] | select(.event != "schedule")] | length')
+          if [ "${n:-0}" -gt 0 ]; then echo "守時工作進行中，本次巡檢跳過"; echo "skip=1" >> "$GITHUB_OUTPUT"; fi
       - uses: actions/checkout@v4
+        if: steps.guard.outputs.skip != '1'
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.skip != '1'
         with:
           python-version: "3.12"
       - run: pip install -q requests
+        if: steps.guard.outputs.skip != '1'
       - name: 公告排程
         if: github.event_name == 'push'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python -m saga.notify --schedule
       - name: 到期的就上架
+        if: steps.guard.outputs.skip != '1'
         run: python3 scripts/run_schedule.py && scripts/save_schedule.sh
       - name: 等到下一個排程（不靠 GitHub 定時器）
         id: wait
