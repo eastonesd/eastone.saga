@@ -188,10 +188,11 @@ elif mode == "video":
     vae = AutoencoderKLWan.from_pretrained(JOB["video_model"], subfolder="vae", torch_dtype=torch.float32)
     vp = WanImageToVideoPipeline.from_pretrained(JOB["video_model"], vae=vae, torch_dtype=dt)
     # T4 只有 15GB：整個 5B 模型一次搬上 GPU 會爆（11/12 實測 OOM）→ 分組卸載，算到哪一組才搬哪一組
+    # 不用 use_stream：它會把權重複製到鎖頁記憶體，Kaggle 29GB 主記憶體會被撐爆（實測 exit -9）
     from diffusers.hooks import apply_group_offloading
     _on, _off = torch.device("cuda"), torch.device("cpu")
     vp.transformer.enable_group_offload(onload_device=_on, offload_device=_off, offload_type="block_level",
-                                        num_blocks_per_group=JOB.get("video_blocks_per_group", 3), use_stream=True)
+                                        num_blocks_per_group=JOB.get("video_blocks_per_group", 3), use_stream=False)
     apply_group_offloading(vp.text_encoder, onload_device=_on, offload_device=_off, offload_type="block_level",
                            num_blocks_per_group=4)
     vae.to(_on)
