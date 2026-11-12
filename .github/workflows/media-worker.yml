@@ -27,6 +27,8 @@ jobs:
           T: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           A: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
+          [ -n "$T" ] && echo "CLOUDFLARE_API_TOKEN：已讀到" || echo "CLOUDFLARE_API_TOKEN：讀不到"
+          [ -n "$A" ] && echo "CLOUDFLARE_ACCOUNT_ID：已讀到（${#A} 字元）" || echo "CLOUDFLARE_ACCOUNT_ID：讀不到"
           if [ -z "$T" ] || [ -z "$A" ]; then
             echo "::warning::尚未設定 CLOUDFLARE_API_TOKEN／CLOUDFLARE_ACCOUNT_ID，先略過部署（設定後手動重跑本工作）"
           else echo "ok=1" >> "$GITHUB_OUTPUT"; fi
