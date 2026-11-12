@@ -187,15 +187,19 @@ elif mode == "video":
     dt = torch.float16 if JOB.get("video_dtype", "fp16") == "fp16" else torch.bfloat16
     vae = AutoencoderKLWan.from_pretrained(JOB["video_model"], subfolder="vae", torch_dtype=torch.float32)
     vp = WanImageToVideoPipeline.from_pretrained(JOB["video_model"], vae=vae, torch_dtype=dt)
-    # T4 只有 15GB：model_cpu_offload 與 block 分組卸載實測都 OOM（11/12）→ 逐層卸載，最省顯存
-    vp.enable_sequential_cpu_offload()
+    # T4 只有 15GB：model_cpu_offload 與 block 分組卸載實測都 OOM（11/12）→ 主模型與文字編碼器逐層卸載（顯存峰值約 2GB）；
+    # VAE 常駐 GPU（全部逐層卸載時，69 格解碼要 8.7 分鐘，比擴散本身還久）
+    from accelerate import cpu_offload
+    cpu_offload(vp.transformer, execution_device=torch.device("cuda"))
+    cpu_offload(vp.text_encoder, execution_device=torch.device("cuda"))
+    vae.to("cuda")
     for fn in ("enable_tiling", "enable_slicing"):
         if hasattr(vae, fn):
             getattr(vae, fn)()
     vp.set_progress_bar_config(disable=True)
     NEG = JOB.get("video_neg") or ("色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，"
                                    "JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，"
-                                   "手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走")
+                                   "手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走，镜头移动，推拉镜头，前景遮挡，画面中突然出现的人")
     def _step_log(pipe, i, t, kw):
         if i in (0, 4) or i % 10 == 9:
             log(f"  影片第 {i + 1} 步", f"顯存峰值 {torch.cuda.max_memory_allocated() / 2**30:.1f}GB")

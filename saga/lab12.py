@@ -322,7 +322,7 @@ def video(pick: str, only: str) -> None:
             continue
         g = choice.get(str(s["n"]), "B")
         frames = int(round(s["sec"] * 24 / 4)) * 4 + 1   # Wan 要 4n+1 格，24 fps
-        vs.append({"key": f"epV_s{s['n']}", "prompt": s["motion"], "image_url": asset_url(_frame(g, s["n"])),
+        vs.append({"key": f"epV_s{s['n']}", "prompt": s["motion"] + " Locked-off tripod shot, the camera does not move, no new people enter the frame.", "image_url": asset_url(_frame(g, s["n"])),
                    "w": 832, "h": 480, "frames": frames, "fps": 24, "steps": 30, "cfg": 5.0, "seed": _seed(f"video{s['n']}")})
     job = {"job_id": uuid.uuid4().hex[:12], "slug": SLUG, "video_model": render.VIDEO_MODEL, "width": 1344, "height": 768,
            "time_budget_min": 300, "characters": [], "shots": [], "video_shots": vs}
