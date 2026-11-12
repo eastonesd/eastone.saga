@@ -32,13 +32,17 @@ jobs:
           if [ -z "$T" ] || [ -z "$A" ]; then
             echo "::warning::尚未設定 CLOUDFLARE_API_TOKEN／CLOUDFLARE_ACCOUNT_ID，先略過部署（設定後手動重跑本工作）"
           else echo "ok=1" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/setup-node@v4
+        if: steps.key.outputs.ok == '1'
+        with:
+          node-version: "22"
       - name: 部署
         if: steps.key.outputs.ok == '1'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          workingDirectory: worker
+        working-directory: worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx --yes wrangler@4 deploy
       - name: 取得網址並驗證 iOS 需要的標頭
         if: steps.key.outputs.ok == '1'
         env:
