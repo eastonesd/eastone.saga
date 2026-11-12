@@ -187,7 +187,17 @@ elif mode == "video":
     dt = torch.float16 if JOB.get("video_dtype", "fp16") == "fp16" else torch.bfloat16
     vae = AutoencoderKLWan.from_pretrained(JOB["video_model"], subfolder="vae", torch_dtype=torch.float32)
     vp = WanImageToVideoPipeline.from_pretrained(JOB["video_model"], vae=vae, torch_dtype=dt)
-    vp.enable_model_cpu_offload()
+    # T4 只有 15GB：整個 5B 模型一次搬上 GPU 會爆（11/12 實測 OOM）→ 分組卸載，算到哪一組才搬哪一組
+    from diffusers.hooks import apply_group_offloading
+    _on, _off = torch.device("cuda"), torch.device("cpu")
+    vp.transformer.enable_group_offload(onload_device=_on, offload_device=_off, offload_type="block_level",
+                                        num_blocks_per_group=JOB.get("video_blocks_per_group", 3), use_stream=True)
+    apply_group_offloading(vp.text_encoder, onload_device=_on, offload_device=_off, offload_type="block_level",
+                           num_blocks_per_group=4)
+    vae.to(_on)
+    for fn in ("enable_tiling", "enable_slicing"):
+        if hasattr(vae, fn):
+            getattr(vae, fn)()
     vp.set_progress_bar_config(disable=True)
     NEG = JOB.get("video_neg") or ("色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，"
                                    "JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，"
@@ -283,6 +293,7 @@ ERRORS = []
 
 def run(mode, shard=0, nshards=1, gpu=0):
     env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu), PYTHONUNBUFFERED="1")
+    env.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
     p = subprocess.Popen([sys.executable, WORKER_PATH, mode, str(shard), str(nshards)], env=env)
     p.label = f"{mode}#{shard}@GPU{gpu}"
     return p
