@@ -138,6 +138,7 @@ elif mode == "shots":
             _masks[(w, h)] = [m.reshape(1, m.shape[0], m.shape[2], m.shape[3])]
         return _masks[(w, h)]
     done = 0
+    TIMES = {}
     groups = {}
     for s in mine:  # 依主模型分組，每組只載入一次
         groups.setdefault(s.get("unet", "lightning"), []).append(s)
@@ -152,6 +153,7 @@ elif mode == "shots":
           if out_of_time():
               log("時間預算用完"); break
           try:
+              t_shot = time.time()
               apply_loras(pipe, lora_weights(s))
               KW = gen_kw(s)
               scale = s.get("ip", JOB.get("ip_scale", 0.5))
@@ -168,6 +170,8 @@ elif mode == "shots":
                   img = pipe(prompt=s["prompt"], width=sw, height=sh, ip_adapter_image=ref if ref is not None else blank,
                              generator=gen, **KW).images[0]
               img.save(f"{OUT}/{s['key']}.png")
+              TIMES[s["key"]] = round(time.time() - t_shot, 1)
+              json.dump(TIMES, open(f"{OUT}/timing_shots_{shard}.json", "w"))
               done += 1
               if done % 10 == 0 or done == len(mine):
                   log(f"{done}/{len(mine)}")
@@ -175,22 +179,49 @@ elif mode == "shots":
               traceback.print_exc()
 
 elif mode == "video":
-    from diffusers import WanImageToVideoPipeline
+    # Wan 2.2 TI2V 5B 圖生影片。尺寸由工作單指定（預設橫式 832×480，長寬須為 32 的倍數），
+    # 首幀先等比縮放再置中裁切，避免舊版硬拉成 480×832 直式造成變形。
+    import numpy as np
+    from diffusers import AutoencoderKLWan, WanImageToVideoPipeline
     from diffusers.utils import export_to_video
-    vp = WanImageToVideoPipeline.from_pretrained(JOB["video_model"], torch_dtype=torch.float16)
+    dt = torch.float16 if JOB.get("video_dtype", "fp16") == "fp16" else torch.bfloat16
+    vae = AutoencoderKLWan.from_pretrained(JOB["video_model"], subfolder="vae", torch_dtype=torch.float32)
+    vp = WanImageToVideoPipeline.from_pretrained(JOB["video_model"], vae=vae, torch_dtype=dt)
     vp.enable_model_cpu_offload()
-    for v in JOB.get("video_shots", []):
+    vp.set_progress_bar_config(disable=True)
+    NEG = JOB.get("video_neg") or ("色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，"
+                                   "JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，"
+                                   "手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走")
+    info = {}
+    for v in JOB.get("video_shots", [])[shard::nshards]:
         src = f"{OUT}/{v['key']}.png"
         if out_of_time() or not os.path.exists(src):
-            continue
+            info[v["key"]] = {"error": "沒有首幀或時間用完"}; continue
+        t1 = time.time()
         try:
-            img = Image.open(src).convert("RGB").resize((480, 832))
-            frames = vp(image=img, prompt=v["prompt"], height=832, width=480, num_frames=49,
-                        num_inference_steps=JOB.get("video_steps", 20), guidance_scale=5.0).frames[0]
-            export_to_video(frames, f"{OUT}/{v['key']}.mp4", fps=16)
-            log("影片", v["key"])
-        except Exception:
+            W, H = v.get("w", 832), v.get("h", 480)
+            img = Image.open(src).convert("RGB")
+            ow, oh = img.size
+            k = max(W / ow, H / oh)
+            img = img.resize((round(ow * k), round(oh * k)), Image.LANCZOS)
+            l, t = (img.width - W) // 2, (img.height - H) // 2
+            img = img.crop((l, t, l + W, t + H))
+            nf = v.get("frames", 121)
+            frames = vp(image=img, prompt=v["prompt"], negative_prompt=NEG, height=H, width=W, num_frames=nf,
+                        num_inference_steps=v.get("steps", JOB.get("video_steps", 30)),
+                        guidance_scale=v.get("cfg", 5.0),
+                        generator=torch.Generator("cpu").manual_seed(v.get("seed", 0))).frames[0]
+            arr = np.asarray(frames)
+            bad = bool(np.isnan(arr).any() or arr.max() - arr.min() < 0.02)
+            export_to_video(frames, f"{OUT}/{v['key']}.mp4", fps=v.get("fps", 24))
+            info[v["key"]] = {"src_size": [ow, oh], "out_size": [W, H], "frames": nf, "fps": v.get("fps", 24),
+                              "seconds": round(nf / v.get("fps", 24), 2), "gen_sec": round(time.time() - t1, 1),
+                              "blank_or_nan": bad}
+            log("影片", v["key"], info[v["key"]])
+        except Exception as e:
             traceback.print_exc()
+            info[v["key"]] = {"error": f"{type(e).__name__}: {str(e)[:300]}", "gen_sec": round(time.time() - t1, 1)}
+        json.dump(info, open(f"{OUT}/video_info_{shard}.json", "w"), ensure_ascii=False)
 '''
 
 # ── 1. 準備：模型直接從 Hugging Face 下載到本機硬碟 ─────────────
@@ -222,16 +253,22 @@ RECIPE = {
     "ip": ("h94/IP-Adapter", ["sdxl_models/ip-adapter-plus-face_sdxl_vit-h.safetensors",
                               "models/image_encoder/config.json", "models/image_encoder/model.safetensors"]),
 }
-for name, (repo, patterns) in RECIPE.items():
+_need_sdxl = bool(JOB.get("shots")) or any(not (c.get("ref_b64") or c.get("ref_url")) for c in JOB.get("characters", []))
+for v in JOB.get("video_shots", []):  # 另一輪選好的首幀
+    if v.get("image_url"):
+        import urllib.request
+        urllib.request.urlretrieve(v["image_url"], f"{OUT}/{v['key']}.png")
+for name, (repo, patterns) in (RECIPE.items() if _need_sdxl else []):
     try:
         snapshot_download(repo, local_dir=f"{M}/{name}", allow_patterns=patterns, max_workers=16)
     except Exception:  # hf_transfer 不可用時退回一般下載
         os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "0"
         snapshot_download(repo, local_dir=f"{M}/{name}", allow_patterns=patterns, max_workers=16)
-hf_hub_download("ByteDance/SDXL-Lightning", "sdxl_lightning_8step_unet.safetensors", local_dir=f"{M}/lightning")
+if _need_sdxl:
+    hf_hub_download("ByteDance/SDXL-Lightning", "sdxl_lightning_8step_unet.safetensors", local_dir=f"{M}/lightning")
 _need = {s.get("unet", "lightning") for s in JOB.get("shots", [])} | {(JOB.get("ref_render") or {}).get("unet", "lightning")}
 for key, repo in (("sdxl", "stabilityai/stable-diffusion-xl-base-1.0"), ("jugg", "RunDiffusion/Juggernaut-XL-v9")):
-    if key in _need:
+    if key in _need and _need_sdxl:
         hf_hub_download(repo, "unet/diffusion_pytorch_model.fp16.safetensors", local_dir=f"{M}/unet_{key}")
         log("下載主模型", key)
 log("模型下載完成")

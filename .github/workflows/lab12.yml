@@ -1,0 +1,51 @@
+name: 12 秒品質試拍
+
+# 依執行單分段跑：stills（靜幀 A/B）→ voice（X/Y 旁白）→ video（Wan 動作，可先驗一鏡）→ assemble（A、B 成片）
+# 成品都放在 Release「lab12」；不觸發正式生產、排程或上架。
+on:
+  workflow_dispatch:
+    inputs:
+      stage:
+        description: 階段
+        type: choice
+        options: [stills, voice, video, assemble]
+      pick:
+        description: 每鏡選用的首幀（video／assemble 用）
+        default: "1:B,2:B,3:B"
+      shots:
+        description: 要生成動作的鏡頭（video 用）
+        default: "1"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ (inputs.stage == 'stills' || inputs.stage == 'video') && 'saga-kaggle' || format('saga-lab12-{0}', inputs.stage) }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_TOKEN: ${{ github.token }}
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+      SAGA_KERNEL_SLUG: saga-lab12
+      MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+      MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: ~/.saga-tools
+          key: saga-media-v1
+      - run: scripts/setup_media.sh
+      - name: 執行
+        run: python -m saga.lab12 "${{ inputs.stage }}" --pick "${{ inputs.pick }}" --shots "${{ inputs.shots }}"
