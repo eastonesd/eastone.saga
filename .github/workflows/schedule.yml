@@ -14,12 +14,12 @@ permissions:
 
 concurrency:
   group: saga-schedule
-  cancel-in-progress: false
+  cancel-in-progress: true   # 新的一輪取代舊的（例如排程改了）
 
 jobs:
   tick:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 350
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -29,19 +29,37 @@ jobs:
           python-version: "3.12"
       - run: pip install -q requests
       - name: 公告排程
-        if: github.event_name != 'schedule'
+        if: github.event_name == 'push'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python -m saga.notify --schedule
       - name: 到期的就上架
-        if: github.event_name == 'schedule'
-        run: python3 scripts/run_schedule.py
-      - name: 存檔
+        run: python3 scripts/run_schedule.py && scripts/save_schedule.sh
+      - name: 等到下一個排程（不靠 GitHub 定時器）
+        id: wait
+        if: github.event_name != 'schedule'
         run: |
-          git config user.name "saga-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add schedule
-          git diff --cached --quiet && exit 0
-          git commit -q -m "排程上架：已觸發 [skip ci]"
-          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && exit 0; sleep 5; done
-          exit 1
+          # 下一個未完成項目在 5.3 小時內 → 這個工作直接睡到那個時間；更遠的話先睡 5.3 小時再接下一輪
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import datetime, timezone
+          items = [i for i in json.load(open("schedule/publish.json")) if not i.get("done")]
+          if not items:
+              print("more=0"); raise SystemExit
+          nxt = min(datetime.fromisoformat(i["at"]) for i in items)
+          wait = (nxt - datetime.now(timezone.utc)).total_seconds()
+          print(f"sleep={int(max(0, min(wait + 30, 5.3 * 3600)))}"); print("more=1")
+          PY
+      - name: 睡到時間
+        if: steps.wait.outputs.more == '1'
+        run: sleep ${{ steps.wait.outputs.sleep }}
+      - name: 時間到 → 上架
+        if: steps.wait.outputs.more == '1'
+        run: |
+          git pull -q --rebase origin main
+          python3 scripts/run_schedule.py && scripts/save_schedule.sh
+      - name: 還有後續排程就再接一輪
+        if: steps.wait.outputs.more == '1'
+        run: |
+          left=$(python3 -c "import json;print(sum(1 for i in json.load(open('schedule/publish.json')) if not i.get('done')))")
+          [ "$left" -gt 0 ] && gh workflow run schedule.yml || echo "排程全部完成"
