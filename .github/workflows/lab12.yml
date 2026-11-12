@@ -15,6 +15,9 @@ on:
       shots:
         description: 要生成動作的鏡頭（video 用）
         default: "1"
+      round:
+        description: 靜幀第幾輪（stills 用）
+        default: "1"
 
 permissions:
   contents: write
@@ -48,4 +51,4 @@ jobs:
           key: saga-media-v1
       - run: scripts/setup_media.sh
       - name: 執行
-        run: python -m saga.lab12 "${{ inputs.stage }}" --pick "${{ inputs.pick }}" --shots "${{ inputs.shots }}"
+        run: python -m saga.lab12 "${{ inputs.stage }}" --pick "${{ inputs.pick }}" --shots "${{ inputs.shots }}" --round "${{ inputs.round }}"

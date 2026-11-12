@@ -33,20 +33,20 @@ NEG = ("cartoon, anime, 3d render, doll, plastic skin, text, watermark, logo, ex
 
 # 三鏡：秒數為試拍規格；first＝動畫首幀（動作起點）；motion＝給 Wan 的動作順序
 SHOTS = [
-    {"n": 1, "name": "教室・抬眼微笑", "sec": 3.0, "refs": ["girl"], "pan": "zoom_in",
+    {"n": 1, "name": "教室・抬眼微笑", "sec": 2.8, "refs": ["girl"], "pan": "zoom_in",
      "first": f"{STYLE}, young woman, shoulder-length black hair, white blouse, navy bow tie, sitting at a classroom desk, "
               "head lowered looking down at the desk, warm sunlight from window on the left, medium close-up, shallow depth of field",
      "motion": "A young woman in a white blouse and a navy ribbon bow tie sits at a classroom desk in warm window light from the left. "
                "She first looks down at the desk, then slowly raises her eyes toward the person across from her, and finally gives a "
                "small gentle smile. Static camera, her face stays consistent, realistic subtle motion."},
-    {"n": 2, "name": "門邊・碰手鬆開", "sec": 5.0, "refs": ["boy", "girl"], "pan": "pan_right",
+    {"n": 2, "name": "門邊・碰手鬆開", "sec": 4.4, "refs": ["boy", "girl"], "pan": "pan_right",
      "first": f"{STYLE}, classroom doorway, young man standing on the left side, young woman on the right side near the open door "
               "turning toward the door, white blouse, navy bow tie, grey cardigan, warm afternoon light, medium wide shot",
      "motion": "At a classroom doorway, the young woman on the right turns and starts walking out through the door. The young man on "
                "the left reaches out his right hand; their hands touch briefly, then let go. She walks out of the door, and his hand "
                "stays hanging in the air for a moment. Static camera, the man stays on the left and the woman on the right until she "
                "leaves, realistic hands."},
-    {"n": 3, "name": "書桌・拿起文件", "sec": 4.0, "refs": ["boy"], "pan": "zoom_in",
+    {"n": 3, "name": "書桌・拿起文件", "sec": 4.8, "refs": ["boy"], "pan": "zoom_in",
      "first": f"{STYLE}, young man, short black hair, grey cardigan, sitting at a wooden desk at night, warm desk lamp on the right, "
               "a single sheet of folded letter paper lying on the desk near his right hand, medium shot",
      "motion": "A young man sits at a wooden desk under a warm desk lamp on the right. With his right hand he picks up a single sheet of "
@@ -61,6 +61,17 @@ EXTRA = [  # 驗收用參考圖（不進影片）：半身服裝、場景光線
     {"key": "epR_s3", "label": "教室光線", "refs": [],
      "prompt": f"{STYLE}, empty classroom, wooden desks, warm late-afternoon sunlight streaming through windows on the left, no people"},
 ]
+# 第 2 輪首幀：第 1 輪兩組都「正面盯鏡頭」（IP-Adapter 臉部參考＋定妝照正面），動作起點不成立 →
+# 臉部參考權重 0.55→0.35、提示詞把姿勢放最前面、B 組負面加入看鏡頭
+FIRST2 = {
+    1: f"young woman looking down at an open notebook on her desk, head lowered, eyes downcast, three-quarter view, {STYLE}, "
+       "shoulder-length black hair, white blouse, navy bow tie, classroom, warm golden sunlight from window on the left",
+    2: f"side view at a classroom doorway, young woman on the right turning away toward the open door, young man on the left "
+       f"lifting his right hand toward her, {STYLE}, white blouse, navy bow tie, light grey cardigan, warm afternoon light, medium wide shot",
+    3: f"young man sitting at a wooden desk at night looking down at a single sheet of paper lying flat on the desk, three-quarter view, "
+       f"{STYLE}, grey cardigan, warm desk lamp on the right side of the desk, dark room, medium shot",
+}
+NOSTARE = ", looking at viewer, eye contact, facing camera, posing, symmetrical portrait"
 CONFIGS = {  # 兩套生產設定
     "A": {"label": "現行 Lightning 8 步", "unet": "lightning", "steps": 8, "cfg": 0, "sampler": "Euler（trailing）"},
     "B": {"label": "完整 SDXL 28 步", "unet": "sdxl", "steps": 28, "cfg": 5, "neg": NEG, "sampler": "DPM++ 2M Karras"},
@@ -72,12 +83,12 @@ LINES = ["那天，她回頭對我笑了。", "我以為，她還會回來。", 
 # 表演版：句子拆分、情緒向量 [開心, 憤怒, 悲傷, 害怕, 厭惡, 憂鬱, 驚訝, 平靜]、句後停頓、起點（秒）
 PERF = [
     {"text": "那天，她回頭對我笑了。", "emo": [0.25, 0, 0.1, 0, 0, 0.25, 0, 0.4], "at": 0.35, "note": "回憶：溫柔帶一點惆悵"},
-    {"text": "我以為，她還會回來。", "emo": [0.3, 0, 0.1, 0, 0, 0.1, 0.05, 0.45], "at": 3.55, "note": "仍有期待；尾字延伸到鬆手之後"},
-    {"text": "後來，", "emo": [0, 0, 0.35, 0, 0, 0.45, 0, 0.2], "at": 8.25, "note": "收低，之後停頓"},
-    {"text": "我才看懂那封信。", "emo": [0, 0, 0.6, 0, 0, 0.3, 0, 0.1], "at": None, "gap": 0.55, "note": "失落；「那封信」落在拿起紙"},
+    {"text": "我以為，她還會回來。", "emo": [0.3, 0, 0.1, 0, 0, 0.1, 0.05, 0.45], "at": 4.2, "note": "仍有期待；尾字延伸到鬆手之後"},
+    {"text": "後來，", "emo": [0, 0, 0.35, 0, 0, 0.45, 0, 0.2], "at": 7.45, "note": "收低，之後停頓"},
+    {"text": "我才看懂那封信。", "emo": [0, 0, 0.6, 0, 0, 0.3, 0, 0.1], "at": None, "gap": 0.5, "note": "失落；「那封信」落在拿起紙"},
 ]
 PERF_TEMPO = 0.93          # 表演版整體放慢（後製 atempo，音高不變）
-PLAIN_AT = [0.35, 3.55, 8.25]
+PLAIN_AT = [0.35, 3.3, 7.6]
 
 
 def _sh(*a: str) -> str:
@@ -140,21 +151,23 @@ def _commit_sha() -> str:
 
 
 # ── 1. 靜幀 ───────────────────────────────────────────────────
-def stills() -> None:
+def stills(rnd: int = 1) -> None:
     from PIL import Image, ImageDraw
 
     chars = []
     for cid, look in (("girl", GIRL), ("boy", BOY)):  # 兩組共用同一份定妝照（以 B 的品質設定生成一次）
-        chars.append({"id": cid, "seed": _seed(cid), "ref_url": None, "ref_b64": None,
+        chars.append({"id": cid, "seed": _seed(cid), "ref_url": asset_url(f"lab12-ref_{cid}.jpg") if rnd > 1 else None, "ref_b64": None,
                       "render": {k: CONFIGS["B"][k] for k in ("unet", "steps", "cfg", "neg")},
                       "ref_prompt": f"{STYLE}, single person, head and shoulders, facing camera, {look}, neutral grey background"})
     shots = []
     for g, cfg in CONFIGS.items():
         rk = {k: cfg[k] for k in ("unet", "steps", "cfg", "neg") if k in cfg}
+        if rnd >= 2 and "neg" in rk:
+            rk["neg"] = rk["neg"] + NOSTARE
         for s in SHOTS:
-            shots.append({"key": f"ep{g}_s{s['n']}", "prompt": s["first"], "refs": s["refs"], "seed": _seed(f"shot{s['n']}"),
-                          "ip": 0.55, "loras": {}, **rk})
-    for e in EXTRA:
+            shots.append({"key": f"ep{g}_s{s['n']}", "prompt": FIRST2[s["n"]] if rnd >= 2 else s["first"], "refs": s["refs"],
+                          "seed": _seed(f"shot{s['n']}"), "ip": 0.35 if rnd >= 2 else 0.55, "loras": {}, **rk})
+    for e in (EXTRA if rnd == 1 else []):
         shots.append({"key": e["key"], "prompt": e["prompt"], "refs": e["refs"], "seed": _seed(e["key"]), "ip": 0.5,
                       "loras": {}, **{k: CONFIGS["B"][k] for k in ("unet", "steps", "cfg", "neg")}})
     job = {"job_id": uuid.uuid4().hex[:12], "slug": SLUG, "video_model": render.VIDEO_MODEL,
@@ -180,15 +193,17 @@ def stills() -> None:
             f = next(iter(dl.rglob(f"ep{g}_s{s['n']}.png")), None)
             if f:
                 sheet.paste(Image.open(f).convert("RGB").resize((tw, th)), (col * (tw + 30), 70 + i * (th + 20)))
-    files = [OUT / "lab12-stills-sheet.jpg"]
+    pre = "" if rnd == 1 else f"r{rnd}-"
+    files = [OUT / f"lab12-{pre}stills-sheet.jpg"]
     sheet.save(files[0], quality=92)
-    for f in list(dl.rglob("ep*_s*.png")) + list(dl.rglob("ref_*.jpg")):
-        dst = OUT / f"lab12-{f.name}"
+    for f in list(dl.rglob("ep*_s*.png")) + ([] if rnd > 1 else list(dl.rglob("ref_*.jpg"))):
+        dst = OUT / f"lab12-{pre}{f.name}"
         shutil.copy(f, dst)
         files.append(dst)
     upload(*files)
     rep = _load_report()
-    rep.update({"commit": _commit_sha(), "stills": {
+    rep.setdefault("commit", _commit_sha())
+    rep.update({f"stills{'' if rnd == 1 else f'_r{rnd}'}": {"ip": 0.35 if rnd >= 2 else 0.55,
         "job_id": job["job_id"], "kaggle_min": manifest.get("elapsed_min"), "gpus": manifest.get("gpus"),
         "errors": manifest.get("errors"), "sheet_order": order,
         "configs": {g: {k: v for k, v in c.items() if k != "neg"} | {"neg": bool(c.get("neg"))} for g, c in CONFIGS.items()},
@@ -256,6 +271,9 @@ def voice() -> None:
     if last_end < 11.0:
         push = min(11.0 - last_end, 0.6)
         perf[-1] = (perf[-1][0], perf[-1][1] + push)
+    elif last_end > 11.8:   # 不可超出 12 秒：最後兩段一起往前移（「後來」最早 7.25 秒）
+        shift = min(last_end - 11.8, perf[-2][1] - 7.25)
+        perf[-2], perf[-1] = (perf[-2][0], perf[-2][1] - shift), (perf[-1][0], perf[-1][1] - shift)
     cue_plain = lay(plain, OUT / "_voice_plain.wav")
     cue_perf = lay(perf, OUT / "_voice_perf.wav")
     perf_text = [p["text"] for p in PERF]
@@ -288,6 +306,12 @@ def voice() -> None:
 
 
 # ── 3. 動作素材 ───────────────────────────────────────────────
+def _frame(v: str, n: int) -> str:
+    """pick 值 "B" 或 "B2"（第 2 輪 B 組）→ release 檔名"""
+    g, r = v[0], v[1:]
+    return f"lab12-{'' if r in ('', '1') else f'r{r}-'}ep{g}_s{n}.png"
+
+
 def video(pick: str, only: str) -> None:
     """pick：每鏡選用的首幀，例如 "1:B,2:A,3:B"；only：要生成的鏡頭，例如 "1" 或 "1,2,3"。"""
     choice = dict(x.split(":") for x in pick.split(","))
@@ -298,7 +322,7 @@ def video(pick: str, only: str) -> None:
             continue
         g = choice.get(str(s["n"]), "B")
         frames = int(round(s["sec"] * 24 / 4)) * 4 + 1   # Wan 要 4n+1 格，24 fps
-        vs.append({"key": f"epV_s{s['n']}", "prompt": s["motion"], "image_url": asset_url(f"lab12-ep{g}_s{s['n']}.png"),
+        vs.append({"key": f"epV_s{s['n']}", "prompt": s["motion"], "image_url": asset_url(_frame(g, s["n"])),
                    "w": 832, "h": 480, "frames": frames, "fps": 24, "steps": 30, "cfg": 5.0, "seed": _seed(f"video{s['n']}")})
     job = {"job_id": uuid.uuid4().hex[:12], "slug": SLUG, "video_model": render.VIDEO_MODEL, "width": 1344, "height": 768,
            "time_budget_min": 300, "characters": [], "shots": [], "video_shots": vs}
@@ -353,8 +377,10 @@ def assemble() -> None:
     from .assemble import _ass_arg, _motion_filter
     rep = _load_report()
     pick = rep.get("video_pick", {})
-    names = [f"lab12-epA_s{s['n']}.png" for s in SHOTS] + [f"lab12-epV_s{s['n']}.mp4" for s in SHOTS]
-    names += [f"lab12-ep{pick.get(str(s['n']), 'B')}_s{s['n']}.png" for s in SHOTS]
+    rnd = max((p[1:] or "1") for p in pick.values()) if pick else "1"
+    a_frame = {s["n"]: _frame("A" + rnd, s["n"]) for s in SHOTS}      # 基準版用同一輪的 A 組靜幀
+    names = list(a_frame.values()) + [f"lab12-epV_s{s['n']}.mp4" for s in SHOTS]
+    names += [_frame(pick.get(str(s["n"]), "B"), s["n"]) for s in SHOTS]
     fetch(*names, "lab12-voice-src-plain.wav", "lab12-voice-src-perf.wav")
     enc = ["-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", "-r", str(FPS), "-an"]
     seg = OUT / "_seg"
@@ -394,14 +420,14 @@ def assemble() -> None:
     a_parts, b_parts = [], []
     for s in SHOTS:
         pa = seg / f"A{s['n']}.mp4"
-        still_clip(OUT / f"lab12-epA_s{s['n']}.png", s, pa)
+        still_clip(OUT / a_frame[s["n"]], s, pa)
         a_parts.append(pa)
         pb = seg / f"B{s['n']}.mp4"
         mv = OUT / f"lab12-epV_s{s['n']}.mp4"
         if mv.exists():
             usage[s["n"]] = {"source": mv.name, **motion_clip(mv, s, pb)}
         else:   # 沒有動作素材 → 該鏡列為未完成，暫以選定首幀運鏡代替
-            still_clip(OUT / f"lab12-ep{pick.get(str(s['n']), 'B')}_s{s['n']}.png", s, pb)
+            still_clip(OUT / _frame(pick.get(str(s["n"]), "B"), s["n"]), s, pb)
             usage[s["n"]] = {"source": "靜幀運鏡（動作素材未完成）", "incomplete": True}
         b_parts.append(pb)
     v = rep.get("voice", {})
@@ -426,5 +452,6 @@ if __name__ == "__main__":
     ap.add_argument("stage", choices=["stills", "voice", "video", "assemble"])
     ap.add_argument("--pick", default="1:B,2:B,3:B")
     ap.add_argument("--shots", default="1")
+    ap.add_argument("--round", type=int, default=1)
     a = ap.parse_args()
-    {"stills": stills, "voice": voice, "assemble": assemble}.get(a.stage, lambda: video(a.pick, a.shots))()
+    {"stills": lambda: stills(a.round), "voice": voice, "assemble": assemble}.get(a.stage, lambda: video(a.pick, a.shots))()
