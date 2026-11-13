@@ -1,0 +1,43 @@
+name: 帶貨片
+
+# 商品實拍圖＋配音＋字幕 → 15 秒直式短片（規格：promo/<slug>/spec.json，說明見 saga/promo.py）
+# 由亞瑟觸發；成片放在 Release「promo-<slug>」。
+
+on:
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 商品代號（promo/ 底下的資料夾名稱）
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: saga-promo-${{ inputs.slug }}
+  cancel-in-progress: true
+
+jobs:
+  promo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SLUG: ${{ inputs.slug }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 安裝工具
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-cjk >/dev/null
+          pip install -q "edge-tts>=7.0" "Pillow>=10.0" "requests>=2.31"
+      - name: 剪輯
+        run: python -m saga.promo "$SLUG"
+      - name: 上傳成片
+        run: |
+          OUT="promo/$SLUG/out"
+          if gh release view "promo-$SLUG" >/dev/null 2>&1; then
+            gh release upload "promo-$SLUG" "$OUT/$SLUG.mp4" "$OUT/cover.jpg" --clobber
+          else
+            gh release create "promo-$SLUG" "$OUT/$SLUG.mp4" "$OUT/cover.jpg" --prerelease \
+              --title "帶貨片：$SLUG" --notes "由 saga/promo.py 產生（規格 promo/$SLUG/spec.json）"
+          fi

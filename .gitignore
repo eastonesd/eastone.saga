@@ -6,3 +6,4 @@ __pycache__/
 kaggle.json
 series/demo/
 series/ci/
+promo/*/out/
