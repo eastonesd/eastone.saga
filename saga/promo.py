@@ -163,7 +163,7 @@ def build(slug: str) -> Path:
             frame.save(out / "cover.jpg", quality=92)
         a = out / f"a{i}.mp3"
         _speak((sc.get("say") or sc["head"]).replace("｜", ""), a, voice, rate)
-        dur = max(_duration(a) + 0.35, float(sc.get("min", 1.8)))
+        dur = max(_duration(a) + 0.25, float(sc.get("min", 1.8)))
         n = round(dur * FPS)
         # 慢速推近 4%，讓靜態圖有呼吸感
         _ff("-loop", "1", "-i", str(fpath), "-vf",

@@ -2,18 +2,18 @@
   "name": "靚Quiet 立體記憶綿眼罩",
   "source": "https://shopee.tw/product/119763168/3844150155",
   "voice": "zh-TW-HsiaoChenNeural",
-  "rate": "+8%",
+  "rate": "+18%",
   "scenes": [
     {
       "img": "https://down-tw.img.susercontent.com/file/sg-11134201-22090-vp4m5c7tryhv49",
       "head": "戴眼罩｜總覺得壓眼睛？",
       "say": "戴眼罩，總覺得壓眼睛？",
-      "min": 2.4
+      "min": 2.0
     },
     {
       "img": "https://down-tw.img.susercontent.com/file/ce96bc5dd6f9e3b5b1f6ed5e1c1db20c",
       "head": "立體設計｜眼睛不被壓著",
-      "say": "這款立體記憶棉眼罩，｜眼睛在裡面可以自在活動。"
+      "say": "立體記憶棉眼罩，｜眼睛在裡面可以自在活動。"
     },
     {
       "img": "https://down-tw.img.susercontent.com/file/2cdfda0c73874e23a3f3b0616205378b",
@@ -21,16 +21,16 @@
       "say": "沿著臉型加厚，加強遮光。"
     },
     {
-      "img": "https://down-tw.img.susercontent.com/file/sg-11134201-22090-bu6nvy8wsyhvf9",
+      "img": "https://down-tw.img.susercontent.com/file/sg-11134201-22090-ojxrgi4tryhv4e",
       "head": "寬版頭帶｜不夾頭髮",
-      "say": "寬版頭帶不夾頭髮，｜蝦皮已經賣出四萬多個。"
+      "say": "寬版頭帶不夾頭髮，｜蝦皮上賣出四萬多個。"
     },
     {
-      "img": "https://down-tw.img.susercontent.com/file/sg-11134201-22090-bu6nvy8wsyhvf9",
+      "img": "https://down-tw.img.susercontent.com/file/cbcc1b8c2782218c456654c0f85f19ec",
       "head": "連結放在留言",
       "say": "連結放在留言。",
       "end": true,
-      "min": 2.0
+      "min": 1.7
     }
   ]
 }
