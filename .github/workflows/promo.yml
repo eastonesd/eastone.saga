@@ -1,21 +1,24 @@
 name: 帶貨片
 
 # 商品實拍圖＋配音＋字幕 → 15 秒直式短片（規格：promo/<slug>/spec.json，說明見 saga/promo.py）
-# 由亞瑟觸發；成片放在 Release「promo-<slug>」。
+# A.R.T.H.U.R.（Discord /ec）寫入 spec.json 時自動剪片；也可手動觸發。成片放在 Release「promo-<slug>」。
 
 on:
+  push:
+    branches: [main]
+    paths: ["promo/*/spec.json"]
   workflow_dispatch:
     inputs:
       slug:
         description: 商品代號（promo/ 底下的資料夾名稱）
-        required: true
+        required: false
 
 permissions:
   contents: write
 
 concurrency:
-  group: saga-promo-${{ inputs.slug }}
-  cancel-in-progress: true
+  group: saga-promo-${{ inputs.slug || github.sha }}
+  cancel-in-progress: false
 
 jobs:
   promo:
@@ -23,9 +26,17 @@ jobs:
     timeout-minutes: 20
     env:
       GH_TOKEN: ${{ github.token }}
-      SLUG: ${{ inputs.slug }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: 找出要剪的商品
+        id: s
+        run: |
+          if [ -n "${{ inputs.slug }}" ]; then S="${{ inputs.slug }}"
+          else S=$(git diff --name-only HEAD~1 HEAD -- 'promo/*/spec.json' | head -1 | cut -d/ -f2); fi
+          [ -n "$S" ] || { echo "沒有要剪的商品"; exit 1; }
+          echo "SLUG=$S" >> "$GITHUB_ENV"
       - name: 安裝工具
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-cjk >/dev/null
