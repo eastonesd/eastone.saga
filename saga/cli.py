@@ -253,28 +253,6 @@ def cmd_vertical(a) -> None:
         list(pool.map(one, todo))
 
 
-def cmd_benchmark(a) -> None:
-    from pathlib import Path
-    from . import benchmark
-    like, source, video = a.like or "", a.source or "", a.video
-    if a.issue_body:
-        info = benchmark.parse_issue(Path(a.issue_body).read_text(encoding="utf-8"))
-        like, source = like or info["like"], source or info["source"]
-        if not video:
-            if not info["video"]:
-                msg = "🎯 找不到影片：請在內文附影片網址，或直接把影片檔拖進 Issue。"
-                if a.report:
-                    Path(a.report).write_text(msg, encoding="utf-8")
-                raise SystemExit(msg)
-            video = str(benchmark.download(info["video"], Path("ref_video.bin")))
-    if not video:
-        raise SystemExit("需要 --video 或 --issue-body")
-    text = benchmark.run(Path(video), Path(a.ours) if a.ours else None, like, source, a.id)
-    print(text)
-    if a.report:
-        Path(a.report).write_text(text, encoding="utf-8")
-
-
 def cmd_stats(a) -> None:
     from . import monetize
     text = monetize.summary(monetize.run())
@@ -425,16 +403,6 @@ def main(argv=None) -> None:
     pvt.add_argument("--out")
     pvt.add_argument("--workers", type=int, default=2)
     pvt.set_defaults(fn=cmd_vertical)
-
-    pbm = sub.add_parser("benchmark", help="分析標竿片段")
-    pbm.add_argument("--video")
-    pbm.add_argument("--issue-body", help="Issue 內文檔案（自動找影片網址、喜歡哪裡、出處）")
-    pbm.add_argument("--ours")
-    pbm.add_argument("--like")
-    pbm.add_argument("--source")
-    pbm.add_argument("--id", required=True)
-    pbm.add_argument("--report")
-    pbm.set_defaults(fn=cmd_benchmark)
 
     pst = sub.add_parser("stats", help="營利進度：抓各平台數據對照門檻")
     pst.set_defaults(fn=cmd_stats)
