@@ -1,13 +1,13 @@
 {
-  "updated": "2026-11-13T10:52+08:00",
+  "updated": "2026-11-14T10:39+08:00",
   "raw": {
     "youtube": {
       "channel": "SAGA | 故事放映室🎥",
       "subscribers": 0,
       "videos": 70,
-      "views_total": 1532,
+      "views_total": 1840,
       "uploads_90d": 70,
-      "watch_hours_365d": 1.9,
+      "watch_hours_365d": 2.2,
       "shorts_views_90d": 0
     },
     "instagram": {
@@ -50,7 +50,7 @@
               "current": 70,
               "target": 3,
               "pct": 100.0,
-              "per_day": 10.0,
+              "per_day": 5.0,
               "eta": null,
               "either": false,
               "closest": false
@@ -58,7 +58,7 @@
             {
               "key": "watch_hours_365d",
               "label": "365 天長片觀看時數",
-              "current": 1.9,
+              "current": 2.2,
               "target": 3000,
               "pct": 0.1,
               "per_day": 0.3,
@@ -99,11 +99,11 @@
             {
               "key": "watch_hours_365d",
               "label": "365 天長片觀看時數",
-              "current": 1.9,
+              "current": 2.2,
               "target": 4000,
-              "pct": 0.0,
+              "pct": 0.1,
               "per_day": 0.3,
-              "eta": "2063-05-11",
+              "eta": "2063-05-10",
               "either": true,
               "closest": true
             },
