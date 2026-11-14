@@ -144,52 +144,6 @@ def _write_status(a, **data) -> None:
             json.dump(data, f, ensure_ascii=False)
 
 
-def cmd_stylebench(a) -> None:
-    """在 Kaggle 上用同一批鏡頭比較畫風設定，輸出對照圖 build/<slug>/stylebench.jpg"""
-    from PIL import Image, ImageDraw, ImageFont
-    from . import render
-
-    original = paths.read_json(paths.bible_path(a.slug))
-    bible = dict(original, render_style=a.style)
-    paths.write_json(paths.bible_path(a.slug), bible)  # 暫時套用，建 job 用
-    try:
-        job = render.build_job(a.slug, [], video=False, poster=False)
-    finally:
-        paths.write_json(paths.bible_path(a.slug), original)
-    for c in job["characters"]:
-        c["ref_b64"] = c["ref_url"] = None  # 依新畫風重做定妝照
-    ep = paths.read_json(paths.episode_path(a.slug, 1))
-    picks = [s for s in ep["shots"] if s["characters"]][: a.n]
-    duo = next((s for s in ep["shots"] if len(s["characters"]) >= 2), None)
-    if duo and duo not in picks:
-        picks[-1] = duo
-    variants = [float(x) for x in a.lora.split(",")]
-    for i, s in enumerate(picks):
-        for v in variants:
-            job["shots"].append({"key": f"ep99_b{i}v{int(v * 100):03d}", "prompt": render.shot_prompt(s, bible),
-                                 "refs": s["characters"][:2], "seed": render._shot_seed(a.slug, 1, s["id"]), "lora": v})
-    dl = paths.BUILD_DIR / a.slug / "_bench"
-    shutil.rmtree(dl, ignore_errors=True)
-    manifest = render._run_mock(job, dl) if a.mock else render._run_on_kaggle(job, dl)
-    font = ImageFont.load_default()
-    cols, tw, th = len(variants), 448, 256
-    sheet = Image.new("RGB", (cols * tw, len(picks) * th + 20 + 2 * 288), "black")
-    d = ImageDraw.Draw(sheet)
-    for j, v in enumerate(variants):
-        d.text((j * tw + 6, 4), f"style LoRA {v}", fill="white", font=font)
-    for i in range(len(picks)):
-        for j, v in enumerate(variants):
-            f = next(iter(dl.rglob(f"ep99_b{i}v{int(v * 100):03d}.png")), None)
-            if f:
-                sheet.paste(Image.open(f).resize((tw, th)), (j * tw, 20 + i * th))
-    refs = sorted(dl.rglob("ref_*.jpg"))
-    for k, f in enumerate(refs):
-        sheet.paste(Image.open(f).resize((224, 288)), ((k % (cols * 2)) * 224, 20 + len(picks) * th + (k // (cols * 2)) * 288))
-    out = paths.BUILD_DIR / a.slug / "stylebench.jpg"
-    sheet.save(out, quality=90)
-    print(f"▶ 對照圖：{out}（{len(manifest.get('images', []))} 張）")
-
-
 def cmd_reoutline(a) -> None:
     """調整總集數／每集秒數：依原大綱重新濃縮成新集數（保留結局），清掉舊分鏡讓它照新長度重寫"""
     from . import prompts
@@ -297,11 +251,6 @@ def cmd_vertical(a) -> None:
         print(f"  ✓ 第 {e} 集直式版", flush=True)
     with ThreadPoolExecutor(max_workers=a.workers) as pool:
         list(pool.map(one, todo))
-
-
-def cmd_stylelab(a) -> None:
-    from . import stylelab
-    stylelab.run(a.slug, a.preset, mock=a.mock)
 
 
 def cmd_benchmark(a) -> None:
@@ -477,12 +426,6 @@ def main(argv=None) -> None:
     pvt.add_argument("--workers", type=int, default=2)
     pvt.set_defaults(fn=cmd_vertical)
 
-    psl = sub.add_parser("stylelab", help="畫風實驗：多組算圖設定對照")
-    psl.add_argument("--slug", required=True)
-    psl.add_argument("--preset", required=True)
-    psl.add_argument("--mock", action="store_true")
-    psl.set_defaults(fn=cmd_stylelab)
-
     pbm = sub.add_parser("benchmark", help="分析標竿片段")
     pbm.add_argument("--video")
     pbm.add_argument("--issue-body", help="Issue 內文檔案（自動找影片網址、喜歡哪裡、出處）")
@@ -495,17 +438,6 @@ def main(argv=None) -> None:
 
     pst = sub.add_parser("stats", help="營利進度：抓各平台數據對照門檻")
     pst.set_defaults(fn=cmd_stats)
-
-    pb = sub.add_parser("stylebench", help="比較畫風設定")
-    pb.add_argument("--slug", required=True)
-    pb.add_argument("--style", default="donghua3d")
-    pb.add_argument("--lora", default="0,0.6,0.9", help="要比較的畫風 LoRA 強度")
-    pb.add_argument("--n", type=int, default=5)
-    pb.add_argument("--mock", action="store_true")
-    pb.set_defaults(fn=cmd_stylebench)
-
-    pv = sub.add_parser("voicebench", help="IndexTTS 聲線試聽帶")
-    pv.set_defaults(fn=lambda a: __import__("saga.tts", fromlist=["x"]).voicebench(paths.BUILD_DIR))
 
     ps = sub.add_parser("summary")
     ps.add_argument("--slug", required=True)
