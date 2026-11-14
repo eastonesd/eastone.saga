@@ -33,9 +33,9 @@ jobs:
       - name: 存試聽帶
         if: always()
         run: |
-          mkdir -p bench/voices
+          # 參考聲音就是 assets/voices/ 的同一批檔案，不再另存一份（只留試聽帶）
+          mkdir -p bench
           cp build/voicebench.mp4 bench/voicebench.mp4 2>/dev/null || true
-          cp build/voice_refs/*.wav bench/voices/ 2>/dev/null || true
           git config user.name "saga-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add bench
