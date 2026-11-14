@@ -1,0 +1,36 @@
+{
+  "name": "冰盾 高端 手機殼 適用 iPhone 18 17 16 15 14 13 手機殼 Pro max 防摔殼",
+  "source": "https://s.shopee.tw/2BGQQqJv99",
+  "voice": "zh-TW-HsiaoChenNeural",
+  "rate": "+15%",
+  "scenes": [
+    {
+      "img": "https://kocyedkngpxckixtudku.supabase.co/storage/v1/object/public/promo/p2611147c09/img1.jpg",
+      "head": "穿殼也想秀機身",
+      "say": "想幫手機穿殼｜又想秀出機身？",
+      "min": 2
+    },
+    {
+      "img": "https://kocyedkngpxckixtudku.supabase.co/storage/v1/object/public/promo/p2611147c09/img2.jpg",
+      "head": "透明背板",
+      "say": "冰盾透明背板｜蘋果標誌看得見"
+    },
+    {
+      "img": "https://kocyedkngpxckixtudku.supabase.co/storage/v1/object/public/promo/p2611147c09/img3.jpg",
+      "head": "多色可選",
+      "say": "鏡頭框配色俐落｜多色可選"
+    },
+    {
+      "img": "https://kocyedkngpxckixtudku.supabase.co/storage/v1/object/public/promo/p2611147c09/img4.jpg",
+      "head": "已售出 1,000+",
+      "say": "防摔殼款式｜日常出門帶著走"
+    },
+    {
+      "img": "https://kocyedkngpxckixtudku.supabase.co/storage/v1/object/public/promo/p2611147c09/img1.jpg",
+      "head": "連結放在留言",
+      "say": "連結放在留言。",
+      "end": true,
+      "min": 1.7
+    }
+  ]
+}
