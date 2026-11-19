@@ -1,14 +1,8 @@
 {
-  "updated": "2026-11-18T11:50+08:00",
+  "updated": "2026-11-19T11:48+08:00",
   "raw": {
     "youtube": {
-      "channel": "SAGA | 故事放映室🎥",
-      "subscribers": 0,
-      "videos": 70,
-      "views_total": 1933,
-      "uploads_90d": 70,
-      "watch_hours_365d": 2.6,
-      "shorts_views_90d": 0
+      "error": "授權失敗：{\n  \"error\": \"invalid_grant\",\n  \"error_description\": \"Token has been expired or revoked.\"\n}"
     },
     "instagram": {
       "account": "saga.storyroom",
@@ -31,14 +25,14 @@
           "name": "影片營利（YPP 初階）",
           "pct": 0,
           "achieved": false,
-          "complete_data": true,
+          "complete_data": false,
           "requirements": [
             {
               "key": "subscribers",
               "label": "訂閱",
-              "current": 0,
+              "current": null,
               "target": 500,
-              "pct": 0.0,
+              "pct": null,
               "per_day": 0.0,
               "eta": null,
               "either": false,
@@ -47,9 +41,9 @@
             {
               "key": "uploads_90d",
               "label": "90 天內公開上傳",
-              "current": 70,
+              "current": null,
               "target": 3,
-              "pct": 100.0,
+              "pct": null,
               "per_day": 1.7,
               "eta": null,
               "either": false,
@@ -58,20 +52,20 @@
             {
               "key": "watch_hours_365d",
               "label": "365 天長片觀看時數",
-              "current": 2.6,
+              "current": null,
               "target": 3000,
-              "pct": 0.1,
+              "pct": null,
               "per_day": 0.2,
-              "eta": "2076-02-14",
+              "eta": null,
               "either": true,
               "closest": true
             },
             {
               "key": "shorts_views_90d",
               "label": "90 天 Shorts 觀看",
-              "current": 0,
+              "current": null,
               "target": 3000000,
-              "pct": 0.0,
+              "pct": null,
               "per_day": 0.0,
               "eta": null,
               "either": true,
@@ -83,14 +77,14 @@
           "name": "廣告營利（YPP 完整）",
           "pct": 0,
           "achieved": false,
-          "complete_data": true,
+          "complete_data": false,
           "requirements": [
             {
               "key": "subscribers",
               "label": "訂閱",
-              "current": 0,
+              "current": null,
               "target": 1000,
-              "pct": 0.0,
+              "pct": null,
               "per_day": 0.0,
               "eta": null,
               "either": false,
@@ -99,20 +93,20 @@
             {
               "key": "watch_hours_365d",
               "label": "365 天長片觀看時數",
-              "current": 2.6,
+              "current": null,
               "target": 4000,
-              "pct": 0.1,
+              "pct": null,
               "per_day": 0.2,
-              "eta": "2092-07-19",
+              "eta": null,
               "either": true,
               "closest": true
             },
             {
               "key": "shorts_views_90d",
               "label": "90 天 Shorts 觀看",
-              "current": 0,
+              "current": null,
               "target": 10000000,
-              "pct": 0.0,
+              "pct": null,
               "per_day": 0.0,
               "eta": null,
               "either": true,
@@ -120,7 +114,8 @@
             }
           ]
         }
-      ]
+      ],
+      "error": "授權失敗：{\n  \"error\": \"invalid_grant\",\n  \"error_description\": \"Token has been expired or revoked.\"\n}"
     },
     "instagram": {
       "tiers": [
