@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T11:48+08:00",
+  "updated": "2026-11-20T11:41+08:00",
   "raw": {
     "youtube": {
       "error": "授權失敗：{\n  \"error\": \"invalid_grant\",\n  \"error_description\": \"Token has been expired or revoked.\"\n}"
@@ -44,7 +44,7 @@
               "current": null,
               "target": 3,
               "pct": null,
-              "per_day": 1.7,
+              "per_day": 0.0,
               "eta": null,
               "either": false,
               "closest": false
@@ -55,7 +55,7 @@
               "current": null,
               "target": 3000,
               "pct": null,
-              "per_day": 0.2,
+              "per_day": 0.1,
               "eta": null,
               "either": true,
               "closest": true
@@ -96,7 +96,7 @@
               "current": null,
               "target": 4000,
               "pct": null,
-              "per_day": 0.2,
+              "per_day": 0.1,
               "eta": null,
               "either": true,
               "closest": true
