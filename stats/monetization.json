@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T14:20+08:00",
+  "updated": "2026-11-25T13:00+08:00",
   "raw": {
     "youtube": {
       "error": "授權失敗：{\n  \"error\": \"invalid_grant\",\n  \"error_description\": \"Token has been expired or revoked.\"\n}"
@@ -33,7 +33,7 @@
               "current": null,
               "target": 500,
               "pct": null,
-              "per_day": 0.0,
+              "per_day": null,
               "eta": null,
               "either": false,
               "closest": false
@@ -44,7 +44,7 @@
               "current": null,
               "target": 3,
               "pct": null,
-              "per_day": 0.0,
+              "per_day": null,
               "eta": null,
               "either": false,
               "closest": false
@@ -55,7 +55,7 @@
               "current": null,
               "target": 3000,
               "pct": null,
-              "per_day": 0.0,
+              "per_day": null,
               "eta": null,
               "either": true,
               "closest": true
@@ -66,7 +66,7 @@
               "current": null,
               "target": 3000000,
               "pct": null,
-              "per_day": 0.0,
+              "per_day": null,
               "eta": null,
               "either": true,
               "closest": false
@@ -85,7 +85,7 @@
               "current": null,
               "target": 1000,
               "pct": null,
-              "per_day": 0.0,
+              "per_day": null,
               "eta": null,
               "either": false,
               "closest": false
@@ -96,7 +96,7 @@
               "current": null,
               "target": 4000,
               "pct": null,
-              "per_day": 0.0,
+              "per_day": null,
               "eta": null,
               "either": true,
               "closest": true
@@ -107,7 +107,7 @@
               "current": null,
               "target": 10000000,
               "pct": null,
-              "per_day": 0.0,
+              "per_day": null,
               "eta": null,
               "either": true,
               "closest": false
